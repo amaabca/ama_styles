@@ -1,0 +1,80 @@
+.callout-box{
+  @include callout($ash);
+
+  &__close-btn{
+    float: right;
+  }
+
+  &--green{
+    @include callout($brand-green);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--red{
+    @include callout($brand-red);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--ins-blue{
+    @include callout($brand-blue-insurance);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &__container{
+    @include grid-row;
+    @include clearfix;
+  }
+
+  &__sub-head{
+    color: $white;
+  }
+
+  &__image-container{
+    @include large-1;
+    @include small-12;
+  }
+
+  &__image{
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__content-container{
+    @include large-11;
+    @include small-12;
+  }
+
+  &__link{
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover{
+      color: $ash;
+    }
+  }
+}
+
+.callout{
+  &__side-arrow{ //this works best if it's a class on a svg element.
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+
+    @include breakpoint(small down){
+      top: 100%;
+      left: 0%;
+      height: 30%;
+      background-color: $white;
+    }
+
+    &--mobile-spacing{
+      @include breakpoint(small down){
+        margin-top: 50px;
+      }
+    }
+  }
+}

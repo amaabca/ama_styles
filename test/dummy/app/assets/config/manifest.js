@@ -2,4 +2,4 @@
 //= link_tree ../images
 //= link_directory ../javascripts .js
 //= link_directory ../stylesheets .css
-//= link ama_styles_manifest.js
+//= link styles_manifest.js

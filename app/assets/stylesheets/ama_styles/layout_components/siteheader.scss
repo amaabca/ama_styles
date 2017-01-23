@@ -1,0 +1,130 @@
+/* Styles for Top Bar, Title Bar */
+.logo{
+  width: 131px;
+  padding: $base-padding*.75 0;
+
+  @include breakpoint(large){
+    padding: $base-padding*.75 0 $base-padding*.75 $base-padding;
+  }
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.top-bar{
+  @extend .show-for-large;
+  height: $top-bar-height;
+  background: $white;
+
+  &__logo{
+    @extend .logo;
+  }
+
+  &__item{
+    @include breakpoint(large){
+      height: $top-bar-height;
+
+      &--highlighted{
+        @extend .top-bar__item;
+        background: $brand-blue-light;
+      }
+    }
+  }
+
+  &__link--highlighted{
+    @include breakpoint(large){
+      color: $white;
+    }
+  }
+
+  .submenu{
+    border: none;
+
+    li{
+      background: $cerulean;
+
+      &:nth-child(1){
+        margin-top: -$base-margin/2;
+      }
+
+      &:hover{
+        background: lighten($cerulean, 5%);
+      }
+    }
+
+    a{
+      color: $white;
+    }
+  }
+}
+.off-canvas-wrapper{
+  /* for some reason foundation sets this to hidden for off-canvas by default,
+  which causes issues with the cart's window.scrollTop in webkit
+  So if something blows up with off-canvas, start by deleting this.  */
+  backface-visibility: visible;
+}
+
+.top-nav-offset{
+  margin-top: $top-bar-height;
+}
+
+.title-bar{
+  height: $top-bar-height;
+
+  @include breakpoint (medium down){
+    padding: 0 $base-padding;
+  }
+
+  &__logo{
+    @extend .logo;
+    @include horizontal-center;
+  }
+}
+
+.menu-icon{
+  @include vertical-center;
+  cursor: pointer;
+  width: 20px;
+  height: 16px;
+
+  &::after{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: $cerulean;
+    box-shadow: 0 7px 0 $cerulean, 0 14px 0 $cerulean; //This creates the menu icon
+    content: '';
+    top: 0;
+    left: 0;
+  }
+}
+
+.page-header{
+  margin-bottom: $base-margin;
+  overflow: auto;
+  background: $brand-blue-light;
+
+  &__heading{
+    @extend .heading;
+    background: $brand-blue-light;
+
+    &--split{
+      @extend .page-header__heading;
+      @include small-6;
+    }
+  }
+
+  &__sub-text{
+    @extend .heading;
+    @include small-6;
+    background: $brand-blue-light;
+    font-style: italic;
+    font-size: 1.25rem;
+    text-align: right;
+  }
+}

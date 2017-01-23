@@ -1,5 +1,3 @@
-require "ama_styles/engine"
-
-module AmaStyles
-  # Your code goes here...
-end
+require 'ama/styles/resolver'
+require 'ama/styles/version'
+require 'ama/styles/engine'
