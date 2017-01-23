@@ -1,5 +1,11 @@
 module AMA
   module Styles
+    ASSET_PATH = File.join(
+      Gem.loaded_specs['ama_styles'].full_gem_path,
+      'app',
+      'assets'
+    ).freeze
+
     class Engine < ::Rails::Engine
       isolate_namespace AMA::Styles
 
