@@ -1,0 +1,118 @@
+# TECHDBT-1226 - A Unified Asset Architecture
+Jan 23, 2017
+
+## Why?
+* We put all of our css/javascript in an ama-layout gem for simplicity.
+* Currently we have to make many individual pull requests when our ama-layout gem is changed.
+* These pull requests need review - this does not scale well.
+* It's also easy to forget about an application when updating the layout gem.
+
+## Goals
+* Eliminate the need for multiple pull requests on an asset change. [G1]
+* Provide a mechanism for all of our individual applications to reference the same static asset files. [G2]
+* Have the ability to rollback all assets to a particular revision. [G3]
+* Provide a fallback mechanism so that we don't have a single point of failure. [G4]
+* Use a CDN for increased performance. [G5]
+* Ideally a "plug and play" solution. i.e. A Rails Engine to grab the latest assets. [G6]
+
+## Architectural Issues
+* How are all applications aware of an asset change? [I1]
+* How do we handle tests in the individual applications? An asset change can theoretically break tests. [I2]
+* How do development assets get served? [I3]
+* Will we be able to point development assets to a different revision locally? [I4]
+* How do we handle application-specific javascript? [I5]
+
+## Proposed Architecture
+
+### Required Setup
+
+#### Asset Files
+
+##### Option 1
+
+All application-specific javascript and CSS will have to be moved to a centralized asset repository that can be included on all applications.
+
+Currently, we have a lot of application-specific javascript such as this: https://github.com/amaabca/automotive/blob/52deae3f2cb3df52b587637ac5ac977639b494f8/app/assets/javascripts/application.js#L21-L26.
+
+This is needed so that an asset repository would be able to precompile all necessary assets independently of application code [I5].
+
+The drawback to this approach would mean that all of the javascript for each individual application would have to execute on
+every page load (as there would be a single generated JS file for all of our applications). This likely has performance ramifications
+(i.e. we would effectively be loading all of membership's JS on registries).
+
+##### Option 2 - Recommendation
+
+An alternative is to keep the javascript assets as-is (shared code in ama-layout, application code in the app) and only unify CSS/image assets.
+This would also overcome issue [I5], yet would not allow our JS code to share the same CDN [G5].
+
+This option is recommended due to code simplicity and page performance.
+
+#### Content Delivery Network
+
+We will need two CDN distributions created - one for staging and one for production (possibly an extra for development).
+
+I was able to use Amazon CloudFront in my tests.
+
+### Process
+
+1. Create a Rails Engine (may be run standalone or as an application dependency) to house the basic asset pipeline as well as helper classes.
+   The individual applications will include this engine as a dependency. We would need to specify no particular locked version of this dependency -
+   it should be designed such that minor asset changes will not break compatibility with the client application.
+2. Create an API endpoint that accepts a revision number and writes it into Redis. All applications share the same Redis instance for session storage. Redis will act as our communication channel between the individual applications.
+3. Setup an AWS S3 bucket with full public read access. This will house our precompiled assets. Configure a CloudFront distribution to use the S3 bucket as an origin.
+4. From the Rails Engine, precompile all necessary assets and push them to the S3 bucket using the same naming convention that Sprockets uses when precompiling assets (this could be accomplished via a Rake/Capistrano task).
+5. Upon pushing the assets to S3, make an API request against the newly created API endpoint to change the revision in Redis.
+6. In the host application, write a custom stylesheet resolution helper method that will correctly link to the proper URL for the asset in CloudFront. This method would have to query Redis to find the current revision.
+7. The host application will point to the updated fingerprinted file in CloudFront when the value in Redis is changed. CloudFront will query S3 for this file as it will not be cached.
+8. Deployment complete.
+
+#### Goals Solved
+
+* [G1]
+  We will no longer need to make many pull requests on an asset change.
+  Instead, we can immediately deploy the assets across all applications and let the version of the central style repository lag behind in the individual applications.
+  We would have to communicate that it would be best practice to pull the latest changes for the style repository when running a bundle update/install on the host applications to fetch the latest changes locally.
+* [G2]
+  All applications would be aware of an asset change by looking into Redis.
+* [G3]
+  It would be possible to rollback to a particular revision. All one would need is the asset fingerprint (digest) generated by Sprockets for the revision.
+  Simply making a request against the newly created API endpoint specifiying the requested revision will rollback the assets properly.
+* [G4]
+  When pushing the compiled assets to S3, we should also push a fallback file. Perhaps we could copy the previous applicaton.css file from the last revision.
+  This file would be statically named (i.e. there would not be a dynamic revision number). When looking for the revision in Redis, the fallback file would be
+  used if there was issues fetching the value from Redis. Therefore if Redis were to fail, a fallback stylesheet would be rendered. We would be relying
+  on the distributed nature of the CloudFormation CDN for failover. If CloudFormation were to fail, there would be serious issues.
+
+  Optionally, CloudFormation can accept a "Default Root Object" that will be rendered when a requested asset is not found. This could be used as a fallback as well.
+* [G5]
+  CloudFormation is used and pointed to an S3 bucket. This optimizes the delivery
+* [G6]
+  Because we created a Rails Engine, we simply need to add this engine as a dependency to all applications.
+
+#### Architectural Issues Solved
+
+* [I1]
+  All applications are aware of an asset change by effectively polling Redis (a shared communication channel) every request. This should not impact
+  performance as this is similar to the current behaviour of storing session data in Redis.
+* [I2]
+  Tests would be handled by still compiling all style assets locally in the host application (using the Rails Engine). Because only style-related assets
+  will be hosted on a CDN and shared, the impact of test breakage should be minimal.
+* [I3]
+  Assets are served via a shared CDN distribution.
+* [I4]
+  Yes, we can still point development style assets to be dynamically generated by the Rails Engine. Only staging/production environments should
+  permanently point to the shared CDN.
+* [I5]
+  Application specific Javascript will still be rendered within the application's own asset pipeline. This keeps our concerns
+  isolated and prevents a lot of unnecessary JS code from getting execute on each request.
+
+### Proof Of Concept
+
+A proof of concept was completed between the following repositories:
+
+* https://github.com/amaabca/ama_styles/tree/proof-of-concept
+* https://github.com/amaabca/api/tree/ama-styles-concept
+* https://github.com/amaabca/insurance/tree/ama-styles-concept
+
+To run it, API and insurance servers must be running. Your shell must define the `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` variables.
+After this is complete, clone https://github.com/amaabca/ama_styles/tree/proof-of-concept, and run bundle install. Finally run this rake task: `bundle exec rake assets:deploy[development]`.

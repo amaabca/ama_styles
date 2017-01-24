@@ -1,0 +1,25 @@
+.content-toggle{
+  &__bg{
+    background-color: $stone;
+    padding: $base-padding;
+    margin-bottom: $base-margin;
+  }
+
+  &__close{
+    @extend .fa;
+    @extend .fa-close;
+    color: $charcoal;
+    cursor: pointer;
+    float: right;
+  }
+
+  //We have to create our own classes for this because Foundation's default show/hide classes
+  //have importants on them which messes with the specificity
+  &--hidden{
+    display: none;
+  }
+
+  &--visible{
+    display: block;
+  }
+}
