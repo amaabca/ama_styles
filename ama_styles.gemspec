@@ -47,6 +47,8 @@ Gem::Specification.new do |s|
   s.add_dependency "font-awesome-sass"
   s.add_dependency "rest-client"
   s.add_dependency "aws-sdk"
+  s.add_dependency "dotenv-rails"
+  s.add_dependency "redis-rails"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry"

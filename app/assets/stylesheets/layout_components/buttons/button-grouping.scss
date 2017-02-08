@@ -1,0 +1,116 @@
+/* button-group is a foundation element, so to avoid style conflicts ours are called button-groupings */
+.button-grouping{
+  @include grid-row;
+  @include clearfix;
+
+  &--nested{
+    @include grid-row-nest;
+  }
+
+  &__container{
+    &--full{
+      @include large-12;
+    }
+
+    &--half{
+      // use with half-small to also have half width buttons on small screens
+      @include large-6;
+    }
+
+    &--quarter{
+      @include large-3;
+      @include small-12;
+    }
+
+    &--third{
+      @include large-4;
+    }
+
+    &--half-small{
+      @include breakpoint(medium down){
+        @include small-6;
+      }
+    }
+  }
+
+  &__button{
+    @extend .button;
+    min-height: 170px;
+    position: relative;
+    width: 100%;
+    padding: 2.5em 1.75em;
+
+    &--green{
+      @extend .button-grouping__button;
+      background-color: $brand-green;
+
+      &:hover{
+        background: lighten($brand-green, 10%);
+      }
+    }
+
+    &--red{
+      @extend .button-grouping__button;
+      background-color: $brand-red;
+
+      &:hover{
+        background: lighten($brand-red, 10%);
+      }
+    }
+  }
+
+  &__content{
+    @include absolute-center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+  }
+
+  &__icon{
+    font-size: 5rem;
+    padding-bottom: $base-padding;
+  }
+
+  &__bg-icon{
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__title{
+    font-weight: bold;
+    margin-bottom: $base-margin;
+  }
+
+  &__text{
+    line-height: 1rem;
+    display: block;
+
+    &--large{
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    &--underline{
+      display: block;
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Non Font Awesome/Symbolicon Icons */
+#card-icon{
+  background-image: asset-url("card-icon.png");
+}
+
+#coverage-icon{
+  background-image: asset-url("coverage-icon.png");
+}
+
+#family-icon{
+  background-image: asset-url("family-icon.png");
+}
+
+#laptop-icon{
+  background-image: asset-url("laptop-icon.png");
+}

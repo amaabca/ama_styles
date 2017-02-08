@@ -1,0 +1,6 @@
+.quote-callout{
+  &__content{
+    @include absolute-center;
+    text-align: center;
+  }
+}

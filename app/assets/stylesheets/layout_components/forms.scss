@@ -1,0 +1,505 @@
+/* ------------- Input Styles  ------------- */
+%inputs-thirds{
+  max-width: 30%;
+  float: left;
+}
+
+%inputs-halves{
+  max-width: 47.5%;
+  float: left;
+}
+
+/* ------------- BEM Checkboxes ------------- */
+.checkbox{
+
+  &--third{
+    @include large-4;
+  }
+
+  &--half{
+    @include large-6;
+  }
+
+  &--full{
+    @include large-12;
+  }
+
+  &__content{
+    display: inline-block;
+    width: 85%;
+    margin-left: 40px;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    padding: 0.5em 0.5em 0.5em 3em;
+
+    &--label{
+      font-size: 1em;
+      font-weight: 700;
+    }
+  }
+}
+
+/* ------------- Custom Radio Button + Checkbox Styles  ------------- */
+input[type="radio"],
+input[type="checkbox"]:not(.default){
+  position: absolute;
+  left: -9999px;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label,
+.form__label--unselected{
+  background: $ash;
+  border: $base-border;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding/2 0 $base-padding/2;
+
+  &:before{
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    background-color: $white;
+    border: $base-border;
+  }
+
+  .membership-card-header{
+    border-bottom: $base-border;
+    background: darken($ash, 4%);
+  }
+}
+
+.form__label-bg{
+  background: $ash;
+  border: $base-border;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  padding: 0 $base-padding/2 0 $base-padding/2;
+}
+
+.form__label-addon{
+  @extend .form__label-bg;
+  border-top: 0;
+}
+
+.checkbox-label{
+  display: inline-block;
+  width: 85%;
+  margin-top: 9px;
+  margin-bottom: 9px;
+  margin-left: 32px;
+}
+
+input[type="radio"] + label{
+  &:before{
+    border-radius: 100%;
+  }
+
+  &:after{
+    content: ' ';
+    transition: all .5s ease-in-out;
+  }
+}
+
+input[type="radio"]:checked + label{
+  color: $stormcloud;
+  background-color: $sky;
+  border: 2px solid darken($sky, 10%);
+
+  &:before{
+    content: '';
+    background-color: $white;
+    border: 2px solid $secondary-color;
+  }
+
+  &:after{
+    content: '';
+    position: absolute;
+    display: block;
+    top: 16px;
+    left: 18px;
+    background-color: $brand-blue-light;
+    width: 8px;
+    height: 8px;
+    -moz-transform: scale(2, 2);
+    -webkit-transform: scale(2, 2);
+    transform: scale(2, 2);
+    border-radius: 100%;
+  }
+
+  &>hr{
+    border: solid darken($sky, 10%);
+    border-width: 2px 0 0;
+    height: 0;
+  }
+
+  .membership-card-header{
+    border-bottom: 2px solid darken($sky, 10%);
+    background: darken($sky, 4%);
+  }
+}
+
+input[type="checkbox"]:checked + label{
+
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 200;
+    left: 14px;
+    top: 21px;
+    width: 8px;
+    height: 16px;
+    border-right: 3px solid $white;
+    border-top: 3px solid $white;
+    transform:(scaleX(-1) rotate(180deg + -45deg));
+    transform-origin:left top;
+    -webkit-transform:(scaleX(-1) rotate(180deg + -45deg));
+    -webkit-transform-origin:left top;
+    -moz-transform:(scaleX(-1) rotate(180deg + -45deg));
+    -moz-transform-origin:left top;
+    animation:checkbox 0.8s;
+  }
+
+  &:before{
+    background: $brand-blue-light;
+  }
+}
+
+input[type="checkbox"]{
+  visibility: hidden;
+}
+
+@keyframes checkbox{
+  0%{
+   height: 0;
+   width: 0;
+   }
+
+  25%{
+    height: 0;
+    width: 8px;
+  }
+
+  50%{
+    height: 17px;
+    width: 8px;
+  }
+}
+
+// Scoped to avoid collisions with foundations datepicker
+.date{
+  .month,
+  .year {
+    @extend %inputs-thirds;
+  }
+
+  .day {
+    @extend %inputs-thirds;
+    margin: 0 5%;
+  }
+
+  .hour,
+  .minute {
+    @extend %inputs-halves;
+  }
+}
+
+.minute{
+  float: right;
+}
+
+.datetime{
+  &.month, &.day, &.year{
+    margin-bottom: $base-margin;
+  }
+}
+
+/*-------------- Credit Card images ---------- */
+.cc-type{
+  width: 38px;
+  height: 19px;
+  display: inline-block;
+}
+
+.type-visa{
+  background: url(image-path("cc-type-visa.png")) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.type-mc,
+.type-mastercard{
+  background: url(image-path("cc-type-mc.png")) no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+/* The vendor prefixed placeholders have to be declared as separate selectors.
+When a browser doesn't understand a selector it invalidates the entire line */
+input::-webkit-input-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input:-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input::-moz-placeholder{
+  color: darken($smoke, 5%);
+}
+
+input[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea,
+select{
+  margin-bottom: 0;
+}
+
+select.has-placeholder:nth-child(1){
+  color: darken($smoke, 5%);
+}
+
+select:focus{
+  border: 2px solid $ocean;
+  background-color: $white;
+  outline: none;
+  box-shadow: 0;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+}
+
+
+/* ------------- Error Messaging ------------- */
+small.error{
+  display: block;
+  clear: both;
+  padding: 0.375rem 0.5625rem 0.5625rem;
+  font-size: $base-font-size;
+  background: $brand-red;
+  color: $white;
+}
+
+.error__page-error{
+  @extend small.error;
+  margin-bottom: $base-margin;
+}
+
+.error__input-error{
+  @extend .error;
+}
+
+.error small.error,
+small.error{
+  background: $brand-red;
+}
+
+.error label,
+.error label.error{
+  color: $brand-red;
+}
+
+.error-message{
+  background: $brand-red;
+}
+
+.email_hint{
+  color: $brand-red;
+  display: none;
+  font-size: 0.875em;
+  margin: 0 0 $base-padding/2;
+}
+
+.email_domain{
+  color: $brand-blue-insurance;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ------------- Moneris ------------- */
+#monerisFrameSurround iframe,
+#monerisFrameSurround object,
+#monerisFrameSurround embed{
+  width: 100%;
+}
+
+.iframe-error{
+  margin-top: -6px !important;
+}
+
+form.moneris{
+  display: none;
+}
+
+/* ------------- For All IE ------------- */
+input[type="text"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder,
+input[type="date"]:-ms-input-placeholder,
+input[type="datetime"]:-ms-input-placeholder,
+input[type="datetime-local"]:-ms-input-placeholder,
+input[type="month"]:-ms-input-placeholder,
+input[type="week"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="number"]:-ms-input-placeholder,
+input[type="search"]:-ms-input-placeholder,
+input[type="tel"]:-ms-input-placeholder,
+input[type="time"]:-ms-input-placeholder,
+input[type="url"]:-ms-input-placeholder{
+  color: darken($stone, 10%);
+}
+
+.form-container{
+  @include grid-row-nest;
+  @include large-9;
+  @include grid-column-end;
+  overflow: auto;
+  max-width: 1080px;
+  display: block;
+}
+
+.button__row{
+  @include grid-row;
+  @include clearfix;
+  clear: both;
+
+  &--nested{
+    @include grid-row-nest;
+    overflow: auto;
+    clear: both;
+  }
+}
+
+.form-horizontal{
+  &__row{
+    @include grid-row-nest;
+    @include clearfix;
+    margin-bottom: $base-margin;
+  }
+
+  &__conditional-row{
+    @extend .form-horizontal__row;
+    display: block;
+
+    &--hidden{
+      display: none;
+    }
+  }
+
+  &__label-wrapper{
+    @include large-4;
+
+    &--disabled{
+      label{
+        @extend .form-horizontal__label-wrapper;
+        color: lighten($slate, 30%);
+      }
+    }
+  }
+
+  &__input-wrapper{
+    @include large-8;
+
+    &--offset{
+      @extend .form-horizontal__input-wrapper;
+      @include large-offset-4;
+    }
+
+    &--small{
+      @include large-2;
+    }
+
+    &--half-width{
+      @include large-4;
+      @include breakpoint(medium down){
+        margin-bottom: $base-margin;
+      }
+    }
+  }
+
+  &__error-wrapper{
+    @include large-8;
+    @extend .error;
+  }
+
+  &__input-hint{
+    @include large-6;
+    @extend .hint;
+
+    &--white{
+      @extend .form-horizontal__input-hint;
+      color: $white;
+    }
+  }
+
+  &__radio-wrapper{
+    @include large-8;
+    margin-bottom: $base-margin;
+
+    &--full{
+      margin-bottom: $base-margin;
+    }
+  }
+
+  &__radio-label{
+    display: inline-block;
+    width: 85%;
+    margin-top: 9px;
+    margin-left: 32px;
+    padding-bottom: 10px;
+  }
+
+  &__select{
+    @include large-8;
+  }
+
+  &__toggle{
+    @include large-12;
+  }
+
+  &__notification{
+    @include large-8;
+  }
+
+  &__input{
+    &--inline{
+      @include small-8;
+    }
+  }
+
+  &__label{
+    &--white{
+      color: $white;
+    }
+  }
+
+  &__submit{
+    &--right{
+      @include large-4;
+    }
+
+    &--inline{
+      @include small-4;
+    }
+  }
+}
