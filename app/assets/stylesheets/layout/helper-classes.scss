@@ -1,0 +1,442 @@
+/*
+
+2. Panels
+3. Positioning
+4. Margins
+5. Padding
+6. Background & Text Colours
+7. Lists
+8. Links
+10. Typography
+
+*/
+.page-title{
+  background: $ash;
+  border-bottom: $base-border;
+  padding: $base-padding 0;
+}
+/* ==================== 2. Panels ==================== */
+
+.panel-title{
+  @extend .page-title;
+  border: 0px;
+  padding: $base-padding/2;
+
+  h5{
+    color: $jet;
+    padding-left: $base-padding/2;
+  }
+}
+
+/* ==================== 3. Positioning ==================== */
+.left{
+  float: left !important;
+}
+
+.right{
+  float: right !important;
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block{
+  display: block !important;
+}
+
+.inline{
+  display: inline !important;
+}
+
+.inline-block{
+  display: inline-block !important;
+}
+
+.text-left{
+  text-align: left !important;
+}
+
+.text-center{
+  text-align: center !important;
+}
+
+.text-right{
+  text-align: right !important;
+}
+
+.relative{
+  position: relative;
+}
+
+.z-index{
+  &--2{
+    z-index: 2;
+    position: relative;
+  }
+}
+
+/* ==================== 4. Margins ==================== */
+.m1{
+  margin: $base-margin !important;
+}
+
+.mt1{
+  margin-top: $base-margin !important;
+}
+
+.mr1{
+  margin-right: $base-margin !important;
+}
+
+.mb1{
+  margin-bottom: $base-margin !important;
+}
+
+.ml1{
+  margin-left: $base-margin !important;
+}
+
+.m0{
+  margin: 0 !important;
+}
+
+.mt0{
+  margin-top: 0 !important;
+}
+
+.mr0{
+  margin-right: 0 !important;
+}
+
+.mb0{
+  margin-bottom: 0 !important;
+}
+
+.ml0{
+  margin-left: 0 !important;
+}
+
+/* ==================== 5. Padding ==================== */
+.p1{
+  padding: $base-padding !important;
+}
+
+.pt1 {
+  padding-top: $base-margin !important;
+}
+
+.pr1 {
+  padding-right: $base-margin !important;
+}
+
+.pb1 {
+  padding-bottom: $base-margin !important;
+}
+
+.pl1 {
+  padding-left: $base-margin !important;
+}
+
+.p0{
+  padding: 0 !important;
+}
+
+.pt0 {
+  padding-top: 0 !important;
+}
+
+.pr0 {
+  padding-right: 0 !important;
+}
+
+.pb0 {
+  padding-bottom :0 !important;
+}
+
+.pl0 {
+  padding-left: 0 !important;
+}
+
+.bb0{
+  border-bottom: 0 !important;
+}
+
+.b0{
+  border: 0;
+}
+
+/* ==================== 6. Background Colours ==================== */
+.whitebg{
+  background-color: $white;
+}
+
+.greybg{
+  background-color: $stone;
+}
+
+.light-greybg{
+  background-color: $ash;
+}
+
+.insurance-blue-bg{
+  background-color: $brand-blue-insurance;
+}
+
+.light-blue-bg{
+  background: $brand-blue-light;
+}
+
+.dark-blue-bg{
+  background: $brand-blue-dark;
+}
+
+.rewards-green-bg{
+  background-color: $brand-green;
+}
+
+.orange-bg{
+  background-color: $orange;
+}
+
+.red-bg{
+  background: $brand-red;
+}
+
+// On a coloured background, the child links should be white
+.insurance-blue-bg a,
+.light-blue-bg a,
+.rewards-green-bg a,
+.dark-blue-bg a{
+  color: $white;
+}
+
+.white-trans{
+  background-color: $white;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+  background-color: rgba(255,255,255,0.6);
+}
+
+.vr{
+  width: 2px;
+  background-color: $stone;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  &--horizontal-mobile{
+    @extend .vr;
+    @include breakpoint(small down){
+      width: 100%;
+      height: 2px;
+      top: 100%;
+    }
+  }
+}
+
+/* ==================== 7. Lists ==================== */
+.lined-list{
+  list-style: none;
+  margin: 0;
+
+  li{
+    padding: $base-padding $base-padding/2 $base-padding/2 $base-padding/2;
+    border-bottom: $base-border;
+
+    .table-value{
+      float: right;
+    }
+  }
+}
+
+.no-bullets{
+  list-style-type: none;
+}
+
+/* ==================== 8. Links ==================== */
+.multiline-link{
+  line-height: 1.3rem !important;
+}
+
+/* ==================== 10. Typography ==================== */
+.white-text{
+  color: $white;
+
+  &--lrg{
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  >a{
+    color: $white;
+  }
+}
+
+.white-micetype{
+  color: $white;
+  font-size: 80%;
+}
+
+.text-shadow{
+  filter: Shadow(Color=#656565, Direction=130, Strength=1);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.strike-through{
+  text-decoration: line-through;
+  color: $black;
+}
+
+.uppercase-title{
+  font-size: $base-font-size*0.875;
+  font-weight: normal;
+  color: $slate;
+  text-transform: uppercase;
+  padding: $base-padding/2 $base-padding*0 $base-padding/2 $base-padding/2;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.grey-sub-title{
+  font-weight: bold;
+  font-size: $base-font-size*0.875;
+  color: $charcoal;
+  padding-bottom: $base-padding;
+}
+
+.brand-blue-dark-text{
+  color: $brand-blue-dark;
+}
+
+.brand-blue-light-text{
+  color: $brand-blue-light;
+}
+
+.micetype{
+  font-size: 80%;
+}
+
+.micetype--italic{
+  @extend .micetype;
+  font-style: italic;
+}
+
+.italic{
+  font-style: italic;
+}
+
+.hint{
+  font-size: $base-font-size*0.85;
+  line-height: $base-font-size;
+  color: darken($smoke, 15%);
+  font-style: italic;
+  display: block;
+
+  &--white{
+    @extend .hint;
+    color: $white;
+  }
+}
+
+.green-text{
+  color: $brand-green;
+}
+
+.orange-text{
+  color: $orange;
+}
+
+.red-text{
+  color: $brand-red;
+}
+
+.small-text{
+  font-size: $base-font-size*0.85;
+}
+
+.word-wrap{
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-word;
+  word-break: break-word;
+}
+
+.semi-bold{
+  font-weight: 600;
+
+  &--small{
+    @extend .semi-bold;
+    font-size: $small-font-size;
+  }
+
+  &--medium{
+    @extend .semi-bold;
+    font-size: $medium-font-size;
+  }
+
+  &--large{
+    @extend .semi-bold;
+    font-size: $large-font-size;
+  }
+
+  &--x-large{
+    @extend .semi-bold;
+    font-size: $x-large-font-size;
+  }
+}
+
+.bold{
+  font-weight: 700;
+
+  &--small{
+    @extend .bold;
+    font-size: $small-font-size;
+  }
+
+  &--medium{
+    @extend .bold;
+    font-size: $medium-font-size;
+  }
+
+  &--large{
+    @extend .bold;
+    font-size: $large-font-size;
+  }
+
+  &--x-large{
+    @extend .bold;
+    font-size: $x-large-font-size;
+    line-height: $x-large-font-size;
+
+    &--green{
+      @extend .bold--x-large;
+      color: $brand-green
+    }
+  }
+
+  &--no-lineheight{
+    line-height: 0;
+    margin-bottom: $base-margin*1.65;
+    margin-top: $base-margin*1.65;
+  }
+}
+
+.x-large-sup{
+  font-size: 63%;
+}
+
+.bold-large-text{
+  @extend .white-text;
+  font-size: $x-large-font-size;
+  font-weight: bold;
+
+  &--green{
+    @extend .bold-large-text;
+    color: $brand-green;
+  }
+}

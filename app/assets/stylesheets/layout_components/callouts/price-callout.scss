@@ -1,0 +1,31 @@
+.price-callout{
+  width: 45%;
+  float: left;
+  position: relative;
+  margin-bottom: 0;
+
+  @include breakpoint(small down){
+    width: 100%;
+    float: none;
+    min-height: 175px;
+  }
+
+  &__side-arrow{ //this works best if it's a class on a svg element.
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+
+    @include breakpoint(small down){
+      top: 100%;
+      left: 0%;
+      height: 30%;
+      background-color: $white;
+    }
+  }
+  
+  &__content{
+    @include absolute-center;
+    text-align: center;
+  }
+}

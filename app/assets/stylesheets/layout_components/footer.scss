@@ -1,0 +1,72 @@
+// Sticky footer setup
+$footer-push-small: 594px;
+$footer-push-medium: 419px;
+$footer-push-large: 321px;
+
+.off-canvas-wrapper{
+  min-height: 100%;
+
+  @include breakpoint(small only){
+    margin-bottom: -$footer-push-small;
+  }
+
+  @include breakpoint(medium only){
+    margin-bottom: -$footer-push-medium;
+  }
+
+  @include breakpoint(large up){
+    margin-bottom: -$footer-push-large;
+  }
+
+  &:after{
+    content: "";
+    display: block;
+
+    @include breakpoint(small only){
+      height: $footer-push-small;
+    }
+
+    @include breakpoint(medium only){
+      height: $footer-push-medium;
+    }
+    
+    @include breakpoint(large up){
+      height: $footer-push-large;
+    }
+  }
+}
+
+// Footer styles
+.page-footer{
+  background: $brand-blue-light;
+  position: relative;
+
+  &__container{
+    @include grid-row;
+    max-width: 1180px;
+    padding-top: $base-padding*3;
+  }
+
+  &__col{
+    @include medium-6;
+    @include large-3;
+  }
+
+  &__col-header{
+    color: $white;
+    font-weight: 700;
+  }
+
+  &__list{
+    list-style-type: none;
+  }
+
+  &__link{
+    color: $white;
+  }
+}
+
+.racetrack{
+  background: $brand-blue-light image-url('footer-racetrack-big.png') no-repeat center $base-padding*3;
+  height: 160px;
+}

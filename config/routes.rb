@@ -1,2 +1,2 @@
-AmaStyles::Engine.routes.draw do
+AMA::Styles::Engine.routes.draw do
 end

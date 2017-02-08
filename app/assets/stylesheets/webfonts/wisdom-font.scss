@@ -1,0 +1,11 @@
+@font-face{
+  font-family: "wisdom-script";
+  src: asset-url("ama_layout/webfonts/fonts/Wisdom-Script.woff") format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wisdom-script{
+  font-family: "wisdom-script", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
