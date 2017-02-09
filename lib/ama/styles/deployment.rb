@@ -3,26 +3,32 @@ module AMA
     class Deployment
       include ActiveModel::Model
       include Sprockets::ManifestUtils
+      include Globals
 
       def run
         clobber_assets
+        puts 'Precompiling assets and pushing to S3...'.colorize(:yellow)
         precompile_assets
         upload_files
+        puts 'Generating fallback stylesheet...'.colorize(:yellow)
+        upload_fallback_stylesheet
+        puts "Verifying S3 integrity...".colorize(:yellow)
         request
+        puts "SUCCESS!".colorize(:green) + ' 🎨'
       end
 
     private
 
       def precompile_assets
-        Rake::Task['assets:precompile'].execute
+        Rake::Task['assets:precompile'].invoke
       end
 
       def clobber_assets
-        Rake::Task['assets:clobber'].execute
+        Rake::Task['assets:clobber'].invoke
       end
 
       def assets_path
-        Pathname.new File.join(Globals::ROOT_PATH, 'public', 'assets')
+        Pathname.new File.join(ROOT_PATH, 'public', 'assets')
       end
 
       def assets_files
@@ -33,10 +39,14 @@ module AMA
         assets_files.each do |file|
           path = Pathname.new(file)
           key = File.join('assets', path.relative_path_from(assets_path).to_s)
-          obj = s3_client.bucket(Rails.configuration.assets_bucket_name).object(key)
-          puts 'Uploading: '.colorize(:green) + key
-          obj.upload_file(file)
+          upload_file(file: file, key: key)
         end
+      end
+
+      def upload_fallback_stylesheet
+        key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
+        file = Dir.glob(File.join(assets_path, "#{PRIMARY_STYLESHEET_NAME}*.css")).first
+        upload_file(file: file, key: key)
       end
 
       def s3_client
@@ -51,6 +61,14 @@ module AMA
         File.basename(find_directory_manifest(assets_path.to_s))
       end
 
+      def upload_file(opts = {})
+        key = opts.fetch(:key)
+        file = opts.fetch(:file)
+        puts 'Uploading: '.colorize(:light_blue) + key
+        object = s3_client.bucket(Rails.configuration.assets_bucket_name).object(key)
+        object.upload_file(file)
+      end
+
       def request
         RestClient::Request.execute(
           method: :post,
@@ -59,6 +77,8 @@ module AMA
             content_type: 'application/json'
           } ,
           url: api_url,
+          user: Rails.configuration.api_deployment_user,
+          password: Rails.configuration.api_deployment_password,
           payload: { digest_file: File.join('assets', digest_file) }.to_json
         )
       end
