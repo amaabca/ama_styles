@@ -49,6 +49,7 @@ Gem::Specification.new do |s|
   s.add_dependency "aws-sdk"
   s.add_dependency "dotenv-rails"
   s.add_dependency "redis-rails"
+  s.add_dependency "colorize"
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "pry"
