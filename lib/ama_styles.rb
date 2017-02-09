@@ -1,6 +1,4 @@
-require 'ama/styles/globals'
+require 'ama/styles/base'
 require 'ama/styles/deployment'
 require 'ama/styles/resolver'
-require 'ama/styles/version'
-require 'ama/styles/cache'
 require 'ama/styles/engine'

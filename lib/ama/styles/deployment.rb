@@ -32,9 +32,9 @@ module AMA
       def upload_files
         assets_files.each do |file|
           path = Pathname.new(file)
-          key = path.relative_path_from(assets_path).to_s
-          obj = s3_client.bucket(Rails.configuration.assets_bucket_name).object("assets/#{key}")
-          puts "Uploading: assets/#{key}"
+          key = File.join('assets', path.relative_path_from(assets_path).to_s)
+          obj = s3_client.bucket(Rails.configuration.assets_bucket_name).object(key)
+          puts 'Uploading: '.colorize(:green) + key
           obj.upload_file(file)
         end
       end
