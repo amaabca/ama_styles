@@ -1,14 +1,11 @@
 module AMA
   module Styles
     class Resolver
+      include Globals
       attr_accessor :remote
 
       def asset_path
-        if remote
-          custom_asset_url
-        else
-          'application'
-        end
+        remote ? custom_asset_url : PRIMARY_STYLESHEET_NAME
       end
 
     private
@@ -16,13 +13,13 @@ module AMA
       def custom_asset_url
         URI.join(
           Rails.configuration.cloudfront_url,
-          '/assets/',
+          ASSET_PREFIX,
           current_revision
         ).to_s
       end
 
       def current_revision
-        Cache.fetch(Globals::CURRENT_STYLESHEET_DIGEST_KEY) || 'fallback.css'
+        Cache.read(CURRENT_STYLESHEET_DIGEST_KEY) || FALLBACK_STYLESHEET_FILE
       end
     end
   end

@@ -25,6 +25,8 @@ module AMA::Styles
     )
     config.cloudfront_url = ENV.fetch('ASSET_CLOUDFRONT_URL')
     config.api_deployment_url = ENV.fetch('API_DEPLOYMENT_URL')
+    config.api_deployment_user = ENV.fetch('API_DEPLOYMENT_USER')
+    config.api_deployment_password = ENV.fetch('API_DEPLOYMENT_PASSWORD')
     config.assets_bucket_name = ENV.fetch('S3_ASSETS_BUCKET_NAME')
     config.redis_endpoint = ENV.fetch('REDIS_ENDPOINT')
   end
