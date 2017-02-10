@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AMA
   module Styles
     class Resolver
@@ -8,7 +10,7 @@ module AMA
         remote ? custom_asset_url : PRIMARY_STYLESHEET_NAME
       end
 
-    private
+      private
 
       def custom_asset_url
         URI.join(

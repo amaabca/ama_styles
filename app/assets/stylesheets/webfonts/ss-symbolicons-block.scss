@@ -12,11 +12,11 @@
 
 @font-face {
   font-family: "SSSymbolicons";
-  src: asset-url('ama_layout/webfonts/ss-symbolicons-block.eot');
-  src: asset-url('ama_layout/webfonts/ss-symbolicons-block.eot?#iefix') format('embedded-opentype'),
-       asset-url('ama_layout/webfonts/ss-symbolicons-block.woff') format('woff'),
-       asset-url('ama_layout/webfonts/ss-symbolicons-block.ttf')  format('truetype'),
-       asset-url('ama_layout/webfonts/ss-symbolicons-block.svg#SSSymboliconsBlock') format('svg');
+  src: asset-url('webfonts/ss-symbolicons-block.eot');
+  src: asset-url('webfonts/ss-symbolicons-block.eot?#iefix') format('embedded-opentype'),
+       asset-url('webfonts/ss-symbolicons-block.woff') format('woff'),
+       asset-url('webfonts/ss-symbolicons-block.ttf')  format('truetype'),
+       asset-url('webfonts/ss-symbolicons-block.svg#SSSymboliconsBlock') format('svg');
   font-weight: normal;
   font-style: normal;
 }

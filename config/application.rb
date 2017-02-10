@@ -1,33 +1,17 @@
+# frozen_string_literal: true
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails'
 # Pick the frameworks you want:
 require 'active_model/railtie'
 require 'sprockets/railtie'
-require 'font-awesome-sass'
-require 'foundation/rails'
-require 'aws-sdk'
-require 'rest-client'
-require 'dotenv/rails-now'
-require 'colorize'
-
-Bundler.require(*Rails.groups)
+require 'ama_styles'
 Dotenv::Railtie.load
 
-module AMA::Styles
-  class Application < Rails::Application
-    Aws.config.update(
-      region: 'us-west-2',
-      credentials: Aws::Credentials.new(
-        ENV.fetch('AWS_ACCESS_KEY_ID'),
-        ENV.fetch('AWS_SECRET_ACCESS_KEY')
-      )
-    )
-    config.cloudfront_url = ENV.fetch('ASSET_CLOUDFRONT_URL')
-    config.api_deployment_url = ENV.fetch('API_DEPLOYMENT_URL')
-    config.api_deployment_user = ENV.fetch('API_DEPLOYMENT_USER')
-    config.api_deployment_password = ENV.fetch('API_DEPLOYMENT_PASSWORD')
-    config.assets_bucket_name = ENV.fetch('S3_ASSETS_BUCKET_NAME')
-    config.redis_endpoint = ENV.fetch('REDIS_ENDPOINT')
+module AMA
+  module Styles
+    class Application < Rails::Application
+    end
   end
 end
