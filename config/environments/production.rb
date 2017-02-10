@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
 
   # Code is not reloaded between requests.
   config.cache_classes = true
@@ -31,23 +34,14 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  # Asset digests allow you to set far-future HTTP expiration dates on all assets,
-  # yet still be able to expire them through the digest params.
+  # Asset digests allow you to set far-future HTTP expiration dates on all
+  # assets, yet still be able to expire them through the digest params.
   config.assets.digest = true
-
-  # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
-
-  # Specifies the header that your server uses for sending files.
-  # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
-
-  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
   config.log_level = :debug
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -60,4 +54,13 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.aws_access_key_id = ENV.fetch('AWS_ACCESS_KEY_ID')
+  config.aws_secret_access_key = ENV.fetch('AWS_SECRET_ACCESS_KEY')
+  config.redis_endpoint = ENV.fetch('REDIS_ENDPOINT')
+  config.api_deployment_url = ENV.fetch('API_DEPLOYMENT_URL')
+  config.api_deployment_user = ENV.fetch('API_DEPLOYMENT_USER')
+  config.api_deployment_password = ENV.fetch('API_DEPLOYMENT_PASSWORD')
+  config.cloudfront_url = ENV.fetch('ASSET_CLOUDFRONT_URL')
+  config.assets_bucket_name = ENV.fetch('S3_ASSETS_BUCKET_NAME')
 end

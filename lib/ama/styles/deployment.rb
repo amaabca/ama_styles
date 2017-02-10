@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module AMA
   module Styles
     class Deployment
@@ -5,19 +6,44 @@ module AMA
       include Sprockets::ManifestUtils
       include Globals
 
+      STYLESHEET_PATTERN = "#{PRIMARY_STYLESHEET_NAME}*.css"
+
+      attr_accessor :log_output, :bucket
+
       def run
-        clobber_assets
-        puts 'Precompiling assets and pushing to S3...'.colorize(:yellow)
-        precompile_assets
+        sprockets_tasks
         upload_files
-        puts 'Generating fallback stylesheet...'.colorize(:yellow)
+        log('Generating fallback stylesheet...'.colorize(:yellow))
         upload_fallback_stylesheet
-        puts "Verifying S3 integrity...".colorize(:yellow)
+        log('Verifying S3 integrity...'.colorize(:yellow))
         request
-        puts "SUCCESS!".colorize(:green) + ' 🎨'
+        log('SUCCESS!'.colorize(:green) + ' 🎨')
       end
 
-    private
+      # Shamelessly taken from:
+      # https://github.com/rails/sprockets-rails/blob/
+      # 830e2d9c15fb1506f4b39c5b9b81ffd48f7c0534/test/test_railtie.rb#L7-L13
+      def silence_stderr
+        orig_stderr = $stderr.clone
+        $stderr.reopen File.new('/dev/null', 'w')
+        yield
+      ensure
+        $stderr.reopen orig_stderr
+      end
+
+      private
+
+      def sprockets_tasks
+        silence_stderr do
+          clobber_assets
+          log('Precompiling assets and pushing to S3...'.colorize(:yellow))
+          precompile_assets
+        end
+      end
+
+      def log(msg)
+        puts msg if log_output
+      end
 
       def precompile_assets
         Rake::Task['assets:precompile'].invoke
@@ -32,7 +58,9 @@ module AMA
       end
 
       def assets_files
-        Dir.glob("#{assets_path.to_s}/**/**", File::FNM_DOTMATCH).select { |f| File.file?(f) }
+        Dir.glob("#{assets_path}/**/**", File::FNM_DOTMATCH).select do |file|
+          File.file?(file)
+        end
       end
 
       def upload_files
@@ -45,12 +73,8 @@ module AMA
 
       def upload_fallback_stylesheet
         key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
-        file = Dir.glob(File.join(assets_path, "#{PRIMARY_STYLESHEET_NAME}*.css")).first
+        file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
         upload_file(file: file, key: key)
-      end
-
-      def s3_client
-        @s3_client ||= Aws::S3::Resource.new(region: 'us-west-2')
       end
 
       def api_url
@@ -64,23 +88,27 @@ module AMA
       def upload_file(opts = {})
         key = opts.fetch(:key)
         file = opts.fetch(:file)
-        puts 'Uploading: '.colorize(:light_blue) + key
-        object = s3_client.bucket(Rails.configuration.assets_bucket_name).object(key)
+        log('Uploading: '.colorize(:light_blue) + key)
+        object = bucket.object(key)
         object.upload_file(file)
       end
 
       def request
         RestClient::Request.execute(
           method: :post,
-          headers: {
-            accept: 'application/json',
-            content_type: 'application/json'
-          } ,
+          headers: request_headers,
           url: api_url,
           user: Rails.configuration.api_deployment_user,
           password: Rails.configuration.api_deployment_password,
           payload: { digest_file: File.join('assets', digest_file) }.to_json
         )
+      end
+
+      def request_headers
+        {
+          accept: 'application/json',
+          content_type: 'application/json'
+        }
       end
     end
   end

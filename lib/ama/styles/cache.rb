@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 module AMA
   module Styles
     class Cache
+      DELEGATIONS = %i(fetch read write delete clear).freeze
+
       class << self
-        delegate :fetch, :read, :write, :delete, :clear, to: :store
+        delegate(*DELEGATIONS, to: :store)
 
         def store
           Rails.configuration.cloudfront_cache_store
@@ -12,9 +16,9 @@ module AMA
           ActiveSupport::Cache.lookup_store(cache_store, opts)
         end
 
-        def transaction(&block)
+        def transaction
           store.data.multi do
-            block.call(self)
+            yield self
           end
         end
       end
