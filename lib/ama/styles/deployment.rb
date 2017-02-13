@@ -54,7 +54,7 @@ module AMA
       end
 
       def assets_path
-        Pathname.new File.join(ROOT_PATH, 'public', 'assets')
+        root_path.join('public', 'assets')
       end
 
       def assets_files
@@ -102,6 +102,8 @@ module AMA
           password: Rails.configuration.api_deployment_password,
           payload: { digest_file: File.join('assets', digest_file) }.to_json
         )
+      rescue RestClient::RequestFailed => ex
+        fail!(ex)
       end
 
       def request_headers
@@ -109,6 +111,11 @@ module AMA
           accept: 'application/json',
           content_type: 'application/json'
         }
+      end
+
+      def fail!(exception)
+        log('FAILURE: '.colorize(:red) + exception.message)
+        raise exception
       end
     end
   end
