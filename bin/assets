@@ -3,10 +3,10 @@
 
 require 'bundler'
 Bundler.setup
-require_relative '../lib/ama/styles/cli_base'
 require_relative '../config/application'
-require_relative '../lib/ama/styles/deployment'
+require_relative '../lib/ama/styles/internal/base'
 require_relative '../lib/ama_styles'
+load File.join('lib/ama/tasks/assets.rake')
 
 question = 'Please enter Branch name? or enter for master'
 branch = HighLine.new.ask(question) do |q|
@@ -14,7 +14,7 @@ branch = HighLine.new.ask(question) do |q|
 end
 
 begin
-  AMA::Styles::CLI.new(argv: ARGV, branch: branch).parse_and_execute
+  AMA::Styles::Internal::CLI.new(argv: ARGV, branch: branch).parse_and_execute
 rescue StandardError => ex
   puts 'ERROR: '.colorize(:red) + ex.message
   exit

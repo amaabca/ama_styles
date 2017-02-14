@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 require 'simplecov'
 ENV['RAILS_ENV'] = 'test'
-require 'ama/styles/cli_base'
 require File.expand_path('../../spec/dummy/config/environment.rb', __FILE__)
-require 'ama/styles/deployment'
+require 'ama/styles/internal/base'
 require 'webmock/rspec'
 require 'factory_girl'
 require 'pry'

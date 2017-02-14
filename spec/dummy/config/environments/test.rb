@@ -39,4 +39,13 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.aws_access_key_id = 'aws-not-secret'
+  config.aws_secret_access_key = 'super-secret'
+  config.redis_endpoint = 'localhost'
+  config.api_deployment_url = 'http://test.ama.ab.ca/api/v1/assets/deployments.json'
+  config.api_deployment_user = 'api_user'
+  config.api_deployment_password = 'api_password'
+  config.cloudfront_url = 'https://test.cloudfront.net/'
+  config.assets_bucket_name = 'ama_test_assets'
 end

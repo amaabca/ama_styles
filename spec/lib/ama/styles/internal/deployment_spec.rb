@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe AMA::Styles::Deployment do
+describe AMA::Styles::Internal::Deployment do
   subject { described_class.new(log_output: false, bucket: bucket) }
 
   describe '#run' do

@@ -1,8 +1,9 @@
 # frozen_string_literal: true
-describe AMA::Styles::CLI do
+
+describe AMA::Styles::Internal::CLI do
   let(:argv) { %w(staging deploy) }
   let(:branch) { 'my_branch' }
-  let(:invalid_argument) { AMA::Styles::CLI::InvalidArgument }
+  let(:invalid_argument) { described_class::InvalidArgument }
   subject do
     described_class.new(argv: argv, branch: branch, dry_run: true)
   end
@@ -41,7 +42,7 @@ describe AMA::Styles::CLI do
     end
 
     context 'valid params' do
-      it 'returns a AMA::Styles::Commands::Deploy instance' do
+      it 'returns a AMA::Styles::Internal::Commands::Deploy instance' do
         expect(subject.parse_and_execute).to be true
       end
     end
