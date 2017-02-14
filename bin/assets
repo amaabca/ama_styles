@@ -1,7 +1,11 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+require 'bundler'
+Bundler.setup
+require_relative '../lib/ama/styles/cli_base'
 require_relative '../config/application'
+require_relative '../lib/ama/styles/deployment'
 require_relative '../lib/ama_styles'
 
 question = 'Please enter Branch name? or enter for master'
