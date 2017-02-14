@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module AMA
   module Styles
     module Hipchat
@@ -10,7 +11,7 @@ module AMA
         user = opts.fetch(:user)
         branch = opts.fetch(:branch)
         environment = opts.fetch(:environment)
-        "#{user} is deploying ama_styles/#{branch}" +
+        "#{user} is deploying ama_styles/#{branch}" \
         " to #{environment} (#{Rails.env})"
       end
 
@@ -18,7 +19,7 @@ module AMA
         user = opts.fetch(:user)
         branch = opts.fetch(:branch)
         environment = opts.fetch(:environment)
-        "#{user} finished deploying ama_styles/#{branch}" +
+        "#{user} finished deploying ama_styles/#{branch}" \
         " to #{environment} (#{Rails.env})"
       end
 

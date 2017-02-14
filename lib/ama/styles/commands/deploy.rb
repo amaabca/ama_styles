@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module AMA
   module Styles
     module Commands
@@ -13,15 +14,19 @@ module AMA
         end
 
         def execute
-          verify_git!
-          environment_context do
-            hipchat_deploy_start
-            dry_run || Rake::Task['assets:deploy'].invoke
-            hipchat_deploy_end
-          end
+          dry_run || run
         end
 
         private
+
+        def run
+          environment_context do
+            verify_git!
+            hipchat_deploy_start
+            Rake::Task['assets:deploy'].invoke
+            hipchat_deploy_end
+          end
+        end
 
         def normalized_environment
           if environment == 'staging'
@@ -60,28 +65,41 @@ module AMA
         end
 
         def verify_git!
-          if local_branch && remote_branch
-            verify_changed_files
-            verify_commit_digests
-          else
-            raise GitError, "invalid branch: #{branch}"
-          end
+          raise GitError, "invalid branch: #{branch}" unless branches
+          fetch_branches
+          checkout_branch
+          verify_changed_files
+          verify_commit_digests
+        end
+
+        def checkout_branch
+          git.branch(branch).checkout
+        end
+
+        def branches
+          local_branch && remote_branch
         end
 
         def verify_commit_digests
-          if remote_branch.gcommit.sha != local_branch.gcommit.sha
-            raise GitError, 'local git repo is stale - please pull'
-          end
+          message = 'local git repo is stale - please pull'
+          raise GitError, message unless digest_match
+        end
+
+        def digest_match
+          remote_branch.gcommit.sha == local_branch.gcommit.sha
         end
 
         def verify_changed_files
-          if git.status.changed.count != 0
-            raise GitError, 'there are uncommitted changes'
-          end
+          message = 'there are uncommitted changes'
+          raise GitError, message unless git.status.changed.count.zero?
         end
 
         def local_branch
           git.branches[branch]
+        end
+
+        def fetch_branches
+          git.remote('origin').fetch
         end
 
         def remote_branch
