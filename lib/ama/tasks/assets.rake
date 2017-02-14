@@ -5,6 +5,6 @@ namespace :assets do
   task :deploy do
     client = Aws::S3::Resource.new(region: 'us-west-2')
     bucket = client.bucket(Rails.configuration.assets_bucket_name)
-    AMA::Styles::Deployment.new(bucket: bucket, log_output: true).run
+    AMA::Styles::Internal::Deployment.new(bucket: bucket, log_output: true).run
   end
 end
