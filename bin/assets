@@ -1,17 +1,17 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 require_relative '../config/application'
 require_relative '../lib/ama_styles'
 
-branch = HighLine.new.ask('Please enter Branch name? or enter for master') do |q|
+question = 'Please enter Branch name? or enter for master'
+branch = HighLine.new.ask(question) do |q|
   q.default = 'master'
 end
 
 begin
   AMA::Styles::CLI.new(argv: ARGV, branch: branch).parse_and_execute
-rescue AMA::Styles::Commands::Deploy::GitError => ex
+rescue StandardError => ex
   puts 'ERROR: '.colorize(:red) + ex.message
-  exit
-rescue AMA::Styles::CLI::InvalidArgument
   exit
 end

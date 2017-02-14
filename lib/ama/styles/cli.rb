@@ -3,8 +3,8 @@
 module AMA
   module Styles
     class CLI
-      ENVIRONMENTS = %w(development staging production)
-      COMMANDS = %w(deploy)
+      ENVIRONMENTS = %w(development staging production).freeze
+      COMMANDS = %w(deploy).freeze
       InvalidArgument = Class.new(StandardError)
 
       attr_accessor :argv, :dry_run, :branch
@@ -66,7 +66,6 @@ module AMA
       end
 
       def invalid_argument!(msg)
-        puts 'ERROR: '.colorize(:red) + msg
         raise InvalidArgument, msg
       end
     end

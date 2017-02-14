@@ -3,4 +3,6 @@ SimpleCov.start 'rails' do
   # We load the version in the gemspec, which
   # confuses SimpleCov.
   add_filter 'lib/ama/styles/version'
+  add_filter 'lib/ama/styles/hipchat'
+  add_filter 'lib/ama/styles/commands/*'
 end
