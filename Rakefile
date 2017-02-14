@@ -3,7 +3,6 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
-load File.join('lib/ama/tasks/assets.rake')
 AMA::Styles::Application.load_tasks
 AMA::Styles::Application.initialize!
 RSpec::Core::RakeTask.new(:spec)

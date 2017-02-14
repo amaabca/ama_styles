@@ -7,6 +7,7 @@ require 'rails'
 require 'active_model/railtie'
 require 'sprockets/railtie'
 require 'ama_styles'
+load File.join('lib/ama/tasks/assets.rake')
 Dotenv::Railtie.load
 
 module AMA

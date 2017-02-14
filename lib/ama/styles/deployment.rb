@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module AMA
   module Styles
     class Deployment
@@ -94,7 +95,7 @@ module AMA
       end
 
       def request
-        RestClient::Request.execute(
+        RestClient::Request.logged_request(
           method: :post,
           headers: request_headers,
           url: api_url,
