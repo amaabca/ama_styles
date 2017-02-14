@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../config/application'
+require_relative '../lib/ama_styles'
+
+branch = HighLine.new.ask('Please enter Branch name? or enter for master') do |q|
+  q.default = 'master'
+end
+
+begin
+  AMA::Styles::CLI.new(argv: ARGV, branch: branch).parse_and_execute
+rescue AMA::Styles::Commands::Deploy::GitError => ex
+  puts 'ERROR: '.colorize(:red) + ex.message
+  exit
+rescue AMA::Styles::CLI::InvalidArgument
+  exit
+end
