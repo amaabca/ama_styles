@@ -4,6 +4,7 @@
 require 'bundler'
 Bundler.setup
 require_relative '../config/application'
+require_relative '../lib/ama/styles/internal/environment'
 require_relative '../lib/ama/styles/internal/base'
 require_relative '../lib/ama_styles'
 load File.join('lib/ama/tasks/assets.rake')

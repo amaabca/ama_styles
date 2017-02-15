@@ -3,4 +3,5 @@ SimpleCov.start 'rails' do
   add_filter 'lib/ama/styles/version'
   add_filter 'lib/ama/styles/internal/hipchat'
   add_filter 'lib/ama/styles/internal/commands/*'
+  add_filter 'lib/ama/styles/internal/environment'
 end

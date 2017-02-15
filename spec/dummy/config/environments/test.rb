@@ -39,7 +39,6 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-
   config.aws_access_key_id = 'aws-not-secret'
   config.aws_secret_access_key = 'super-secret'
   config.redis_endpoint = 'localhost'
