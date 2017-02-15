@@ -12,6 +12,5 @@ spec/dummy/public/assets/*
 .env
 public/*
 tmp/*
-log/*
 coverage
 Gemfile.lock
