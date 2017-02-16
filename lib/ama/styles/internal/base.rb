@@ -15,7 +15,10 @@ require 'git'
 
 # Internal
 require_relative 'config'
+require_relative 'environment'
 require_relative 'hipchat'
 require_relative 'cli'
 require_relative 'deployment'
 require_relative 'commands/deploy'
+
+AMA::Styles::Internal::Environment.new(environment: 'development').load!
