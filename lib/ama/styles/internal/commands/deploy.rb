@@ -29,19 +29,11 @@ module AMA
             end
           end
 
-          def normalized_environment
-            if environment == 'staging'
-              'production'
-            else
-              environment
-            end
-          end
-
           def environment_context
-            Dotenv.overload(".env.#{environment}")
-            AMA::Styles::Application.load_tasks
-            AMA::Styles::Application.initialize!
+            Environment.new(environment: environment).load!
+            initialize_application
             yield
+            Environment.new(environment: 'development').load!
           end
 
           def hipchat_deploy_start
@@ -63,6 +55,11 @@ module AMA
                 environment: environment
               )
             )
+          end
+
+          def initialize_application
+            AMA::Styles::Application.load_tasks
+            AMA::Styles::Application.initialize!
           end
 
           def verify_git!
