@@ -20,5 +20,3 @@ require_relative 'hipchat'
 require_relative 'cli'
 require_relative 'deployment'
 require_relative 'commands/deploy'
-
-AMA::Styles::Internal::Environment.new(environment: 'development').load!

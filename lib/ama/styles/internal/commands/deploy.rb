@@ -79,7 +79,7 @@ module AMA
           end
 
           def verify_commit_digests
-            message = 'local git repo is stale - please pull'
+            message = 'local git repo is stale - please push or pull'
             raise GitError, message unless digest_match
           end
 
