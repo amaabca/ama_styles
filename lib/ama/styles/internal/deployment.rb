@@ -92,7 +92,8 @@ module AMA
           file = opts.fetch(:file)
           log('Uploading: '.colorize(:light_blue) + key)
           object = bucket.object(key)
-          object.upload_file(file)
+          content_type = MIME::Types.type_for(object.key).first.to_s
+          object.upload_file(file, content_type: content_type)
         end
 
         def request
