@@ -1,0 +1,23 @@
+@media print{
+  .side-nav,
+  .page-footer,
+  .top-bar-right,
+  .breadcrumbs,
+  .table__header--grey-bg{
+    display: none;
+  }
+
+  .main-container{
+    float: left !important;
+    width: 100%;
+  }
+
+  // overrides equalizer, which causes weirdness with print
+  .large-8.columns.table__bg-spacing{
+    height: auto !important;
+  }
+
+  .header{
+    position: relative;
+  }
+}

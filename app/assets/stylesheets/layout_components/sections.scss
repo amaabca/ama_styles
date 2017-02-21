@@ -1,0 +1,235 @@
+.heading{
+  padding: $base-padding*.75 $base-padding;
+  color: $white;
+}
+
+.section{
+  margin-bottom: $base-margin;
+
+  &__sub-head{
+    margin-bottom: $base-margin;
+    color: $charcoal;
+    clear: both;
+  }
+
+  &__content-container{
+    @include grid-row-nest;
+  }
+
+  &__content-two-thirds{
+    @include large-8;
+
+    &>*:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+
+.section-nested{
+  @include grid-row-nest;
+  @include clearfix;
+}
+
+.section-heading{
+  @extend .heading;
+  background: $brand-blue-light;
+
+  &--no-bg{
+    padding-bottom: $base-padding;
+  }
+
+  &--no-padding{
+    background: $brand-blue-light;
+    color: $white;
+  }
+
+  &--grey-bg{
+    @extend .heading;
+    background: $slate;
+  }
+
+  &--dark-blue-bg{
+    @extend .heading;
+    background: $brand-blue-dark;
+  }
+}
+
+.section-heading--accordion{
+  @extend .heading;
+  overflow: auto;
+  display: block;
+}
+
+.section-heading--green{
+  @extend .heading;
+  background: $brand-green;
+}
+
+.section-quarter{
+  @extend .section;
+  @include large-3;
+}
+
+.section-heading--blue{
+  @extend .heading;
+  background: $brand-blue-light;
+}
+
+.section-half{
+  @extend .section;
+  @include large-6;
+}
+
+.section-full{
+  @extend .section;
+  @include large-12;
+
+  &--max-width{
+    @extend .section-full;
+    max-width: 1080px;
+  }
+}
+
+.section-third{
+  @extend .section;
+  @include large-4;
+  @include clearfix;
+}
+
+.section-quarter{
+  @extend .section;
+  @include large-3;
+}
+
+.section-two-thirds{
+  @extend .section;
+  @include large-8;
+  @include grid-column-end;
+  @include clearfix;
+
+  &:last-child:not(.section-content){
+    margin-bottom: 0;
+  }
+
+  @include breakpoint(medium down){
+    float: none;
+  }
+}
+
+.section-centered{
+  &--half{
+    @extend .section;
+    @include large-6;
+    @include large-centered;
+
+    &:last-child:not(:first-child){
+      float: none;
+    }
+  }
+}
+
+.section-content{
+  padding: $base-padding;
+  background: $white;
+  @include clearfix;
+
+  &>*:last-child{
+    margin-bottom: 0;
+    /*override so that the last child element always has margin-bottom of zero
+    (because the container has bottom padding)
+    the alternative is to set the elements themselves to ONLY have bottom-margin
+    if they're not the :last-child, but Foundation adds bottom margin to everything by default
+    so we would have to change each element individually in the _settings file.
+    */
+
+    &>*:last-child{
+      margin-bottom: 0;
+      /* the same as above, but for nested elements within sections */
+    }
+  }
+
+  &--grey-bg{
+    padding: $base-padding;
+    background: lighten($stormcloud, 5%);
+    color: $white;
+  }
+
+  &--smoke-bg{
+    padding: $base-padding;
+    background: lighten($smoke, 5%);
+  }
+
+  &--ash-bg{
+    padding: $base-padding;
+    background: $ash;
+  }
+
+  &--blue-bg{
+    padding: $base-padding;
+    background: $brand-blue-light;
+    color: $white;
+    @include clearfix;
+
+    label{
+      color: $white;
+    }
+  }
+
+  &--cerulean-bg{
+    padding: $base-padding;
+    background: $cerulean;
+    color: $white;
+  }
+
+  &--grey-border{
+    border: 2px solid $stone;
+  }
+}
+
+.section-content-half{
+  @extend .section;
+  @include medium-6;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.content-container{
+  &--vertical{
+    @include vertical-center;
+    width: 100%;
+  }
+}
+
+@function set-hint-color($color) {
+  @if (lightness($color) > 50) {
+    @return $smoke; // Lighter backgorund, return dark color
+  } @else {
+    @return $white; // Darker background, return light color
+  }
+}
+
+.page-container{
+  @include grid-row;
+  position: relative;
+}
+
+.main-container{
+  // using grid-column in place of large-10 so that we can set the gutters to 0
+  @include grid-column(10,0);
+  background: $stone;
+  @include clearfix;
+
+  @include breakpoint(medium down){
+    @include grid-column(12,0);
+  }
+}
+
+.main-container-full{
+  // using grid-column in place of large-10 so that we can set the gutters to 0
+  @include grid-column(12,0);
+  background: $stone;
+
+  @include breakpoint(medium down){
+    @include grid-column(12,0);
+  }
+}

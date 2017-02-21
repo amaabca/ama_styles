@@ -1,0 +1,41 @@
+.hero{
+  &--grey{
+    margin: 100px auto;
+
+    @include breakpoint(medium down){
+      margin-top: $base-margin;
+    }
+  }
+
+  &--cerulean{
+    background: $cerulean;
+    width: 100%;
+  }
+
+  &__heading{
+    color: $white;
+  }
+
+  &__image{
+    margin: $base-margin*2 0;
+    width: 540px;
+    height: 193px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100%;
+    background-position: center;
+  }
+}
+
+.row-fluid{
+  @include grid-row;
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+
+  @include breakpoint(medium down){
+    width: 100%;
+    margin: 0;
+    padding: $base-padding 0;
+  }
+}
