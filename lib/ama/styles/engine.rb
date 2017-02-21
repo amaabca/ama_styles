@@ -15,10 +15,6 @@ module AMA
           raw: true
         )
       end
-
-      initializer 'assets' do
-        Rails.application.config.assets.append_path(Globals::ASSET_PATH)
-      end
     end
   end
 end
