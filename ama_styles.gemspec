@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
     'Ryan Jones',
     'Darko Dosenovic',
     'Jonathan Weyermann',
+    'Zoie Carnegie',
     'Kayt Campbell',
     'Kathleen Robertson',
     'Sinead Errity'
@@ -31,6 +32,7 @@ Gem::Specification.new do |s|
     'ryan.michael.jones@gmail.com',
     'darko.dosenovic@ama.ab.ca',
     'jonathan.weyermann@ama.ab.ca',
+    'zoie.carnegie@ama.ab.ca',
     'kayt.campbell@ama.ab.ca',
     'kathleen.robertson@ama.ab.ca',
     'sinead.errity@ama.ab.ca'
