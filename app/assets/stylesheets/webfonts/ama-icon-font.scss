@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "ama-icon-font";
+  src:asset-url("ama_layout/webfonts/fonts/ama-icon-font.eot");
+  src:asset-url("ama_layout/webfonts/fonts/ama-icon-font.eot?#iefix") format("embedded-opentype"),
+    asset-url("ama_layout/webfonts/fonts/ama-icon-font.woff") format("woff"),
+    asset-url("ama_layout/webfonts/fonts/ama-icon-font.ttf") format("truetype"),
+    asset-url("ama_layout/webfonts/fonts/ama-icon-font.svg#ama-icon-font") format("svg");
+  font-style: normal;
+}
+
+[class^="ama-icon-"]:before,
+[class*="ama-icon-"]:before {
+  font-family: "ama-icon-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ama-icon-motorcycle:before {
+  content: "\61";
+}
+.ama-icon-map-pin:before {
+  content: "\62";
+}
+.ama-icon-home:before {
+  content: "\63";
+}
+.ama-icon-hospital:before {
+  content: "\64";
+}
+.ama-icon-battery-power:before {
+  content: "\65";
+}
+.ama-icon-settings:before {
+  content: "\66";
+}
+.ama-icon-bicycle:before {
+  content: "\67";
+}
+.ama-icon-scooter:before {
+  content: "\68";
+}
+.ama-icon-rv:before {
+  content: "\69";
+}
+.ama-icon-ama-card:before {
+  content: "\6a";
+}
+
+.ama-icon{
+  &__medium{
+    font-size: 2.45rem;
+  }
+}
