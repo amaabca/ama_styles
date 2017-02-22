@@ -9,7 +9,7 @@ AMA::Styles::Internal::Environment.new(environment: 'development').load!
 require_relative '../lib/ama_styles'
 load File.join('lib/ama/tasks/assets.rake')
 
-question = 'Please enter Branch name? or enter for master'
+question = 'Please enter branch name: (default = master)'
 branch = HighLine.new.ask(question) do |q|
   q.default = 'master'
 end
