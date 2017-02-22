@@ -1,2 +1,1 @@
-//= link_directory ../javascripts/ama_styles .js
-//= link_directory ../stylesheets/ama_styles .css
+//= link_directory ../stylesheets/ama/styles .css

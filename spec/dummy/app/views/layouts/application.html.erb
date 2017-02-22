@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dummy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag Rails.configuration.stylesheet_resolver.asset_path, media: "all" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

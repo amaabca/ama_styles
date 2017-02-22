@@ -1,0 +1,77 @@
+.legend{
+  &__header{
+    background-color: $cerulean;
+    color: $white;
+    padding: $base-padding*0.6;
+  }
+
+  &__content-container{
+    background-color: $white;
+    padding: $base-padding*0.6;
+  }
+
+  &__keys{
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  &__key-identifier{
+    @include clearfix;
+    margin-top: $base-margin*0.4;
+  }
+
+  &__icon{
+    height: 12px;
+    width: 12px;
+    float: left;
+    margin-right: $base-margin*0.45;
+    margin-top: $base-margin*0.2;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+
+    &--grey{
+      @extend .legend__icon;
+      background-color: $smoke;
+    }
+
+    &--green{
+      @extend .legend__icon;
+      background-color: $brand-green;
+    }
+
+    &--darkred{
+      @extend .legend__icon;
+      background-color: $sangria;
+    }
+
+    &--yellow{
+      @extend .legend__icon;
+      background-color: $canary;
+    }
+
+    &--red{
+      @extend .legend__icon;
+      background-color: $brand-red;
+    }
+
+    &--black{
+      @extend .legend__icon;
+      background-color: $black;
+    }
+  }
+
+  &__icon--rect{
+    height: 25px;
+    width: 3.5px;
+    float: left;
+    border-radius: 0;
+    margin-right: $base-margin*0.45;
+    margin-top: 0;
+  }
+
+  &__text{
+    float: left;
+    font-size: $base-font-size*0.8;
+    line-height: 1.3rem;
+  }
+}

@@ -1,0 +1,39 @@
+.button-toggle{
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+
+  &--absolute{
+    @extend .button-toggle;
+    position: absolute;
+    top: 15px;
+    width: 95%;
+    left: 2.5%;
+  }
+
+  &__option{
+    width: 50%;
+    border: 2px solid $cerulean;
+    float: left;
+    background: $white;
+    color: $slate;
+    padding: $base-padding*0.45;
+    text-align: center;
+
+    &--right{
+      @extend .button-toggle__option;
+      border-radius: 0 5px 5px 0;
+      margin-left: -1px;
+    }
+
+    &--left{
+      @extend .button-toggle__option;
+      border-radius: 5px 0 0 5px;
+    }
+
+    &.visible{
+      background: $cerulean;
+      color: $white;
+    }
+  }
+}

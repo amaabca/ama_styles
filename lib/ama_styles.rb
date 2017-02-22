@@ -1,5 +1,11 @@
-require "ama_styles/engine"
+# frozen_string_literal: true
 
-module AmaStyles
-  # Your code goes here...
-end
+# Third Party
+require 'font-awesome-sass'
+require 'foundation/rails'
+require 'dotenv/rails-now'
+
+# Internal
+require 'ama/styles/base'
+require 'ama/styles/resolver'
+require 'ama/styles/engine'

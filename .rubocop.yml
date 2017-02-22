@@ -1,0 +1,14 @@
+AllCops:
+  Exclude:
+    - 'spec/dummy/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+  DisplayCopNames: true
+  TargetRubyVersion: 2.3
+Documentation:
+  Enabled: false
+# RSpec uses long blocks (i.e. describe, it, etc.)
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - '*.gemspec'
