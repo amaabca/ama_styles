@@ -76,11 +76,7 @@ module AMA
         def upload_fallback_stylesheet
           key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
           file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
-          upload_file(file: file, key: key)
-        end
-
-        def api_url
-          Rails.configuration.api_deployment_url
+          upload_file(file: file, key: key, cache: false)
         end
 
         def digest_file
@@ -93,20 +89,35 @@ module AMA
           log('Uploading: '.colorize(:light_blue) + key)
           object = bucket.object(key)
           content_type = MIME::Types.type_for(object.key).first.to_s
-          object.upload_file(file, content_type: content_type)
+          args = args_for(type: content_type, cache: opts.fetch(:cache, true))
+          object.upload_file(file, args)
         end
 
         def request
           RestClient::Request.logged_request(
             method: :post,
             headers: request_headers,
-            url: api_url,
+            url: Rails.configuration.api_deployment_url,
             user: Rails.configuration.api_deployment_user,
             password: Rails.configuration.api_deployment_password,
             payload: { digest_file: File.join('assets', digest_file) }.to_json
           )
         rescue RestClient::RequestFailed => ex
           fail!(ex)
+        end
+
+        def args_for(opts = {})
+          type = opts.fetch(:type)
+          { content_type: type }.tap do |hash|
+            if opts.fetch(:cache)
+              hash[:expires] = cache_expiry
+              hash[:cache_control] = 'public'
+            end
+          end
+        end
+
+        def cache_expiry
+          (DateTime.current + FAR_FUTURE_CACHE_EXPIRATION).httpdate
         end
 
         def request_headers
@@ -117,7 +128,6 @@ module AMA
         end
 
         def fail!(exception)
-          log('FAILURE: '.colorize(:red) + exception.message)
           raise exception
         end
       end
