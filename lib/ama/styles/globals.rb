@@ -13,6 +13,7 @@ module AMA
       FALLBACK_STYLESHEET_NAME = 'fallback'
       FALLBACK_STYLESHEET_FILE = "#{FALLBACK_STYLESHEET_NAME}.css"
       ASSET_PREFIX = 'assets/'
+      FAR_FUTURE_CACHE_EXPIRATION = 30.years.freeze
 
       def root_path
         Rails.root

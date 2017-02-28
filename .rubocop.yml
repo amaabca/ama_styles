@@ -7,6 +7,9 @@ AllCops:
   TargetRubyVersion: 2.3
 Documentation:
   Enabled: false
+# Slightly longer classes
+Metrics/ClassLength:
+  Max: 125
 # RSpec uses long blocks (i.e. describe, it, etc.)
 Metrics/BlockLength:
   Exclude:
