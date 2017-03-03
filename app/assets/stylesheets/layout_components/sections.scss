@@ -6,6 +6,31 @@
 .section{
   margin-bottom: $base-margin;
 
+  &__content{
+    background: $white;
+    padding-top: $base-padding;
+  }
+
+  &__heading{
+    @extend .heading;
+    background: $brand-blue-light;
+
+    &--no-bg{
+      padding-bottom: $base-padding;
+    }
+
+    &--on-inline-element{
+      @extend .heading;
+      overflow: auto;
+      display: block;
+    }
+
+    &--green{
+      @extend .heading;
+      background: $brand-green;
+    }
+  }
+
   &__sub-head{
     margin-bottom: $base-margin;
     color: $charcoal;
