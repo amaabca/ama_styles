@@ -14,7 +14,8 @@
   }
 
   &__item{
-    padding: $base-padding*2 0;
+    padding-top: $base-padding*2;
+    padding-bottom: $base-padding*2;
     text-align: center;
   }
 
@@ -26,10 +27,6 @@
     background-size: contain;
     max-width: 100%;
     background-position: center;
-
-    @include breakpoint(small only){
-      max-width: 90%;
-    }
   }
 
   &__content{
