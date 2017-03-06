@@ -57,7 +57,7 @@
 .accordion{
   &__header{
     background: $brand-blue-light;
-    overflow: auto;
+    overflow: hidden;
     display: block;
   }
 
