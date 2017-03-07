@@ -1,0 +1,14 @@
+.credit-card{
+  background-color: $cerulean;
+  border-radius: 3px;
+  padding: $base-padding;
+
+  &__logo{
+    float: right;
+  }
+
+  &--large-text{
+    color: $white;
+    font-size: $large-font-size;
+  }
+}
