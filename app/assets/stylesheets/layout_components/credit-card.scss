@@ -2,12 +2,32 @@
   background-color: $cerulean;
   border-radius: 3px;
   padding: $base-padding;
+  max-width: 400px;
+  min-height: 216px;
+  position: relative;
 
-  &__logo{
+  &__logo-visa{
+    background: url(image-path("cc-type-visa-white.png")) no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 100px;
+    float:right;
+  }
+
+  &__logo-mc{
+    background: url(image-path("cc-type-mc-white.png")) no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 80px;
     float: right;
   }
 
-  &--large-text{
+  &__label{
+    font-size: $base-font-size;
+    color: $white;
+  }
+
+  &__data{
     color: $white;
     font-size: $large-font-size;
   }
