@@ -45,6 +45,11 @@
   background-color: $brand-red;
 }
 
+.success_notification{
+  @extend .notice_notification;
+  background-color: $brand-green;
+}
+
 //Status error classes
 .orange-warning-icon{
   @extend .fa;
