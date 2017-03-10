@@ -20,20 +20,17 @@ dialog .close-reveal-modal{
     font-weight: normal;
   }
 
-  &--small-window{
-    @extend .reveal-modal;
-    width: 35%;
-    max-width: 85rem;
-    background-color: $white;
-
-    @include breakpoint(small only){
-      width: 100%;
-      top: 50px !important;
-      min-height: 240px;
+  @include breakpoint(medium-up){
+    &--small-window{
+      @extend .reveal-modal;
+      width: 35%;
+      max-width: 85rem;
+      background-color: $white;
     }
   }
 
   @include breakpoint(small only){
+    width:100%;
     top: 50px !important;
     min-height: 240px;
   }

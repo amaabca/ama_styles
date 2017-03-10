@@ -1,13 +1,11 @@
 .credit-card{
   background-color: $cerulean;
-  border-radius: 3px;
+  border-radius: $base-radius;
   padding: $base-padding;
   max-width: 400px;
   min-height: 216px;
-  position: relative;
 
   &__logo{
-    background-size: contain;
     height: 50px;
     width: 100px;
     float: right;
@@ -16,12 +14,14 @@
       @extend .credit-card__logo;
       background: url(image-path("cc-type-visa-white.png")) no-repeat;
       width: 100px;
+      background-size: contain;
     }
 
     &--mc{
       @extend .credit-card__logo;
       background: url(image-path("cc-type-mc-white.png")) no-repeat;
       width: 80px;
+      background-size: contain;
     }
   }
 
