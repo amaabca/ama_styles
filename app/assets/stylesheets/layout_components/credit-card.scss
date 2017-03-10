@@ -6,20 +6,23 @@
   min-height: 216px;
   position: relative;
 
-  &__logo-visa{
-    background: url(image-path("cc-type-visa-white.png")) no-repeat;
+  &__logo{
     background-size: contain;
     height: 50px;
     width: 100px;
-    float:right;
-  }
-
-  &__logo-mc{
-    background: url(image-path("cc-type-mc-white.png")) no-repeat;
-    background-size: contain;
-    height: 50px;
-    width: 80px;
     float: right;
+
+    &--visa{
+      @extend .credit-card__logo;
+      background: url(image-path("cc-type-visa-white.png")) no-repeat;
+      width: 100px;
+    }
+
+    &--mc{
+      @extend .credit-card__logo;
+      background: url(image-path("cc-type-mc-white.png")) no-repeat;
+      width: 80px;
+    }
   }
 
   &__label{
