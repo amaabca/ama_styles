@@ -1,0 +1,37 @@
+.credit-card{
+  background-color: $cerulean;
+  border-radius: $base-radius;
+  padding: $base-padding;
+  max-width: 400px;
+  min-height: 216px;
+
+  &__logo{
+    height: 50px;
+    width: 100px;
+    float: right;
+
+    &--visa{
+      @extend .credit-card__logo;
+      background: url(image-path("cc-type-visa-white.png")) no-repeat;
+      width: 100px;
+      background-size: contain;
+    }
+
+    &--mc{
+      @extend .credit-card__logo;
+      background: url(image-path("cc-type-mc-white.png")) no-repeat;
+      width: 80px;
+      background-size: contain;
+    }
+  }
+
+  &__label{
+    font-size: $base-font-size;
+    color: $white;
+  }
+
+  &__data{
+    color: $white;
+    font-size: $large-font-size;
+  }
+}
