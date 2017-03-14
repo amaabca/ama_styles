@@ -24,7 +24,7 @@ dialog .close-reveal-modal{
     &--small-window{
       @extend .reveal-modal;
       width: 35%;
-      max-width: 85rem;
+      max-width:700px;
       background-color: $white;
     }
   }
