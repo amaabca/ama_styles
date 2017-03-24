@@ -112,6 +112,12 @@
 
 .mb0{
   margin-bottom: 0 !important;
+
+  &--mobile-mb1{
+    @include breakpoint(small only){
+      margin-bottom: $base-margin !important;
+    }
+  }
 }
 
 .ml0{
@@ -124,19 +130,19 @@
 }
 
 .pt1 {
-  padding-top: $base-margin !important;
+  padding-top: $base-padding !important;
 }
 
 .pr1 {
-  padding-right: $base-margin !important;
+  padding-right: $base-padding !important;
 }
 
 .pb1 {
-  padding-bottom: $base-margin !important;
+  padding-bottom: $base-padding !important;
 }
 
 .pl1 {
-  padding-left: $base-margin !important;
+  padding-left: $base-padding !important;
 }
 
 .p0{
@@ -153,6 +159,12 @@
 
 .pb0 {
   padding-bottom :0 !important;
+
+  &--mobile-pb1{
+    @include breakpoint(small only){
+      padding-bottom: $base-padding !important;
+    }
+  }
 }
 
 .pl0 {
