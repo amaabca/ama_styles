@@ -33,5 +33,9 @@
   &__data{
     color: $white;
     font-size: $large-font-size;
+
+    @include breakpoint(small only){
+      font-size: $medium-font-size;
+    }
   }
 }
