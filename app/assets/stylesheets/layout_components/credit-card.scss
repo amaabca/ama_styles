@@ -17,7 +17,7 @@
       background-size: contain;
     }
 
-    &--mc{
+    &--mastercard{
       @extend .credit-card__logo;
       background: url(image-path("cc-type-mc-white.png")) no-repeat;
       width: 80px;
