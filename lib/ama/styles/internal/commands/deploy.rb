@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module AMA
   module Styles
     module Internal
