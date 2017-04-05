@@ -16,8 +16,9 @@
 @include foundation-close-button;
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
-@include foundation-dropdown-menu;
+/*foundation-menu needs to be above foundation-dropdown-menu to work correctly with flexbox enabled*/
 @include foundation-menu;
+@include foundation-dropdown-menu;
 @include foundation-off-canvas;
 @include foundation-reveal;
 @include foundation-table;
