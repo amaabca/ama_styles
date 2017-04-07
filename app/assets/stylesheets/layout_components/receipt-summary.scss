@@ -6,11 +6,9 @@
   }
 
   &__image{
-
     @include breakpoint(small only){
       display: block;
-      margin-right: auto;
-      margin-left: auto;
+      margin-left: $base-margin;
     }
   }
 
