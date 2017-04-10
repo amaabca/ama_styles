@@ -8,7 +8,6 @@
   &__image{
     @include breakpoint(small only){
       display: block;
-      margin-left: $base-margin;
     }
   }
 
