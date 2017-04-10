@@ -35,6 +35,11 @@
 
 .right{
   float: right !important;
+  &--mobile{
+    @include breakpoint(small only){
+      float: right !important;
+    }
+  }
 }
 
 .center{
@@ -44,6 +49,11 @@
 
 .block{
   display: block !important;
+  &--mobile{
+    @include breakpoint(small only){
+      display: block !important;
+    }
+  }
 }
 
 .inline{
@@ -64,6 +74,11 @@
 
 .text-right{
   text-align: right !important;
+  &--mobile{
+    @include breakpoint(small only){
+      text-align: right !important;
+    }
+  }
 }
 
 .relative{
