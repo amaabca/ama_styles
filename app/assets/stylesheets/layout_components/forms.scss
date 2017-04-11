@@ -215,6 +215,17 @@ input[type="checkbox"]{
   }
 }
 
+.date-pair{
+  .month,
+  .year {
+    @extend %inputs-halves;
+
+    &:last-of-type{
+      float: right;
+    }
+  }
+}
+
 .minute{
   float: right;
 }
