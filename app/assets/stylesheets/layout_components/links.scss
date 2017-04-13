@@ -1,6 +1,6 @@
 .link--white{
   color: $white;
-  text-decoration: underline;
+  text-decoration: underline !important;
 
   &:hover{
     color: $white;
