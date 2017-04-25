@@ -3,7 +3,7 @@ $footer-push-small: 594px;
 $footer-push-medium: 419px;
 $footer-push-large: 321px;
 
-.off-canvas-wrapper{
+.off-canvas-wrapper:not(.no-footer){
   min-height: 100%;
 
   @include breakpoint(small only){
@@ -29,7 +29,7 @@ $footer-push-large: 321px;
     @include breakpoint(medium only){
       height: $footer-push-medium;
     }
-    
+
     @include breakpoint(large up){
       height: $footer-push-large;
     }
