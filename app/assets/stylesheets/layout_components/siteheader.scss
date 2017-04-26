@@ -81,7 +81,9 @@
 }
 
 .top-nav-offset{
-  margin-top: $top-bar-height;
+  @include breakpoint (medium up){
+    margin-top: $top-bar-height;
+  }
 }
 
 .title-bar{
