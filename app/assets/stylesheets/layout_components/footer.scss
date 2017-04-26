@@ -3,6 +3,12 @@ $footer-push-small: 594px;
 $footer-push-medium: 419px;
 $footer-push-large: 321px;
 
+.off-canvas-wrapper{
+  &.no-footer{
+    height: 100%;
+  }
+}
+
 .off-canvas-wrapper:not(.no-footer){
   min-height: 100%;
 
