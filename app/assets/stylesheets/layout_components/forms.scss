@@ -287,6 +287,9 @@ input[type='text'],
 textarea,
 select{
   margin-bottom: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 select.has-placeholder:nth-child(1){
