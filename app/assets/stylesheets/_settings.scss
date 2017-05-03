@@ -59,7 +59,7 @@ $light-gray: #e6e6e6;
 $medium-gray: #cacaca;
 $dark-gray: #8a8a8a;
 $black: #0a0a0a;
-$white: $white;
+$white: #ffffff;
 $body-background: $stone;
 $body-font-color: $slate;
 $body-font-family: 'Open Sans', Helvetica, Roboto, Arial, sans-serif;
@@ -521,7 +521,7 @@ $tab-content-background: $white;
 $tab-content-border: none;
 $tab-content-color: foreground($tab-background, $primary-color);
 $tab-content-padding: 0;
-$tab-color: #ffffff;
+$tab-color: $white;
 
 // 33. Thumbnail
 // -------------
