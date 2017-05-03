@@ -124,6 +124,7 @@
         float: left;
         width: 25%;
         margin-bottom: 0;
+        height: 100%;
       }
     }
   }
@@ -185,6 +186,7 @@
       float: left;
       border-right: 2px solid $stone;
       border-left: 2px solid $stone;
+      height: 100%;
     }
   }
 
@@ -293,7 +295,7 @@
 
   &__divider{
     margin-bottom: 0;
-    
+
     @include breakpoint(small only){
       display: none;
     }

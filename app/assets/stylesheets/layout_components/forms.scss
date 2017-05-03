@@ -104,11 +104,6 @@ input[type="radio"] + label{
   &:before{
     border-radius: 100%;
   }
-
-  &:after{
-    content: ' ';
-    transition: all .5s ease-in-out;
-  }
 }
 
 input[type="radio"]:checked + label{
