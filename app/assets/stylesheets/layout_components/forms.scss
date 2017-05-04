@@ -192,6 +192,28 @@ input[type="checkbox"]{
   }
 }
 
+.radio-centered input[type="radio"] + label{
+   padding: 0 0 46px 0;
+
+   &:before{
+     top: 100%;
+     margin-top: -35px;
+     left: 50%;
+     margin-left: -12px;
+   }
+
+   &:after{
+     top: 100%;
+     margin-top: -27px;
+     left: 50%;
+     margin-left: -4px;
+   }
+ }
+
+ .radio-centered input[type="radio"]:checked + label{
+   padding: 0 0 46px 0;
+ }
+
 // Scoped to avoid collisions with foundations datepicker
 .date{
   .month,
@@ -282,6 +304,9 @@ input[type='text'],
 textarea,
 select{
   margin-bottom: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 select.has-placeholder:nth-child(1){

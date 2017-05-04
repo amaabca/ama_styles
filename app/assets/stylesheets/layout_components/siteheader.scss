@@ -82,6 +82,10 @@
 
 .top-nav-offset{
   margin-top: $top-bar-height;
+
+  &--styleguide{
+    margin-top: 19px;
+  }
 }
 
 .title-bar{
