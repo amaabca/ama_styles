@@ -10,6 +10,9 @@ html, body{
 .off-canvas-wrapper{
   &.no-footer{
     height: 100%;
+    @include breakpoint(small only){
+      overflow: scroll;
+    }
   }
 }
 
