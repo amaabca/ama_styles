@@ -14,7 +14,6 @@ dialog .close-reveal-modal{
   max-width: 960px;
   position: relative;
   margin: 0 auto;
-  @include reveal-modal-base;
 
   a{
     text-decoration: none;
