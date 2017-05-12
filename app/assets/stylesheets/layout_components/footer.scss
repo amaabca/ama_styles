@@ -11,7 +11,7 @@ html, body{
   &.no-footer{
     height: 100%;
     @include breakpoint(small only){
-      overflow: scroll;
+      overflow-y: scroll;
     }
   }
 }
