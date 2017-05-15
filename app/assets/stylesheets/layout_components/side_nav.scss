@@ -83,5 +83,9 @@
     @include breakpoint(medium down){
       position: relative;
     }
+
+    @include breakpoint(small only){
+      width: 100%;
+    }
   }
 }
