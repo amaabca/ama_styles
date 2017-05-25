@@ -1,8 +1,10 @@
 .comparison-radios{
-  &__wrapper{
-    @include grid-row-nest;
-    @include clearfix;
-    margin-bottom: $base-margin;
+  @include breakpoint(medium) {
+    &__wrapper{
+      @include grid-row-nest;
+      @include clearfix;
+      margin-bottom: $base-margin;
+    }
   }
 
   &__radio-full{
