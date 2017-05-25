@@ -204,6 +204,7 @@ input[type="checkbox"]{
 
    &:after{
      top: 100%;
+     top: 100%;
      margin-top: -27px;
      left: 50%;
      margin-left: -4px;
@@ -400,13 +401,15 @@ input[type="url"]:-ms-input-placeholder{
   color: darken($stone, 10%);
 }
 
-.form-container{
-  @include grid-row-nest;
-  @include large-9;
-  @include grid-column-end;
-  overflow: auto;
-  max-width: 1080px;
-  display: block;
+@include breakpoint(medium) {
+  .form-container{
+    @include grid-row-nest;
+    @include large-9;
+    @include grid-column-end;
+    overflow: auto;
+    max-width: 1080px;
+    display: block;
+  }
 }
 
 .button__row{
