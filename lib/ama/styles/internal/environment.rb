@@ -59,7 +59,7 @@ module AMA
         def configure_assets
           config.eager_load = false
           config.assets.css_compressor = :sass
-          config.assets.precompile += %w(shared.css)
+          config.assets.precompile += %w[shared.css]
         end
 
         def configure_api
