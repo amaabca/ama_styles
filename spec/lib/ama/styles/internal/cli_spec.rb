@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe AMA::Styles::Internal::CLI do
-  let(:argv) { %w(staging deploy) }
+  let(:argv) { %w[staging deploy] }
   let(:branch) { 'my_branch' }
   let(:invalid_argument) { described_class::InvalidArgument }
   subject do
@@ -10,7 +10,7 @@ describe AMA::Styles::Internal::CLI do
 
   describe '#parse_and_execute' do
     context 'invalid command' do
-      let(:argv) { %w(staging push) }
+      let(:argv) { %w[staging push] }
 
       it 'raise invalid argument' do
         expect { subject.parse_and_execute }.to raise_error invalid_argument
@@ -18,7 +18,7 @@ describe AMA::Styles::Internal::CLI do
     end
 
     context 'missing command' do
-      let(:argv) { %w(staging) }
+      let(:argv) { %w[staging] }
 
       it 'raise invalid argument' do
         expect { subject.parse_and_execute }.to raise_error invalid_argument
@@ -26,7 +26,7 @@ describe AMA::Styles::Internal::CLI do
     end
 
     context 'invalid environment' do
-      let(:argv) { %w(test deploy) }
+      let(:argv) { %w[test deploy] }
 
       it 'raise invalid argument' do
         expect { subject.parse_and_execute }.to raise_error invalid_argument
