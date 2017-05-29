@@ -4,8 +4,8 @@ module AMA
   module Styles
     module Internal
       class CLI
-        ENVIRONMENTS = %w(development staging production).freeze
-        COMMANDS = %w(deploy).freeze
+        ENVIRONMENTS = %w[development staging production].freeze
+        COMMANDS = %w[deploy].freeze
         InvalidArgument = Class.new(StandardError)
 
         attr_accessor :argv, :dry_run, :branch
