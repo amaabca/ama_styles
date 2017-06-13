@@ -9,6 +9,11 @@
   &__content{
     background: $white;
     padding-top: $base-padding;
+
+    &--smoke-bg{
+      background: lighten($smoke, 5%);
+      padding-top: $base-padding;
+    }
   }
 
   &__heading{
