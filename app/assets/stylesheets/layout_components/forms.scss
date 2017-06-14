@@ -446,6 +446,14 @@ input[type="url"]:-ms-input-placeholder{
         margin-bottom: $base-margin;
       }
     }
+
+    /* Prevents jogging of an input's placeholder text due to safari's form autofill. */
+    & input{
+      height: auto;
+    }
+    & select{
+      height: auto;
+    }
   }
 
   &__error-wrapper{
