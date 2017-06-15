@@ -1,3 +1,26 @@
+/* ------------- Global Styles  ------------- */
+/* height:auto; prevents jogging of an input's placeholder text due to safari's form autofill. */
+form {
+  input[type='text'],
+  [type='password'],
+  [type='date'],
+  [type='datetime'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='week'],
+  [type='email'],
+  [type='number'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='url'],
+  [type='color'],
+  select
+  {
+    height: auto;
+  }
+}
+
 /* ------------- Input Styles  ------------- */
 %inputs-thirds{
   max-width: 30%;
@@ -467,14 +490,6 @@ input[type="url"]:-ms-input-placeholder{
       @include breakpoint(medium down){
         margin-bottom: $base-margin;
       }
-    }
-
-    /* Prevents jogging of an input's placeholder text due to safari's form autofill. */
-    & input{
-      height: auto;
-    }
-    & select{
-      height: auto;
     }
   }
 
