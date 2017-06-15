@@ -3,6 +3,19 @@ $footer-push-small: 594px;
 $footer-push-medium: 419px;
 $footer-push-large: 321px;
 
+html, body{
+  height: 100%;
+}
+
+.off-canvas-wrapper{
+  &.no-footer{
+    height: 100%;
+    @include breakpoint(small only){
+      overflow-y: scroll;
+    }
+  }
+}
+
 .off-canvas-wrapper:not(.no-footer){
   min-height: 100%;
 
