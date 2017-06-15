@@ -6,6 +6,12 @@
 .section{
   margin-bottom: $base-margin;
 
+  &__content{
+    background: $white;
+    padding-top: $base-padding;
+    @include clearfix;
+  }
+
   &__sub-head{
     margin-bottom: $base-margin;
     color: $charcoal;
