@@ -3,7 +3,7 @@
 module AMA
   module Styles
     class Cache
-      DELEGATIONS = %i(fetch read write delete clear).freeze
+      DELEGATIONS = %i[fetch read write delete clear].freeze
 
       class << self
         delegate(*DELEGATIONS, to: :store)

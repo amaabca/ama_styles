@@ -82,6 +82,10 @@
 
 .top-nav-offset{
   margin-top: $top-bar-height;
+
+  &--styleguide{
+    margin-top: 19px;
+  }
 }
 
 .title-bar{
@@ -98,7 +102,8 @@
     &--roadreports{
       @extend .logo;
       @include horizontal-center;
-      width: 260px;
+      width: 70%;
+      max-width: 260px;
     }
   }
 }

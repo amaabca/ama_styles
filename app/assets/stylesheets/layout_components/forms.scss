@@ -104,11 +104,6 @@ input[type="radio"] + label{
   &:before{
     border-radius: 100%;
   }
-
-  &:after{
-    content: ' ';
-    transition: all .5s ease-in-out;
-  }
 }
 
 input[type="radio"]:checked + label{
@@ -196,6 +191,28 @@ input[type="checkbox"]{
     width: 8px;
   }
 }
+
+.radio-centered input[type="radio"] + label{
+   padding: 0 0 46px 0;
+
+   &:before{
+     top: 100%;
+     margin-top: -35px;
+     left: 50%;
+     margin-left: -12px;
+   }
+
+   &:after{
+     top: 100%;
+     margin-top: -27px;
+     left: 50%;
+     margin-left: -4px;
+   }
+ }
+
+ .radio-centered input[type="radio"]:checked + label{
+   padding: 0 0 46px 0;
+ }
 
 // Scoped to avoid collisions with foundations datepicker
 .date{
@@ -287,6 +304,9 @@ input[type='text'],
 textarea,
 select{
   margin-bottom: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 select.has-placeholder:nth-child(1){
@@ -380,13 +400,15 @@ input[type="url"]:-ms-input-placeholder{
   color: darken($stone, 10%);
 }
 
-.form-container{
-  @include grid-row-nest;
-  @include large-9;
-  @include grid-column-end;
-  overflow: auto;
-  max-width: 1080px;
-  display: block;
+@include breakpoint(medium) {
+  .form-container{
+    @include grid-row-nest;
+    @include large-9;
+    @include grid-column-end;
+    overflow: auto;
+    max-width: 1080px;
+    display: block;
+  }
 }
 
 .button__row{
