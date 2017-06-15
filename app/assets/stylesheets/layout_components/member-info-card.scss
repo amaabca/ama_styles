@@ -19,7 +19,9 @@
   }
 
   &__member-type{
-
+    &--primary{
+      color: $canary;
+    }
   }
 
   &__details-container{
