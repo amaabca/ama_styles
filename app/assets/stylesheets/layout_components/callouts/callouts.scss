@@ -23,6 +23,12 @@
     color: $white;
   }
 
+  &--brand-blue-light{
+    @include callout($brand-blue-light);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
   &__container{
     @include grid-row;
     @include clearfix;
