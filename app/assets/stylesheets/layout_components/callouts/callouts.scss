@@ -27,6 +27,9 @@
     @include callout($brand-blue-light);
     margin-bottom: $base-margin;
     color: $white;
+    @include breakpoint(small only){
+      min-height: 286px;
+    }
   }
 
   &__container{
@@ -51,6 +54,11 @@
   &__content-container{
     @include large-11;
     @include small-12;
+
+    &--centered{
+      @include absolute-center;
+      text-align: center;
+    }
   }
 
   &__link{
