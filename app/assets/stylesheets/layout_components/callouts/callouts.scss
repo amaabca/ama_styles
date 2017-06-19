@@ -32,6 +32,12 @@
     }
   }
 
+  &--orange{
+    @include callout($orange);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
   &__container{
     @include grid-row;
     @include clearfix;
