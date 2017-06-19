@@ -44,6 +44,18 @@
     }
   }
 
+  &--brand-red{
+    @extend .button;
+    $button-background: $brand-red;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus{
+      background: lighten($button-background, 10%);
+    }
+  }
+
   &--left{
     @extend .button;
     float: left;
