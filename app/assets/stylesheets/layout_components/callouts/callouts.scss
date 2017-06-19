@@ -27,15 +27,18 @@
     @include callout($brand-blue-light);
     margin-bottom: $base-margin;
     color: $white;
-    @include breakpoint(small only){
-      min-height: 286px;
-    }
   }
 
   &--orange{
     @include callout($orange);
     margin-bottom: $base-margin;
     color: $white;
+  }
+
+  &--membership-summary{
+    @include breakpoint(small only){
+      min-height: 286px;
+    }
   }
 
   &__container{
