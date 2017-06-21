@@ -3,4 +3,5 @@
 module AMA
   module Styles
     VERSION = '1.3.4'
+  end
 end
