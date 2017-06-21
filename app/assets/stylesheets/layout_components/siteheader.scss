@@ -95,12 +95,10 @@
     padding: 0 $base-padding;
   }
 
-  a{
-    margin: 0 auto;
-  }
-
   &__logo{
     @extend .logo;
+    margin-left: auto;
+    margin-right: auto;
 
     &--roadreports{
       @extend .logo;
