@@ -4,6 +4,7 @@
 require 'font-awesome-sass'
 require 'foundation/rails'
 require 'dotenv/rails-now'
+require 'autoprefixer-rails'
 
 # Internal
 require 'ama/styles/base'
