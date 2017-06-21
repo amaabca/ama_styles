@@ -19,9 +19,7 @@
   &__icon{
     font-size: 5rem;
     color: $brand-blue-light;
-    position: absolute;
-    top: 20px;
-    left: 18px;
+    @include absolute-center;
   }
   &__content{
     padding: $base-padding;
