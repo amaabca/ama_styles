@@ -24,18 +24,13 @@
     }
   }
 
-  &__details-container:first-of-type{
+  &__details-container{
     border-right: 2px solid $stone;
+
     @include breakpoint(small only){
       &:last-of-type{
         border-right: 0;
       }
-    }
-  }
-
-  &__details-container:last-of-type{
-    @include breakpoint(small only){
-      border: 0;
     }
   }
 
