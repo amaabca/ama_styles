@@ -23,6 +23,24 @@
     color: $white;
   }
 
+  &--brand-blue-light{
+    @include callout($brand-blue-light);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--orange{
+    @include callout($orange);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--membership-summary{
+    @include breakpoint(small only){
+      min-height: 320px;
+    }
+  }
+
   &__container{
     @include grid-row;
     @include clearfix;
@@ -45,6 +63,11 @@
   &__content-container{
     @include large-11;
     @include small-12;
+
+    &--centered{
+      @include absolute-center;
+      text-align: center;
+    }
   }
 
   &__link{
