@@ -137,6 +137,15 @@
   }
 }
 
+.right-sidebar{
+  margin-top: $top-bar-height;
+
+  &__bg{
+    @extend .right-sidebar;
+    background-color: $ash;
+  }
+}
+
 .page-header{
   margin-bottom: $base-margin;
   overflow: auto;
