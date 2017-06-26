@@ -111,3 +111,13 @@
     }
   }
 }
+
+.notification{
+  &__badge{
+    @include badge;
+    background: $brand-red;
+    color: $white;
+    line-height: 1.5;
+    font-weight: bolder;
+  }
+}
