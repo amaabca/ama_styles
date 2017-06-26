@@ -113,11 +113,37 @@
 }
 
 .notification{
-  &__badge{
-    @include badge;
-    background: $brand-red;
-    color: $white;
-    line-height: 1.5;
-    font-weight: bolder;
+    display: inline-block;
+    position: relative;
+
+  @include breakpoint (large){
+    &__badge{
+      @include badge;
+      background: $brand-red;
+      color: $white;
+      line-height: 1.5;
+      font-weight: bolder;
+      position: absolute;
+      top: 13px;
+      right: 381px;
+    }
+  }
+  @include breakpoint (medium down){
+    &__icon{
+      @include vertical-center;
+      position: absolute;
+      right: 15px;
+    }
+
+    &__badge{
+      @include badge;
+      background: $brand-red;
+      color: $white;
+      line-height: 1.5;
+      font-weight: bolder;
+      position: absolute;
+      top: 13px;
+      right: 5px;
+    }
   }
 }
