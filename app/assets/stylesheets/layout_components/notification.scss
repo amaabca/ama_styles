@@ -111,6 +111,69 @@
     }
   }
 }
+/* Notification Centre Styling starts here */
+.right-sidebar{
+  z-index: 9999;
+  width: 350px;
+  transform: translate(350px, 0px);
+
+  &__bg{
+    @extend .right-sidebar;
+    background-color: $ash;
+  }
+
+  &__header-bg{
+    background-color: $white;
+    border-bottom: 2px solid $stone;
+    border-left: 2px solid $stone;
+    padding-bottom: $base-padding / 2;
+  }
+
+  &__notice{
+    margin-top: $base-margin;
+
+    &--active{
+      padding-top: $base-padding;
+      background-color: $sky;
+      border-left: 5px solid $cerulean;
+      border-right: 1px solid $cerulean;
+      border-top: 1px solid $cerulean;
+      border-bottom: 1px solid $cerulean;
+    }
+
+    &--inactive{
+      padding-top: $base-padding / 2;
+      background-color: $white;
+      border-left: 5px solid $smoke;
+      border-right: 1px solid $smoke;
+      border-top: 1px solid $smoke;
+      border-bottom: 1px solid $smoke;
+    }
+  }
+
+  &__notice-icon{
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    font-size: $medium-font-size;
+    text-align: center;
+    position: relative;
+    top: 4px;
+
+    &--red{
+      @extend .right-sidebar__notice-icon;
+      color: $white;
+      background-color: $brand-red;
+      float: left;
+    }
+    &--orange{
+      @extend .right-sidebar__notice-icon;
+      color: $white;
+      background-color: $orange;
+      float: left;
+    }
+  }
+}
 
 .notification{
     display: inline-block;
@@ -122,7 +185,7 @@
       background: $brand-red;
       color: $white;
       line-height: 1.5;
-      font-weight: bolder;
+      font-weight: bold;
       position: absolute;
       top: 13px;
       right: 381px;
@@ -140,7 +203,7 @@
       background: $brand-red;
       color: $white;
       line-height: 1.5;
-      font-weight: bolder;
+      font-weight: bold;
       position: absolute;
       top: 13px;
       right: 5px;
