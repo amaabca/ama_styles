@@ -1,0 +1,113 @@
+.notice--flash{
+  padding: $base-padding/2 $base-padding;
+  background-color: $brand-blue-insurance;
+  color: $white;
+  -webkit-animation: noticeFade 8s;
+  -moz-animation: noticeFade 8s;
+  -o-animation: noticeFade 8s;
+   animation: noticeFade 8s;
+   opacity: 0;
+}
+
+@keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-o-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-moz-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+@-webkit-keyframes noticeFade{
+  0%   { opacity:0; }
+  10%  { opacity:1; }
+  90%  { opacity:1; }
+  100% { opacity:0; }
+}
+
+.notice_notification{
+  padding: $base-padding/2 $base-padding;
+  background-color: $brand-blue-insurance;
+  color: $white;
+}
+
+.error_notification{
+  @extend .notice_notification;
+  background-color: $brand-red;
+}
+
+.success_notification{
+  @extend .notice_notification;
+  background-color: $brand-green;
+}
+
+//Status error classes
+.orange-warning-icon{
+  @extend .fa;
+  @extend .fa-exclamation-circle;
+  @extend .orange-text;
+}
+
+.white-warning-icon{
+  @extend .fa;
+  @extend .fa-exclamation-circle;
+  @extend .white-text;
+}
+
+.green-active-icon{
+  @extend .fa;
+  @extend .fa-check-circle;
+  @extend .green-text;
+}
+
+.white-active-icon{
+  @extend .fa;
+  @extend .fa-check-circle;
+  @extend .white-text;
+}
+
+.status-icon{
+  font-size: 2rem !important; //needs important to overwrite the .fa font size
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.notice{
+  color: $white;
+  padding: $base-padding;
+  margin-bottom: $base-margin;
+  overflow: auto;
+
+  &--warning{
+    @extend .notice;
+    background: $orange;
+  }
+
+  &__icon-wrapper{
+    @include small-2;
+  }
+
+  &__icon{
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__text-wrapper{
+    @include small-10;
+
+    &>:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
