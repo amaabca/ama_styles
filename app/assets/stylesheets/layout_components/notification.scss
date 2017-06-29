@@ -1,5 +1,4 @@
 .notification{
-  display: inline-block;
   position: relative;
 
   &__badge{
@@ -9,8 +8,8 @@
     line-height: 1.5;
     font-weight: bold;
     position: absolute;
-    top: 13px;
-    right: 381px;
+    top: 15px;
+    right: 25px;
   }
 
   @include breakpoint (medium down){
@@ -21,8 +20,8 @@
     }
 
     &__badge{
-      top: 13px;
-      right: 5px;
+      top: 10px;
+      right: 8px;
     }
   }
 }
