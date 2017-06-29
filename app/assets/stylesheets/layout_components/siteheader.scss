@@ -97,13 +97,13 @@
 
   &__logo{
     @extend .logo;
-    @include horizontal-center;
+    margin-left: auto;
+    margin-right: auto;
 
     &--roadreports{
       @extend .logo;
-      @include horizontal-center;
       width: 70%;
-      max-width: 260px;
+      width: 260px;
     }
   }
 }
