@@ -1,0 +1,35 @@
+.icon-info-box{
+  background: $white;
+  margin-bottom: $base-margin;
+
+  &__icon-bg{
+    background: $powder-blue;
+    padding-top: $base-padding;
+    padding-bottom: $base-padding;
+  }
+
+  &__icon-container{
+    background: $white;
+    width: 110px;
+    min-height: 110px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+  }
+
+  &__icon{
+    font-size: 5rem;
+    color: $brand-blue-light;
+    @include absolute-center;
+  }
+
+  &__content{
+    padding: $base-padding;
+  }
+
+  &__link{
+    text-align: right;
+    display: block;
+  }
+}
