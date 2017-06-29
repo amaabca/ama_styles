@@ -16,8 +16,8 @@
 @include foundation-close-button;
 @include foundation-drilldown-menu;
 @include foundation-dropdown;
-@include foundation-dropdown-menu;
 @include foundation-menu;
+@include foundation-dropdown-menu;/*This needs to go below foundation-menu or the navigational dropdowns will remain open all the time*/
 @include foundation-off-canvas;
 @include foundation-reveal;
 @include foundation-table;
