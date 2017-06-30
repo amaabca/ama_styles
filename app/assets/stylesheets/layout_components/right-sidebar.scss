@@ -4,6 +4,11 @@
   transform: translate(350px, 0px);
   background-color: $ash;
 
+  @include breakpoint (small down){
+    width: 90vw;
+    transform: translate(90vw, 0px);
+  }
+
   &__header{
     background-color: $white;
     border-bottom: 2px solid $stone;
