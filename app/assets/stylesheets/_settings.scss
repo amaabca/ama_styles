@@ -70,7 +70,7 @@ $global-weight-normal: normal;
 $global-weight-bold: bold;
 $global-radius: 3px;
 $global-text-direction: ltr;
-$global-flexbox: false;
+$global-flexbox: true;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
@@ -150,7 +150,7 @@ $hr-margin: $base-margin auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
 $list-style-type: disc;
-$list-style-position: inside;
+$list-style-position: outside;
 $list-side-margin: 0;
 $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
@@ -406,6 +406,7 @@ $offcanvas-fixed-reveal: false;
 $offcanvas-exit-background: none;
 $maincontent-class: 'off-canvas-content';
 $maincontent-shadow: none;
+$offcanvas-shadow: none;
 
 // 25. Orbit
 // ---------
