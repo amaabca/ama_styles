@@ -51,10 +51,10 @@
     position: relative;
 
     &--vertical-center{
-     @include breakpoint(large){
-       @include vertical-center;
+      @include breakpoint(large){
+        @include vertical-center;
+      }
     }
-   }
   }
 
   &__link{
