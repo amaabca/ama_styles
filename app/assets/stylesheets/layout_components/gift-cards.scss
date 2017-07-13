@@ -1,0 +1,51 @@
+.clickable-radio-buttons{
+  input[type="radio"] + label{
+    background: $white;
+    color: $secondary-color;
+    border-radius: $base-radius;
+    border: none;
+    margin: 0 $base-margin 0 0;
+    padding: $base-padding/3;
+    width: 19%;
+    text-align: center;
+    float: left;
+
+    &:before,
+    &:after{
+      content: none;
+    }
+  }
+
+  input[type="radio"]:checked + label,
+  input[type="radio"]:hover + label{
+    background: $primary-color;
+    color: $white;
+    border: none;
+  }
+
+  @include breakpoint(medium down){
+    input[type="radio"] + label{
+      padding: $base-padding $base-padding/2;
+      margin-bottom: $base-margin;
+    }
+  }
+}
+
+.toggle-card{
+  color: $white;
+  font-size: 0.7rem;
+  line-height: 15px;
+  display: block;
+  margin-bottom: $base-margin;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#toggle-amount{
+  color: $white;
+  font-size: 0.7rem;
+  line-height: 15px;
+  display: block;
+  text-decoration: underline;
+  cursor: pointer;
+}
