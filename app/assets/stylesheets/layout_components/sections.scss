@@ -201,6 +201,10 @@
     label{
       color: $white;
     }
+
+    input[type="radio"] + label{
+      color: $stormcloud;
+    }
   }
 
   &--cerulean-bg{
