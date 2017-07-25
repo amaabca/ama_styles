@@ -72,6 +72,7 @@ $global-radius: 3px;
 $global-text-direction: ltr;
 $global-flexbox: true;
 $print-transparent-backgrounds: true;
+$contrast-warnings: false;
 
 @include add-foundation-colors;
 
