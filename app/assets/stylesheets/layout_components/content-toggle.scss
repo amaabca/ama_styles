@@ -34,3 +34,17 @@
     display: block;
   }
 }
+
+.edit_gift{
+  .associate-expandable{
+    display: none;
+  }
+
+  .join-checkout{
+    &--micetype{
+      margin-top: $base-padding/2;
+      font-size: 80%;
+      display: block !important;
+    }
+  }
+}
