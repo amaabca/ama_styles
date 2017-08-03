@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '>= 4.2'
-  s.add_dependency 'foundation-rails', '~> 6.3.1.0'
+  s.add_dependency 'foundation-rails', '>= 6.4.1.2'
   s.add_dependency 'sass-rails'
   s.add_dependency 'font-awesome-sass'
   s.add_dependency 'redis-rails'
@@ -62,7 +62,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '0.49.1'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'colorize'
-  s.add_development_dependency 'hipchat'
+  s.add_development_dependency 'hipchat', '~> 1.5.4'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rest-client'
   s.add_development_dependency 'rest-client-jogger'
