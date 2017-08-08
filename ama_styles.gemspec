@@ -62,7 +62,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '0.49.1'
   s.add_development_dependency 'factory_girl'
   s.add_development_dependency 'colorize'
-  s.add_development_dependency 'hipchat', '~> 1.5.4'
+  s.add_development_dependency 'hipchat'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rest-client'
   s.add_development_dependency 'rest-client-jogger'
