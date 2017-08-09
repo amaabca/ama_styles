@@ -32,7 +32,7 @@ module AMA
         end
 
         def api_token
-          ENV.fetch('HIPCHAT_TOKEN')
+          ENV.fetch('HIPCHAT_TOKEN_V2')
         end
 
         def room
