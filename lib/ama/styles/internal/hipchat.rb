@@ -28,11 +28,11 @@ module AMA
         private
 
         def client
-          ::HipChat::Client.new(api_token)
+          ::HipChat::Client.new(api_token, api_version: 'v1')
         end
 
         def api_token
-          ENV.fetch('HIPCHAT_TOKEN_V2')
+          ENV.fetch('HIPCHAT_TOKEN')
         end
 
         def room
