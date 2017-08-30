@@ -100,6 +100,11 @@ $grid-column-gutter: (
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
+$grid-margin-gutters: (
+  small: 30px,
+  medium: 30px,
+);
+$grid-padding-gutters: $grid-margin-gutters;
 
 // 4. Base Typography
 // ------------------
