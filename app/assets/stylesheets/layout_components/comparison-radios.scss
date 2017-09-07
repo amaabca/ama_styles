@@ -36,6 +36,43 @@
     text-align: center;
   }
 
+  &__radio-btn--stacked{
+    .comparison-radios__input + label{
+      @include breakpoint(small only){
+        overflow: hidden;
+      }
+
+      @include breakpoint(small){
+        padding: 0 0 46px 0;
+      }
+
+      &::before{
+        @include breakpoint(small){
+          top: 100%;
+          margin-top: -35px;
+          left: 50%;
+          margin-left: -12px;
+        }
+      }
+    }
+
+    input[type="radio"]:checked + label{
+
+      &::after{
+        @include breakpoint(small){
+          top: 100%;
+          margin-top: -27px;
+          left: 50%;
+          margin-left: -4px;
+        }
+      }
+    }
+
+    .comparison-radios__divider{
+      display: block;
+    }
+  }
+
   &__radio-btn--centered{
     .comparison-radios__input + label{
       @include breakpoint(small only){
