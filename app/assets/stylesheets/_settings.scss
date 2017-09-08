@@ -100,6 +100,11 @@ $grid-column-gutter: (
 );
 $grid-column-align-edge: true;
 $block-grid-max: 8;
+$grid-margin-gutters: (
+  small: 30px,
+  medium: 30px,
+);
+$grid-padding-gutters: $grid-margin-gutters;
 
 // 4. Base Typography
 // ------------------
@@ -108,22 +113,22 @@ $header-font-family: $body-font-family;
 $header-font-weight: 700;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-sizes: (
+$header-styles: (
   small: (
-    'h1': 20,
-    'h2': 20,
-    'h3': 19,
-    'h4': 18,
-    'h5': 17,
-    'h6': 16,
+    'h1': ('font-size': 20),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': 20,
-    'h2': 20,
-    'h3': 18,
-    'h4': 16,
-    'h5': 14,
-    'h6': 12,
+    'h1': ('font-size': 20),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 18),
+    'h4': ('font-size': 16),
+    'h5': ('font-size': 14),
+    'h6': ('font-size': 12),
   ),
 );
 $header-color: inherit;

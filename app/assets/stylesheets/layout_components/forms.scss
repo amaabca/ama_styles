@@ -389,7 +389,12 @@ small.error{
 }
 
 .error__page-error{
-  @extend small.error;
+  display: block;
+  clear: both;
+  padding: 0.375rem 0.5625rem 0.5625rem;
+  font-size: $base-font-size;
+  background: $brand-red;
+  color: $white;
   margin-bottom: $base-margin;
 }
 
