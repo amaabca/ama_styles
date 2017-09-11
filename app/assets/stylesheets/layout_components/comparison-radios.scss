@@ -37,6 +37,28 @@
   }
 
   &__radio-btn--stacked{
+
+    li{
+      text-align: left;
+      margin-bottom: $base-margin/2;
+    }
+
+    .comparison-radios__list{
+      @include breakpoint(small only){
+        padding: 0 $base-padding;
+      }
+    }
+
+    .fa-times{
+      color: $brand-red;
+      margin-right: $base-margin/2;
+    }
+
+    .fa-check{
+      color: $brand-green;
+      margin-right: $base-margin/2;
+    }
+
     .comparison-radios__input + label{
       @include breakpoint(small only){
         overflow: hidden;
@@ -54,6 +76,10 @@
           margin-left: -12px;
         }
       }
+    }
+
+    input[type="radio"] + label{
+        background: #ffffff;
     }
 
     input[type="radio"]:checked + label{
