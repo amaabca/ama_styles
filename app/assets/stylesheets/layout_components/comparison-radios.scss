@@ -78,7 +78,7 @@
     }
 
     input[type="radio"] + label{
-        background: #ffffff;
+        background: $white;
     }
 
     input[type="radio"]:checked + label{
