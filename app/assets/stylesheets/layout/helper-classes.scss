@@ -269,6 +269,20 @@
   }
 }
 
+.border-right{
+  border-right: 2px solid $stone;
+
+  @include breakpoint(small down){
+    border-right: none;
+    border-bottom: 2px solid $stone;
+    margin-bottom: $base-margin;
+  }
+}
+
+.border-left{
+  border-left: 2px solid $stone;
+}
+
 /* ==================== 7. Lists ==================== */
 .lined-list{
   list-style: none;
@@ -398,6 +412,8 @@
   -ms-word-break: break-word;
   word-break: break-word;
 }
+
+
 
 .semi-bold{
   font-weight: 600;
