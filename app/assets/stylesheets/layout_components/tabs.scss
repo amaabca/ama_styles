@@ -1,21 +1,21 @@
 .tabs{
   background-color: $white;
 }
-.tabs-title {
-  a {
+.tabs-title{
+  background-color: $white;
+  a{
     padding: $base-padding;
     color: $cerulean;
   }
-  background-color: $white;
 }
 
-.tabs-title.is-active {
+.tabs-title.is-active{
   background-color: $cerulean;
-  a {
+  a{
     color: $white;
     background-color: $cerulean;
   }
-  a:hover {
+  a:hover{
     background-color: $cerulean;
   }
 }
