@@ -4,6 +4,7 @@
 
 .tabs-title{
   background-color: $white;
+
   a{
     padding: $base-padding;
     color: $cerulean;
@@ -12,10 +13,12 @@
 
 .tabs-title.is-active{
   background-color: $cerulean;
+
   a{
     color: $white;
     background-color: $cerulean;
   }
+
   a:hover{
     background-color: $cerulean;
   }
