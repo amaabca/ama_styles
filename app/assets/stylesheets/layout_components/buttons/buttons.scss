@@ -91,7 +91,7 @@
 
     @include breakpoint(small down){
       display: block;
-      margin: 0 auto;
+      margin: 0 auto $base-margin auto;
       width: 100%;
     }
   }
