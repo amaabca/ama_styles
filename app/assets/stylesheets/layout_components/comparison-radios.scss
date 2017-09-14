@@ -37,6 +37,43 @@
   }
 
   &__radio-btn--stacked{
+
+    .comparison-radios__list{
+      padding: 0 $base-padding 0 $base-padding*3;
+
+      @include breakpoint(small only){
+        padding: 0 $base-padding;
+      }
+
+      &-item{
+        &::before{
+          content: none;
+        }
+      }
+
+      .fa{
+        &::before{
+          font-family: 'FontAwesome';
+          margin-right: 0px;
+          margin-left: -24px;
+        }
+      }
+
+      .fa-times{
+        &::before{
+          content: "\f00d";
+          color: $brand-red;
+        }
+      }
+
+      .fa-check{
+        &::before{
+          content: "\f00c";
+          color: $brand-green;
+        }
+      }
+    }
+
     .comparison-radios__input + label{
       @include breakpoint(small only){
         overflow: hidden;
@@ -54,6 +91,10 @@
           margin-left: -12px;
         }
       }
+    }
+
+    input[type="radio"] + label{
+      background: $white;
     }
 
     input[type="radio"]:checked + label{
