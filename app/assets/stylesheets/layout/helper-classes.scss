@@ -143,6 +143,11 @@
 
 .ml0{
   margin-left: 0 !important;
+
+  &--tablet-ml1{
+    @include breakpoint(medium only){
+      margin-left: $base-margin !important;
+    }
 }
 
 /* ==================== 5. Padding ==================== */
@@ -271,6 +276,7 @@
 
 .border-right{
   border-right: 2px solid $stone;
+
   @include breakpoint(small down){
     border-right: none;
     border-bottom: 2px solid $stone;
