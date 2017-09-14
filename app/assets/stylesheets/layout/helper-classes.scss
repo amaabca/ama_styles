@@ -35,6 +35,7 @@
 
 .right{
   float: right !important;
+
   &--mobile{
     @include breakpoint(small only){
       float: right !important;
@@ -49,6 +50,7 @@
 
 .block{
   display: block !important;
+
   &--mobile{
     @include breakpoint(small only){
       display: block !important;
@@ -74,6 +76,7 @@
 
 .text-right{
   text-align: right !important;
+
   &--mobile{
     @include breakpoint(small only){
       text-align: right !important;
@@ -143,6 +146,12 @@
 
 .ml0{
   margin-left: 0 !important;
+
+  &--tablet-ml1{
+    @include breakpoint(medium only){
+      margin-left: $base-margin !important;
+    }
+  }
 }
 
 /* ==================== 5. Padding ==================== */
@@ -267,6 +276,20 @@
       top: 100%;
     }
   }
+}
+
+.border-right{
+  border-right: 2px solid $stone;
+
+  @include breakpoint(small down){
+    border-right: none;
+    border-bottom: 2px solid $stone;
+    margin-bottom: $base-margin;
+  }
+}
+
+.border-left{
+  border-left: 2px solid $stone;
 }
 
 /* ==================== 7. Lists ==================== */
