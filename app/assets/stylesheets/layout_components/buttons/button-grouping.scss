@@ -45,7 +45,19 @@
       background-color: $brand-green;
 
       &:hover{
-        background: lighten($brand-green, 10%);
+        background: lighten($brand-green, 10%)!important;
+      }
+    }
+
+    &--white{
+      @extend .button-grouping__button;
+      background-color: $white;
+
+      &:hover{
+        background: $ash!important;
+      }
+      &:active{
+        background: $ash!important;
       }
     }
 
@@ -54,7 +66,7 @@
       background-color: $brand-red;
 
       &:hover{
-        background: lighten($brand-red, 10%);
+        background: lighten($brand-red, 10%)!important;
       }
     }
   }
@@ -94,6 +106,10 @@
     &--underline{
       display: block;
       text-decoration: underline;
+    }
+
+    &--blue{
+      color: $brand-blue-light;
     }
   }
 }
