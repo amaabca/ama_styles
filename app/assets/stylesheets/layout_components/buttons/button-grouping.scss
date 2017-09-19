@@ -42,19 +42,37 @@
 
     &--green{
       @extend .button-grouping__button;
-      background-color: $brand-green;
+      $button-background: $brand-green;
+      background: $button-background;
 
-      &:hover{
-        background: lighten($brand-green, 10%);
+      &:hover,
+      &:active,
+      &:focus{
+        background: lighten($button-background, 10%);
+      }
+    }
+
+    &--white{
+      @extend .button-grouping__button;
+      $button-background: $white;
+      background: $button-background;
+
+      &:hover,
+      &:active,
+      &:focus{
+        background: darken($button-background, 10%);
       }
     }
 
     &--red{
       @extend .button-grouping__button;
-      background-color: $brand-red;
+      $button-background: $brand-red;
+      background: $button-background;
 
-      &:hover{
-        background: lighten($brand-red, 10%);
+      &:hover,
+      &:active,
+      &:focus{
+        background: lighten($button-background, 10%);
       }
     }
   }
@@ -94,6 +112,10 @@
     &--underline{
       display: block;
       text-decoration: underline;
+    }
+
+    &--blue{
+      color: $brand-blue-light;
     }
   }
 }
