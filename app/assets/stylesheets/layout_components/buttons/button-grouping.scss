@@ -42,31 +42,34 @@
 
     &--green{
       @extend .button-grouping__button;
-      background-color: $brand-green;
+      background: $brand-green;
 
-      &:hover{
-        background: lighten($brand-green, 10%) !important;
+      &:hover,
+      &:active,
+      &:focus{
+        background: lighten($brand-green, 10%);
       }
     }
 
     &--white{
       @extend .button-grouping__button;
-      background-color: $white;
+      background: $white;
 
-      &:hover{
-        background: $ash !important;
-      }
-      &:active{
-        background: $ash !important;
+      &:hover,
+      &:active,
+      &:focus{
+        background: $ash;
       }
     }
 
     &--red{
       @extend .button-grouping__button;
-      background-color: $brand-red;
+      background: $brand-red;
 
-      &:hover{
-        background: lighten($brand-red, 10%) !important;
+      &:hover,
+      &:active,
+      &:focus{
+        background: lighten($brand-red, 10%);
       }
     }
   }
