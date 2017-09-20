@@ -140,11 +140,7 @@
   &--mobile-mb1{
     @extend .mb0;
 
-    @include breakpoint(small only){
-      margin-bottom: $base-margin !important;
-    }
-
-    @include breakpoint(medium only){
+    @include breakpoint(medium down){
       margin-bottom: $base-margin !important;
     }
   }
