@@ -138,7 +138,9 @@
   margin-bottom: 0 !important;
 
   &--mobile-mb1{
-    @include breakpoint(small only){
+    @extend .mb0;
+
+    @include breakpoint(medium down){
       margin-bottom: $base-margin !important;
     }
   }
