@@ -1,24 +1,20 @@
-.subscriptions{
-  .subscription-items,
-  .reminder-items{
-    .row{
-      padding: 15px;
+.subscriptions {
+  .row {
+    padding: 15px;
 
-      &.section-heading{
-        padding-left: 10px;
-        background-color: #eeeeee;
-        color: #6b6b6b;
-      }
+    &.section-heading {
+      padding-left: 10px;
+      background-color: #eeeeee;
+      color: #6b6b6b;
+    }
 
-      &.subscription-item,
-      &.reminder-item{
-        background-color: #f7f7f7;
-        color: #6b6b6b;
-      }
+    &.subscription-item {
+      background-color: #f7f7f7;
+      color: #6b6b6b;
+    }
 
-      input[type="checkbox"] + label{
-        border: none;
-      }
+    input[type="checkbox"] + label {
+      border: none;
     }
   }
 }
