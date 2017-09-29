@@ -63,6 +63,93 @@ form {
   }
 }
 
+/* ------------- Switch (Toggle Button) Styles ------------- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 64px;
+  height: 30px;
+  float: right;
+
+  &-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $brand-red;
+    -webkit-transition: .3s;
+    transition: .3s;
+    border-radius: 30px;
+
+    &__icon {
+      transition: .25s;
+      position: absolute;
+      color: #fff;
+      font-size: 1.5rem;
+      top: 4px;
+
+      &--left {
+        @extend .switch-slider__icon;
+        left: 10px;
+        opacity: 0;
+        transition-delay: .0s;
+      }
+
+      &--right {
+        @extend .switch-slider__icon;
+        right: 10px;
+        opacity: 1;
+        transition-delay: 0.15s;
+      }
+    }
+  }
+
+  &-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .3s;
+    transition: .3s;
+    border-radius: 50%;
+  }
+
+  &:before {
+  -webkit-transform: translateX(34px);
+  -ms-transform: translateX(34px);
+  transform: translateX(34px);
+  }
+
+
+  input:checked + .switch-slider {
+    background-color: $brand-green;
+
+    .fa{
+
+      &.fa-check{
+        opacity: 1;
+        transition-delay: 0.15s;
+      }
+
+      &.fa-times{
+        opacity: 0;
+        transition-delay: .0s;
+      }
+    }
+
+    &:before {
+    -webkit-transform: translateX(34px);
+    -ms-transform: translateX(34px);
+    transform: translateX(34px);
+    }
+  }
+}
+
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 input[type="radio"],
 input[type="checkbox"]:not(.default){
