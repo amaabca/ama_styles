@@ -292,6 +292,12 @@
 
 .border-left{
   border-left: 2px solid $stone;
+
+  @include breakpoint(small down){
+    border-left: none;
+    border-top: 2px solid $stone;
+    margin-top: $base-margin;
+  }
 }
 
 /* ==================== 7. Lists ==================== */
