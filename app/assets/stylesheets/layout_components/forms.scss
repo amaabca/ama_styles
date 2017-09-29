@@ -79,12 +79,13 @@ form {
     right: 0;
     bottom: 0;
     background-color: $brand-red;
-    -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     border-radius: 30px;
 
     &__icon {
-      transition: .25s;
+      -webkit-transition: 0.25s;
+      transition: 0.25s;
       position: absolute;
       color: #fff;
       font-size: 1.5rem;
@@ -94,13 +95,15 @@ form {
         @extend .switch-slider__icon;
         left: 10px;
         opacity: 0;
-        transition-delay: .0s;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
       }
 
       &--right {
         @extend .switch-slider__icon;
         right: 10px;
         opacity: 1;
+        -webkit-transition-delay: 0.15s;
         transition-delay: 0.15s;
       }
     }
@@ -114,31 +117,28 @@ form {
     left: 2px;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: .3s;
-    transition: .3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
     border-radius: 50%;
   }
-
-  &:before {
-  -webkit-transform: translateX(34px);
-  -ms-transform: translateX(34px);
-  transform: translateX(34px);
-  }
-
 
   input:checked + .switch-slider {
     background-color: $brand-green;
 
-    .fa{
+    .switch-slider__icon{
 
-      &.fa-check{
+      &--left {
+        @extend .switch-slider__icon;
         opacity: 1;
+        -webkit-transition-delay: 0.15s;
         transition-delay: 0.15s;
       }
 
-      &.fa-times{
+      &--right {
+        @extend .switch-slider__icon;
         opacity: 0;
-        transition-delay: .0s;
+        -webkit-transition-delay: 0s;
+        transition-delay: 0s;
       }
     }
 
