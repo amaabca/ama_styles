@@ -79,7 +79,6 @@ form {
     right: 0;
     bottom: 0;
     background-color: $brand-red;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
     border-radius: 30px;
 
@@ -95,7 +94,6 @@ form {
         @extend .switch-slider__icon;
         left: 10px;
         opacity: 0;
-        -webkit-transition-delay: 0s;
         transition-delay: 0s;
       }
 
@@ -103,7 +101,6 @@ form {
         @extend .switch-slider__icon;
         right: 10px;
         opacity: 1;
-        -webkit-transition-delay: 0.15s;
         transition-delay: 0.15s;
       }
     }
@@ -117,7 +114,6 @@ form {
     left: 2px;
     bottom: 2px;
     background-color: white;
-    -webkit-transition: 0.3s;
     transition: 0.3s;
     border-radius: 50%;
   }
@@ -126,26 +122,21 @@ form {
     background-color: $brand-green;
 
     .switch-slider__icon{
-
       &--left {
         @extend .switch-slider__icon;
         opacity: 1;
-        -webkit-transition-delay: 0.15s;
         transition-delay: 0.15s;
       }
 
       &--right {
         @extend .switch-slider__icon;
         opacity: 0;
-        -webkit-transition-delay: 0s;
         transition-delay: 0s;
       }
     }
 
     &:before {
-    -webkit-transform: translateX(34px);
-    -ms-transform: translateX(34px);
-    transform: translateX(34px);
+      transform: translateX(34px);
     }
   }
 }
