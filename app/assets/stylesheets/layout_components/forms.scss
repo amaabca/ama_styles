@@ -71,57 +71,10 @@ form {
   height: 30px;
   float: right;
 
-  &-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $brand-red;
-    transition: 0.3s;
-    border-radius: 30px;
-
-    &__icon {
-      -webkit-transition: 0.25s;
-      transition: 0.25s;
-      position: absolute;
-      color: #fff;
-      font-size: 1.5rem;
-      top: 4px;
-
-      &--left {
-        @extend .switch-slider__icon;
-        left: 10px;
-        opacity: 0;
-        transition-delay: 0s;
-      }
-
-      &--right {
-        @extend .switch-slider__icon;
-        right: 10px;
-        opacity: 1;
-        transition-delay: 0.15s;
-      }
-    }
-  }
-
-  &-slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 2px;
-    bottom: 2px;
-    background-color: white;
-    transition: 0.3s;
-    border-radius: 50%;
-  }
-
   input:checked + .switch-slider {
     background-color: $brand-green;
 
-    .switch-slider__icon{
+    .switch-slider__icon {
       &--left {
         @extend .switch-slider__icon;
         opacity: 1;
@@ -137,6 +90,53 @@ form {
 
     &:before {
       transform: translateX(34px);
+    }
+  }
+}
+
+.switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $brand-red;
+  transition: 0.3s;
+  border-radius: 30px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+
+  &__icon {
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    top: 4px;
+
+    &--left {
+      @extend .switch-slider__icon;
+      left: 10px;
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    &--right {
+      @extend .switch-slider__icon;
+      right: 10px;
+      opacity: 1;
+      transition-delay: 0.15s;
     }
   }
 }
