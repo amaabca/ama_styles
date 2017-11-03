@@ -1,57 +1,57 @@
-.member-card{
+.member-card {
   width: 308px;
   height: 216px;
   position: relative;
   margin: 0 auto;
 
-  &__card-front{
+  &__card-front {
     background: url(image-path("membership-cards/temporary/front.png")) no-repeat;
   }
 
-  &__card-back{
+  &__card-back {
     background: url(image-path("membership-cards/temporary/back.png")) no-repeat;
   }
 
-  &__label{
+  &__label {
     position: absolute;
     font-size: $base-font-size*0.6;
     color: $charcoal;
     text-transform: uppercase;
   }
 
-  &__data{
+  &__data {
     position: absolute;
     color: $charcoal;
     font-weight: bold;
   }
 
-  &__clubcode{
+  &__clubcode {
     left: 15px;
     top: 70px;
   }
 
-  &__membership-number-label{
+  &__membership-number-label {
     left: 102px;
     top: 70px;
   }
 
-  &__membership-number{
+  &__membership-number {
     font-size: $base-font-size*1.6;
     left: 15px;
     top: 75px;
   }
 
-  &__expiry-label{
+  &__expiry-label {
     left: 15px;
     top: 108px;
   }
 
-  &__expiry{
+  &__expiry {
     left: 15px;
     top: 117px;
   }
 
-  &__name{
+  &__name {
     font-size: $base-font-size*1.2;
     left: 15px;
     top: 150px;

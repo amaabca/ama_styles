@@ -1,8 +1,8 @@
-.breadcrumbs{
+.breadcrumbs {
   @include large-12;
 
-  &__link{
-    &--disabled{
+  &__link {
+    &--disabled {
       @extend .disabled;
       pointer-events: none;
     }
