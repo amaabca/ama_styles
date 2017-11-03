@@ -1,50 +1,50 @@
-.member-info-card{
+.member-info-card {
   background: $white;
   padding: $base-padding $base-padding 0 $base-padding;
   margin-bottom: $base-margin;
 
-  &__image{
+  &__image {
     float: left;
     padding-bottom: $base-padding;
   }
 
-  &__member-info{
+  &__member-info {
     float: left;
     padding-top: $base-padding;
   }
 
-  &__member-name{
+  &__member-name {
     font-size: $base-font-size*1.3;
     font-weight: bold;
   }
 
-  &__member-type{
-    &--primary{
+  &__member-type {
+    &--primary {
       color: $canary;
     }
   }
 
-  &__details-container{
+  &__details-container {
     border-right: 2px solid $stone;
 
-    @include breakpoint(small only){
-      &:last-of-type{
+    @include breakpoint(small only) {
+      &:last-of-type {
         border-right: 0;
       }
     }
   }
 
-  &__details-title{
+  &__details-title {
     text-transform: uppercase;
     padding-bottom: $base-padding/2;
   }
 
-  &__details{
+  &__details {
     font-weight: bold;
   }
 
-  &__button{
-    @include breakpoint(small only){
+  &__button {
+    @include breakpoint(small only) {
       margin-top: $base-margin;
     }
   }

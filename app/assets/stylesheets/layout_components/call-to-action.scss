@@ -1,21 +1,20 @@
-.call-to-action{
-
-  &__container{
+.call-to-action {
+  &__container {
     @include grid-row;
     @include clearfix;
   }
 
-  &__image-container{
+  &__image-container {
     @include large-1;
     @include small-3;
   }
 
-  &__image{
+  &__image {
     display: block;
     margin: 0 auto;
   }
 
-  &__content-container{
+  &__content-container {
     @include large-3;
     @include small-9;
   }

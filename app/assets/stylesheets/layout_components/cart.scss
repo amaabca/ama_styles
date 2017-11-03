@@ -1,39 +1,38 @@
-/*Cart*/
-.summary-cart{
+.summary-cart {
   list-style-type: none;
   margin-bottom: 0;
   position: relative;
   z-index: 1; //prevent cart from going underneath footer on short screens
 
-  @include breakpoint(medium down){
+  @include breakpoint(medium down) {
     width: 100%;
     position: fixed;
     bottom: 0;
     left: 0;
   }
 
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 7px;
   }
 
-  ::-webkit-scrollbar-thumb{
+  ::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+    background-color: rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
   }
 
-  &__container{
+  &__container {
     @extend .float-right; //needed to override the default column behavior (left aligned)
     @include medium-4;
   }
 
-  &__title{
+  &__title {
     float: left;
     color: $white;
   }
 
-  &__accordion-toggle-icon{
+  &__accordion-toggle-icon {
     @include hide-for(large);
     @extend .fa;
     @extend .fa-arrows-v;
@@ -44,7 +43,7 @@
     margin-top: $base-margin*0.6;
   }
 
-  &__item-count{
+  &__item-count {
     @include hide-for(large);
     float: right;
     width: 30px;
@@ -58,91 +57,90 @@
     background: lighten($brand-green, 5%);
   }
 
-  &__content{
+  &__content {
     background: $white;
     padding: $base-padding;
     @include clearfix;
   }
 
-  &__list{
-    margin-left: 0;
+  &__list {
     overflow-y: scroll;
     max-height: auto;
     list-style: none;
     margin: 0;
     list-style-type: none;
-    overflow-y: scroll;
 
-    @include breakpoint(small){
+    @include breakpoint(small) {
       max-height: 150px;
     }
 
-    @include breakpoint(large){
+    @include breakpoint(large) {
       max-height: 320px;
     }
   }
 
-  &__list-item{
+  &__list-item {
     padding: $base-padding;
 
-    &:not(:nth-child(1)){
+    &:not(:nth-child(1)) {
       border-top: 1px solid $smoke;
     }
   }
 
-  &__submit{
+  &__submit {
     list-style-type: none;
     margin-left: 0;
   }
 
-  &__remove{
+  &__remove {
     float: right;
 
-    .fa-times-circle-o{
+    .fa-times-circle-o {
       font-size: $base-font-size*2;
     }
   }
 
-  &__remove-link{
+  &__remove-link {
     color: $slate;
     text-decoration: none;
 
     &:hover,
-    &:focus{
+    &:focus {
       color: $charcoal;
     }
   }
 
-  .summary-flash-notice{
+  .summary-flash-notice {
     color: $white;
     background: $brand-blue-insurance;
 
     p,
     a,
     a:hover,
-    a:focus{
+    a:focus {
       color: $white;
     }
 
-    &:not(:nth-child(1)){
+    &:not(:nth-child(1)) {
       border-top: none;
     }
   }
 }
 
-.delete-icon{ //same one used in the cart and on info charts it lives outside of cart so it can be used other places
+.delete-icon {
+  //same one used in the cart and on info charts it lives outside of cart so it can be used other places
   float: right;
 
-  .fa-times-circle-o{
+  .fa-times-circle-o {
     font-size: $base-font-size*2;
   }
 
-  a{
+  a {
     color: $slate;
     text-decoration: none;
 
     &:hover,
-    &:focus{
+    &:focus {
       color: $charcoal;
     }
   }

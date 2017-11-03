@@ -1,15 +1,15 @@
-.accordion-title{
+.accordion-title {
   @extend .heading;
   text-decoration: none;
 
   &:hover,
   &:active,
   &:visited,
-  &:focus{
+  &:focus {
     color: $white;
   }
 
-  .accordion-icon{
+  .accordion-icon {
     width: 16px;
     height: 16px;
     display: block;
@@ -18,55 +18,52 @@
   }
 }
 
-.accordion-secondary{
-  &--header{
+.accordion-secondary {
+  &--header {
     font-size: $base-font-size;
   }
-
-  &--heading{
-
-  }
 }
-.accordion.secondary{
+
+.accordion.secondary {
   background: none;
 
-  a{
+  a {
     font-size: $global-font-size;
   }
 
-  .accordion-content a{
+  .accordion-content a {
     font-size: $global-font-size;
   }
 
-  .accordion-title{
+  .accordion-title {
     background: $white;
     color: $slate;
 
-    &:hover{
+    &:hover {
       background: $stone;
     }
   }
 
   .top-level,
-  .top-level:hover{
+  .top-level:hover {
     background: darken($stone, 5%);
     color: $slate;
   }
 }
 
-.accordion{
-  &__header{
+.accordion {
+  &__header {
     background: $brand-blue-light;
     overflow: hidden;
     display: block;
   }
 
-  &__heading{
+  &__heading {
     @extend .heading;
     @include small-10;
   }
 
-  &__toggle{
+  &__toggle {
     @include small-2;
     @extend .fa;
     @extend .fa-arrows-v;
@@ -76,61 +73,63 @@
   }
 }
 
-.accordion-multi-state{
+.accordion-multi-state {
   @extend .accordion;
   margin-bottom: $base-margin;
   background: transparent;
   -ms-overflow-style: none;
 
-  .accordion-item{ //this is a foundation class needed for accordions to work. We only want to modify the margin for multi-state which is why it is nested.
+  .accordion-item {
+    /* this is a foundation class needed for accordions to work. We only want to modify the margin for multi-state
+    which is why it is nested. */
     margin-bottom: $base-margin;
   }
 
-  &__header{
+  &__header {
     @extend .accordion__header;
     background: transparent;
     position: relative;
   }
 
-  &__heading-bg{
-    @include small-10;
-    color: $white;
-    padding: 0.63rem $base-padding;
-    width: calc(100% - 20px);
-
-    &--active{
-      @extend .accordion-multi-state__heading-bg;
-      background: $brand-blue-light;
-    }
-
-    &--inactive{
-      @extend .accordion-multi-state__heading-bg;
-      background: $stone;
-
-      .accordion-multi-state__heading{
-        color: $slate;
-      }
-    }
-
-    &--complete{
-      @extend .accordion-multi-state__heading-bg;
-      background: $brand-green;
-    }
-
-    &--error{
-      @extend .accordion-multi-state__heading-bg;
-      background: $brand-red;
-    }
-  }
-
-  &__heading{
+  &__heading {
     color: $white;
     margin-left: $base-margin*0.75;
     font-size: $base-font-size;
     padding: 0;
   }
 
-  &__icon{
+  &__heading-bg {
+    @include small-10;
+    color: $white;
+    padding: 0.63rem $base-padding;
+    width: calc(100% - 20px);
+
+    &--active {
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-blue-light;
+    }
+
+    &--inactive {
+      @extend .accordion-multi-state__heading-bg;
+      background: $stone;
+
+      .accordion-multi-state__heading {
+        color: $slate;
+      }
+    }
+
+    &--complete {
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-green;
+    }
+
+    &--error {
+      @extend .accordion-multi-state__heading-bg;
+      background: $brand-red;
+    }
+  }
+
+  &__icon {
     @extend .fa;
     width: 39px;
     height: 39px;
@@ -138,28 +137,28 @@
     display: inline-block;
     border-radius: 100%;
     position: absolute;
-    background: white;
+    background: $white;
     @include vertical-center;
 
-    &::before{
+    &::before {
       @include vertical-center;
       width: 100%;
       text-align: center;
       font-size: 22px;
     }
 
-    &--active{
+    &--active {
       @extend .accordion-multi-state__icon;
       @extend .fa-check;
       color: $stone;
     }
 
-    &--inactive{
+    &--inactive {
       @extend .accordion-multi-state__icon;
       border: 2px solid $stone;
     }
 
-    &--complete{
+    &--complete {
       @extend .accordion-multi-state__icon;
       @extend .fa-check;
       border: 2px solid $brand-green;
@@ -167,7 +166,7 @@
       color: $brand-green;
     }
 
-    &--error{
+    &--error {
       @extend .accordion-multi-state__icon;
       @extend .fa-close;
       border: 2px solid $brand-red;
@@ -181,6 +180,6 @@
 // and there doesn't seem to be an override in the settings file
 .accordion-item:first-child > :first-child,
 .accordion-item:first-child > :last-child,
-:last-child:not(.is-active) > .accordion-title{
+:last-child:not(.is-active) > .accordion-title {
   border-radius: 0;
 }

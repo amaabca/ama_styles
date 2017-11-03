@@ -1,24 +1,24 @@
-.feature{
-  &__container{
+.feature {
+  &__container {
     background: $white;
   }
 
-  &__section-title{
+  &__section-title {
     @extend .wisdom-script;
     text-align: center;
     font-size: $base-font-size*2.857;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
       margin-top: $base-margin*2;
     }
   }
 
-  &__item{
+  &__item {
     padding: $base-padding*2 0;
     text-align: center;
   }
 
-  &__image{
+  &__image {
     margin: 0 auto $base-margin auto;
     width: 415px;
     height: 219px;
@@ -27,77 +27,76 @@
     max-width: 100%;
     background-position: center;
 
-    @include breakpoint(small only){
+    @include breakpoint(small only) {
       max-width: 90%;
     }
   }
 
-  &__content{
-    @include breakpoint(large){
+  &__content {
+    @include breakpoint(large) {
       width: 80%;
       margin: 0 auto;
     }
   }
 }
 
-#feature__image{
-  &--devices{
+#feature__image {
+  &--devices {
     background-image: asset-url(gatekeeper/devices);
   }
 
-  &--membership{
+  &--membership {
     background-image: asset-url(gatekeeper/membership);
   }
 
-  &--vrar{
+  &--vrar {
     background-image: asset-url(gatekeeper/vrar);
   }
 
-  &--automotive{
+  &--automotive {
     background-image: asset-url(gatekeeper/automotive);
   }
 
-  &--rewards{
+  &--rewards {
     background-image: asset-url(gatekeeper/rewards);
   }
 
-  &--subscriptions{
+  &--subscriptions {
     background-image: asset-url(gatekeeper/subscriptions);
   }
 
-  &--gift-cards{
+  &--gift-cards {
     background-image: asset-url(gatekeeper/gift-card);
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2),
-(min-resolution: 192dpi){
-  #feature__image{
-    &--devices{
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  #feature__image {
+    &--devices {
       background-image: asset-url(gatekeeper/devices2x);
     }
 
-    &--feature--membership{
+    &--feature--membership {
       background-image: asset-url(gatekeeper/membership2x);
     }
 
-    &--vrar{
+    &--vrar {
       background-image: asset-url(gatekeeper/vrar2x);
     }
 
-    &--automotive{
+    &--automotive {
       background-image: asset-url(gatekeeper/automotive2x);
     }
 
-    &--rewards{
+    &--rewards {
       background-image: asset-url(gatekeeper/rewards2x);
     }
 
-    &--subscriptions{
+    &--subscriptions {
       background-image: asset-url(gatekeeper/subscriptions2x);
     }
 
-    &--gift-cards{
+    &--gift-cards {
       background-image: asset-url(gatekeeper/gift-card2x);
     }
   }
