@@ -1,139 +1,139 @@
 /* button-group is a foundation element, so to avoid style conflicts ours are called button-groupings */
-.button-grouping{
+.button-grouping {
   @include grid-row;
   @include clearfix;
 
-  &--nested{
+  &--nested {
     @include grid-row-nest;
   }
 
-  &__container{
-    &--full{
+  &__container {
+    &--full {
       @include large-12;
     }
 
-    &--half{
+    &--half {
       // use with half-small to also have half width buttons on small screens
       @include large-6;
     }
 
-    &--quarter{
+    &--quarter {
       @include large-3;
       @include small-12;
     }
 
-    &--third{
+    &--third {
       @include large-4;
     }
 
-    &--half-small{
-      @include breakpoint(medium down){
+    &--half-small {
+      @include breakpoint(medium down) {
         @include small-6;
       }
     }
   }
 
-  &__button{
+  &__button {
     @extend .button;
     min-height: 170px;
     position: relative;
     width: 100%;
     padding: 2.5em 1.75em;
 
-    &--green{
+    &--green {
       @extend .button-grouping__button;
       $button-background: $brand-green;
       background: $button-background;
 
       &:hover,
       &:active,
-      &:focus{
+      &:focus {
         background: lighten($button-background, 10%);
       }
     }
 
-    &--white{
+    &--white {
       @extend .button-grouping__button;
       $button-background: $white;
       background: $button-background;
 
       &:hover,
       &:active,
-      &:focus{
+      &:focus {
         background: darken($button-background, 10%);
       }
     }
 
-    &--red{
+    &--red {
       @extend .button-grouping__button;
       $button-background: $brand-red;
       background: $button-background;
 
       &:hover,
       &:active,
-      &:focus{
+      &:focus {
         background: lighten($button-background, 10%);
       }
     }
   }
 
-  &__content{
+  &__content {
     @include absolute-center;
     -webkit-transform: translateX(-50%) translateY(-50%);
     width: 90%;
     color: $white;
   }
 
-  &__icon{
+  &__icon {
     font-size: 5rem;
     padding-bottom: $base-padding;
   }
 
-  &__bg-icon{
+  &__bg-icon {
     height: 80px;
     background-repeat: no-repeat;
     background-position: center center;
   }
 
-  &__title{
+  &__title {
     font-weight: bold;
     margin-bottom: $base-margin;
   }
 
-  &__text{
+  &__text {
     line-height: 1rem;
     display: block;
 
-    &--large{
+    &--large {
       display: block;
       font-size: 2.5rem;
       font-weight: bold;
     }
 
-    &--underline{
+    &--underline {
       display: block;
       text-decoration: underline;
     }
 
-    &--blue{
+    &--blue {
       color: $brand-blue-light;
     }
   }
 }
 
 /* Non Font Awesome/Symbolicon Icons */
-#card-icon{
+#card-icon {
   background-image: asset-url("membership/card-icon.png");
 }
 
-#coverage-icon{
+#coverage-icon {
   background-image: asset-url("membership/coverage-icon.png");
 }
 
-#family-icon{
+#family-icon {
   background-image: asset-url("membership/family-icon.png");
 }
 
-#laptop-icon{
+#laptop-icon {
   background-image: asset-url("membership/laptop-icon.png");
 }
