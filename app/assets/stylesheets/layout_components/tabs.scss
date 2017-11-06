@@ -12,15 +12,12 @@
 }
 
 .tabs-title.is-active{
-  background-color: $cerulean;
-  border-radius: 3px;
-
   a{
     color: $white;
-    background-color: $cerulean;
+    background-color: lighten($cerulean, 10%);
   }
 
   a:hover{
-    background-color: $cerulean;
+    background-color: lighten($cerulean, 10%);
   }
 }
