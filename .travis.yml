@@ -4,4 +4,10 @@ services:
   - redis-server
 rvm:
   - 2.3.1
-before_install: gem install bundler && bundle --version
+before_install:
+  - npm i -g npm@5.5.1
+  - npm install -g stylelint
+  - gem install bundler && bundle --version
+script:
+  - bundle exec rake
+  - bundle exec stylelint "app/assets/stylesheets/**/*.scss"
