@@ -1,55 +1,55 @@
-.promo-block{
+.promo-block {
   position: relative;
   overflow: auto;
 
-  &__divider{
+  &__divider {
     @include show-for(medium);
     position: absolute;
     color: $smoke;
     font-size: 1.75rem;
     top: 30%;
 
-    &--left{
+    &--left {
       @extend .promo-block__divider;
       left: 33%;
     }
 
-    &--right{
+    &--right {
       @extend .promo-block__divider;
       right: 33%;
     }
   }
 
-  &__item{
+  &__item {
     @include clearfix;
     @include medium-4;
     text-align: center;
 
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       text-align: left;
 
-      p{
+      p {
         @include small-9;
       }
     }
   }
 
-  &__icon-container{
+  &__icon-container {
     margin: 0 0 $base-margin 0;
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       @include small-3;
       padding: 0;
     }
   }
 
-  &__icon-background{
+  &__icon-background {
     width: 110px;
     height: 110px;
     margin: 0 auto;
     background: $smoke;
     position: relative;
 
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       width: 60%;
       height: auto;
       padding-top: 60%;
@@ -57,13 +57,13 @@
       min-height: 65px;
     }
 
-    &--round{
+    &--round {
       @extend .promo-block__icon-background;
       border-radius: 100%;
     }
   }
 
-  &__icon{
+  &__icon {
     color: $white;
     font-size: 4rem;
     text-align: center;
@@ -71,15 +71,15 @@
     left: 0;
     @include vertical-center;
 
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       font-size: 2.5rem;
     }
 
-    &-image{
+    &-image {
       @extend .promo-block__icon;
       height: 50px;
 
-      @include breakpoint(small down){
+      @include breakpoint(small down) {
         height: 31px;
       }
     }

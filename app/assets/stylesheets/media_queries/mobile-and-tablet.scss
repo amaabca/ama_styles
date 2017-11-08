@@ -1,15 +1,15 @@
-@media screen and #{breakpoint(medium down)}{
-  .skip{
+@media screen and #{breakpoint(medium down)} {
+  .skip {
     margin-top: $base-margin;
   }
 
-  .join-radio{
-    input[type="radio"] + label{
+  .join-radio {
+    input[type="radio"] + label {
       width: 100%;
     }
   }
 
-  .error-pg-num-border{
+  .error-pg-num-border {
     border-left: 0;
     margin-top: $base-margin;
   }

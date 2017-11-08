@@ -1,80 +1,80 @@
-.callout-box{
+.callout-box {
   @include callout($ash);
 
-  &__close-btn{
+  &__close-btn {
     float: right;
   }
 
-  &--green{
+  &--green {
     @include callout($brand-green);
     margin-bottom: $base-margin;
     color: $white;
   }
 
-  &--red{
+  &--red {
     @include callout($brand-red);
     margin-bottom: $base-margin;
     color: $white;
   }
 
-  &--ins-blue{
+  &--ins-blue {
     @include callout($brand-blue-insurance);
     margin-bottom: $base-margin;
     color: $white;
   }
 
-  &--brand-blue-light{
+  &--brand-blue-light {
     @include callout($brand-blue-light);
     margin-bottom: $base-margin;
     color: $white;
   }
 
-  &--orange{
+  &--orange {
     @include callout($orange);
     margin-bottom: $base-margin;
     color: $white;
   }
 
-  &--membership-summary{
-    @include breakpoint(small only){
+  &--membership-summary {
+    @include breakpoint(small only) {
       min-height: 320px;
     }
   }
 
-  &__container{
+  &__container {
     @include grid-row;
     @include clearfix;
   }
 
-  &__sub-head{
+  &__sub-head {
     color: $white;
   }
 
-  &__image-container{
+  &__image-container {
     @include large-1;
     @include small-12;
   }
 
-  &__image{
+  &__image {
     display: block;
     margin: 0 auto;
   }
 
-  &__content-container{
+  &__content-container {
     @include large-11;
     @include small-12;
 
-    &--centered{
+    &--centered {
       @include absolute-center;
       text-align: center;
     }
   }
 
-  &__link{
+  &__link {
     color: inherit;
     text-decoration: underline;
 
-    &:hover{
+    &:hover {
       color: $ash;
     }
   }
