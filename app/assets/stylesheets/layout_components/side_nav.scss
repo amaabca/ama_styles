@@ -1,90 +1,90 @@
-.side-nav{
+.side-nav {
   background: $white;
   @include grid-column(2,0);
 
-  @include breakpoint(medium down){
+  @include breakpoint(medium down) {
     display: none;
   }
 
-  &__spacer{
+  &__spacer {
     @include large-2;
     height: 100%;
     position: absolute;
     z-index: -1; //to prevent overlap with notifications
 
-    &--white{
+    &--white {
       @extend .side-nav__spacer;
       background-color: $white;
     }
 
-    &--show-for-medium{
+    &--show-for-medium {
       @extend .side-nav__spacer;
-      @include breakpoint(medium down){
+      @include breakpoint(medium down) {
         display: block;
       }
     }
   }
 
-  &__header{
+  &__header {
     @extend .heading;
     background: $cerulean;
   }
 
-  &__content{
+  &__content {
     padding: $base-padding;
   }
 
-  &__list{
+  &__list {
     list-style-type: none;
   }
 
-  &__item{
+  &__item {
     margin-bottom: $base-margin;
   }
 
-  &__link{
+  &__link {
     display: block;
     font-weight: 600;
     color: $jet;
     margin-bottom: $base-margin/2;
   }
 
-  &__child-list{
+  &__child-list {
     list-style-type: none;
   }
 
-  &__child-item{
+  &__child-item {
     margin-bottom: $base-margin/2;
   }
 
-  &__child-link{
+  &__child-link {
     color: $stormcloud;
     font-size: rem-calc(12);
 
     &:active,
     &:hover,
-    &:focus{
+    &:focus {
       $anchor-color: $cerulean;
       color: $anchor-color-hover;
     }
 
-    &--active-page{
+    &--active-page {
       font-weight: bold;
       color: $cerulean;
     }
   }
 
-  &--overlay{
+  &--overlay {
     @extend .side-nav;
     z-index: 1000;
     position: absolute;
     min-width: 300px;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
       position: relative;
     }
 
-    @include breakpoint(small only){
+    @include breakpoint(small only) {
       width: 100%;
     }
   }

@@ -1,38 +1,39 @@
-.option-toggle{
-  &__list{
+.option-toggle {
+  &__list {
     list-style: none;
     margin-bottom: 0;
   }
 
-  &__item{
+  &__item {
     @include clearfix;
     margin: 1px 0;
     background-color: $white;
     color: $cerulean;
     position: relative;
 
-    &:nth-child(even){
+    &:nth-child(even) {
       background-color: $ash;
     }
 
-    &.visible{ //this class isn't BEM because of the old JS in RR - KR
+    &.visible {
+      //this class isn't BEM because of the old JS in RR - KR
       background-color: $brand-blue-light;
       color: $white;
 
-      .option-toggle__icon{
+      .option-toggle__icon {
         background-color: $brand-blue-light;
         color: $white;
       }
     }
   }
 
-  &__label{
+  &__label {
     margin: 0 0 0 $base-margin;
     line-height: 24px;
     @include vertical-center;
   }
 
-  &__icon-container{
+  &__icon-container {
     background-color: transparent;
     width: 60px;
     height: 50px;
@@ -41,7 +42,7 @@
     position: relative;
   }
 
-  &__icon{
+  &__icon {
     color: $cerulean;
     width: 100%;
     font-size: $base-font-size*1.75;

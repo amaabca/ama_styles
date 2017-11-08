@@ -1,63 +1,60 @@
-.progress-bar{
+.progress-bar {
   @include hide-for(small only);
   overflow: auto;
 
-  &__section{
-    &--active{
+  &__section {
+    &--active {
       background: $cerulean;
     }
 
-    &--inactive{
+    &--inactive {
       background: $brand-blue-light;
     }
 
-    &--completed{
+    &--completed {
       background: $brand-blue-dark;
     }
   }
 
-  &--selected{
+  &--selected {
     background: $cerulean;
     color: $white;
   }
 
-  &--completed{
+  &--completed {
     color: $white;
     background: $brand-blue-dark;
   }
 
-  &__section-quarter{
+  &__section-quarter {
     @include medium-3;
     position: relative;
     color: $white;
     overflow: hidden;
     padding: 6px 0;
 
-    &:last-child:not(:first-child){
+    &:last-child:not(:first-child) {
       float: none;
     }
   }
-    &__section-title{
 
-    }
+  &__section-info {
+    display: block;
+  }
 
-    &__section-info{
-      display: block;
-    }
-
-  &__arrow{
+  &__arrow {
     width: 32px;
     height: 32px;
     position: absolute;
     right: -20px;
     top: -4px;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
       display: none;
     }
 
-    &::after{
-      content: '';
+    &::after {
+      content: "";
       position: absolute;
       right: 0;
       border-color: transparent transparent transparent $brand-blue-light;
@@ -65,8 +62,8 @@
       border-width: 35px;
     }
 
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       position: absolute;
       right: -4px; //this controls the thickness of the arrow
       border-color: transparent transparent transparent $white;
@@ -75,8 +72,8 @@
       border-width: 35px;
     }
 
-    &--selected::after{
-      content: '';
+    &--selected::after {
+      content: "";
       color: $white;
       position: absolute;
       right: 0;
@@ -85,8 +82,8 @@
       border-width: 35px;
     }
 
-    &--selected:before{
-      content: '';
+    &--selected::before {
+      content: "";
       color: $white;
       position: absolute;
       right: -4px; //this controls the thickness of the arrow
@@ -96,8 +93,8 @@
       border-width: 35px;
     }
 
-    &--completed::after{
-      content: '';
+    &--completed::after {
+      content: "";
       color: $white;
       position: absolute;
       right: 0;
@@ -106,8 +103,8 @@
       border-width: 35px;
     }
 
-    &--completed:before{
-      content: '';
+    &--completed::before {
+      content: "";
       color: $white;
       position: absolute;
       right: -4px; //this controls the thickness of the arrow
@@ -117,8 +114,8 @@
       border-width: 35px;
     }
 
-    &--very-completed::after{
-      content: '';
+    &--very-completed::after {
+      content: "";
       color: $white;
       position: absolute;
       right: 0;
@@ -127,8 +124,8 @@
       border-width: 35px;
     }
 
-    &--very-completed::before{
-      content: '';
+    &--very-completed::before {
+      content: "";
       color: $white;
       position: absolute;
       right: -4px; //this controls the thickness of the arrow
@@ -140,11 +137,11 @@
   }
 }
 
-.progress-bar-vertical{
+.progress-bar-vertical {
   list-style: none;
   position: relative;
 
-  &__guide{
+  &__guide {
     height: 100%;
     position: absolute;
     width: 2px;
@@ -152,31 +149,31 @@
     left: 17px;
   }
 
-  &__step{
+  &__step {
     @extend .clearfix;
     position: relative;
     margin-bottom: $base-margin*1.4;
   }
 
-  &__icon{
+  &__icon {
     width: 37px;
     height: 37px;
     border-radius: 100%;
     display: inline-block;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 23px;
     text-align: center;
     background-color: $stone;
     position: relative;
     float: left;
 
-    &--active{
+    &--active {
       @extend .progress-bar-vertical__icon;
       background-color: $brand-blue-light;
       color: $white;
     }
 
-    &--complete{
+    &--complete {
       @extend .fa;
       @extend .fa-check;
       @extend .progress-bar-vertical__icon;
@@ -184,7 +181,7 @@
       color: $white;
       font-weight: normal;
 
-      &::before{
+      &::before {
         @include vertical-center;
         left: 0;
         width: 100%;
@@ -192,7 +189,7 @@
     }
   }
 
-  &__content{
+  &__content {
     position: relative;
     float: left;
     margin-left: $base-margin*1.5;
@@ -200,13 +197,13 @@
     max-width: 74%;
   }
 
-  &__content-remove{
+  &__content-remove {
     line-height: 23px;
     margin-left: $base-margin*0.35;
   }
 }
 
-.progress-bar-horizontal{
+.progress-bar-horizontal {
   list-style: none;
   position: relative;
   margin: 0 auto;
@@ -214,11 +211,11 @@
   width: 100%;
   @include clearfix;
 
-  @include breakpoint(medium only){
+  @include breakpoint(medium only) {
     max-width: 546px;
   }
 
-  &__guide{
+  &__guide {
     width: 80%;
     left: 10%;
     position: absolute;
@@ -227,42 +224,42 @@
     top: 70%;
   }
 
-  &__step{
+  &__step {
     position: relative;
     display: table-cell;
 
-    @include breakpoint(medium only){
+    @include breakpoint(medium only) {
       margin-right: 9%;
     }
   }
 
-  &__icon{
+  &__icon {
     width: 37px;
     height: 37px;
     border-radius: 100%;
     display: block;
     margin: 0 auto;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 21px;
     text-align: center;
     background-color: $stone;
     position: relative;
     line-height: 37px;
 
-    @include breakpoint(medium only){
+    @include breakpoint(medium only) {
       width: 50px;
       height: 50px;
       font-size: 26px;
       line-height: 50px;
     }
 
-    &--active{
+    &--active {
       @extend .progress-bar-horizontal__icon;
       background-color: $brand-blue-light;
       color: $white;
     }
 
-    &--complete{
+    &--complete {
       @extend .fa;
       @extend .fa-check;
       @extend .progress-bar-horizontal__icon;
@@ -270,7 +267,7 @@
       color: $white;
       font-weight: normal;
 
-      &::before{
+      &::before {
         @include vertical-center;
         left: 0;
         width: 100%;
@@ -278,14 +275,14 @@
     }
   }
 
-  &__content{
+  &__content {
     line-height: $base-font-size*1.5;
     text-align: center;
     margin-bottom: $base-margin*0.65;
     display: block;
     font-size: $base-font-size*0.85;
 
-    @include breakpoint(medium only){
+    @include breakpoint(medium only) {
       font-size: $base-font-size;
     }
   }

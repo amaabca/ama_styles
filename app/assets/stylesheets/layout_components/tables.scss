@@ -1,25 +1,25 @@
-.table{
+.table {
   margin-bottom: $base-margin;
 
-  &--ash-bg{
+  &--ash-bg {
     background: $ash;
   }
 
-  &__row{
+  &__row {
     @include grid-row;
     overflow: auto;
     padding: $base-padding/2 0;
 
-    &--striped{
+    &--striped {
       @extend .table__row;
       border-bottom: 2px solid $stone;
 
-      &:first-of-type{
+      &:first-of-type {
         border-top: 2px solid $stone;
       }
     }
 
-    &--grey-bg{
+    &--grey-bg {
       @extend .table__row;
       background: $stone;
       padding: 0;
@@ -27,85 +27,85 @@
     }
   }
 
-  &__bg-spacing{
+  &__bg-spacing {
     padding-top: $base-padding/2;
     padding-bottom: $base-padding/2;
   }
 
-  &__row-nested{
+  &__row-nested {
     @include grid-row-nest;
     @include clearfix;
   }
 
-  &__data{
+  &__data {
     display: block;
 
-    &--left{
+    &--left {
       float: left;
     }
 
-    &--right{
+    &--right {
       float: right;
     }
 
-    &--center{
+    &--center {
       @extend .table__data;
       text-align: center;
       clear: both;
     }
 
-    &--hide-large{
+    &--hide-large {
       @include hide-for(large);
     }
   }
 
-  &__header{
+  &__header {
     @include show-for(medium);
 
-    &--grey-bg{
+    &--grey-bg {
       @extend .table__header;
       background: $stone;
     }
   }
 
-  &__col-title{
+  &__col-title {
     font-weight: 600;
     font-size: rem-calc(16);
     color: $slate;
 
-    &--medium{
+    &--medium {
       font-weight: 600;
       font-size: $base-font-size;
       color: $slate;
     }
 
-    &--small{
+    &--small {
       font-weight: 600;
       font-size: $base-font-size*0.875;
     }
   }
 
-  &__col-title-link{
+  &__col-title-link {
     padding-left: $base-padding;
   }
 
-  &__col-color{
-    &--green{
+  &__col-color {
+    &--green {
       background: $brand-green;
     }
   }
 
-  &__icon-checkmark{
+  &__icon-checkmark {
     @extend .fa;
     @extend .fa-check-circle;
     @extend .green-text;
   }
 }
 
-.table-with-bg{
+.table-with-bg {
   margin-bottom: $base-margin;
 
-  &__row{
+  &__row {
     @include grid-row;
     overflow: auto;
   }

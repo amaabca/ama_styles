@@ -1,26 +1,26 @@
-.legend{
-  &__header{
+.legend {
+  &__header {
     background-color: $cerulean;
     color: $white;
     padding: $base-padding*0.6;
   }
 
-  &__content-container{
+  &__content-container {
     background-color: $white;
     padding: $base-padding*0.6;
   }
 
-  &__keys{
+  &__keys {
     list-style: none;
     margin-bottom: 0;
   }
 
-  &__key-identifier{
+  &__key-identifier {
     @include clearfix;
     margin-top: $base-margin*0.4;
   }
 
-  &__icon{
+  &__icon {
     height: 12px;
     width: 12px;
     float: left;
@@ -29,38 +29,38 @@
     border-radius: 100%;
     -webkit-border-radius: 100%;
 
-    &--grey{
+    &--grey {
       @extend .legend__icon;
       background-color: $smoke;
     }
 
-    &--green{
+    &--green {
       @extend .legend__icon;
       background-color: $brand-green;
     }
 
-    &--darkred{
+    &--darkred {
       @extend .legend__icon;
       background-color: $sangria;
     }
 
-    &--yellow{
+    &--yellow {
       @extend .legend__icon;
       background-color: $canary;
     }
 
-    &--red{
+    &--red {
       @extend .legend__icon;
       background-color: $brand-red;
     }
 
-    &--black{
+    &--black {
       @extend .legend__icon;
       background-color: $black;
     }
   }
 
-  &__icon--rect{
+  &__icon--rect {
     height: 25px;
     width: 3.5px;
     float: left;
@@ -69,7 +69,7 @@
     margin-top: 0;
   }
 
-  &__text{
+  &__text {
     float: left;
     font-size: $base-font-size*0.8;
     line-height: 1.3rem;
