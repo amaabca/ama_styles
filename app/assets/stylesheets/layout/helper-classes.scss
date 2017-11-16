@@ -10,154 +10,154 @@
 10. Typography
 
 */
-.page-title{
+.page-title {
   background: $ash;
   border-bottom: $base-border;
   padding: $base-padding 0;
 }
 /* ==================== 2. Panels ==================== */
 
-.panel-title{
+.panel-title {
   @extend .page-title;
-  border: 0px;
+  border: 0;
   padding: $base-padding/2;
 
-  h5{
+  h5 {
     color: $jet;
     padding-left: $base-padding/2;
   }
 }
 
 /* ==================== 3. Positioning ==================== */
-.left{
+.left {
   float: left !important;
 }
 
-.right{
+.right {
   float: right !important;
 
-  &--mobile{
-    @include breakpoint(small only){
+  &--mobile {
+    @include breakpoint(small only) {
       float: right !important;
     }
   }
 }
 
-.center{
+.center {
   margin-left: auto;
   margin-right: auto;
 }
 
-.block{
+.block {
   display: block !important;
 
-  &--mobile{
-    @include breakpoint(small only){
+  &--mobile {
+    @include breakpoint(small only) {
       display: block !important;
     }
   }
 }
 
-.inline{
+.inline {
   display: inline !important;
 }
 
-.inline-block{
+.inline-block {
   display: inline-block !important;
 }
 
-.text-left{
+.text-left {
   text-align: left !important;
 }
 
-.text-center{
+.text-center {
   text-align: center !important;
 }
 
-.text-right{
+.text-right {
   text-align: right !important;
 
-  &--mobile{
-    @include breakpoint(small only){
+  &--mobile {
+    @include breakpoint(small only) {
       text-align: right !important;
     }
   }
 }
 
-.relative{
+.relative {
   position: relative;
 }
 
-.z-index{
-  &--2{
+.z-index {
+  &--2 {
     z-index: 2;
     position: relative;
   }
 }
 
 /* ==================== 4. Margins ==================== */
-.m1{
+.m1 {
   margin: $base-margin !important;
 }
 
-.mt1{
+.mt1 {
   margin-top: $base-margin !important;
 }
 
-.mr1{
+.mr1 {
   margin-right: $base-margin !important;
 }
 
-.mb1{
+.mb1 {
   margin-bottom: $base-margin !important;
 }
 
-.ml1{
+.ml1 {
   margin-left: $base-margin !important;
 }
 
-.m0{
+.m0 {
   margin: 0 !important;
 }
 
-.mt0{
+.mt0 {
   margin-top: 0 !important;
 
-  &--mobile-mt1{
-    @include breakpoint(small only){
+  &--mobile-mt1 {
+    @include breakpoint(small only) {
       margin-top: $base-margin !important;
     }
   }
 }
 
-.mr0{
+.mr0 {
   margin-right: 0 !important;
 }
 
-.mb0{
+.mb0 {
   margin-bottom: 0 !important;
 
-  &--mobile-mb1{
+  &--mobile-mb1 {
     @extend .mb0;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
       margin-bottom: $base-margin !important;
     }
   }
 }
 
-.ml0{
+.ml0 {
   margin-left: 0 !important;
 
-  &--tablet-ml1{
-    @include breakpoint(medium only){
+  &--tablet-ml1 {
+    @include breakpoint(medium only) {
       margin-left: $base-margin !important;
     }
   }
 }
 
 /* ==================== 5. Padding ==================== */
-.p1{
+.p1 {
   padding: $base-padding !important;
 }
 
@@ -177,7 +177,7 @@
   padding-left: $base-padding !important;
 }
 
-.p0{
+.p0 {
   padding: 0 !important;
 }
 
@@ -190,10 +190,10 @@
 }
 
 .pb0 {
-  padding-bottom :0 !important;
+  padding-bottom: 0 !important;
 
-  &--mobile-pb1{
-    @include breakpoint(small only){
+  &--mobile-pb1 {
+    @include breakpoint(small only) {
       padding-bottom: $base-padding !important;
     }
   }
@@ -203,48 +203,48 @@
   padding-left: 0 !important;
 }
 
-.bb0{
+.bb0 {
   border-bottom: 0 !important;
 }
 
-.b0{
+.b0 {
   border: 0;
 }
 
 /* ==================== 6. Background Colours ==================== */
-.whitebg{
+.whitebg {
   background-color: $white;
 }
 
-.greybg{
+.greybg {
   background-color: $stone;
 }
 
-.light-greybg{
+.light-greybg {
   background-color: $ash;
 }
 
-.insurance-blue-bg{
+.insurance-blue-bg {
   background-color: $brand-blue-insurance;
 }
 
-.light-blue-bg{
+.light-blue-bg {
   background: $brand-blue-light;
 }
 
-.dark-blue-bg{
+.dark-blue-bg {
   background: $brand-blue-dark;
 }
 
-.rewards-green-bg{
+.rewards-green-bg {
   background-color: $brand-green;
 }
 
-.orange-bg{
+.orange-bg {
   background-color: $orange;
 }
 
-.red-bg{
+.red-bg {
   background: $brand-red;
 }
 
@@ -252,17 +252,19 @@
 .insurance-blue-bg a,
 .light-blue-bg a,
 .rewards-green-bg a,
-.dark-blue-bg a{
+.dark-blue-bg a {
   color: $white;
 }
 
-.white-trans{
+.white-trans {
+  /* stylelint-disable */
   background-color: $white;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255, 255, 255, 0.6);
+  /* stylelint-enable */
 }
 
-.vr{
+.vr {
   width: 2px;
   background-color: $stone;
   height: 100%;
@@ -270,9 +272,9 @@
   right: 0;
   top: 0;
 
-  &--horizontal-mobile{
+  &--horizontal-mobile {
     @extend .vr;
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       width: 100%;
       height: 2px;
       top: 100%;
@@ -280,20 +282,20 @@
   }
 }
 
-.border-right{
+.border-right {
   border-right: 2px solid $stone;
 
-  @include breakpoint(small down){
+  @include breakpoint(small down) {
     border-right: none;
     border-bottom: 2px solid $stone;
     margin-bottom: $base-margin;
   }
 }
 
-.border-left{
+.border-left {
   border-left: 2px solid $stone;
 
-  @include breakpoint(small down){
+  @include breakpoint(small down) {
     border-left: none;
     border-top: 2px solid $stone;
     margin-top: $base-margin;
@@ -301,60 +303,60 @@
 }
 
 /* ==================== 7. Lists ==================== */
-.lined-list{
+.lined-list {
   list-style: none;
   margin: 0;
 
-  li{
+  li {
     padding: $base-padding $base-padding/2 $base-padding/2 $base-padding/2;
     border-bottom: $base-border;
 
-    .table-value{
+    .table-value {
       float: right;
     }
   }
 }
 
-.no-bullets{
+.no-bullets {
   list-style-type: none;
 }
 
 /* ==================== 8. Links ==================== */
-.multiline-link{
+.multiline-link {
   line-height: 1.3rem !important;
 }
 
 /* ==================== 10. Typography ==================== */
-.white-text{
+.white-text {
   color: $white;
 
-  &--lrg{
+  &--lrg {
     display: block;
     font-size: 2rem;
     font-weight: bold;
   }
 
-  >a{
+  > a {
     color: $white;
   }
 }
 
-.white-micetype{
+.white-micetype {
   color: $white;
   font-size: 80%;
 }
 
-.text-shadow{
-  filter: Shadow(Color=#656565, Direction=130, Strength=1);
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+.text-shadow {
+  filter: shadow(color=#656565, direction=130, strength=1);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
 }
 
-.strike-through{
+.strike-through {
   text-decoration: line-through;
   color: $black;
 }
 
-.uppercase-title{
+.uppercase-title {
   font-size: $base-font-size*0.875;
   font-weight: normal;
   color: $slate;
@@ -362,144 +364,144 @@
   padding: $base-padding/2 $base-padding*0 $base-padding/2 $base-padding/2;
 }
 
-.uppercase{
+.uppercase {
   text-transform: uppercase;
 }
 
-.grey-sub-title{
+.grey-sub-title {
   font-weight: bold;
   font-size: $base-font-size*0.875;
   color: $charcoal;
   padding-bottom: $base-padding;
 }
 
-.brand-blue-dark-text{
+.brand-blue-dark-text {
   color: $brand-blue-dark;
 }
 
-.brand-blue-light-text{
+.brand-blue-light-text {
   color: $brand-blue-light;
 }
 
-.micetype{
+.micetype {
   font-size: 80%;
 }
 
-.micetype--italic{
+.micetype--italic {
   @extend .micetype;
   font-style: italic;
 }
 
-.italic{
+.italic {
   font-style: italic;
 }
 
-.hint{
+.hint {
   font-size: $base-font-size*0.85;
   line-height: $base-font-size;
   color: darken($smoke, 15%);
   font-style: italic;
   display: block;
 
-  &--white{
+  &--white {
     @extend .hint;
     color: $white;
   }
 }
 
-.green-text{
+.green-text {
   color: $brand-green;
 }
 
-.orange-text{
+.orange-text {
   color: $orange;
 }
 
-.red-text{
+.red-text {
   color: $brand-red;
 }
 
-.small-text{
+.small-text {
   font-size: $base-font-size*0.85;
 }
 
-.word-wrap{
+.word-wrap {
   overflow-wrap: break-word;
   word-wrap: break-word;
   -ms-word-break: break-word;
   word-break: break-word;
 }
 
-.semi-bold{
+.semi-bold {
   font-weight: 600;
 
-  &--small{
+  &--small {
     @extend .semi-bold;
     font-size: $small-font-size;
   }
 
-  &--medium{
+  &--medium {
     @extend .semi-bold;
     font-size: $medium-font-size;
   }
 
-  &--large{
+  &--large {
     @extend .semi-bold;
     font-size: $large-font-size;
   }
 
-  &--x-large{
+  &--x-large {
     @extend .semi-bold;
     font-size: $x-large-font-size;
   }
 }
 
-.bold{
-  font-weight: 700;
+.bold {
+  font-weight: bold;
 
-  &--small{
+  &--small {
     @extend .bold;
     font-size: $small-font-size;
   }
 
-  &--medium{
+  &--medium {
     @extend .bold;
     font-size: $medium-font-size;
   }
 
-  &--large{
+  &--large {
     @extend .bold;
     font-size: $large-font-size;
   }
 
-  &--x-large{
+  &--x-large {
     @extend .bold;
     font-size: $x-large-font-size;
     line-height: $x-large-font-size;
 
-    &--green{
+    &--green {
       @extend .bold--x-large;
-      color: $brand-green
+      color: $brand-green;
     }
   }
 
-  &--no-lineheight{
+  &--no-lineheight {
     line-height: 0;
     margin-bottom: $base-margin*1.65;
     margin-top: $base-margin*1.65;
   }
 }
 
-.x-large-sup{
+.x-large-sup {
   font-size: 63%;
 }
 
-.bold-large-text{
+.bold-large-text {
   @extend .white-text;
   font-size: $x-large-font-size;
   font-weight: bold;
 
-  &--green{
+  &--green {
     @extend .bold-large-text;
     color: $brand-green;
   }

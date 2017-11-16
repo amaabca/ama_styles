@@ -1,24 +1,24 @@
-.content-toggle{
-  &__bg{
+.content-toggle {
+  &__bg {
     background-color: $stone;
     padding: $base-padding;
     margin-bottom: $base-margin;
 
-    &--cerulean{
+    &--cerulean {
       @extend .content-toggle__bg;
       background-color: $cerulean;
       color: $white;
     }
   }
 
-  &__close{
+  &__close {
     @extend .fa;
     @extend .fa-close;
     color: $charcoal;
     cursor: pointer;
     float: right;
 
-    &--white{
+    &--white {
       @extend .content-toggle__close;
       color: $white;
     }
@@ -26,17 +26,17 @@
 
   //We have to create our own classes for this because Foundation's default show/hide classes
   //have importants on them which messes with the specificity
-  &--hidden{
+  &--hidden {
     display: none;
   }
 
-  &--visible{
+  &--visible {
     display: block;
   }
 }
 
-.edit_gift{
-  .associate-expandable{
+.edit_gift {
+  .associate-expandable {
     display: none;
   }
 }

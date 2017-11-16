@@ -1,4 +1,4 @@
-.legend-map{
+.legend-map {
   display: none;
   width: 160px;
   background-color: $white;
@@ -8,41 +8,41 @@
   right: 0;
   z-index: 5;
 
-  @include breakpoint(small down){
+  @include breakpoint(small down) {
     bottom: 0;
     top: auto;
     width: 100%;
     position: fixed;
 
-    .legend__icon{
+    .legend__icon {
       float: none;
-      margin: 0 auto 6px auto;
+      margin: 0 auto 6px;
       display: block;
 
-      &--rect{
+      &--rect {
         height: 3.5px;
         width: 27px;
       }
     }
 
-    .legend__text{
+    .legend__text {
       float: none;
     }
 
-    .legend__key-identifier{
+    .legend__key-identifier {
       float: left;
       margin-right: $base-margin*0.45;
       text-align: center;
     }
 
-    .legend__keys{
+    .legend__keys {
       @include clearfix;
       width: auto;
       margin: 0 auto;
     }
   }
 
-  &.visible{
+  &.visible {
     display: block;
   }
 }

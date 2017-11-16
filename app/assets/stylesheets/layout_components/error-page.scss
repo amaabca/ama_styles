@@ -1,25 +1,25 @@
-.error-page-emph{
+.error-page-emph {
   color: $secondary-color;
 }
 
-.error-pg-width{
+.error-pg-width {
   max-width: 650px !important;
   margin: 0 auto !important;
   padding-left: $base-padding/2;
   padding-right: $base-padding/2;
 }
 
-.error-pg-mb{
+.error-pg-mb {
   margin: 0 auto $base-margin*8 auto !important;
 }
 
-.error-pg-num{
+.error-pg-num {
   min-width: 50%;
   min-height: 80px;
   padding-top: $base-padding/2;
 }
 
-.error-pg-num-border{
+.error-pg-num-border {
   border-left: 1px solid $slate;
   margin-top: 0;
 }

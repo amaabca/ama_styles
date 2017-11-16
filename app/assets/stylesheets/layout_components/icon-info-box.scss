@@ -1,14 +1,14 @@
-.icon-info-box{
+.icon-info-box {
   background: $white;
   margin-bottom: $base-margin;
 
-  &__icon-bg{
+  &__icon-bg {
     background: $powder-blue;
     padding-top: $base-padding;
     padding-bottom: $base-padding;
   }
 
-  &__icon-container{
+  &__icon-container {
     background: $white;
     width: 110px;
     min-height: 110px;
@@ -18,17 +18,17 @@
     position: relative;
   }
 
-  &__icon{
+  &__icon {
     font-size: 5rem;
     color: $brand-blue-light;
     @include absolute-center;
   }
 
-  &__content{
+  &__content {
     padding: $base-padding;
   }
 
-  &__link{
+  &__link {
     text-align: right;
     display: block;
   }

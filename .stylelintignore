@@ -1,0 +1,5 @@
+/app/assets/stylesheets/_settings.scss
+/app/assets/stylesheets/foundation_and_overrides.scss
+/app/assets/stylesheets/foundation_and_overrides_battery.scss
+/app/assets/stylesheets/webfonts/*.scss
+/app/assets/stylesheets/layout/variables.scss

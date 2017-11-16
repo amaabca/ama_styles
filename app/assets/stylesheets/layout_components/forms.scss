@@ -1,64 +1,60 @@
 /* ------------- Global Styles  ------------- */
 /* height:auto; prevents jogging of an input's placeholder text due to safari's form autofill. */
 form {
-  input[type='text'],
-  [type='password'],
-  [type='date'],
-  [type='datetime'],
-  [type='datetime-local'],
-  [type='month'],
-  [type='week'],
-  [type='email'],
-  [type='number'],
-  [type='search'],
-  [type='tel'],
-  [type='time'],
-  [type='url'],
-  [type='color'],
-  select
-  {
+  input[type="text"],
+  [type="password"],
+  [type="date"],
+  [type="datetime"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="week"],
+  [type="email"],
+  [type="number"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="url"],
+  [type="color"],
+  select {
     height: auto;
   }
 }
 
 /* ------------- Input Styles  ------------- */
-%inputs-thirds{
+%inputs-thirds {
   max-width: 30%;
   float: left;
 }
 
-%inputs-halves{
+%inputs-halves {
   max-width: 47.5%;
   float: left;
 }
 
 /* ------------- BEM Checkboxes ------------- */
-.checkbox{
-
-  &--third{
+.checkbox {
+  &--third {
     @include large-4;
   }
 
-  &--half{
+  &--half {
     @include large-6;
   }
 
-  &--full{
+  &--full {
     @include large-12;
   }
 
-  &__content{
+  &__content {
     display: inline-block;
-    width: 85%;
-    margin-left: 40px;
     margin: 0;
     width: 100%;
     position: relative;
     padding: 0.5em 0.5em 0.5em 3em;
 
-    &--label{
+    &--label {
       font-size: 1em;
-      font-weight: 700;
+      font-weight: bold;
     }
   }
 }
@@ -88,7 +84,7 @@ form {
       }
     }
 
-    &:before {
+    &::before {
       transform: translateX(34px);
     }
   }
@@ -112,7 +108,7 @@ form {
     width: 26px;
     left: 2px;
     bottom: 2px;
-    background-color: white;
+    background-color: $white;
     transition: 0.3s;
     border-radius: 50%;
   }
@@ -121,7 +117,7 @@ form {
     -webkit-transition: 0.25s;
     transition: 0.25s;
     position: absolute;
-    color: #fff;
+    color: $white;
     font-size: 1.5rem;
     top: 4px;
 
@@ -143,14 +139,14 @@ form {
 
 /* ------------- Custom Radio Button + Checkbox Styles  ------------- */
 input[type="radio"],
-input[type="checkbox"]:not(.default){
+input[type="checkbox"]:not(.default) {
   position: absolute;
   left: -9999px;
 }
 
 input[type="radio"] + label,
 input[type="checkbox"] + label,
-.form__label--unselected{
+.form__label--unselected {
   background: $ash;
   border: $base-border;
   margin: 0;
@@ -159,8 +155,8 @@ input[type="checkbox"] + label,
   cursor: pointer;
   padding: 0 $base-padding/2 0 $base-padding/2;
 
-  &:before{
-    content: ' ';
+  &::before {
+    content: " ";
     display: block;
     position: absolute;
     left: 10px;
@@ -172,13 +168,13 @@ input[type="checkbox"] + label,
     border: $base-border;
   }
 
-  .membership-card-header{
+  .membership-card-header {
     border-bottom: $base-border;
     background: darken($ash, 4%);
   }
 }
 
-.form__label-bg{
+.form__label-bg {
   background: $ash;
   border: $base-border;
   margin: 0;
@@ -188,12 +184,12 @@ input[type="checkbox"] + label,
   padding: 0 $base-padding/2 0 $base-padding/2;
 }
 
-.form__label-addon{
+.form__label-addon {
   @extend .form__label-bg;
   border-top: 0;
 }
 
-.checkbox-label{
+.checkbox-label {
   display: inline-block;
   width: 85%;
   margin-top: 9px;
@@ -201,25 +197,25 @@ input[type="checkbox"] + label,
   margin-left: 32px;
 }
 
-input[type="radio"] + label{
-  &:before{
+input[type="radio"] + label {
+  &::before {
     border-radius: 100%;
   }
 }
 
-input[type="radio"]:checked + label{
+input[type="radio"]:checked + label {
   color: $stormcloud;
   background-color: $sky;
   border: 2px solid darken($sky, 10%);
 
-  &:before{
-    content: '';
+  &::before {
+    content: "";
     background-color: $white;
     border: 2px solid $secondary-color;
   }
 
-  &:after{
-    content: '';
+  &::after {
+    content: "";
     position: absolute;
     display: block;
     top: 16px;
@@ -233,22 +229,21 @@ input[type="radio"]:checked + label{
     border-radius: 100%;
   }
 
-  &>hr{
+  & > hr {
     border: solid darken($sky, 10%);
     border-width: 2px 0 0;
     height: 0;
   }
 
-  .membership-card-header{
+  .membership-card-header {
     border-bottom: 2px solid darken($sky, 10%);
     background: darken($sky, 4%);
   }
 }
 
-input[type="checkbox"]:checked + label{
-
-  &:after{
-    content: '';
+input[type="checkbox"]:checked + label {
+  &::after {
+    content: "";
     display: block;
     position: absolute;
     z-index: 200;
@@ -258,52 +253,52 @@ input[type="checkbox"]:checked + label{
     height: 16px;
     border-right: 3px solid $white;
     border-top: 3px solid $white;
-    transform:(scaleX(-1) rotate(180deg + -45deg));
-    transform-origin:left top;
-    -webkit-transform:(scaleX(-1) rotate(180deg + -45deg));
-    -webkit-transform-origin:left top;
-    -moz-transform:(scaleX(-1) rotate(180deg + -45deg));
-    -moz-transform-origin:left top;
-    animation:checkbox 0.8s;
+    transform: (scaleX(-1) rotate(180deg + -45deg));
+    transform-origin: left top;
+    -webkit-transform: (scaleX(-1) rotate(180deg + -45deg));
+    -webkit-transform-origin: left top;
+    -moz-transform: (scaleX(-1) rotate(180deg + -45deg));
+    -moz-transform-origin: left top;
+    animation: checkbox 0.8s;
   }
 
-  &:before{
+  &::before {
     background: $brand-blue-light;
   }
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   visibility: hidden;
 }
 
-@keyframes checkbox{
-  0%{
+@keyframes checkbox {
+  0% {
     height: 0;
     width: 0;
   }
 
-  25%{
+  25% {
     height: 0;
     width: 8px;
   }
 
-  50%{
+  50% {
     height: 17px;
     width: 8px;
   }
 }
 
-.radio-centered input[type="radio"] + label{
-  padding: 0 0 46px 0;
+.radio-centered input[type="radio"] + label {
+  padding: 0 0 46px;
 
-  &:before{
+  &::before {
     top: 100%;
     margin-top: -35px;
     left: 50%;
     margin-left: -12px;
   }
 
-  &:after{
+  &::after {
     top: 100%;
     margin-top: -27px;
     left: 50%;
@@ -311,12 +306,12 @@ input[type="checkbox"]{
   }
 }
 
-.radio-centered input[type="radio"]:checked + label{
-  padding: 0 0 46px 0;
+.radio-centered input[type="radio"]:checked + label {
+  padding: 0 0 46px;
 }
 
-.clickable-radio-buttons{
-  input[type="radio"] + label{
+.clickable-radio-buttons {
+  input[type="radio"] + label {
     background: $white;
     color: $secondary-color;
     border-radius: $base-radius;
@@ -327,21 +322,21 @@ input[type="checkbox"]{
     text-align: center;
     float: left;
 
-    &:before,
-    &:after{
+    &::before,
+    &::after {
       content: none;
     }
   }
 
   input[type="radio"]:checked + label,
-  input[type="radio"]:hover + label{
+  input[type="radio"]:hover + label {
     background: $primary-color;
     color: $white;
     border: none;
   }
 
-  @include breakpoint(medium down){
-    input[type="radio"] + label{
+  @include breakpoint(medium down) {
+    input[type="radio"] + label {
       padding: $base-padding $base-padding/2;
       margin-bottom: $base-margin;
     }
@@ -349,7 +344,7 @@ input[type="checkbox"]{
 }
 
 // Scoped to avoid collisions with foundations datepicker
-.date{
+.date {
   .month,
   .year {
     @extend %inputs-thirds;
@@ -366,42 +361,44 @@ input[type="checkbox"]{
   }
 }
 
-.date-pair{
+.date-pair {
   .month,
   .year {
     @extend %inputs-halves;
 
-    &:last-of-type{
+    &:last-of-type {
       float: right;
     }
   }
 }
 
-.minute{
+.minute {
   float: right;
 }
 
-.datetime{
-  &.month, &.day, &.year{
+.datetime {
+  &.month,
+  &.day,
+  &.year {
     margin-bottom: $base-margin;
   }
 }
 
-/*-------------- Credit Card images ---------- */
-.cc-type{
+/* -------------- Credit Card images ---------- */
+.cc-type {
   width: 38px;
   height: 19px;
   display: inline-block;
 }
 
-.type-visa{
+.type-visa {
   background: url(image-path("cc-type-visa.png")) no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
 .type-mc,
-.type-mastercard{
+.type-mastercard {
   background: url(image-path("cc-type-mc.png")) no-repeat;
   background-size: contain;
   background-position: center center;
@@ -409,45 +406,41 @@ input[type="checkbox"]{
 
 /* The vendor prefixed placeholders have to be declared as separate selectors.
 When a browser doesn't understand a selector it invalidates the entire line */
-input::-webkit-input-placeholder{
+input::-webkit-input-placeholder {
   color: darken($smoke, 5%);
 }
 
-input:-moz-placeholder{
+input:-moz-placeholder {
   color: darken($smoke, 5%);
 }
 
-input::-moz-placeholder{
+input::-moz-placeholder {
   color: darken($smoke, 5%);
 }
 
-input[type='text'],
-[type='password'],
-[type='date'],
-[type='datetime'],
-[type='datetime-local'],
-[type='month'],
-[type='week'],
-[type='email'],
-[type='number'],
-[type='search'],
-[type='tel'],
-[type='time'],
-[type='url'],
-[type='color'],
+input[type="text"],
+[type="password"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="week"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="color"],
 textarea,
-select{
+select {
   margin-bottom: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-select.has-placeholder:nth-child(1){
-  color: darken($smoke, 5%);
-}
-
-select:focus{
+select:focus {
   border: 2px solid $ocean;
   background-color: $white;
   outline: none;
@@ -455,9 +448,8 @@ select:focus{
   transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
 }
 
-
 /* ------------- Error Messaging ------------- */
-small.error{
+small.error {
   display: block;
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
@@ -466,7 +458,7 @@ small.error{
   color: $white;
 }
 
-.error__page-error{
+.error__page-error {
   display: block;
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
@@ -476,32 +468,32 @@ small.error{
   margin-bottom: $base-margin;
 }
 
-.error__input-error{
+.error__input-error {
   @extend .error;
 }
 
 .error small.error,
-small.error{
+small.error {
   background: $brand-red;
 }
 
 .error label,
-.error label.error{
+.error label.error {
   color: $brand-red;
 }
 
-.error-message{
+.error-message {
   background: $brand-red;
 }
 
-.email_hint{
+.email_hint {
   color: $brand-red;
   display: none;
   font-size: 0.875em;
   margin: 0 0 $base-padding/2;
 }
 
-.email_domain{
+.email_domain {
   color: $brand-blue-insurance;
   font-weight: bold;
   text-decoration: underline;
@@ -510,15 +502,15 @@ small.error{
 /* ------------- Moneris ------------- */
 #monerisFrameSurround iframe,
 #monerisFrameSurround object,
-#monerisFrameSurround embed{
+#monerisFrameSurround embed {
   width: 100%;
 }
 
-.iframe-error{
+.iframe-error {
   margin-top: -6px !important;
 }
 
-form.moneris{
+form.moneris {
   display: none;
 }
 
@@ -535,12 +527,12 @@ input[type="number"]:-ms-input-placeholder,
 input[type="search"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 input[type="time"]:-ms-input-placeholder,
-input[type="url"]:-ms-input-placeholder{
+input[type="url"]:-ms-input-placeholder {
   color: darken($stone, 10%);
 }
 
 @include breakpoint(medium) {
-  .form-container{
+  .form-container {
     @include grid-row-nest;
     @include large-9;
     @include grid-column-end;
@@ -550,90 +542,90 @@ input[type="url"]:-ms-input-placeholder{
   }
 }
 
-.button__row{
+.button__row {
   @include grid-row;
   @include clearfix;
   clear: both;
 
-  &--nested{
+  &--nested {
     @include grid-row-nest;
     overflow: auto;
     clear: both;
   }
 }
 
-.form-horizontal{
-  &__row{
+.form-horizontal {
+  &__row {
     @include grid-row-nest;
     @include clearfix;
     margin-bottom: $base-margin;
   }
 
-  &__conditional-row{
+  &__conditional-row {
     @extend .form-horizontal__row;
     display: block;
 
-    &--hidden{
+    &--hidden {
       display: none;
     }
   }
 
-  &__label-wrapper{
+  &__label-wrapper {
     @include large-4;
 
-    &--disabled{
-      label{
+    &--disabled {
+      label {
         @extend .form-horizontal__label-wrapper;
         color: lighten($slate, 30%);
       }
     }
   }
 
-  &__input-wrapper{
+  &__input-wrapper {
     @include large-8;
 
-    &--offset{
+    &--offset {
       @extend .form-horizontal__input-wrapper;
       @include large-offset-4;
     }
 
-    &--small{
+    &--small {
       @include large-2;
     }
 
-    &--half-width{
+    &--half-width {
       @include large-4;
-      @include breakpoint(medium down){
+      @include breakpoint(medium down) {
         margin-bottom: $base-margin;
       }
     }
   }
 
-  &__error-wrapper{
+  &__error-wrapper {
     @include large-8;
     @extend .error;
   }
 
-  &__input-hint{
+  &__input-hint {
     @include large-6;
     @extend .hint;
 
-    &--white{
+    &--white {
       @extend .form-horizontal__input-hint;
       color: $white;
     }
   }
 
-  &__radio-wrapper{
+  &__radio-wrapper {
     @include large-8;
     margin-bottom: $base-margin;
 
-    &--full{
+    &--full {
       margin-bottom: $base-margin;
     }
   }
 
-  &__radio-label{
+  &__radio-label {
     display: inline-block;
     width: 85%;
     margin-top: 9px;
@@ -641,36 +633,36 @@ input[type="url"]:-ms-input-placeholder{
     padding-bottom: 10px;
   }
 
-  &__select{
+  &__select {
     @include large-8;
   }
 
-  &__toggle{
+  &__toggle {
     @include large-12;
   }
 
-  &__notification{
+  &__notification {
     @include large-8;
   }
 
-  &__input{
-    &--inline{
+  &__input {
+    &--inline {
       @include small-8;
     }
   }
 
-  &__label{
-    &--white{
+  &__label {
+    &--white {
       color: $white;
     }
   }
 
-  &__submit{
-    &--right{
+  &__submit {
+    &--right {
       @include large-4;
     }
 
-    &--inline{
+    &--inline {
       @include small-4;
     }
   }
