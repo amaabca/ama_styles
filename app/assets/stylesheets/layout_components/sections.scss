@@ -1,283 +1,278 @@
-.heading{
-  padding: $base-padding*.75 $base-padding;
+.heading {
+  padding: $base-padding*0.75 $base-padding;
   color: $white;
 }
 
-.section{
+.section {
   margin-bottom: $base-margin;
 
-  &__heading{
+  &__heading {
     @extend .heading;
     background: $brand-blue-light;
 
-    &--no-bg{
+    &--no-bg {
       padding-bottom: $base-padding;
     }
 
-    &--no-padding{
+    &--no-padding {
       background: $brand-blue-light;
       color: $white;
     }
 
-    &--grey-bg{
+    &--grey-bg {
       @extend .heading;
       background: $slate;
     }
 
-    &--dark-blue-bg{
+    &--dark-blue-bg {
       @extend .heading;
       background: $brand-blue-dark;
     }
 
-    &--accordion{
+    &--accordion {
       @extend .heading;
       overflow: auto;
       display: block;
     }
 
-    &--orange{
+    &--orange {
       @extend .heading;
       background: $orange;
     }
 
-    &--yellow{
+    &--yellow {
       @extend .heading;
       background: $canary;
     }
 
-    &--blue{
+    &--blue {
       @extend .heading;
       background: $brand-blue-light;
     }
 
-    &--green{
+    &--green {
       @extend .heading;
       background: $brand-green;
     }
   }
 
-  &__content{
+  &__content {
     background: $white;
     padding-top: $base-padding;
     @include clearfix;
   }
 
-  &__sub-head{
+  &__sub-head {
     margin-bottom: $base-margin;
     color: $charcoal;
     clear: both;
   }
 
-  &__content-container{
+  &__content-container {
     @include grid-row-nest;
   }
 
-  &__content-two-thirds{
+  &__content-two-thirds {
     @include large-8;
 
-    &>*:last-child{
+    & > *:last-child {
       margin-bottom: 0;
     }
   }
 
-  &--scroll{
+  &--scroll {
     overflow: auto;
     height: 500px;
     padding: 0 $base-padding;
     margin-bottom: $base-margin;
     border: $base-border;
 
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       height: 350px;
     }
   }
 }
 
-.section-nested{
+.section-nested {
   @include grid-row-nest;
   @include clearfix;
 }
 
 /* Old, and/or improperly named classes - DO NOT RE-USE */
-.section-heading{
+.section-heading {
   @extend .heading;
   background: $brand-blue-light;
 
-  &--no-bg{
+  &--no-bg {
     padding-bottom: $base-padding;
   }
 
-  &--no-padding{
+  &--no-padding {
     background: $brand-blue-light;
     color: $white;
   }
 
-  &--grey-bg{
+  &--grey-bg {
     @extend .heading;
     background: $slate;
   }
 
-  &--dark-blue-bg{
+  &--dark-blue-bg {
     @extend .heading;
     background: $brand-blue-dark;
   }
 
-  &--accordion{
+  &--accordion {
     @extend .heading;
     overflow: auto;
     display: block;
   }
 
-  &--orange{
+  &--orange {
     @extend .heading;
     background: $orange;
   }
 
-  &--yellow{
+  &--yellow {
     @extend .heading;
     background: $canary;
   }
 
-  &--blue{
+  &--blue {
     @extend .heading;
     background: $brand-blue-light;
   }
 
-  &--green{
+  &--green {
     @extend .heading;
     background: $brand-green;
   }
 }
 
-.section-quarter{
+.section-quarter {
   @extend .section;
   @include large-3;
 }
 
-.section-half{
+.section-half {
   @extend .section;
   @include large-6;
 }
 
-.section-full{
+.section-full {
   @extend .section;
   @include large-12;
 
-  &--max-width{
+  &--max-width {
     @extend .section-full;
     max-width: 1080px;
   }
 }
 
-.section-third{
+.section-third {
   @extend .section;
   @include large-4;
   @include clearfix;
 }
 
-.section-quarter{
-  @extend .section;
-  @include large-3;
-}
-
-.section-two-thirds{
+.section-two-thirds {
   @extend .section;
   @include large-8;
   @include grid-column-end;
   @include clearfix;
 
-  &:last-child:not(.section-content){
+  &:last-child:not(.section-content) {
     margin-bottom: 0;
   }
 
-  @include breakpoint(medium down){
+  @include breakpoint(medium down) {
     float: none;
   }
 }
 
-.section-centered{
-  &--half{
+.section-centered {
+  &--half {
     @extend .section;
     @include large-6;
     @include large-centered;
 
-    &:last-child:not(:first-child){
+    &:last-child:not(:first-child) {
       float: none;
     }
   }
 }
 
-.section-content{
+.section-content {
   padding: $base-padding;
   background: $white;
   @include clearfix;
 
-  &>*:last-child{
+  & > *:last-child {
     margin-bottom: 0;
-    /*override so that the last child element always has margin-bottom of zero
+    /* override so that the last child element always has margin-bottom of zero
     (because the container has bottom padding)
     the alternative is to set the elements themselves to ONLY have bottom-margin
     if they're not the :last-child, but Foundation adds bottom margin to everything by default
     so we would have to change each element individually in the _settings file.
     */
 
-    &>*:last-child{
+    & > *:last-child {
       margin-bottom: 0;
       /* the same as above, but for nested elements within sections */
     }
   }
 
-  &--grey-bg{
+  &--grey-bg {
     padding: $base-padding;
     background: lighten($stormcloud, 5%);
     color: $white;
   }
 
-  &--smoke-bg{
+  &--smoke-bg {
     padding: $base-padding;
     background: lighten($smoke, 5%);
   }
 
-  &--ash-bg{
+  &--ash-bg {
     padding: $base-padding;
     background: $ash;
   }
 
-  &--blue-bg{
+  &--blue-bg {
     padding: $base-padding;
     background: $brand-blue-light;
     color: $white;
     @include clearfix;
 
-    label{
+    label {
       color: $white;
     }
 
-    input[type="radio"] + label{
+    input[type="radio"] + label {
       color: $stormcloud;
     }
   }
 
-  &--cerulean-bg{
+  &--cerulean-bg {
     padding: $base-padding;
     background: $cerulean;
     color: $white;
   }
 
-  &--grey-border{
+  &--grey-border {
     border: 2px solid $stone;
   }
 }
 
-.section-content-half{
+.section-content-half {
   @extend .section;
   @include medium-6;
   position: relative;
   margin-bottom: 0;
 }
 
-.content-container{
-  &--vertical{
+.content-container {
+  &--vertical {
     @include vertical-center;
     width: 100%;
   }
@@ -285,34 +280,36 @@
 
 @function set-hint-color($color) {
   @if (lightness($color) > 50) {
-    @return $smoke; // Lighter backgorund, return dark color
-  } @else {
+    @return $smoke; // Lighter background, return dark color
+  }
+
+  @else {
     @return $white; // Darker background, return light color
   }
 }
 
-.page-container{
+.page-container {
   @include grid-row;
   position: relative;
 }
 
-.main-container{
+.main-container {
   // using grid-column in place of large-10 so that we can set the gutters to 0
   @include grid-column(10,0);
   background: $stone;
   @include clearfix;
 
-  @include breakpoint(medium down){
+  @include breakpoint(medium down) {
     @include grid-column(12,0);
   }
 }
 
-.main-container-full{
+.main-container-full {
   // using grid-column in place of large-10 so that we can set the gutters to 0
   @include grid-column(12,0);
   background: $stone;
 
-  @include breakpoint(medium down){
+  @include breakpoint(medium down) {
     @include grid-column(12,0);
   }
 }

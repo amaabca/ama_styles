@@ -1,13 +1,13 @@
-.button{
+.button {
   text-decoration: none;
 
   &:hover,
   &:active,
-  &:focus{
+  &:focus {
     background: lighten($button-background, 10%);
   }
 
-  &--green{
+  &--green {
     @extend .button;
     $button-background: $brand-green;
     background: $button-background;
@@ -15,121 +15,120 @@
 
     &:hover,
     &:active,
-    &:focus{
+    &:focus {
       background: lighten($button-background, 10%);
     }
   }
 
-  &--dark-blue{
+  &--dark-blue {
     @extend .button;
     $button-background: $brand-blue-dark;
     background: $button-background;
 
     &:hover,
     &:active,
-    &:focus{
+    &:focus {
       background: lighten($button-background, 10%);
     }
   }
 
-  &--de-emphasized{
+  &--de-emphasized {
     @extend .button;
     $button-background: $slate;
     background: $button-background;
 
     &:hover,
     &:active,
-    &:focus{
+    &:focus {
       background: lighten($button-background, 10%);
     }
   }
 
-  &--brand-red{
+  &--brand-red {
     @extend .button;
     $button-background: $brand-red;
     background: $button-background;
 
     &:hover,
     &:active,
-    &:focus{
+    &:focus {
       background: lighten($button-background, 10%);
     }
   }
 
-  &--left{
+  &--left {
     @extend .button;
     float: left;
   }
 
-  &--right{
+  &--right {
     @extend .button;
     float: right;
   }
 
-  &--center{
+  &--center {
     @extend .button;
     float: none;
   }
 
-  &--expand{
+  &--expand {
     @extend .button;
     @extend .expanded;
   }
 
-  &--expand-medium-down{
+  &--expand-medium-down {
     @extend .button;
 
-    @include breakpoint(medium down){
+    @include breakpoint(medium down) {
       display: block;
       margin: 0 auto;
       width: 100%;
     }
   }
 
-  &--expand-small-down{
+  &--expand-small-down {
     @extend .button;
 
-    @include breakpoint(small down){
+    @include breakpoint(small down) {
       display: block;
       margin: 0 auto $base-margin auto;
       width: 100%;
     }
   }
 
-  &--left-medium-up{
+  &--left-medium-up {
     @extend .button;
 
-    @include breakpoint(medium up){
+    @include breakpoint(medium up) {
       float: left;
     }
   }
 
-  &--right-medium-up{
+  &--right-medium-up {
     @extend .button;
 
-    @include breakpoint(medium up){
+    @include breakpoint(medium up) {
       float: right;
     }
   }
 
-
-  &--left-large-up{
+  &--left-large-up {
     @extend .button;
 
-    @include breakpoint(large up){
+    @include breakpoint(large up) {
       float: left;
     }
   }
 
-  &--right-large-up{
+  &--right-large-up {
     @extend .button;
 
-    @include breakpoint(large up){
+    @include breakpoint(large up) {
       float: right;
     }
   }
 
-  &--small{
+  &--small {
     @extend .button;
     @extend .small;
   }
@@ -138,13 +137,13 @@
 button.disabled,
 button[disabled],
 .button.disabled,
-.button[disabled]{
+.button[disabled] {
   background-color: lighten($secondary-color, 10%);
   border-color: none;
 
   &:hover,
   &:active,
-  &:focus{
+  &:focus {
     background-color: lighten($secondary-color, 10%);
     border-color: none;
   }

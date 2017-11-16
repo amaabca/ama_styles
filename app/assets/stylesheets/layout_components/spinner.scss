@@ -1,20 +1,19 @@
 // Custom spinner - shamelessly stolen from http://tobiasahlin.com/spinkit/
-.spinner{
-  position: absolute;
+.spinner {
   width: 40px;
   height: 40px;
   position: relative;
   margin-left: auto;
   margin-right: auto;
 
-  &--bounce{
+  &--bounce {
     margin: 0 auto;
     width: 70px;
     text-align: center;
   }
 }
 
-.spinner--bounce > div{
+.spinner--bounce > div {
   width: 18px;
   height: 18px;
   background-color: $brand-blue-light;
@@ -24,18 +23,18 @@
   animation: sk-bouncedelay 1.4s infinite ease-in-out both;
 }
 
-.spinner--bounce .bounce1{
+.spinner--bounce .bounce1 {
   -webkit-animation-delay: -0.32s;
   animation-delay: -0.32s;
 }
 
-.spinner--bounce .bounce2{
+.spinner--bounce .bounce2 {
   -webkit-animation-delay: -0.16s;
   animation-delay: -0.16s;
 }
 
 .double-bounce1,
-.double-bounce2{
+.double-bounce2 {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -44,47 +43,61 @@
   position: absolute;
   top: 0;
   left: 0;
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
+  -webkit-animation: sk-bounce 2s infinite ease-in-out;
+  animation: sk-bounce 2s infinite ease-in-out;
 }
 
-.double-bounce2{
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+.double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
 }
 
-@-webkit-keyframes sk-bounce{
-  0%, 100%{ -webkit-transform: scale(0.0) }
-  50%{ -webkit-transform: scale(1.0) }
-}
-
-@keyframes sk-bounce{
-  0%, 100%{
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  }
-  50%{
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
-}
-
-@-webkit-keyframes sk-bouncedelay{
-  0%, 80%, 100%{
+@-webkit-keyframes sk-bounce {
+  0%,
+  100% {
     -webkit-transform: scale(0);
   }
-  40%{
-    -webkit-transform: scale(1.0);
+
+  50% {
+    -webkit-transform: scale(1);
   }
 }
 
-@keyframes sk-bouncedelay{
-  0%, 80%, 100%{
+@keyframes sk-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%,
+  80%,
+  100% {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
-  40%{
-    -webkit-transform: scale(1.0);
-    transform: scale(1.0);
+
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }

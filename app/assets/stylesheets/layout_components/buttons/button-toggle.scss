@@ -1,9 +1,9 @@
-.button-toggle{
+.button-toggle {
   width: 100%;
   margin: 0 auto;
   display: block;
 
-  &--absolute{
+  &--absolute {
     @extend .button-toggle;
     position: absolute;
     top: 15px;
@@ -11,7 +11,7 @@
     left: 2.5%;
   }
 
-  &__option{
+  &__option {
     width: 50%;
     border: 2px solid $cerulean;
     float: left;
@@ -20,18 +20,18 @@
     padding: $base-padding*0.45;
     text-align: center;
 
-    &--right{
+    &--right {
       @extend .button-toggle__option;
       border-radius: 0 5px 5px 0;
       margin-left: -1px;
     }
 
-    &--left{
+    &--left {
       @extend .button-toggle__option;
       border-radius: 5px 0 0 5px;
     }
 
-    &.visible{
+    &.visible {
       background: $cerulean;
       color: $white;
     }

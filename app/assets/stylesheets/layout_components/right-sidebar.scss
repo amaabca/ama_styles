@@ -1,25 +1,25 @@
-.right-sidebar{
+.right-sidebar {
   z-index: 9999;
   width: 350px;
-  transform: translate(350px, 0px);
+  transform: translate(350px, 0);
   background-color: $ash;
 
-  @include breakpoint (small down){
+  @include breakpoint (small down) {
     width: 90vw;
-    transform: translate(90vw, 0px);
+    transform: translate(90vw, 0);
   }
 
-  &__header{
+  &__header {
     background-color: $white;
     border-bottom: 2px solid $stone;
     border-left: 2px solid $stone;
     padding-bottom: $base-padding / 2;
   }
 
-  &__content{
+  &__content {
     margin-top: $base-margin;
 
-    &--active{
+    &--active {
       padding-top: $base-padding;
       background-color: $sky;
       border-left: 5px solid $cerulean;
@@ -28,7 +28,7 @@
       border-bottom: 1px solid $cerulean;
     }
 
-    &--inactive{
+    &--inactive {
       padding-top: $base-padding / 2;
       background-color: $white;
       border-left: 5px solid $smoke;
@@ -38,7 +38,7 @@
     }
   }
 
-  &__content-icon{
+  &__content-icon {
     border-radius: 100%;
     width: 35px;
     height: 35px;
@@ -46,14 +46,14 @@
     text-align: center;
     padding-top: 3px;
 
-    &--red{
+    &--red {
       @extend .right-sidebar__content-icon;
       color: $white;
       background-color: $brand-red;
       float: left;
     }
 
-    &--orange{
+    &--orange {
       @extend .right-sidebar__content-icon;
       color: $white;
       background-color: $orange;
