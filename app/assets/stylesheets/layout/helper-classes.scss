@@ -82,6 +82,12 @@
       text-align: right !important;
     }
   }
+
+  &--medium-up {
+    @include breakpoint(medium) {
+      text-align: right !important;
+    }
+  }
 }
 
 .relative {
