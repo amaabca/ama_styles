@@ -228,6 +228,12 @@
 
 .light-greybg {
   background-color: $ash;
+
+  &--small-only {
+    @include breakpoint(small only) {
+      background-color: $ash;
+    }
+  }
 }
 
 .insurance-blue-bg {
