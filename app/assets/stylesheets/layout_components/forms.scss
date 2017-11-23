@@ -24,6 +24,16 @@ form {
 %inputs-thirds {
   max-width: 30%;
   float: left;
+
+  @include breakpoint(small only) {
+    max-width: 100%;
+    float: none;
+    margin: 0 0 $base-margin/2 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
 }
 
 %inputs-halves {
@@ -352,7 +362,10 @@ input[type="checkbox"] {
 
   .day {
     @extend %inputs-thirds;
-    margin: 0 5%;
+
+    @include breakpoint(medium) {
+      margin: 0 5%;
+    }
   }
 
   .hour,
@@ -438,6 +451,10 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+select.has-placeholder:nth-child(1) {
+  color: darken($smoke, 5%);
 }
 
 select:focus {
