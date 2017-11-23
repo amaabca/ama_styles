@@ -82,6 +82,12 @@
       text-align: right !important;
     }
   }
+
+  &--medium-up {
+    @include breakpoint(medium) {
+      text-align: right !important;
+    }
+  }
 }
 
 .relative {
@@ -222,6 +228,12 @@
 
 .light-greybg {
   background-color: $ash;
+
+  &--small-only {
+    @include breakpoint(small only) {
+      background-color: $ash;
+    }
+  }
 }
 
 .insurance-blue-bg {
@@ -339,6 +351,10 @@
   > a {
     color: $white;
   }
+}
+
+.charcoal-text {
+  color: $charcoal !important;
 }
 
 .white-micetype {
