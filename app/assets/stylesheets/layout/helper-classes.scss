@@ -7,6 +7,7 @@
 6. Background & Text Colours
 7. Lists
 8. Links
+9. Borders
 10. Typography
 
 */
@@ -209,14 +210,6 @@
   padding-left: 0 !important;
 }
 
-.bb0 {
-  border-bottom: 0 !important;
-}
-
-.b0 {
-  border: 0;
-}
-
 /* ==================== 6. Background Colours ==================== */
 .whitebg {
   background-color: $white;
@@ -336,6 +329,47 @@
 /* ==================== 8. Links ==================== */
 .multiline-link {
   line-height: 1.3rem !important;
+}
+
+/* ==================== 9. Borders ======================== */
+.b1 {
+  border: $base-border !important;
+}
+
+.bt1 {
+  border-top: $base-border !important;
+}
+
+.bb1 {
+  border-bottom: $base-border !important;
+}
+
+.br1 {
+  border-right: $base-border !important;
+}
+
+.bl1 {
+  border-left: $base-border !important;
+}
+
+.bt0 {
+  border-top: 0 !important;
+}
+
+.bb0 {
+  border-bottom: 0 !important;
+}
+
+.br0 {
+  border-right: 0 !important;
+}
+
+.bl0 {
+  border-left: 0 !important;
+}
+
+.b0 {
+  border: 0 !important;
 }
 
 /* ==================== 10. Typography ==================== */
