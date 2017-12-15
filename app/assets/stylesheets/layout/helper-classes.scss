@@ -102,6 +102,14 @@
   }
 }
 
+.overflow-hidden {
+  overflow: hidden !important;
+}
+
+.overflow-auto {
+  overflow: auto !important;
+}
+
 /* ==================== 4. Margins ==================== */
 .m1 {
   margin: $base-margin !important;
