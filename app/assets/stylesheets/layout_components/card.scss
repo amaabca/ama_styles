@@ -1,0 +1,19 @@
+.card {
+  &__title {
+    font-size: $base-font-size*1.45;
+    padding: 7px;
+    font-weight: bold;
+
+    @include breakpoint(small only) {
+      font-size: $base-font-size*1.25;
+    }
+  }
+
+  &--blue-bg {
+    @extend .card__title;
+    background: $brand-blue-light;
+    color: $white;
+    margin-bottom: $base-margin;
+    position: relative;
+  }
+}
