@@ -54,6 +54,11 @@
       @extend .heading;
       background: $brand-green;
     }
+
+    &--cerulean {
+      @extend .heading;
+      background: $cerulean;
+    }
   }
 
   &__content {
