@@ -42,7 +42,7 @@
     .comparison-radios__list {
       padding: 0 $base-padding 0 $base-padding*3;
 
-      @include breakpoint(small only) {
+      @include breakpoint(medium) {
         padding: 0 $base-padding;
       }
 
@@ -76,16 +76,16 @@
     }
 
     .comparison-radios__input + label {
-      @include breakpoint(small only) {
+      @include breakpoint(medium) {
         overflow: hidden;
       }
 
-      @include breakpoint(small) {
+      @include breakpoint(medium) {
         padding: 0 0 46px;
       }
 
       &::before {
-        @include breakpoint(small) {
+        @include breakpoint(medium) {
           top: 100%;
           margin-top: -35px;
           left: 50%;
@@ -100,7 +100,7 @@
 
     input[type="radio"]:checked + label {
       &::after {
-        @include breakpoint(small) {
+        @include breakpoint(medium) {
           top: 100%;
           margin-top: -27px;
           left: 50%;
