@@ -12,10 +12,10 @@
 
     &--striped {
       @extend .table__row;
-      border-bottom: 2px solid $stone;
+      border-bottom: $base-border;
 
       &:first-of-type {
-        border-top: 2px solid $stone;
+        border-top: $base-border;
       }
     }
 
