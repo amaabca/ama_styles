@@ -1,12 +1,12 @@
 .card {
   background: $white;
-  padding: $base-padding 0;
+  padding-top: $base-padding;
+  padding-bottom: $base-padding;
   text-align: center;
   margin-bottom: $base-margin;
 
   &__title {
-    font-size: $base-font-size*1.45;
-    padding: 7px;
+    padding: $base-padding*0.45 $base-padding;
     font-weight: bold;
     text-align: center;
 
@@ -19,7 +19,6 @@
     @extend .card__title;
     background: $brand-blue-light;
     color: $white;
-    position: relative;
   }
 
   &__image {
@@ -28,14 +27,14 @@
 
   &__content-bg {
     background: $ash;
-    border-top: 2px solid $stone;
-    border-bottom: 2px solid $stone;
-    padding: $base-padding 0;
+    border-top: $base-border;
+    border-bottom: $base-border;
+    padding-top: $base-padding;
     margin-bottom: $base-margin;
   }
 
-  &--content {
-    padding: 0 $base-padding;
-    margin-bottom: 0;
+  &__content {
+    padding-left: $base-padding;
+    padding-right: $base-padding;
   }
 }
