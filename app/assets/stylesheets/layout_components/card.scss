@@ -6,35 +6,34 @@
   margin-bottom: $base-margin;
 
   &__title {
-    padding: $base-padding*0.45 $base-padding;
+    padding: $base-padding*0.75 $base-padding;
     font-weight: bold;
     text-align: center;
 
     @include breakpoint(small only) {
       font-size: $base-font-size*1.25;
     }
-  }
 
-  &--blue-bg {
-    @extend .card__title;
-    background: $brand-blue-light;
-    color: $white;
+    &--bg-blue {
+      background: $brand-blue-light;
+      color: $white;
+    }
   }
 
   &__image {
     margin-bottom: $base-margin;
   }
 
-  &__content-bg {
-    background: $ash;
-    border-top: $base-border;
-    border-bottom: $base-border;
-    padding-top: $base-padding;
-    margin-bottom: $base-margin;
-  }
-
   &__content {
     padding-left: $base-padding;
     padding-right: $base-padding;
+
+    &--bg-ash {
+      background: $ash;
+      border-top: $base-border;
+      border-bottom: $base-border;
+      padding-top: $base-padding;
+      margin-bottom: $base-margin;
+    }
   }
 }
