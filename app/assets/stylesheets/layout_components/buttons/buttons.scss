@@ -5,6 +5,7 @@
   &:active,
   &:focus {
     background: lighten($button-background, 10%);
+    text-decoration: none;
   }
 
   &--green {

@@ -54,12 +54,22 @@
       @extend .heading;
       background: $brand-green;
     }
+
+    &--cerulean {
+      @extend .heading;
+      background: $cerulean;
+    }
   }
 
   &__content {
     background: $white;
     padding-top: $base-padding;
     @include clearfix;
+
+    &--smoke-bg {
+      padding-top: $base-padding;
+      background: lighten($smoke, 5%);
+    }
   }
 
   &__sub-head {
