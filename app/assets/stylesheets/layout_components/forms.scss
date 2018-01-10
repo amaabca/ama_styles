@@ -178,6 +178,17 @@ input[type="checkbox"] + label,
     border: $base-border;
   }
 
+  &.checkbox--no-label {
+    border: none;
+    background: none;
+    padding: 0;
+
+    &::before {
+      top: -10px;
+      left: 0px;
+    }
+  }
+
   .membership-card-header {
     border-bottom: $base-border;
     background: darken($ash, 4%);
@@ -270,6 +281,11 @@ input[type="checkbox"]:checked + label {
     -moz-transform: (scaleX(-1) rotate(180deg + -45deg));
     -moz-transform-origin: left top;
     animation: checkbox 0.8s;
+  }
+
+  &.checkbox--no-label::after {
+    top: 3px;
+    left: 4px;
   }
 
   &::before {
