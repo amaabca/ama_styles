@@ -75,6 +75,11 @@
         background: lighten($button-background, 10%);
       }
     }
+
+    &--disabled {
+      @extend .button-grouping__button;
+      cursor: not-allowed;
+    }
   }
 
   &__content {
