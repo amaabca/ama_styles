@@ -8,6 +8,18 @@
     text-decoration: none;
   }
 
+  &--green-centered {
+    @extend .button;
+    $button-background: $brand-green;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: lighten($button-background, 10%);
+    }
+  }
+
   &--green {
     @extend .button;
     $button-background: $brand-green;
