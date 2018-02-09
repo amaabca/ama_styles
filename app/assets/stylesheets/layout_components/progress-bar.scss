@@ -174,8 +174,6 @@
     }
 
     &--complete {
-      @extend .fa;
-      @extend .fa-check;
       @extend .progress-bar-vertical__icon;
       background-color: $cerulean;
       color: $white;
