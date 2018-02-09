@@ -12,16 +12,26 @@
   }
 
   &__close {
-    @extend .fa;
-    @extend .fa-close;
     color: $charcoal;
     cursor: pointer;
     float: right;
+
+    &::before {
+      display: none;
+      font-family: "Font Awesome 5 Regular";
+      content: "\f00d";
+    }
 
     &--white {
       @extend .content-toggle__close;
       color: $white;
     }
+  }
+
+  .content-toggle__close::before {
+    display: none;
+    font-family: "Font Awesome 5 Regular";
+    content: "\f00d";
   }
 
   //We have to create our own classes for this because Foundation's default show/hide classes

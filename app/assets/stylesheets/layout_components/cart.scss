@@ -34,8 +34,6 @@
 
   &__accordion-toggle-icon {
     @include hide-for(large);
-    @extend .fa;
-    @extend .fa-arrows-v;
     width: 16px;
     height: 16px;
     float: right;
