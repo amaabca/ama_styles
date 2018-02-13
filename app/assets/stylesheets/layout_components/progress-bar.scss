@@ -258,8 +258,6 @@
     }
 
     &--complete {
-      @extend .fa;
-      @extend .fa-check;
       @extend .progress-bar-horizontal__icon;
       background-color: $cerulean;
       color: $white;
