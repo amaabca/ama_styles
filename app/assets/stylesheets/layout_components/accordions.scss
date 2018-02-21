@@ -128,6 +128,7 @@
   }
 
   &__icon {
+    @extend .fas;
     width: 39px;
     height: 39px;
     border: 2px solid $brand-blue-light;
@@ -146,6 +147,7 @@
 
     &--active {
       @extend .accordion-multi-state__icon;
+      @extend .fa-check;
       color: $stone;
     }
 
@@ -156,6 +158,7 @@
 
     &--complete {
       @extend .accordion-multi-state__icon;
+      @extend .fa-check;
       border: 2px solid $brand-green;
       background: $white;
       color: $brand-green;
@@ -163,6 +166,7 @@
 
     &--error {
       @extend .accordion-multi-state__icon;
+      @extend .fa-times;
       border: 2px solid $brand-red;
       background: $white;
       color: $brand-red;
