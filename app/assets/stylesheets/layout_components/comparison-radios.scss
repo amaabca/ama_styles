@@ -39,6 +39,11 @@
   }
 
   &__radio-btn--stacked {
+    .comparison-radios__list-icon {
+      margin-right: 10px;
+      margin-left: -24px;
+    }
+
     .comparison-radios__list {
       padding: 0 $base-padding 0 $base-padding*3;
 
@@ -52,7 +57,7 @@
         }
       }
 
-      .fa {
+      .fas {
         &::before {
           font-family: "FontAwesome";
           margin-right: 0;

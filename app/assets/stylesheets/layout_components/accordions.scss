@@ -65,8 +65,6 @@
 
   &__toggle {
     @include small-2;
-    @extend .fa;
-    @extend .fa-arrows-v;
     text-align: right;
     color: $white;
     padding-top: $base-padding*1.25;
@@ -130,7 +128,7 @@
   }
 
   &__icon {
-    @extend .fa;
+    @extend .fas;
     width: 39px;
     height: 39px;
     border: 2px solid $brand-blue-light;
@@ -168,7 +166,7 @@
 
     &--error {
       @extend .accordion-multi-state__icon;
-      @extend .fa-close;
+      @extend .fa-times;
       border: 2px solid $brand-red;
       background: $white;
       color: $brand-red;
