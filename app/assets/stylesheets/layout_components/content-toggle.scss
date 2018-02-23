@@ -12,8 +12,6 @@
   }
 
   &__close {
-    @extend .fa;
-    @extend .fa-close;
     color: $charcoal;
     cursor: pointer;
     float: right;
