@@ -1,0 +1,30 @@
+#button--chat {
+  @include button(false, $cerulean, auto, $white, solid);
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  border-radius: 999rem;
+  padding: 1.08333rem 1.83333rem;
+  letter-spacing: 0.6;
+}
+
+#chat-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+#chat-modal {
+  height: 80%;
+}
+
+.chat {
+  &__icon {
+    vertical-align: middle;
+  }
+
+  &__text {
+    vertical-align: middle;
+    padding-left: 0.25rem;
+  }
+}
