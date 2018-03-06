@@ -1,8 +1,8 @@
 #button--chat {
   @include button(false, $cerulean, auto, $white, solid);
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  position: fixed;
+  right: 1.5rem;
+  bottom: 0.5rem;
   z-index: 9999;
   border-radius: 999rem;
   padding: 1.08333rem 1.83333rem;
