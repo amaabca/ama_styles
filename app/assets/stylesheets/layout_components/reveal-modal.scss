@@ -20,6 +20,24 @@ dialog .close-reveal-modal {
     font-weight: normal;
   }
 
+  &--chat {
+    @extend .reveal-modal;
+    position: fixed;
+    top: 195px !important;
+    right: 20px;
+    z-index: 3;
+    box-shadow: 0px 1px 19px 2px rgba(0,0,0,0.25);
+
+    @include breakpoint(small only) {
+      width: 94% !important;
+    }
+  }
+
+  &--chat-container {
+    height: 400px;
+    margin-bottom: $base-margin;
+  }
+
   @include breakpoint(medium) {
     &--small-window {
       position: relative;
