@@ -94,12 +94,6 @@
       background: $brand-green;
     }
   }
-
-  &__icon-checkmark {
-    @extend .fa;
-    @extend .fa-check-circle;
-    @extend .green-text;
-  }
 }
 
 .table-with-bg {

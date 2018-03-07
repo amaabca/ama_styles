@@ -99,26 +99,18 @@
 
 //Status error classes
 .orange-warning-icon {
-  @extend .fa;
-  @extend .fa-exclamation-circle;
   @extend .orange-text;
 }
 
 .white-warning-icon {
-  @extend .fa;
-  @extend .fa-exclamation-circle;
   @extend .white-text;
 }
 
 .green-active-icon {
-  @extend .fa;
-  @extend .fa-check-circle;
   @extend .green-text;
 }
 
 .white-active-icon {
-  @extend .fa;
-  @extend .fa-check-circle;
   @extend .white-text;
 }
 
