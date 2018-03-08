@@ -30,7 +30,8 @@ dialog .close-reveal-modal {
     box-shadow: 0 1px 19px 2px rgba(0, 0, 0, 0.25);
 
     @include breakpoint(small only) {
-      width: 94% !important;
+      right: auto !important;
+      top: auto !important;
     }
   }
 
@@ -51,7 +52,6 @@ dialog .close-reveal-modal {
 
   @include breakpoint(small only) {
     width: 100%;
-    top: 50px !important;
     min-height: 240px;
   }
 
