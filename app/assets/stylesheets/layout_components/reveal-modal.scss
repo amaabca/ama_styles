@@ -31,8 +31,7 @@ dialog .close-reveal-modal {
     outline: none;
 
     @include breakpoint(small only) {
-      right: auto !important;
-      top: auto !important;
+      right: auto;
     }
   }
 
