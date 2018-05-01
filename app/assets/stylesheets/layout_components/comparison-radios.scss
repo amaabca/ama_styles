@@ -321,18 +321,16 @@
   &__list-item {
     padding-bottom: $base-padding;
 
-    &::before {
-      font-family: "FontAwesome";
-      content: "\f00c";
-      color: $brand-blue-light;
-      margin-right: 5px;
-      margin-left: -17px;
-    }
-
     @include breakpoint(small only) {
       text-align: left;
       margin-left: $base-margin*1.5;
     }
+  }
+
+  &__list-icon {
+    margin-right: 10px;
+    margin-left: -24px;
+    color: $brand-blue-light;
   }
 
   &__ribbon {
