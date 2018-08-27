@@ -242,11 +242,11 @@
 }
 
 .light-blue-bg {
-  background: $brand-blue-light !important;
+  background-color: $brand-blue-light !important;
 }
 
 .dark-blue-bg {
-  background: $brand-blue-dark !important;
+  background-color: $brand-blue-dark !important;
 }
 
 .rewards-green-bg {
@@ -258,7 +258,7 @@
 }
 
 .red-bg {
-  background: $brand-red !important;
+  background-color: $brand-red !important;
 }
 
 // On a coloured background, the child links should be white
@@ -271,7 +271,7 @@
 
 .white-trans {
   /* stylelint-disable */
-  background-color: $white !important;
+  background-color: $white;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   background-color: rgba(255, 255, 255, 0.6);
   /* stylelint-enable */
