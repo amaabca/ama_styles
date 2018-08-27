@@ -271,7 +271,7 @@
 
 .white-trans {
   /* stylelint-disable */
-  background-color: $white!important;
+  background-color: $white !important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   background-color: rgba(255, 255, 255, 0.6);
   /* stylelint-enable */
