@@ -11,6 +11,7 @@
 10. Typography
 
 */
+
 .page-title {
   background: $ash;
   border-bottom: $base-border;
@@ -220,45 +221,45 @@
 
 /* ==================== 6. Background Colours ==================== */
 .whitebg {
-  background-color: $white;
+  background-color: $white !important;
 }
 
 .greybg {
-  background-color: $stone;
+  background-color: $stone !important;
 }
 
 .light-greybg {
-  background-color: $ash;
+  background-color: $ash !important;
 
   &--small-only {
     @include breakpoint(small only) {
-      background-color: $ash;
+      background-color: $ash !important;
     }
   }
 }
 
 .insurance-blue-bg {
-  background-color: $brand-blue-insurance;
+  background-color: $brand-blue-insurance !important;
 }
 
 .light-blue-bg {
-  background: $brand-blue-light;
+  background: $brand-blue-light !important;
 }
 
 .dark-blue-bg {
-  background: $brand-blue-dark;
+  background: $brand-blue-dark !important;
 }
 
 .rewards-green-bg {
-  background-color: $brand-green;
+  background-color: $brand-green !important;
 }
 
 .orange-bg {
-  background-color: $orange;
+  background-color: $orange !important;
 }
 
 .red-bg {
-  background: $brand-red;
+  background: $brand-red !important;
 }
 
 // On a coloured background, the child links should be white
@@ -266,12 +267,12 @@
 .light-blue-bg a,
 .rewards-green-bg a,
 .dark-blue-bg a {
-  color: $white;
+  color: $white !important;
 }
 
 .white-trans {
   /* stylelint-disable */
-  background-color: $white;
+  background-color: $white!important;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
   background-color: rgba(255, 255, 255, 0.6);
   /* stylelint-enable */
