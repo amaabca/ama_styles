@@ -13,28 +13,24 @@ Gem::Specification.new do |s|
     'Michael van den Beuken',
     'Ruben Estevez',
     'Jordan Babe',
-    'Mathieu Gilbert',
     'Jesse Doyle',
     'Ryan Jones',
     'Darko Dosenovic',
     'Jonathan Weyermann',
     'Zoie Carnegie',
     'Kayt Campbell',
-    'Kathleen Robertson',
     'Sinead Errity'
   ]
   s.email = [
     'michael.beuken@gmail.com',
     'ruben.a.estevez@gmail.com',
     'jorbabe@gmail.com',
-    'mathieu.gilbert@ama.ab.ca',
     'jesse.doyle@ama.ab.ca',
     'ryan.michael.jones@gmail.com',
     'darko.dosenovic@ama.ab.ca',
     'jonathan.weyermann@ama.ab.ca',
     'zoie.carnegie@ama.ab.ca',
     'kayt.campbell@ama.ab.ca',
-    'kathleen.robertson@ama.ab.ca',
     'sinead.errity@ama.ab.ca'
   ]
   s.homepage = 'https:/github.com/amaabca/ama_styles'
@@ -51,7 +47,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-sass'
   s.add_dependency 'redis-rails'
   s.add_dependency 'dotenv-rails'
-  s.add_dependency 'autoprefixer-rails'
+  s.add_dependency 'autoprefixer-rails', '8.6.4'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'sqlite3'
