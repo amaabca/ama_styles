@@ -3,10 +3,15 @@
 module AMA
   module Styles
     module Internal
-      module Hipchat
-        def hipchat_message(msg, opts = {})
-          color = opts.fetch(:color, :green)
-          client[room].send('Deploy', msg, color: color)
+      module Chat
+        def chat_message(msg, opts = {})
+          color = opts.fetch(:color, 'good')
+          attachment = {
+            fallback: msg,
+            color: color,
+            text: msg
+          }
+          client.post(attachments: [attachment])
         end
 
         def start_deploy_message(opts = {})
@@ -28,15 +33,16 @@ module AMA
         private
 
         def client
-          ::HipChat::Client.new(api_token, api_version: 'v1')
+          @client = Slack::Notifier.new(webhook_url) do
+            defaults(
+              channel: ENV.fetch('SLACK_CHANNEL'),
+              username: ENV.fetch('SLACK_USERNAME', 'Deployments')
+            )
+          end
         end
 
-        def api_token
-          ENV.fetch('HIPCHAT_TOKEN')
-        end
-
-        def room
-          ENV.fetch('HIPCHAT_ROOM')
+        def webhook_url
+          ENV.fetch('SLACK_WEBHOOK_URL')
         end
       end
     end
