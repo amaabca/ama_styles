@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-sass'
   s.add_dependency 'redis-rails'
   s.add_dependency 'dotenv-rails'
-  s.add_dependency 'autoprefixer-rails', '8.6.4'
+  s.add_dependency 'autoprefixer-rails'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'sqlite3'
@@ -58,7 +58,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rubocop', '0.49.1'
   s.add_development_dependency 'factory_bot'
   s.add_development_dependency 'colorize'
-  s.add_development_dependency 'hipchat'
+  s.add_development_dependency 'slack-notifier'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rest-client'
   s.add_development_dependency 'rest-client-jogger'
