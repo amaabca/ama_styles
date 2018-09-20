@@ -39,22 +39,20 @@ module AMA
 
           def chat_deploy_start
             chat_message(
-              start_deploy_message(
-                user: git_user,
-                branch: branch,
-                environment: environment
-              ),
-              color: 'warning'
+              start_deploy_message,
+              color: 'warning',
+              user: git_user,
+              branch: branch,
+              environment: environment
             )
           end
 
           def chat_deploy_end
             chat_message(
-              end_deploy_message(
-                user: git_user,
-                branch: branch,
-                environment: environment
-              )
+              end_deploy_message,
+              user: git_user,
+              branch: branch,
+              environment: environment
             )
           end
 
