@@ -6,7 +6,7 @@ module AMA
       module Commands
         class Deploy
           GitError = Class.new(StandardError)
-          include Hipchat
+          include Chat
           attr_accessor :environment, :branch, :dry_run
 
           def initialize(opts = {})
@@ -24,9 +24,9 @@ module AMA
           def run
             environment_context do
               verify_git!
-              hipchat_deploy_start
+              chat_deploy_start
               Rake::Task['assets:deploy'].invoke
-              hipchat_deploy_end
+              chat_deploy_end
             end
           end
 
@@ -37,24 +37,22 @@ module AMA
             Environment.new(environment: 'development').load!
           end
 
-          def hipchat_deploy_start
-            hipchat_message(
-              start_deploy_message(
-                user: git_user,
-                branch: branch,
-                environment: environment
-              ),
-              color: :yellow
+          def chat_deploy_start
+            chat_message(
+              start_deploy_message,
+              color: 'warning',
+              user: git_user,
+              branch: branch,
+              environment: environment
             )
           end
 
-          def hipchat_deploy_end
-            hipchat_message(
-              end_deploy_message(
-                user: git_user,
-                branch: branch,
-                environment: environment
-              )
+          def chat_deploy_end
+            chat_message(
+              end_deploy_message,
+              user: git_user,
+              branch: branch,
+              environment: environment
             )
           end
 

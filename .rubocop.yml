@@ -10,6 +10,10 @@ Documentation:
 # Slightly longer classes
 Metrics/ClassLength:
   Max: 125
+Metrics/LineLength:
+  Max: 130
+Metrics/MethodLength:
+  Max: 25
 # RSpec uses long blocks (i.e. describe, it, etc.)
 Metrics/BlockLength:
   Exclude:
