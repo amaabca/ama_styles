@@ -28,12 +28,12 @@ module AMA
           client.post(attachments: [attachment])
         end
 
-        def start_deploy_message
-          ':eyes: Ama_styles Application is Deploying'
+        def start_deploy_message(opts = {})
+          ":eyes: #{opts.fetch(:user)} is deploying Ama_Styles/#{opts.fetch(:branch)} to #{opts.fetch(:environment)}"
         end
 
-        def end_deploy_message
-          ':bangbang: Ama_styles Application Deployed'
+        def end_deploy_message(opts = {})
+          ":bangbang: #{opts.fetch(:user)} has deployed Ama_Styles/#{opts.fetch(:branch)} to #{opts.fetch(:environment)}"
         end
 
         private

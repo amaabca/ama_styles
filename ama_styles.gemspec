@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'slack-notifier'
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rest-client'
-  s.add_development_dependency 'rest-client-jogger'
+  s.add_development_dependency 'rest-client-jogger', '0.3.5'
   s.add_development_dependency 'highline'
   s.add_development_dependency 'git'
 end
