@@ -414,8 +414,28 @@ input[type="checkbox"] {
 }
 /* -------------- File Uploader ---------- */
 
-.file-uploader {
-  
+.uploader {
+  &__file {
+    border-bottom: $base-border;
+    padding: $base-padding/2 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__icon {
+    font-size: $base-font-size*1.2;
+    color: $charcoal;
+    &-clear {
+      @extend .uploader__icon;
+      cursor: pointer;
+      :hover {
+        color: $brand-red;
+      }
+    }
+    &-doc {
+      @extend .uploader__icon;
+      margin-right: $base-margin/2;
+    }
+  }
 }
 
 /* -------------- Credit Card images ---------- */
