@@ -421,16 +421,20 @@ input[type="checkbox"] {
     display: flex;
     justify-content: space-between;
   }
+
   &__icon {
     font-size: $base-font-size*1.2;
     color: $charcoal;
+
     &-clear {
       @extend .uploader__icon;
       cursor: pointer;
+
       :hover {
         color: $brand-red;
       }
     }
+
     &-doc {
       @extend .uploader__icon;
       margin-right: $base-margin/2;
