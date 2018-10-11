@@ -2,6 +2,6 @@
 
 module AMA
   module Styles
-    VERSION = '2.2.1'
+    VERSION = '2.2.2'
   end
 end
