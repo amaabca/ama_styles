@@ -430,7 +430,7 @@ input[type="checkbox"] {
       @extend .uploader__icon;
       cursor: pointer;
 
-      :hover {
+      &:hover {
         color: $brand-red;
       }
     }
