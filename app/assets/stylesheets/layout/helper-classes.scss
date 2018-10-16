@@ -32,6 +32,12 @@
 /* ==================== 3. Positioning ==================== */
 .left {
   float: left !important;
+
+  &--mobile {
+    @include breakpoint(small only) {
+      float: left !important;
+    }
+  }
 }
 
 .right {
@@ -40,6 +46,16 @@
   &--mobile {
     @include breakpoint(small only) {
       float: right !important;
+    }
+  }
+}
+
+.no-float {
+  float: none !important;
+
+  &--mobile {
+    @include breakpoint(small only) {
+      float: none !important;
     }
   }
 }
@@ -65,6 +81,12 @@
 
 .inline-block {
   display: inline-block !important;
+
+  &--mobile {
+    @include breakpoint(small only) {
+      display: inline-block !important;
+    }
+  }
 }
 
 .text-left {
