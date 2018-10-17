@@ -9,5 +9,6 @@ before_install:
   - npm install -g stylelint
   - gem install bundler && bundle --version
 script:
+  - bundle exec danger
   - bundle exec rake
   - bundle exec stylelint "app/assets/stylesheets/**/*.scss"
