@@ -64,4 +64,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rest-client-jogger', '0.3.5'
   s.add_development_dependency 'highline'
   s.add_development_dependency 'git'
+  s.add_development_dependency 'danger'
+  s.add_development_dependency 'nokogiri', '1.8.4'
 end
