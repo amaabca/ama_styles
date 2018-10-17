@@ -420,13 +420,13 @@ input[type="checkbox"] {
     padding: $base-padding/2 0;
     display: flex;
     justify-content: space-between;
-    word-break: break-word;
   }
 
   &__content-container {
     padding-right: $base-padding;
     display: flex;
     align-items: center;
+    word-break: break-word;
   }
 
   &__icon {
