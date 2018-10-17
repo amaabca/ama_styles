@@ -420,6 +420,7 @@ input[type="checkbox"] {
     padding: $base-padding/2 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__content-container {
