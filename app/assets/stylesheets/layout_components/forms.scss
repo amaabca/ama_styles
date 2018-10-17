@@ -420,24 +420,28 @@ input[type="checkbox"] {
     padding: $base-padding/2 0;
     display: flex;
     justify-content: space-between;
+    word-break: break-word;
+  }
+
+  &__content-container {
+    padding-right: $base-padding;
+    display: flex;
+    align-items: center;
   }
 
   &__icon {
+    font-size: $base-font-size*1.5;
+    color: $charcoal;
+    margin-right: $base-margin;
+  }
+
+  &__clear-button {
     font-size: $base-font-size*1.2;
     color: $charcoal;
+    cursor: pointer;
 
-    &-clear {
-      @extend .uploader__icon;
-      cursor: pointer;
-
-      &:hover {
-        color: $brand-red;
-      }
-    }
-
-    &-doc {
-      @extend .uploader__icon;
-      margin-right: $base-margin/2;
+    &:hover {
+      color: $brand-red;
     }
   }
 }
