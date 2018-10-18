@@ -11,7 +11,7 @@ if %w[🎨 🐘 :art: :elephant:].none? { |s| github.pr_body.include?(s) }
 end
 
 # Do not let 'binding.pry' get into master by accident
-raise 'A binding.pry was committed 💩' if system 'grep -r binding.pry . --exclude=Dangerfile'
+raise 'A binding.pry was committed 💩' if system 'grep -r binding.pry . --exclude=Dangerfile --exclude-dir=vendor'
 
 # Do not let 'debugger' get into master by accident
-raise 'A debugger was committed 💩' if system 'grep -r debugger . --exclude=Dangerfile'
+raise 'A debugger was committed 💩' if system 'grep -r debugger . --exclude=Dangerfile --exclude-dir=vendor'
