@@ -412,6 +412,40 @@ input[type="checkbox"] {
     margin-bottom: $base-margin;
   }
 }
+/* -------------- File Uploader ---------- */
+
+.uploader {
+  &__file {
+    border-bottom: $base-border;
+    padding: $base-padding/2 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content-container {
+    padding-right: $base-padding;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+  }
+
+  &__icon {
+    font-size: $base-font-size*1.5;
+    color: $charcoal;
+    margin-right: $base-margin;
+  }
+
+  &__clear-button {
+    font-size: $base-font-size*1.2;
+    color: $charcoal;
+    cursor: pointer;
+
+    &:hover {
+      color: $brand-red;
+    }
+  }
+}
 
 /* -------------- Credit Card images ---------- */
 .cc-type {
