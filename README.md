@@ -47,7 +47,5 @@ initializers/assets.rb `Rails.configuration.stylesheet_resolver.remote = false`
 
 This will trigger compilation of your assets instead of using AWS cloudfront.
 
-** NOTE ** Remember to update ama_styles gem in the app after deploying to master to get new assets
-
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
