@@ -33,6 +33,13 @@
     }
   }
 
+  &__text-button {
+    @extend .button;
+    position: relative;
+    width: 100%;
+    padding: 1.75em;
+  }
+
   &__button {
     @extend .button;
     min-height: 170px;
