@@ -33,6 +33,30 @@
     }
   }
 
+  &__text-button {
+    @extend .button;
+    position: relative;
+    width: 100%;
+    padding: 1.75em;
+    text-align: left;
+
+    &--grey {
+      @extend .button-grouping__text-button;
+      $button-background: $slate;
+      background: $button-background;
+      
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($button-background, 10%);
+      }
+    }
+
+    &.is-active {
+      background: $cerulean;
+    }
+  }
+
   &__button {
     @extend .button;
     min-height: 170px;
