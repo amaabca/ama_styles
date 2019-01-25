@@ -85,7 +85,7 @@ module AMA
         def upload_latest_stylesheet
           key = File.join(ASSET_PREFIX, LATEST_STYLESHEET_FILE)
           file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
-          upload_file(file: file, key: key, cache: (DateTime.current + 1.hour).httpdate)
+          upload_file(file: file, key: key, cache: (DateTime.current + 10.minutes).httpdate)
         end
 
         def digest_file
