@@ -82,7 +82,7 @@ module AMA
         def upload_latest_stylesheet
           key = File.join(ASSET_PREFIX, LATEST_STYLESHEET_FILE)
           file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
-          upload_file(file: file, key: key, cache: false)
+          upload_file(file: file, key: key, cache: (DateTime.current + 1.hour).httpdate)
         end
 
         def digest_file
@@ -95,7 +95,7 @@ module AMA
           log('Uploading: '.colorize(:light_blue) + key)
           object = bucket.object(key)
           content_type = MIME::Types.type_for(object.key).first.to_s
-          args = args_for(type: content_type, cache: opts.fetch(:cache, true))
+          args = args_for(type: content_type, cache: opts.fetch(:cache, cache_expiry))
           object.upload_file(file, args)
         end
 
@@ -103,7 +103,7 @@ module AMA
           type = opts.fetch(:type)
           { content_type: type }.tap do |hash|
             if opts.fetch(:cache)
-              hash[:expires] = cache_expiry
+              hash[:expires] = opts.fetch(:cache)
               hash[:cache_control] = 'public'
             end
           end
