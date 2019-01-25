@@ -17,6 +17,7 @@ module AMA
           upload_files
           log('Generating fallback stylesheet...'.colorize(:yellow))
           upload_fallback_stylesheet
+          upload_latest_stylesheet
           log('Verifying S3 integrity...'.colorize(:yellow))
           log('SUCCESS!'.colorize(:green) + ' 🎨')
         end
@@ -74,6 +75,12 @@ module AMA
 
         def upload_fallback_stylesheet
           key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
+          file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
+          upload_file(file: file, key: key, cache: false)
+        end
+
+        def upload_latest_stylesheet
+          key = File.join(ASSET_PREFIX, LATEST_STYLESHEET_FILE)
           file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
           upload_file(file: file, key: key, cache: false)
         end
