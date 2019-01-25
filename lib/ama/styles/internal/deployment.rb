@@ -69,7 +69,10 @@ module AMA
           assets_files.each do |file|
             path = Pathname.new(file)
             key = File.join('assets', path.relative_path_from(assets_path).to_s)
-            upload_file(file: file, key: key)
+            if key.start_with?("assets/.sprockets-manifest")
+              key = 'assets/manifest.json'
+            end
+            upload_file(file: file, key: key, cache: false)
           end
         end
 
