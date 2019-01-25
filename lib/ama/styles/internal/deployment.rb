@@ -18,7 +18,6 @@ module AMA
           log('Generating fallback stylesheet...'.colorize(:yellow))
           upload_fallback_stylesheet
           log('Verifying S3 integrity...'.colorize(:yellow))
-          request
           log('SUCCESS!'.colorize(:green) + ' 🎨')
         end
 
@@ -91,19 +90,6 @@ module AMA
           content_type = MIME::Types.type_for(object.key).first.to_s
           args = args_for(type: content_type, cache: opts.fetch(:cache, true))
           object.upload_file(file, args)
-        end
-
-        def request
-          RestClient::Request.logged_request(
-            method: :post,
-            headers: request_headers,
-            url: Rails.configuration.api_deployment_url,
-            user: Rails.configuration.api_deployment_user,
-            password: Rails.configuration.api_deployment_password,
-            payload: { digest_file: File.join('assets', digest_file) }.to_json
-          )
-        rescue RestClient::RequestFailed => ex
-          fail!(ex)
         end
 
         def args_for(opts = {})
