@@ -2,7 +2,6 @@ module AMA
   module Styles
     module Internal
       class Manifest
-        # include AMA::Styles::Globals
         include S3::Client
 
         def update!
@@ -53,12 +52,12 @@ module AMA
           @manifest ||= JSON.parse(fetch_file('manifest')).with_indifferent_access
         end
 
-        def object_keys
-          @object_keys ||= bucket.objects.to_a.map(&:key)
-        end
-
         def file_in_bucket?(file)
           missing_file!(file) unless object_keys.include?(file)
+        end
+
+        def object_keys
+          @object_keys ||= bucket.objects.to_a.map(&:key)
         end
 
         def fetch_file(file, opts = {})

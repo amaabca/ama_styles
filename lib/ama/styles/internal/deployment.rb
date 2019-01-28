@@ -18,6 +18,7 @@ module AMA
           log('Generating fallback stylesheet...'.colorize(:yellow))
           upload_fallback_stylesheet
           upload_latest_stylesheet
+          AMA::Styles::Internal::Manifest.update!
           log('Verifying S3 integrity...'.colorize(:yellow))
           log('SUCCESS!'.colorize(:green) + ' 🎨')
         end
