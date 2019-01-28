@@ -52,13 +52,13 @@ module AMA
 
         def manifest
           @manifest ||= begin
-            file = File.join(ASSET_PATH, MANIFEST_FILE)
+            file = File.join(ASSET_PREFIX, MANIFEST_FILE)
             JSON.parse(fetch_file(file)).with_indifferent_access
           end
         end
 
         def file_in_bucket?(file)
-          missing_file!(file) unless object_keys.include?(file)
+          raise StandardError.new('File missing!') unless object_keys.include?(file)
         end
 
         def object_keys

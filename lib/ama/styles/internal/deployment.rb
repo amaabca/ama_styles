@@ -93,10 +93,6 @@ module AMA
           upload_file(file: file, key: key, cache: (DateTime.current + 10.minutes).httpdate)
         end
 
-        def digest_file
-          File.basename(find_directory_manifest(assets_path.to_s))
-        end
-
         def upload_file(opts = {})
           key = opts.fetch(:key)
           file = opts.fetch(:file)

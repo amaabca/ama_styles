@@ -16,12 +16,8 @@ module AMA
         URI.join(
           Rails.configuration.cloudfront_url,
           ASSET_PREFIX,
-          current_revision
+          LATEST_STYLESHEET_FILE
         ).to_s
-      end
-
-      def current_revision
-        Cache.read(CURRENT_STYLESHEET_DIGEST_KEY) || FALLBACK_STYLESHEET_FILE
       end
     end
   end
