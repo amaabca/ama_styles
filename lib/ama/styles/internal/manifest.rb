@@ -2,7 +2,13 @@ module AMA
   module Styles
     module Internal
       class Manifest
-        include S3::Client
+        include Globals
+
+        attr_accessor :bucket
+
+        def initialize(opts = {})
+          self.bucket = opts.fetch(:bucket)
+        end
 
         def update!
           validate!
@@ -29,15 +35,11 @@ module AMA
         end
 
         def used_file?(asset)
-          fallback_file?(asset) || manifest_file?(asset) || in_manifest?(asset)
+          required_file?(asset) || in_manifest?(asset)
         end
 
-        def fallback_file?(asset)
-          !!asset.key.match(FALLBACK_STYLESHEET_FILE)
-        end
-
-        def manifest_file?(asset)
-          asset.key == 'manifest'
+        def required_file?(asset)
+          STATIC_FILES.include?(asset.key)
         end
 
         def in_manifest?(asset)
@@ -49,7 +51,10 @@ module AMA
         end
 
         def manifest
-          @manifest ||= JSON.parse(fetch_file('manifest')).with_indifferent_access
+          @manifest ||= begin
+            file = File.join(ASSET_PATH, MANIFEST_FILE)
+            JSON.parse(fetch_file(file)).with_indifferent_access
+          end
         end
 
         def file_in_bucket?(file)
@@ -62,12 +67,6 @@ module AMA
 
         def fetch_file(file, opts = {})
           bucket.object(file).get.body.read
-        rescue Aws::S3::Errors::ServiceError
-          missing_file!(file)
-        end
-
-        def missing_file!(file)
-          raise MissingFileError, I18n.t('assets.errors.missing_file', file: file)
         end
       end
     end

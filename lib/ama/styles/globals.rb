@@ -14,7 +14,13 @@ module AMA
       FALLBACK_STYLESHEET_FILE = "#{FALLBACK_STYLESHEET_NAME}.css"
       LATEST_STYLESHEET_NAME = 'latest'
       LATEST_STYLESHEET_FILE = "#{LATEST_STYLESHEET_NAME}.css"
+      MANIFEST_FILE = 'manifest.json'
       ASSET_PREFIX = 'assets/'
+      STATIC_FILES = [
+        File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE),
+        File.join(ASSET_PREFIX, LATEST_STYLESHEET_FILE),
+        File.join(ASSET_PREFIX, MANIFEST_FILE)
+      ].freeze
       FAR_FUTURE_CACHE_EXPIRATION = 30.years.freeze
 
       def root_path

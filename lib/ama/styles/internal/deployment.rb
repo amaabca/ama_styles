@@ -18,8 +18,8 @@ module AMA
           log('Generating fallback stylesheet...'.colorize(:yellow))
           upload_fallback_stylesheet
           upload_latest_stylesheet
-          AMA::Styles::Internal::Manifest.update!
           log('Verifying S3 integrity...'.colorize(:yellow))
+          collect_garbage!
           log('SUCCESS!'.colorize(:green) + ' 🎨')
         end
 
@@ -54,6 +54,10 @@ module AMA
 
         def clobber_assets
           Rake::Task['assets:clobber'].invoke
+        end
+
+        def collect_garbage!
+          AMA::Styles::Internal::Manifest.new(bucket: bucket).update!
         end
 
         def assets_path
