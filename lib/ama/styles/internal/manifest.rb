@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AMA
   module Styles
     module Internal
@@ -16,7 +18,7 @@ module AMA
         end
 
         def asset_files
-          assets.values.map { |f| File.join(ASSET_PREFIX, f) }
+          assets.values.map { |_f| File.join(ASSET_PREFIX, MANIFEST_FILE) }
         end
 
         def validate!
@@ -58,14 +60,14 @@ module AMA
         end
 
         def file_in_bucket?(file)
-          raise StandardError.new('File missing!') unless object_keys.include?(file)
+          raise StandardError, 'File missing!' unless object_keys.include?(file)
         end
 
         def object_keys
           @object_keys ||= bucket.objects.to_a.map(&:key)
         end
 
-        def fetch_file(file, opts = {})
+        def fetch_file(file, _opts = {})
           bucket.object(file).get.body.read
         end
       end

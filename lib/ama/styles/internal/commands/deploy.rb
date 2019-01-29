@@ -71,6 +71,7 @@ module AMA
 
           def verify_git!
             raise GitError, "invalid branch: #{branch}" unless branches
+
             fetch_branches
             checkout_branch
             verify_changed_files

@@ -74,9 +74,7 @@ module AMA
           assets_files.each do |file|
             path = Pathname.new(file)
             key = File.join('assets', path.relative_path_from(assets_path).to_s)
-            if key.start_with?("assets/.sprockets-manifest")
-              key = 'assets/manifest.json'
-            end
+            key = 'assets/manifest.json' if key.start_with?('assets/.sprockets-manifest')
             upload_file(file: file, key: key, cache: false)
           end
         end
@@ -93,15 +91,16 @@ module AMA
           upload_file(file: file, key: key, cache: (DateTime.current + 10.minutes).httpdate)
         end
 
+        # rubocop:disable Metrics/AbcSize
         def upload_file(opts = {})
           key = opts.fetch(:key)
-          file = opts.fetch(:file)
           log('Uploading: '.colorize(:light_blue) + key)
           object = bucket.object(key)
           content_type = MIME::Types.type_for(object.key).first.to_s
           args = args_for(type: content_type, cache: opts.fetch(:cache, cache_expiry))
-          object.upload_file(file, args)
+          object.upload_file(opts.fetch(:file), args)
         end
+        # rubocop:enable Metrics/AbcSize
 
         def args_for(opts = {})
           type = opts.fetch(:type)
@@ -115,17 +114,6 @@ module AMA
 
         def cache_expiry
           (DateTime.current + FAR_FUTURE_CACHE_EXPIRATION).httpdate
-        end
-
-        def request_headers
-          {
-            accept: 'application/json',
-            content_type: 'application/json'
-          }
-        end
-
-        def fail!(exception)
-          raise exception
         end
       end
     end

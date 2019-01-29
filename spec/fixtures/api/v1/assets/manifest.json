@@ -1,0 +1,22 @@
+{
+  "files": {
+    "shared-1ac6f096e883eb0c27e2cfdb3c09be9237c762b4737acd2879bebd5c5d0cefc7.css": {
+      "logical_path": "shared.css",
+      "mtime": "2017-02-08T16:38:25-07:00",
+      "size": 697248,
+      "digest": "1ac6f096e883eb0c27e2cfdb3c09be9237c762b4737acd2879bebd5c5d0cefc7",
+      "integrity": "sha256-GsbwluiD6wwn4s/bPAm+kjfHYrRzes0oeb69XF0M78c="
+    },
+    "font-awesome/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot": {
+      "logical_path": "font-awesome/fontawesome-webfont.eot",
+      "mtime": "2017-02-06T14:47:46-07:00",
+      "size": 165742,
+      "digest": "7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979",
+      "integrity": "sha256-e/yrbbmdXPvxcFygU23ceFhUMsxfpBu9etDwCQM7KXk="
+    }
+  },
+  "assets": {
+    "shared.css": "shared-1ac6f096e883eb0c27e2cfdb3c09be9237c762b4737acd2879bebd5c5d0cefc7.css",
+    "font-awesome/fontawesome-webfont.eot": "font-awesome/fontawesome-webfont-7bfcab6db99d5cfbf1705ca0536ddc78585432cc5fa41bbd7ad0f009033b2979.eot"
+  }
+}
