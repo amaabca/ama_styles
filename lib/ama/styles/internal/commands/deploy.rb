@@ -12,7 +12,7 @@ module AMA
           def initialize(opts = {})
             self.dry_run = opts.fetch(:dry_run, false)
             self.environment = opts.fetch(:environment)
-            self.branch = opts.fetch(:branch) { 'master' }
+            self.branch = opts.fetch(:branch) { 'v3' }
           end
 
           def execute
@@ -71,6 +71,7 @@ module AMA
 
           def verify_git!
             raise GitError, "invalid branch: #{branch}" unless branches
+
             fetch_branches
             checkout_branch
             verify_changed_files
