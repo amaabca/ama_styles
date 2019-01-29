@@ -19,6 +19,7 @@ Gem that will carry and deploy AMA assets.
 6. Deploy using
   1. `bin/assets ENVIRONMENT deploy` (Replace environment with: staging, production)
 
+
 ## Setup a new app
 
 * Add `gem 'ama_styles', git: 'git@github.com:amaabca/ama_styles.git'` to your Gemfile.
