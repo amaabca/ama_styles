@@ -40,8 +40,6 @@ module AMA
         end
 
         def configure_aws
-          config.aws_access_key_id = ENV['AWS_STYLES_USER_ACCESS_KEY_ID']
-          config.aws_secret_access_key = ENV['AWS_STYLES_USER_SECRET_ACCESS_KEY']
           config.cloudfront_url = ENV['ASSET_CLOUDFRONT_URL']
           config.assets_bucket_name = ENV['S3_ASSETS_BUCKET_NAME']
         end
@@ -49,9 +47,8 @@ module AMA
         def configure_aws_client
           Aws.config.update(
             region: 'us-west-2',
-            credentials: Aws::Credentials.new(
-              config.aws_access_key_id,
-              config.aws_secret_access_key
+            credentials: Aws::SharedCredentials.new(
+              profile: 'ama-aws'
             )
           )
         end
