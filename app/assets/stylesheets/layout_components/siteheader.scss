@@ -164,4 +164,19 @@
   a {
     line-height: 2;
   }
+
+  .button__link {
+    background: none;
+    padding: 0.7rem 1rem;
+    line-height: 2;
+    margin-bottom: 0;
+  }
+
+  .header__link {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
 }
