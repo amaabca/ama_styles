@@ -132,6 +132,10 @@
   overflow: auto !important;
 }
 
+.flex {
+  display: flex !important;
+}
+
 /* ==================== 4. Margins ==================== */
 .m1 {
   margin: $base-margin !important;
@@ -586,8 +590,4 @@
     @extend .bold-large-text;
     color: $brand-green;
   }
-}
-
-.flex {
-  display: flex !important;
 }
