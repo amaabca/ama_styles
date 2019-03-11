@@ -153,6 +153,19 @@
     bottom: 0.5rem;
     z-index: 2;
   }
+
+  &__link {
+    line-height: inherit;
+    color: $cerulean;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      color: lighten($cerulean, 15%);
+      text-decoration: none;
+    }
+  }
 }
 
 button.disabled,
