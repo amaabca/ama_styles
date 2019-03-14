@@ -49,6 +49,10 @@
     margin-bottom: $base-margin/2;
     cursor: pointer;
     line-height: inherit;
+
+    &:hover {
+      color: lighten($cerulean, 15%);
+    }
   }
 
   &__child-list {
