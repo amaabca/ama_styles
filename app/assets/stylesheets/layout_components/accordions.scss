@@ -38,10 +38,6 @@
   .accordion-title {
     background: $white;
     color: $slate;
-
-    &:hover {
-      background: $stone;
-    }
   }
 
   .top-level,
@@ -52,22 +48,42 @@
 }
 
 .accordion {
+  border-top: 1px solid $smoke;
+  border-bottom: 1px solid $smoke;
+  background: none;
+
   &__header {
-    background: $brand-blue-light;
     overflow: hidden;
     display: block;
+    padding: $base-padding/1.5;
+    padding-left: $base-padding;
+    font-size: $global-font-size;
+    font-weight: 600;
+
+    &--arrow {
+      font-size: $global-font-size*1.5;
+      display: block;
+      margin: 0 auto;
+
+        @include breakpoint(medium) {
+        float: left;
+        margin-right: $base-margin;
+      }
+    }
+
+    &:hover {
+      background: $ash;
+      color: darken($brand-blue-light, 1%);
+    }
   }
 
   &__heading {
-    @extend .heading;
-    @include small-10;
-  }
+    text-align: center;
 
-  &__toggle {
-    @include small-2;
-    text-align: right;
-    color: $white;
-    padding-top: $base-padding*1.25;
+    @include breakpoint(medium) {
+      text-align: left;
+      display: inline-block;
+    }
   }
 }
 
