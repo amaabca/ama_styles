@@ -38,6 +38,10 @@
   .accordion-title {
     background: $white;
     color: $slate;
+
+    &:hover {
+      background: $stone;
+    }
   }
 
   .top-level,
@@ -57,7 +61,6 @@
     display: block;
     padding: $base-padding/1.5;
     padding-left: $base-padding;
-    font-size: $global-font-size;
     font-weight: 600;
 
     &--arrow {
@@ -79,6 +82,7 @@
 
   &__heading {
     text-align: center;
+    font-size: $global-font-size;
 
     @include breakpoint(medium) {
       text-align: left;
@@ -88,7 +92,6 @@
 }
 
 .accordion-multi-state {
-  @extend .accordion;
   margin-bottom: $base-margin;
   background: transparent;
   -ms-overflow-style: none;
@@ -100,7 +103,9 @@
   }
 
   &__header {
-    @extend .accordion__header;
+    background: $brand-blue-light;
+    overflow: hidden;
+    display: block;
     background: transparent;
     position: relative;
   }
