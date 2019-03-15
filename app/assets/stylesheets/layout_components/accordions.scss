@@ -61,7 +61,6 @@
     display: block;
     padding: $base-padding/1.5;
     padding-left: $base-padding;
-    font-weight: 600;
 
     &--arrow {
       font-size: $global-font-size*1.5;
@@ -89,6 +88,10 @@
       display: inline-block;
     }
   }
+}
+
+.accordion .is-active > a > .accordion__header--arrow {
+  transform: rotate(180deg);
 }
 
 .accordion-multi-state {
