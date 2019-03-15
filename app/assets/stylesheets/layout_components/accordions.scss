@@ -100,6 +100,7 @@
     /* this is a foundation class needed for accordions to work. We only want to modify the margin for multi-state
     which is why it is nested. */
     margin-bottom: $base-margin;
+    list-style: none;
   }
 
   &__header {
