@@ -88,10 +88,10 @@
       display: inline-block;
     }
   }
-}
 
-.accordion .is-active > a > .accordion__header--arrow {
-  transform: rotate(180deg);
+  .is-active .accordion__header--arrow {
+    transform: rotate(180deg);
+  }
 }
 
 .accordion-multi-state {
