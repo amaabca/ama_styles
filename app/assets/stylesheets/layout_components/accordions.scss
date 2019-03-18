@@ -52,27 +52,49 @@
 }
 
 .accordion {
+  border-top: 1px solid $smoke;
+  border-bottom: 1px solid $smoke;
+  background: none;
+
   &__header {
-    background: $brand-blue-light;
     overflow: hidden;
     display: block;
+    padding: $base-padding/1.5;
+    padding-left: $base-padding;
+
+    &--arrow {
+      font-size: $global-font-size*1.5;
+      display: block;
+      margin: 0 auto;
+
+        @include breakpoint(medium) {
+        float: left;
+        margin-right: $base-margin;
+      }
+    }
+
+    &:hover {
+      background: $ash;
+      color: darken($brand-blue-light, 1%);
+    }
   }
 
   &__heading {
-    @extend .heading;
-    @include small-10;
+    text-align: center;
+    font-size: $global-font-size;
+
+    @include breakpoint(medium) {
+      text-align: left;
+      display: inline-block;
+    }
   }
 
-  &__toggle {
-    @include small-2;
-    text-align: right;
-    color: $white;
-    padding-top: $base-padding*1.25;
+  .is-active .accordion__header--arrow {
+    transform: rotate(180deg);
   }
 }
 
 .accordion-multi-state {
-  @extend .accordion;
   margin-bottom: $base-margin;
   background: transparent;
   -ms-overflow-style: none;
@@ -81,10 +103,13 @@
     /* this is a foundation class needed for accordions to work. We only want to modify the margin for multi-state
     which is why it is nested. */
     margin-bottom: $base-margin;
+    list-style: none;
   }
 
   &__header {
-    @extend .accordion__header;
+    background: $brand-blue-light;
+    overflow: hidden;
+    display: block;
     background: transparent;
     position: relative;
   }
