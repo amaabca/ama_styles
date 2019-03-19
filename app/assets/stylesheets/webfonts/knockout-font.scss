@@ -1,0 +1,13 @@
+@font-face{
+  font-family: "Knockout-48Featherweight";
+  src: asset-url("/webfonts/fonts/Knockout-48.otf") format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.knockout-font{
+  font-family: "Knockout-48Featherweight", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
