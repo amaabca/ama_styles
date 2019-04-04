@@ -170,7 +170,7 @@ input[type="checkbox"] + label,
     display: block;
     position: absolute;
     left: 10px;
-    top: 8px;
+    top: calc(50% - 12px);
     width: 24px;
     min-width: 24px;
     height: 24px;
@@ -215,7 +215,7 @@ input[type="checkbox"] + label,
   width: 85%;
   margin-top: 9px;
   margin-bottom: 9px;
-  margin-left: 32px;
+  margin-left: 38px;
 }
 
 input[type="radio"] + label {
@@ -239,7 +239,7 @@ input[type="radio"]:checked + label {
     content: "";
     position: absolute;
     display: block;
-    top: 16px;
+    top: calc(50% - 4px);
     left: 18px;
     background-color: $brand-blue-light;
     width: 8px;
