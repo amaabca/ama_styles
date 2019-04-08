@@ -1,5 +1,5 @@
 # AmaStyles
-Gem that will carry and deploy AMA assets.
+Gem that will carry and deploy AMA assets. Testing!
 
 ## Getting Up and Running
 
