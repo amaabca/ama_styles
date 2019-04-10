@@ -66,16 +66,19 @@
       font-size: $global-font-size*1.5;
       display: block;
       margin: 0 auto;
+      text-align: center;
 
-        @include breakpoint(medium) {
+      @include breakpoint(medium) {
         float: left;
         margin-right: $base-margin;
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: $ash;
       color: darken($brand-blue-light, 1%);
+      text-decoration: none;
     }
   }
 
@@ -107,7 +110,6 @@
   }
 
   &__header {
-    background: $brand-blue-light;
     overflow: hidden;
     display: block;
     background: transparent;
