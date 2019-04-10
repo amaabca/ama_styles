@@ -66,6 +66,7 @@
       font-size: $global-font-size*1.5;
       display: block;
       margin: 0 auto;
+      text-align: center;
 
         @include breakpoint(medium) {
         float: left;
@@ -73,9 +74,11 @@
       }
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background: $ash;
       color: darken($brand-blue-light, 1%);
+      text-decoration: none;
     }
   }
 
