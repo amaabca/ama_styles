@@ -24,7 +24,6 @@
     @extend .button;
     $button-background: $brand-green;
     background: $button-background;
-    float: right;
 
     &:hover,
     &:active,
