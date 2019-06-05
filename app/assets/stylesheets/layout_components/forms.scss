@@ -218,6 +218,13 @@ input[type="checkbox"] + label,
   margin-left: 38px;
 }
 
+.checkbox-terms {
+  border: $base-border;
+  border-top: 0;
+  padding: $base-padding;
+  padding-bottom: 0;
+}
+
 input[type="radio"] + label {
   &::before {
     border-radius: 100%;
