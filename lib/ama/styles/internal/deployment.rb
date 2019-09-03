@@ -48,6 +48,7 @@ module AMA
         end
 
         def precompile_assets
+          Rake::Task['assets:copy_raw_assets'].invoke
           Rake::Task['assets:precompile'].invoke
         end
 
