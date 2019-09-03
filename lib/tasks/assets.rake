@@ -4,7 +4,7 @@ namespace :assets do
   desc 'Copy raw assets'
   task :copy_raw_assets do
     assets_path = File.join(Rails.root, 'app', 'assets', 'raw')
-    assets = Dir.glob("#{assets_path}/**/**", File::FNM_DOTMATCH).select.map do |file|
+    assets = Dir.glob("#{assets_path}/**/**", File::FNM_DOTMATCH).map do |file|
       next unless File.file?(file)
       expanded_path = Pathname.new(File.expand_path(file))
       asset_path = Pathname.new(assets_path)
