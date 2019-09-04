@@ -60,6 +60,7 @@ module AMA
           config.eager_load = false
           config.assets.css_compressor = :sass
           config.assets.precompile += %w[shared.css]
+          config.font_awesome_pro_source_path = ENV['FONT_AWESOME_PRO_SOURCE_PATH']
         end
 
         def configure_api

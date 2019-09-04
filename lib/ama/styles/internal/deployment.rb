@@ -49,6 +49,12 @@ module AMA
 
         def precompile_assets
           Rake::Task['assets:copy_raw_assets'].invoke
+          if font_awesome_pro?
+            Rake::Task['assets:fa5_pro'].invoke(
+              Rails.configuration.font_awesome_pro_source_path,
+              GEM_ROOT_PATH
+            )
+          end
           Rake::Task['assets:precompile'].invoke
         end
 
@@ -64,6 +70,10 @@ module AMA
           Dir.glob("#{assets_path}/**/**", File::FNM_DOTMATCH).select do |file|
             File.file?(file)
           end
+        end
+
+        def font_awesome_pro?
+          Rails.configuration.font_awesome_pro_source_path.present?
         end
 
         def upload_files

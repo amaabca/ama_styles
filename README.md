@@ -32,6 +32,7 @@ Gem that will carry and deploy AMA assets.
 
 ```ruby
   Rails.configuration.assets.precompile += %w(shared.css)
+  Rails.configuration.font_awesome_pro_source_path = '~/source/to/font-awesome'
   Rails.configuration.stylesheet_resolver.remote = Rails.env.production?
 ```
 * Add the `ASSET_CLOUDFRONT_URL` variable to the relevant `.env` file for the application.

@@ -4,7 +4,6 @@
 # in a host application.
 
 # Development Dependencies
-require 'rake'
 require 'aws-sdk'
 require 'rest-client'
 require 'rest_client/jogger'

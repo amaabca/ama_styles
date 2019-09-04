@@ -19,3 +19,4 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - '*.gemspec'
+    - 'lib/ama/tasks/assets.rake'

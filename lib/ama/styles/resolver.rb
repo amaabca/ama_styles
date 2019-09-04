@@ -10,6 +10,10 @@ module AMA
         remote ? custom_asset_url : PRIMARY_STYLESHEET_NAME
       end
 
+      def local?
+        !remote
+      end
+
       private
 
       def custom_asset_url
