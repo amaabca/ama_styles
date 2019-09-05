@@ -2,4 +2,6 @@
  * NOTE: font-awesome-sass does not define the pro-only icons. If you want
  * use one, you must define it below.
  */
-.#{$fa-css-prefix}-tire:before { content: fa-content(\f631); }
+.#{$fa-css-prefix}-tire::before {
+  content: fa-content(\f631);
+}
