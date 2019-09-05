@@ -44,7 +44,7 @@
       @extend .button-grouping__text-button;
       $button-background: $slate;
       background: $button-background;
-      
+
       &:hover,
       &:active,
       &:focus {
@@ -60,6 +60,7 @@
   &__button {
     @extend .button;
     min-height: 170px;
+    height: 100%;
     position: relative;
     width: 100%;
     padding: 2.5em 1.75em;
