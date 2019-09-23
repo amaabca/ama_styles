@@ -1,3 +1,6 @@
 @media screen and #{breakpoint(large)} {
-  
+  *:focus {
+    //yes, all the elements
+    outline: none;
+  }
 }
