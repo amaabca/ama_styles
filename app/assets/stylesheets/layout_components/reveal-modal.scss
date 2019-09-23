@@ -14,8 +14,6 @@ dialog .close-reveal-modal {
   max-width: 960px;
   position: relative;
   margin: 0 auto;
-  border: none;
-  outline: none;
 
   a {
     text-decoration: none;
@@ -77,4 +75,8 @@ dialog .close-reveal-modal {
   .reveal {
     padding: $global-padding $global-padding 51px $global-padding; // 51 pixels to offset the height of the top bar
   }
+}
+
+*:focus {
+  outline: none;
 }
