@@ -48,17 +48,6 @@
   }
 }
 
-.cx-common-container {
-  .cx-titlebar {
-    padding: 9px 20px !important;
-
-    .cx-title{
-      font-size: 20px;
-      font-weight: $header-font-weight;
-    }
-  }
-}
-
 .cx-bubble-arrow {
   svg {
     fill: $sky;
@@ -98,6 +87,7 @@
 
   .cx-titlebar {
     background: $brand-blue-light;
+    padding: 9px 20px !important;
 
     .cx-title {
       color: $white;
