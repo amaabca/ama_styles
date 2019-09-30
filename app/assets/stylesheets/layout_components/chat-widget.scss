@@ -51,6 +51,11 @@
 .cx-common-container {
   .cx-titlebar {
     padding: 9px 20px !important;
+
+    .cx-title{
+      font-size: 20px;
+      font-weight: $header-font-weight;
+    }
   }
 }
 
@@ -96,6 +101,8 @@
 
     .cx-title {
       color: $white;
+      font-size: 20px;
+      font-weight: $header-font-weight;
     }
   }
 
