@@ -256,6 +256,9 @@ input[type="radio"]:checked + label {
     &::before {
       border-color: $cerulean;
     }
+    &::after {
+      background-color: $cerulean;
+    }
   }
 
   &::after {
@@ -272,12 +275,6 @@ input[type="radio"]:checked + label {
     transform: scale(2, 2);
     border-radius: 100%;
     transition: background-color 0.5s linear;
-  }
-
-  &:hover {
-    &::after {
-      background-color: $cerulean;
-    }
   }
 
   & > hr {
