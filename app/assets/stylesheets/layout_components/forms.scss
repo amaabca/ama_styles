@@ -164,6 +164,15 @@ input[type="checkbox"] + label,
   position: relative;
   cursor: pointer;
   padding: 0 $base-padding/2 0 $base-padding/2;
+  transition: border-color 0.25s linear;
+
+  &:hover {
+    &::before {
+      border-color: $brand-blue-light;
+      background-color: $white;
+      transition: border-color 0.25s linear;
+    }
+  }
 
   &::before {
     content: " ";
@@ -176,6 +185,7 @@ input[type="checkbox"] + label,
     height: 24px;
     background-color: $white;
     border: $base-border;
+    transition: border-color 0.25s linear;
   }
 
   &.checkbox--no-label {
@@ -242,6 +252,16 @@ input[type="radio"]:checked + label {
     border: 2px solid $secondary-color;
   }
 
+  &:hover {
+    &::before {
+      border-color: $cerulean;
+    }
+
+    &::after {
+      background-color: $cerulean;
+    }
+  }
+
   &::after {
     content: "";
     position: absolute;
@@ -255,6 +275,7 @@ input[type="radio"]:checked + label {
     -webkit-transform: scale(2, 2);
     transform: scale(2, 2);
     border-radius: 100%;
+    transition: background-color 0.5s linear;
   }
 
   & > hr {
