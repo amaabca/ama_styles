@@ -226,6 +226,11 @@ input[type="checkbox"] + label,
   margin-top: 9px;
   margin-bottom: 9px;
   margin-left: 38px;
+
+  &--full {
+    @extend .checkbox-label;
+    width: auto;
+  }
 }
 
 .checkbox-terms {
