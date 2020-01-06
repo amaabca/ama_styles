@@ -1,0 +1,11 @@
+{
+  "name": "design-token-converter",
+  "scripts": {
+    "transform": "node --experimental-modules --no-warnings transform.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "theo": "^8.1.4"
+  },
+  "license": "MIT"
+}
