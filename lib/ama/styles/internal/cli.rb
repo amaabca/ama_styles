@@ -5,7 +5,7 @@ module AMA
     module Internal
       class CLI
         ENVIRONMENTS = %w[development staging production].freeze
-        COMMANDS = %w[deploy].freeze
+        COMMANDS = %w[deploy build].freeze
         InvalidArgument = Class.new(StandardError)
 
         attr_accessor :argv, :dry_run, :branch
@@ -23,12 +23,15 @@ module AMA
         private
 
         def parse_command
-          if COMMANDS.include?(command)
+          case command
+          when 'deploy'
             Commands::Deploy.new(
               branch: branch,
               environment: environment,
               dry_run: dry_run
             )
+          when 'build'
+            Commands::Build.new
           else
             invalid_argument!(command_message)
           end

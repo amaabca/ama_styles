@@ -10,8 +10,10 @@ require_relative '../lib/ama_styles'
 load File.join('lib/ama/tasks/assets.rake')
 
 question = 'Please enter branch name: (default = master)'
-branch = HighLine.new.ask(question) do |q|
-  q.default = 'master'
+branch = ENV.fetch('BRANCH') do
+  HighLine.new.ask(question) do |q|
+    q.default = 'master'
+  end
 end
 
 begin

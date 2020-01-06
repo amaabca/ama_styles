@@ -1,7 +1,7 @@
 {
   "name": "design-token-converter",
   "scripts": {
-    "transform": "node --experimental-modules --no-warnings transform.js"
+    "scss": "node --experimental-modules --no-warnings scss.js"
   },
   "type": "module",
   "dependencies": {
