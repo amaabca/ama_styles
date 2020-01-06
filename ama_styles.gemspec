@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir['spec/**/*']
 
   s.add_dependency 'rails', '>= 4.2'
-  s.add_dependency 'foundation-rails', '>= 6.4.3.0'
+  s.add_dependency 'foundation-rails', '~> 6.5.3'
   s.add_dependency 'sass-rails'
   s.add_dependency 'font-awesome-sass'
   s.add_dependency 'redis-rails'
