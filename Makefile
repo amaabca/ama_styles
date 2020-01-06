@@ -1,9 +1,9 @@
-.PHONY: all assets
+.PHONY: all scss assets
 
-all: app/assets/stylesheets/_design_tokens.scss assets
+all: scss assets
 
 assets:
 	BRANCH=master bin/assets staging build
 
-app/assets/stylesheets/_design_tokens.scss:
+scss:
 	$(MAKE) -C design_tokens scss
