@@ -81,7 +81,8 @@
     }
   }
 
-  &--text-red {
+  &--red-text {
+    @extend .button;
     color: $brand-red;
 
     &:hover,
