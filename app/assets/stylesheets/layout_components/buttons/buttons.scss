@@ -78,7 +78,6 @@
     &:focus {
       background: lighten($sky, 4%);
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
-      color: $brand-red;
     }
   }
 
@@ -177,6 +176,19 @@
     &:focus {
       color: lighten($cerulean, 15%);
       text-decoration: none;
+    }
+  }
+
+  &__text {
+
+    &--red{
+      color: $brand-red;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $brand-red;
+      }
     }
   }
 }
