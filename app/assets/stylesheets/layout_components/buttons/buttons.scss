@@ -81,6 +81,16 @@
     }
   }
 
+  &--text-red {
+    color: $brand-red;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: lighten($brand-red, 10%);
+    }
+  }
+
   &--left {
     @extend .button;
     float: left;
@@ -176,18 +186,6 @@
     &:focus {
       color: lighten($cerulean, 15%);
       text-decoration: none;
-    }
-  }
-
-  &__text {
-    &--red {
-      color: $brand-red;
-
-      &:hover,
-      &:active,
-      &:focus {
-        color: lighten($brand-red, 10%);
-      }
     }
   }
 }
