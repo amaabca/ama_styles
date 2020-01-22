@@ -62,7 +62,6 @@
     min-height: 170px;
     position: relative;
     width: 100%;
-    padding: 2.5em 1.75em;
 
     &--full {
       @extend .button-grouping__button;
@@ -152,6 +151,10 @@
 
     &--blue {
       color: $brand-blue-light;
+    }
+
+    &--slate {
+      color: $slate;
     }
   }
 }
