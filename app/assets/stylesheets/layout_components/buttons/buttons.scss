@@ -68,6 +68,19 @@
     }
   }
 
+  &--white {
+    @extend .button;
+    $button-background: $white;
+    background: $button-background;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: lighten($sky, 4%);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+    }
+  }
+
   &--left {
     @extend .button;
     float: left;
