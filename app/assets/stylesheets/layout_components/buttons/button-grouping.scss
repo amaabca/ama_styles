@@ -98,6 +98,11 @@
       $button-background: $brand-red;
       background: $button-background;
 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+
       &:hover,
       &:active,
       &:focus {
