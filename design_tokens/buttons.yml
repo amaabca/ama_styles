@@ -2,6 +2,14 @@
 props:
   button_background:
     value: "{!primary_color}"
+  button--FontWeight:
+    value: "bold"
+  button--secondary--BackgroundColor:
+    value: "{!secondary_color}"
+  button--danger--BackgroundColor:
+    value: "{!danger_color}"
+  button--highlighted--BackgroundColor:
+    value: "{!highlight_color}"
 imports:
   - ./aliases.yml
 global:

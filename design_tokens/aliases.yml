@@ -1,4 +1,10 @@
 # aliases.yml
 aliases:
   primary_color:
-    value: "#0070d2"
+    value: "#0070d2" #brand blue light
+  secondary_color:
+    value: "00205b" #brand blue dark
+  danger_color:
+    value: "da291c" #brand red
+  highlight_color:
+      value: "78be20" #rewards green
