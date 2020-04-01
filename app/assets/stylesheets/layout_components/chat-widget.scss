@@ -110,6 +110,7 @@
 
   label {
     color: $slate !important;
+    font-size: 1em;
   }
 
   a {
@@ -177,7 +178,8 @@
   input[type="tel"],
   textarea {
     background-color: $white;
-    color: $stormcloud;
+    color: $black;
+    font-size: 1em;
     border-color: $smoke;
     border-width: 2px;
     border-style: solid;
@@ -189,6 +191,7 @@
 
   .cx-btn {
     border-radius: 3px;
+    font-size: 1em;
     font-weight: normal;
   }
 
