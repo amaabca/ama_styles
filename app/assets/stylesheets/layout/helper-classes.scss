@@ -441,7 +441,7 @@
 }
 
 .uppercase-title {
-  font-size: $base-font-size*0.875;
+  font-size: $small-font-size;
   font-weight: normal;
   color: $slate;
   text-transform: uppercase;
@@ -454,7 +454,7 @@
 
 .grey-sub-title {
   font-weight: bold;
-  font-size: $base-font-size*0.875;
+  font-size: $small-font-size;
   color: $charcoal;
   padding-bottom: $base-padding;
 }
@@ -481,7 +481,7 @@
 }
 
 .hint {
-  font-size: $base-font-size*0.85;
+  font-size: $small-font-size;
   line-height: $base-font-size;
   color: darken($smoke, 15%);
   font-style: italic;
@@ -507,7 +507,7 @@
 }
 
 .small-text {
-  font-size: $base-font-size*0.85;
+  font-size: $small-font-size;
 }
 
 .word-wrap {

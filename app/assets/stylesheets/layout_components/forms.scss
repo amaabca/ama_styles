@@ -63,7 +63,7 @@ form {
     padding: 0.5em 0.5em 0.5em 3em;
 
     &--label {
-      font-size: 1em;
+      font-size: $base-font-size;
       font-weight: bold;
     }
   }
@@ -589,7 +589,7 @@ small.error {
 .email_hint {
   color: $brand-red;
   display: none;
-  font-size: 0.875em;
+  font-size: $small-font-size;
   margin: 0 0 $base-padding/2;
 }
 
