@@ -28,11 +28,11 @@
   background: none;
 
   a {
-    font-size: $global-font-size;
+    font-size: $base-font-size;
   }
 
   .accordion-content a {
-    font-size: $global-font-size;
+    font-size: $base-font-size;
   }
 
   .accordion-title {
@@ -63,7 +63,7 @@
     padding-left: $base-padding;
 
     &--arrow {
-      font-size: $global-font-size*1.5;
+      font-size: $base-font-size*1.5;
       display: block;
       margin: 0 auto;
       text-align: center;
@@ -84,7 +84,7 @@
 
   &__heading {
     text-align: center;
-    font-size: $global-font-size;
+    font-size: $base-font-size;
 
     @include breakpoint(medium) {
       text-align: left;

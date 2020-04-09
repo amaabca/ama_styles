@@ -46,7 +46,7 @@
 
   &--de-emphasized {
     @extend .button;
-    $button-background: $slate;
+    $button-background: $de-emphasized-button-color;
     background: $button-background;
 
     &:hover,

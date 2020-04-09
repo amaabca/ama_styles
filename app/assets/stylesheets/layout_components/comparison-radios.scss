@@ -314,7 +314,7 @@
 
     @include breakpoint(small only) {
       padding: 0 $base-padding/3;
-      font-size: $base-font-size*0.875;
+      font-size: $small-font-size;
     }
   }
 
