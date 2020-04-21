@@ -24,6 +24,10 @@
     padding: $base-padding;
   }
 
+  &__title {
+    width: 95%;
+  }
+
   &__title,
   &__text {
     color: $white;
