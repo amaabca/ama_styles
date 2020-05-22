@@ -1,0 +1,44 @@
+name: CI
+on:
+  push:
+    branches:
+      - ado-83
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis
+        ports:
+          - '6379:6379'
+        options: --entrypoint redis-server
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js 10.13.0
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.13.0'
+    - name: Set up Ruby 2.3
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '2.3.1'
+        bundler: '1.17.3'
+    - name: Install Bundler
+      run: gem install bundler -v '~> 1.17.3'
+    - name: Install sqlite3
+      run: sudo apt-get install libsqlite3-dev
+    - name: Install Ruby Dependencies
+      run: |
+        bundle _1.17.3_ --version
+        bundle _1.17.3_ config set path 'vendor/bundle'
+        bundle _1.17.3_ install --jobs 4 --retry 3
+    - name: Run Tests
+      run: bundle _1.17.3_ exec rake
+    - name: Run style check
+      run: |
+        npm i npm@latest -g
+        npm install -g stylelint
+        bundle _1.17.3_ exec stylelint "app/assets/stylesheets/**/*.scss"
