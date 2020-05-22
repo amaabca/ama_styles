@@ -1,0 +1,34 @@
+name: CI
+on:
+  push:
+    branches:
+      - set-githubactions-2
+  pull_request:
+    branches:
+      - set-githubactions-2
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      redis:
+        image: redis
+        ports:
+          - '6379:6379'
+        options: --entrypoint redis-server
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby 2.3
+      uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.3'
+    - name: Install Bundler
+      run:  gem install bundler -v '~> 1.17.3'
+    - name: Install sqlite3
+      run: sudo apt-get install libsqlite3-dev
+    - name: Install Ruby Dependencies
+      run: |
+        bundle _1.17.3_ --version
+        bundle _1.17.3_ config set path 'vendor/bundle'
+        bundle _1.17.3_ install --jobs 4 --retry 3
+    - name: Run Tests
+      run: bundle _1.17.3_ exec rake
