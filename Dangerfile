@@ -8,12 +8,12 @@ unless github.pr_author.include?('dependabot')
     https://app.opsgenie.com
   ]
   unless urls.any? { |url| github.pr_body.include?(url) }
-    fail 'Please provide a VSTS, ADO link or OPSGENIE link in the Pull Request description 💩'
+    raise 'Please provide a VSTS, ADO link or OPSGENIE link in the Pull Request description 💩'
   end
 
   # Do not let 'binding.pry' get into master by accident
-  fail 'A binding.pry was committed 💩' if system 'grep -r binding.pry . --exclude=Dangerfile --exclude-dir=vendor'
+  raise 'A binding.pry was committed 💩' if system 'grep -r binding.pry . --exclude=Dangerfile'
 
   # Do not let 'debugger' get into master by accident
-  fail 'A debugger was committed 💩' if system 'grep -r debugger . --exclude=Dangerfile --exclude-dir=vendor'
+  raise 'A debugger was committed 💩' if system 'grep -r debugger . --exclude=Dangerfile --exclude=Gemfile'
 end
