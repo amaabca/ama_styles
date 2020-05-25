@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require File.expand_path('../config/application', __FILE__)
+require File.expand_path('config/application', __dir__)
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 load File.join('lib/tasks/assets.rake')

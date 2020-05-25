@@ -103,8 +103,8 @@ module AMA
             password: Rails.configuration.api_deployment_password,
             payload: { digest_file: File.join('assets', digest_file) }.to_json
           )
-        rescue RestClient::RequestFailed => ex
-          fail!(ex)
+        rescue RestClient::RequestFailed => e
+          fail!(e)
         end
 
         def args_for(opts = {})

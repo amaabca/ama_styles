@@ -6,6 +6,7 @@ namespace :assets do
     assets_path = File.join(Rails.root, 'app', 'assets', 'raw')
     assets = Dir.glob("#{assets_path}/**/**", File::FNM_DOTMATCH).map do |file|
       next unless File.file?(file)
+
       expanded_path = Pathname.new(File.expand_path(file))
       asset_path = Pathname.new(assets_path)
       expanded_path.relative_path_from(asset_path).to_s
