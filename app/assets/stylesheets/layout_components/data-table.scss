@@ -32,8 +32,9 @@
   position: relative;
 
   .dataTables_paginate {
-    float: right;
-    margin: 0;
+    float: none;
+    padding-top: 20px;
+    text-align: center;
   }
 }
 
