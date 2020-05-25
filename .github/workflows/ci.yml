@@ -2,7 +2,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - update-ruby-version
   pull_request:
     branches:
       - master
