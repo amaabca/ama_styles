@@ -28,6 +28,12 @@ jobs:
         bundler: '1.17.3'
     - name: Install Bundler
       run: gem install bundler -v '~> 1.17.3'
+    - name: Install Danger
+      run: gem install danger
+    - name: Execute Danger
+      env:
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+      run: danger
     - name: Install sqlite3
       run: sudo apt-get install libsqlite3-dev
     - name: Install Ruby Dependencies
