@@ -54,14 +54,12 @@ describe AMA::Styles::Cache do
     end
 
     it 'rolls back on a failure' do
-      begin
-        described_class.transaction do |store|
-          store.write(redis_key, true)
-          raise StandardError, 'explicit raise!'
-        end
-      rescue StandardError
-        expect(described_class.read(redis_key)).to be nil
+      described_class.transaction do |store|
+        store.write(redis_key, true)
+        raise StandardError, 'explicit raise!'
       end
+    rescue StandardError
+      expect(described_class.read(redis_key)).to be nil
     end
 
     it 'writes multiple values atomically' do
