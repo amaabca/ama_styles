@@ -14,9 +14,8 @@ Gem::Specification.new do |s|
     'Ruben Estevez',
     'Jordan Babe',
     'Jesse Doyle',
-    'Ryan Jones',
+    'Ryan Reddekopp',
     'Darko Dosenovic',
-    'Jonathan Weyermann',
     'Zoie Carnegie',
     'Kayt Campbell',
     'Sinead Errity'
@@ -26,9 +25,8 @@ Gem::Specification.new do |s|
     'ruben.a.estevez@gmail.com',
     'jorbabe@gmail.com',
     'jesse.doyle@ama.ab.ca',
-    'ryan.michael.jones@gmail.com',
+    'ryan.reddekopp@ama.ab.ca',
     'darko.dosenovic@ama.ab.ca',
-    'jonathan.weyermann@ama.ab.ca',
     'zoie.carnegie@ama.ab.ca',
     'kayt.campbell@ama.ab.ca',
     'sinead.errity@ama.ab.ca'
@@ -64,4 +62,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rest-client-jogger'
   s.add_development_dependency 'highline'
   s.add_development_dependency 'git'
+  s.add_development_dependency 'danger'
 end
