@@ -34,6 +34,13 @@ Gem that will carry and deploy AMA assets.
   Rails.configuration.assets.precompile += %w(shared.css)
   Rails.configuration.stylesheet_resolver.remote = Rails.env.production?
 ```
+
+* Optionally set a version
+
+```ruby
+Rails.configuration.stylesheet_resolver.version = 'v1'
+```
+
 * Add the `ASSET_CLOUDFRONT_URL` variable to the relevant `.env` file for the application.
 * Set the `cloudfront_url` configuration option in an initializer/application.rb:
 

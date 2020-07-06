@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 describe AMA::Styles::Internal::Deployment do
-  subject { described_class.new(log_output: false, bucket: bucket) }
+  subject { described_class.new(log_output: false, bucket: bucket, version: version) }
+
+  let(:version) {}
 
   describe '#run' do
     let(:client) do
@@ -58,6 +60,22 @@ describe AMA::Styles::Internal::Deployment do
         ).and_call_original
         expect(bucket).to receive(:object).at_least(1).times.and_call_original
         subject.silence_stderr { subject.run }
+      end
+
+      context 'with a version set' do
+        let(:version) { 'v1' }
+        let(:prefix) { "#{version}/#{AMA::Styles::Globals::ASSET_PREFIX}" }
+
+        it 'uploads a fallback stylesheet to S3 (if Redis is unavailable)' do
+          # bucket.object is called many times (once for each asset file)
+          # therefore, we have to stub with the following strategy to
+          # specifically look for the fallback key.
+          expect(bucket).to receive(:object).with(
+            File.join(prefix, AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE)
+          ).and_call_original
+          expect(bucket).to receive(:object).at_least(1).times.and_call_original
+          subject.silence_stderr { subject.run }
+        end
       end
     end
 

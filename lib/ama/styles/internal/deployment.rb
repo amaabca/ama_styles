@@ -10,7 +10,7 @@ module AMA
 
         STYLESHEET_PATTERN = "#{PRIMARY_STYLESHEET_NAME}*.css"
 
-        attr_accessor :log_output, :bucket
+        attr_accessor :log_output, :bucket, :version
 
         def run
           sprockets_tasks
@@ -34,6 +34,12 @@ module AMA
         end
 
         private
+
+        def asset_prefix
+          return ASSET_PREFIX unless version
+
+          "#{version}/#{ASSET_PREFIX}"
+        end
 
         def sprockets_tasks
           silence_stderr do
@@ -69,13 +75,13 @@ module AMA
         def upload_files
           assets_files.each do |file|
             path = Pathname.new(file)
-            key = File.join('assets', path.relative_path_from(assets_path).to_s)
+            key = File.join(asset_prefix, path.relative_path_from(assets_path).to_s)
             upload_file(file: file, key: key)
           end
         end
 
         def upload_fallback_stylesheet
-          key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
+          key = File.join(asset_prefix, FALLBACK_STYLESHEET_FILE)
           file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
           upload_file(file: file, key: key, cache: false)
         end
