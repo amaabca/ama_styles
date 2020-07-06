@@ -1,0 +1,81 @@
+.callout-box {
+  @include callout($ash);
+
+  &__close-btn {
+    float: right;
+  }
+
+  &--green {
+    @include callout($brand-green);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--red {
+    @include callout($brand-red);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--ins-blue {
+    @include callout($brand-blue-insurance);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--brand-blue-light {
+    @include callout($brand-blue-light);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--orange {
+    @include callout($orange);
+    margin-bottom: $base-margin;
+    color: $white;
+  }
+
+  &--membership-summary {
+    @include breakpoint(small only) {
+      min-height: 320px;
+    }
+  }
+
+  &__container {
+    @include grid-row;
+    @include clearfix;
+  }
+
+  &__sub-head {
+    color: $white;
+  }
+
+  &__image-container {
+    @include large-1;
+    @include small-12;
+  }
+
+  &__image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__content-container {
+    @include large-11;
+    @include small-12;
+
+    &--centered {
+      @include absolute-center;
+      text-align: center;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $ash;
+    }
+  }
+}

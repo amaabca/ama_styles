@@ -1,0 +1,106 @@
+.table {
+  margin-bottom: $base-margin;
+
+  &--ash-bg {
+    background: $ash;
+  }
+
+  &__row {
+    @include grid-row;
+    overflow: auto;
+    padding: $base-padding/2 0;
+
+    &--striped {
+      @extend .table__row;
+      border-bottom: $base-border;
+
+      &:first-of-type {
+        border-top: $base-border;
+      }
+    }
+
+    &--grey-bg {
+      @extend .table__row;
+      background: $stone;
+      padding: 0;
+      margin-top: 3px;
+    }
+  }
+
+  &__bg-spacing {
+    padding-top: $base-padding/2;
+    padding-bottom: $base-padding/2;
+  }
+
+  &__row-nested {
+    @include grid-row-nest;
+    @include clearfix;
+  }
+
+  &__data {
+    display: block;
+
+    &--left {
+      float: left;
+    }
+
+    &--right {
+      float: right;
+    }
+
+    &--center {
+      @extend .table__data;
+      text-align: center;
+      clear: both;
+    }
+
+    &--hide-large {
+      @include hide-for(large);
+    }
+  }
+
+  &__header {
+    @include show-for(medium);
+
+    &--grey-bg {
+      @extend .table__header;
+      background: $stone;
+    }
+  }
+
+  &__col-title {
+    font-weight: 600;
+    font-size: rem-calc(16);
+    color: $slate;
+
+    &--medium {
+      font-weight: 600;
+      font-size: $base-font-size;
+      color: $slate;
+    }
+
+    &--small {
+      font-weight: 600;
+      font-size: $small-font-size;
+    }
+  }
+
+  &__col-title-link {
+    padding-left: $base-padding;
+  }
+
+  &__col-color {
+    &--green {
+      background: $brand-green;
+    }
+  }
+}
+
+.table-with-bg {
+  margin-bottom: $base-margin;
+
+  &__row {
+    @include grid-row;
+    overflow: auto;
+  }
+}

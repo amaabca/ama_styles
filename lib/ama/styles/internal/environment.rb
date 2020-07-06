@@ -4,6 +4,8 @@ module AMA
   module Styles
     module Internal
       class Environment
+        include Globals
+
         attr_accessor :environment
 
         def initialize(opts = {})
@@ -59,7 +61,9 @@ module AMA
         def configure_assets
           config.eager_load = false
           config.assets.css_compressor = :sass
-          config.assets.precompile += %w[shared.css]
+          ama_styles_versions.each do |version|
+            config.assets.precompile += %W[#{version}/shared.css]
+          end
         end
 
         def configure_api

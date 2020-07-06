@@ -1,0 +1,29 @@
+.button {
+  &--bounce {
+    position: relative;
+    animation: bounce 7000ms forwards infinite linear;
+    transition: background-color 0.3s ease;
+  }
+
+  @keyframes bounce {
+    90% {
+      top: 0;
+    }
+
+    92% {
+      top: -3px;
+    }
+
+    94% {
+      top: 0;
+    }
+
+    98% {
+      top: -6px;
+    }
+
+    100% {
+      top: 0;
+    }
+  }
+}

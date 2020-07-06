@@ -18,6 +18,19 @@ module AMA
       def root_path
         Rails.root
       end
+
+      module_function
+
+      def ama_styles_default_version
+        'v2'
+      end
+
+      def ama_styles_versions
+        %w[
+          v2
+          v3
+        ]
+      end
     end
   end
 end

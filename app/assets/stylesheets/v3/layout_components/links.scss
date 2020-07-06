@@ -1,0 +1,13 @@
+.link--white {
+  color: $white;
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.link--no-underline,
+.link--no-underline:hover {
+  text-decoration: none;
+}

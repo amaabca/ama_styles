@@ -1,0 +1,33 @@
+.notification {
+  position: relative;
+
+  &__badge {
+    @include badge;
+    background: $brand-red;
+    color: $white;
+    line-height: 1.5;
+    font-weight: bolder;
+    position: absolute;
+    top: 10%;
+    right: 15%;
+
+    &--styleguide {
+      @extend .notification__badge;
+      top: 0;
+      right: 5px;
+    }
+  }
+
+  @include breakpoint (medium down) {
+    &__icon {
+      @include vertical-center;
+      position: absolute;
+      right: 15px;
+    }
+
+    &__badge {
+      top: 10px;
+      right: 8px;
+    }
+  }
+}

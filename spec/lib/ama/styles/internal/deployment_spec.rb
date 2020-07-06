@@ -14,7 +14,8 @@ describe AMA::Styles::Internal::Deployment do
       Rails.root.join(
         'public',
         'assets',
-        'application*.css'
+        '**',
+        'shared*.css'
       ).to_s
     end
     let(:bucket) { client.bucket(Rails.configuration.assets_bucket_name) }
@@ -46,7 +47,7 @@ describe AMA::Styles::Internal::Deployment do
       it 'precompiles assets and uploads them to S3' do
         expect(bucket).to receive(:object).at_least(1).times.and_call_original
         subject.silence_stderr { subject.run }
-        expect(Dir.glob(pattern).size).to eq(1)
+        expect(Dir.glob(pattern).size).to eq(2)
       end
 
       it 'uploads a fallback stylesheet to S3 (if Redis is unavailable)' do
@@ -54,7 +55,10 @@ describe AMA::Styles::Internal::Deployment do
         # therefore, we have to stub with the following strategy to
         # specifically look for the fallback key.
         expect(bucket).to receive(:object).with(
-          File.join(prefix, AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE)
+          File.join("#{prefix}v2", AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE)
+        ).and_call_original
+        expect(bucket).to receive(:object).with(
+          File.join("#{prefix}v3", AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE)
         ).and_call_original
         expect(bucket).to receive(:object).at_least(1).times.and_call_original
         subject.silence_stderr { subject.run }
