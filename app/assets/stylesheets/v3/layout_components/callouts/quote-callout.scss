@@ -1,0 +1,52 @@
+.quote-callout {
+  &__container {
+    display: flex;
+    background: $white;
+
+    @include breakpoint(medium up) {
+      flex-direction: row;
+    }
+
+    @include breakpoint(small only) {
+      flex-direction: column;
+      height: 600px; // HACK: IE 11 can't determine the flex container height for columns.
+    }
+  }
+
+  &__price {
+    background: $cerulean;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-basis: 50%;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    flex-basis: 50%;
+  }
+
+  &__arrow {
+    display: flex;
+    position: relative;
+
+    &--right {
+      width: 0;
+      border-left: 50px solid $cerulean;
+      border-top: 150px solid transparent;
+      border-bottom: 150px solid transparent;
+    }
+
+    &--down {
+      height: 0;
+      border-top: 20px solid $cerulean;
+      border-left: 46vw solid transparent;
+      border-right: 46vw solid transparent;
+    }
+  }
+}

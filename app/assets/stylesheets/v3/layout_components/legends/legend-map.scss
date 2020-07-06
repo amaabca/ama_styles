@@ -1,0 +1,48 @@
+.legend-map {
+  display: none;
+  width: 160px;
+  background-color: $white;
+  color: $slate;
+  position: absolute;
+  top: 145px;
+  right: 0;
+  z-index: 5;
+
+  @include breakpoint(small down) {
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    position: fixed;
+
+    .legend__icon {
+      float: none;
+      margin: 0 auto 6px;
+      display: block;
+
+      &--rect {
+        height: 3.5px;
+        width: 27px;
+      }
+    }
+
+    .legend__text {
+      float: none;
+    }
+
+    .legend__key-identifier {
+      float: left;
+      margin-right: $base-margin*0.45;
+      text-align: center;
+    }
+
+    .legend__keys {
+      @include clearfix;
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &.visible {
+    display: block;
+  }
+}

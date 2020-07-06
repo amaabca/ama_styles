@@ -1,0 +1,30 @@
+.breadcrumbs {
+  &__link {
+    &--disabled {
+      @extend .disabled;
+      pointer-events: none;
+    }
+  }
+}
+
+// styles for react app breadcrumbs
+// (breadcrumbs__section only exists in our react apps)
+.breadcrumbs__section {
+  &::after {
+    margin: 0 0.75rem;
+    content: "/";
+    color: $smoke;
+  }
+
+  &:last-child {
+    a {
+      color: $stormcloud;
+      pointer-events: none;
+      text-decoration: none;
+    }
+
+    &::after {
+      content: "";
+    }
+  }
+}

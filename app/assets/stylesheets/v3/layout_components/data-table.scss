@@ -1,0 +1,68 @@
+// adapted from:
+// https://github.com/mkhairi/jquery-datatables/blob/c2f67896/app/assets/stylesheets/datatables/dataTables.foundation.scss
+.dataTable {
+  clear: both;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100%;
+
+  td,
+  th {
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+
+    &.dataTables_empty {
+      text-align: center;
+    }
+  }
+
+  &.nowrap {
+    th,
+    td {
+      white-space: nowrap;
+    }
+  }
+}
+
+.dataTables_info {
+  padding-top: $base-padding/2;
+}
+
+.dataTables_wrapper {
+  position: relative;
+
+  .dataTables_paginate {
+    float: none;
+    padding-top: 20px;
+    text-align: center;
+  }
+
+  .dataTables_processing {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    background-color: $white;
+  }
+}
+
+.pagination {
+  padding: $base-padding/2;
+
+  .paginate_button {
+    border-radius: 0;
+  }
+
+  a {
+    color: $slate;
+
+    &:hover {
+      text-decoration: none;
+      border-radius: 0;
+    }
+  }
+}
+
+.current {
+  background: $cerulean !important;
+  color: $white;
+}

@@ -1,0 +1,49 @@
+/* Colours */
+$brand-red: #da291c;
+$sangria: #780000;
+$white: #ffffff;
+$green: #3fae60;
+$brand-green: #78be20; //Rewards Green
+$brand-blue-insurance:#00a3e0;
+$orange: #e7992b;
+$canary: #FFC345;
+// Blue tones - ordered from lightest to darkest
+$sky: #e2f4fc;
+$dark-sky: #b4e2f7;
+$powder-blue: #b4d1e9;
+$ocean: #8cceec;
+$cerulean: #2577be;
+$brand-blue-light: #00539b;
+$brand-blue-dark: #00205b;
+// Grey tones - ordered from lightest to darkest
+$ash: #f7f7f7;
+$stone: #eeeeee;
+$smoke: #cccccc;
+$stormcloud: #959595;
+$slate: #838383;
+$charcoal: #656565;
+$jet: #323232;
+$black: #000000;
+// For foundation
+$primary-color: $brand-blue-dark;
+$secondary-color: $brand-blue-light;
+// Fonts
+$font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
+$font-family-headings: "Open Sans Semi-Bold", Helvetica, Arial, sans-serif;
+$base-font-size: 14px;
+$small-font-size: $base-font-size*0.875;
+$medium-font-size: $base-font-size*1.3;
+$large-font-size: $base-font-size*1.85;
+$x-large-font-size: $base-font-size*3;
+// Spacing
+$base-margin: 1rem;
+$base-padding: 1rem;
+
+// Borders
+$base-border: 2px solid $stone;
+//Radius
+$base-radius: 3px;
+//Top-Bar
+$top-bar-height: 53px;
+//Tiering
+$de-emphasized-button-color: $slate;

@@ -1,0 +1,42 @@
+.content-toggle {
+  &__bg {
+    background-color: $stone;
+    padding: $base-padding;
+    margin-bottom: $base-margin;
+
+    &--cerulean {
+      @extend .content-toggle__bg;
+      background-color: $cerulean;
+      color: $white;
+    }
+  }
+
+  &__close {
+    color: $charcoal;
+    cursor: pointer;
+    float: right;
+
+    &--white {
+      @extend .content-toggle__close;
+      color: $white;
+    }
+  }
+
+  //We have to create our own classes for this because Foundation's default show/hide classes
+  //have importants on them which messes with the specificity
+  &--hidden {
+    display: none;
+  }
+
+  &--visible {
+    display: block;
+  }
+}
+
+.edit_gift,
+.edit_join,
+.edit_promo {
+  .associate-expandable {
+    display: none;
+  }
+}

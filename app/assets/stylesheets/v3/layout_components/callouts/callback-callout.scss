@@ -1,0 +1,33 @@
+.callback-callout {
+  background: $white;
+  width: 55%;
+  padding: $base-padding;
+  padding-left: 45px;
+  float: left;
+
+  @include breakpoint(medium only) {
+    padding-left: 65px;
+  }
+
+  @include breakpoint(small down) {
+    width: 100%;
+    float: none;
+    margin-top: 25px;
+    padding-left: $base-padding;
+  }
+
+  &__form {
+    @include clearfix;
+    margin-top: $base-padding*1.5;
+    text-align: center;
+
+    &--confirmation {
+      @include clearfix;
+      padding: 0 $base-padding*1.5 0 65px;
+
+      @include breakpoint(small down) {
+        padding: $base-padding;
+      }
+    }
+  }
+}

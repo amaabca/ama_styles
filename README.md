@@ -28,11 +28,33 @@ Gem that will carry and deploy AMA assets.
 ```erb
   <%= stylesheet_link_tag Rails.configuration.stylesheet_resolver.asset_path, media: "all" %>
 ```
-* Add to initializers/assets.rb:
+
+* Add to config/application.rb: one version for all environments. If a version is
+  not specified it will default to ama_styles_default_version.
 
 ```ruby
-  Rails.configuration.assets.precompile += %w(shared.css)
+config.ama_styles_version = 'v3'
+```
+
+* Add to config/application.rb: different versions based on environment
+
+```ruby
+config.ama_styles_version = config.app_env == 'production' ? 'v2' : 'v3'
+```
+
+* Add to initializers/assets.rb
+
+```ruby
+  Rails.configuration.stylesheet_resolver.version = Rails.configuration.ama_styles_version # optional
   Rails.configuration.stylesheet_resolver.remote = Rails.env.production?
+  Rails.configuration.assets.paths << File.join(
+    Gem.loaded_specs['ama_styles'].full_gem_path,
+    'app',
+    'assets',
+    'stylesheets',
+    Rails.configuration.stylesheet_resolver.version
+)
+  Rails.configuration.assets.precompile += %W(#{Rails.configuration.stylesheet_resolver.version}/shared.css)
 ```
 * Add the `ASSET_CLOUDFRONT_URL` variable to the relevant `.env` file for the application.
 * Set the `cloudfront_url` configuration option in an initializer/application.rb:
