@@ -5,9 +5,14 @@ module AMA
     class Resolver
       include Globals
       attr_accessor :remote
+      attr_writer :version
 
       def asset_path
-        remote ? custom_asset_url : PRIMARY_STYLESHEET_NAME
+        remote ? custom_asset_url : "#{version}/#{PRIMARY_STYLESHEET_NAME}"
+      end
+
+      def version
+        @version ||= ama_styles_default_version
       end
 
       private
@@ -21,7 +26,7 @@ module AMA
       end
 
       def current_revision
-        Cache.read(CURRENT_STYLESHEET_DIGEST_KEY) || FALLBACK_STYLESHEET_FILE
+        Cache.read("#{CURRENT_STYLESHEET_DIGEST_KEY}/#{version}") || "#{version}/#{FALLBACK_STYLESHEET_FILE}"
       end
     end
   end

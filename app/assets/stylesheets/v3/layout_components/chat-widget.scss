@@ -1,0 +1,218 @@
+.cx-webchat.cx-theme-ama {
+  .cx-menu {
+    li.cx-branding-icon {
+      display: none;
+    }
+  }
+
+  .cx-form {
+    th {
+      .cx-control-label {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .cx-message-group {
+    .cx-message .cx-avatar-wrapper {
+      .cx-avatar.agent {
+        svg.cx-svg-icon-tone1 {
+          fill: $brand-blue-light;
+        }
+      }
+    }
+  }
+
+  .cx-transcript {
+    .cx-message {
+      .cx-name {
+        font-weight: bold !important;
+      }
+    }
+
+    .cx-message.cx-you {
+      .cx-bubble {
+        background-color: $sky;
+      }
+    }
+
+    .cx-message.cx-them {
+      .cx-bubble {
+        background-color: $sky;
+      }
+    }
+
+    .cx-message.cx-date {
+      border: 2px solid $brand-blue-light !important;
+    }
+  }
+}
+
+.cx-bubble-arrow {
+  svg {
+    fill: $sky;
+  }
+}
+
+.cx-message.cx-date {
+  color: $brand-blue-light;
+}
+
+.cx-message-chat {
+  color: $brand-blue-light;
+}
+
+.cx-widget {
+  font-family: $font-family-sans-serif !important;
+}
+
+.cx-webchat div.cx-input-container {
+  border-width: 2px 0 0 !important;
+}
+
+.cx-widget.cx-theme-ama {
+  * {
+    border-color: $brand-blue-light;
+  }
+  color: $slate;
+  background-color: $white;
+
+  .cx-overlay {
+    background-color: $brand-blue-light;
+  }
+
+  .cx-svg-icon-tone1 {
+    fill: $white;
+  }
+
+  .cx-titlebar {
+    background: $brand-blue-light;
+    padding: 9px 20px !important;
+
+    .cx-title {
+      color: $white;
+      font-size: 20px;
+      font-weight: $header-font-weight;
+    }
+  }
+
+  .cx-form-control {
+    border-radius: 0;
+  }
+
+  .cx-buttons-window-control .cx-svg-icon-tone1 {
+    fill: $white;
+  }
+
+  .cx-input-icon-overlay .cx-svg-icon-tone1 {
+    fill: $white;
+  }
+
+  label {
+    color: $slate !important;
+    font-size: 1em;
+  }
+
+  a {
+    color: $slate;
+  }
+
+  a:hover {
+    color: $brand-blue-light;
+  }
+
+  .cx-dropdown {
+    color: $jet;
+  }
+
+  .cx-icon-alert-circle {
+    color: $brand-red;
+  }
+
+  .cx-footer {
+    color: transparent;
+    height: 0;
+    padding: 10px;
+
+    * {
+      fill: transparent;
+    }
+  }
+
+  .cx-form-control.cx-error {
+    border-color: $brand-red;
+  }
+
+  .cx-form-control::placeholder {
+    color: $smoke;
+  }
+
+  .cx-form-control:-moz-placeholder {
+    color: $smoke;
+  }
+
+  .cx-form-control::-moz-placeholder {
+    color: $smoke;
+  }
+
+  .cx-form-control:-ms-input-placeholder {
+    color: $smoke;
+  }
+
+  .cx-form-control::-webkit-input-placeholder {
+    color: $smoke;
+  }
+
+  input:focus,
+  textarea:focus,
+  .cx-btn:focus,
+  .cx-button-group button:focus,
+  .cx-form-control:focus {
+    border-color: $ocean;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    background-color: $white;
+    color: $black;
+    font-size: 1em;
+    border-color: $smoke;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  .cx-border-error {
+    border-color: $brand-red;
+  }
+
+  .cx-btn {
+    border-radius: 3px;
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  .cx-btn-default {
+    border-color: $slate;
+    color: $white;
+    background-color: $slate;
+  }
+
+  .cx-btn.cx-disabled {
+    background: $slate;
+  }
+
+  .cx-btn-primary {
+    color: $white;
+    border-color: $cerulean;
+    background: $cerulean;
+  }
+
+  .cx-smokescreen {
+    background-color: $jet;
+    opacity: 0.7;
+  }
+}

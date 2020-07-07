@@ -16,7 +16,7 @@ module AMA
           sprockets_tasks
           upload_files
           log('Generating fallback stylesheet...'.colorize(:yellow))
-          upload_fallback_stylesheet
+          upload_fallback_stylesheets
           log('Verifying S3 integrity...'.colorize(:yellow))
           request
           log('SUCCESS!'.colorize(:green) + ' 🎨')
@@ -74,10 +74,12 @@ module AMA
           end
         end
 
-        def upload_fallback_stylesheet
-          key = File.join(ASSET_PREFIX, FALLBACK_STYLESHEET_FILE)
-          file = Dir.glob(File.join(assets_path, STYLESHEET_PATTERN)).first
-          upload_file(file: file, key: key, cache: false)
+        def upload_fallback_stylesheets
+          ama_styles_versions.each do |version|
+            key = File.join(ASSET_PREFIX, version, FALLBACK_STYLESHEET_FILE)
+            file = Dir.glob(File.join(assets_path, version, STYLESHEET_PATTERN)).first
+            upload_file(file: file, key: key, cache: false)
+          end
         end
 
         def digest_file

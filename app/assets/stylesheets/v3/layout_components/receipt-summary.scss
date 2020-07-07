@@ -1,0 +1,21 @@
+.receipt-summary {
+  &__image-container {
+    @include medium-3;
+    margin-bottom: $base-margin;
+  }
+
+  &__image {
+    @include breakpoint(small only) {
+      display: block;
+    }
+  }
+
+  &__content-container {
+    @include medium-9;
+    margin-bottom: $base-margin;
+
+    @include breakpoint(small only) {
+      margin-left: $base-margin;
+    }
+  }
+}

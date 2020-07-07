@@ -1,0 +1,179 @@
+/* button-group is a foundation element, so to avoid style conflicts ours are called button-groupings */
+.button-grouping {
+  @include grid-row;
+  @include clearfix;
+
+  &--nested {
+    @include grid-row-nest;
+  }
+
+  &__container {
+    &--full {
+      @include large-12;
+    }
+
+    &--half {
+      // use with half-small to also have half width buttons on small screens
+      @include large-6;
+    }
+
+    &--quarter {
+      @include large-3;
+      @include small-12;
+    }
+
+    &--third {
+      @include large-4;
+    }
+
+    &--half-small {
+      @include breakpoint(medium down) {
+        @include small-6;
+      }
+    }
+  }
+
+  &__text-button {
+    @extend .button;
+    position: relative;
+    width: 100%;
+    padding: 1.75em;
+    text-align: left;
+
+    &--grey {
+      @extend .button-grouping__text-button;
+      $button-background: $slate;
+      background: $button-background;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($button-background, 10%);
+      }
+    }
+
+    &.is-active {
+      background: $cerulean;
+    }
+  }
+
+  &__button {
+    @extend .button;
+    min-height: 170px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &--full {
+      @extend .button-grouping__button;
+      height: 100%;
+    }
+
+    &--green {
+      @extend .button-grouping__button;
+      $button-background: $brand-green;
+      background: $button-background;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($button-background, 10%);
+      }
+    }
+
+    &--white {
+      @extend .button-grouping__button;
+      $button-background: $white;
+      background: $button-background;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($sky, 4%);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+      }
+    }
+
+    &--red {
+      @extend .button-grouping__button;
+      $button-background: $brand-red;
+      background: $button-background;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background: lighten($button-background, 10%);
+      }
+    }
+
+    &--disabled {
+      @extend .button-grouping__button;
+      cursor: not-allowed;
+    }
+  }
+
+  &__content {
+    @include absolute-center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    width: 90%;
+    color: $white;
+  }
+
+  &__icon {
+    font-size: 5rem;
+    padding-bottom: $base-padding;
+  }
+
+  &__bg-icon {
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-bottom: $base-margin;
+  }
+
+  &__text {
+    line-height: 1rem;
+    display: block;
+
+    &--large {
+      display: block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    &--underline {
+      display: block;
+      text-decoration: underline;
+    }
+
+    &--blue {
+      color: $brand-blue-light;
+    }
+
+    &--slate {
+      color: $slate;
+    }
+  }
+}
+
+/* Non Font Awesome/Symbolicon Icons */
+#card-icon {
+  background-image: asset-url("membership/card-icon.png");
+}
+
+#coverage-icon {
+  background-image: asset-url("membership/coverage-icon.png");
+}
+
+#family-icon {
+  background-image: asset-url("membership/family-icon.png");
+}
+
+#laptop-icon {
+  background-image: asset-url("membership/laptop-icon.png");
+}

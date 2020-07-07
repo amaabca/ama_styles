@@ -1,0 +1,39 @@
+.pagination {
+  margin-bottom: $base-margin;
+
+  &__page {
+    font-weight: bold;
+    font-size: $base-font-size*1.0625;
+  }
+
+  &__current-page {
+    background-color: $cerulean;
+    color: $white;
+    margin: 0 3px;
+    padding: 0 3px;
+    border-radius: 3px;
+  }
+
+  &__link {
+    color: $slate;
+    margin: auto 3px;
+    padding: 0 3px;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $cerulean;
+      color: $white;
+      padding: 0 3px;
+      text-decoration: none;
+    }
+  }
+
+  &__page-gap {
+    font-weight: bold;
+  }
+
+  &--centered {
+    @extend .pagination;
+    text-align: center;
+  }
+}

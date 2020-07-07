@@ -1,0 +1,27 @@
+.colour-coordinated-list {
+  margin: $base-margin $base-margin*0.5;
+  padding: $base-padding*0.5 $base-padding;
+  list-style-type: none;
+
+  &.good {
+    /* I will be making a bug for the devs to change the way the JS uses these classes so we can rename
+    to something a bit better -KR */
+    border-left: 9px solid $brand-green;
+  }
+
+  &.fair {
+    border-left: 9px solid $orange;
+  }
+
+  &.poor {
+    border-left: 9px solid $brand-red;
+  }
+
+  &.unreported {
+    border-left: 9px solid $smoke;
+  }
+
+  &.closed {
+    border-left: 9px solid $black;
+  }
+}
