@@ -4,6 +4,7 @@ describe AMA::Styles::Resolver do
   describe '#asset_path' do
     before(:each) do
       subject.remote = remote
+      subject.version = version
     end
 
     context 'with remote: true' do
@@ -14,8 +15,8 @@ describe AMA::Styles::Resolver do
 
         before(:each) do
           AMA::Styles::Cache.write(
-            AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY,
-            asset_name
+            "#{AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY}/#{subject.version}",
+            "#{subject.version}/#{asset_name}"
           )
         end
 
@@ -23,13 +24,46 @@ describe AMA::Styles::Resolver do
           AMA::Styles::Cache.clear
         end
 
-        it 'returns the cloudfront asset url' do
-          cloudfront_url = URI.join(
-            Rails.configuration.cloudfront_url,
-            AMA::Styles::Globals::ASSET_PREFIX,
-            asset_name
-          ).to_s
-          expect(subject.asset_path).to eq(cloudfront_url)
+        context 'when version is nil' do
+          let(:version) {}
+
+          it 'returns the ama_styles_default_version cloudfront asset url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{AMA::Styles::Globals.ama_styles_default_version}/",
+              asset_name
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
+        end
+
+        context 'when version is v2' do
+          let(:version) { 'v2' }
+
+          it 'returns the v2 cloudfront asset url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{version}/",
+              asset_name
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
+        end
+
+        context 'when version is v3' do
+          let(:version) { 'v3' }
+
+          it 'returns the v3 cloudfront asset url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{version}/",
+              asset_name
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
         end
       end
 
@@ -38,23 +72,76 @@ describe AMA::Styles::Resolver do
           AMA::Styles::Cache.clear
         end
 
-        it 'returns the cloudfront fallback url' do
-          cloudfront_url = URI.join(
-            Rails.configuration.cloudfront_url,
-            AMA::Styles::Globals::ASSET_PREFIX,
-            AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE
-          ).to_s
-          expect(subject.asset_path).to eq(cloudfront_url)
+        context 'when version is nil' do
+          let(:version) {}
+
+          it 'returns the ama_styles_default_version cloudfront fallback url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{AMA::Styles::Globals.ama_styles_default_version}/",
+              AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
+        end
+
+        context 'when version is v2' do
+          let(:version) { 'v2' }
+
+          it 'returns the v2 cloudfront fallback url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{version}/",
+              AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
+        end
+
+        context 'when version is v3' do
+          let(:version) { 'v3' }
+
+          it 'returns the v3 cloudfront fallback url' do
+            cloudfront_url = URI.join(
+              Rails.configuration.cloudfront_url,
+              AMA::Styles::Globals::ASSET_PREFIX,
+              "#{version}/",
+              AMA::Styles::Globals::FALLBACK_STYLESHEET_FILE
+            ).to_s
+            expect(subject.asset_path).to eq(cloudfront_url)
+          end
         end
       end
     end
 
     context 'with remote: false' do
       let(:remote) { false }
+      let(:name) { "#{subject.version}/#{AMA::Styles::Globals::PRIMARY_STYLESHEET_NAME}" }
 
-      it 'returns the primary stylesheet name' do
-        name = AMA::Styles::Globals::PRIMARY_STYLESHEET_NAME
-        expect(subject.asset_path).to eq(name)
+      context 'when version is nil' do
+        let(:version) {}
+
+        it 'returns the ama_styles_default_version stylesheet name' do
+          expect(subject.asset_path).to eq(name)
+        end
+      end
+
+      context 'when version is v2' do
+        let(:version) { 'v2' }
+
+        it 'returns the v2 stylesheet name' do
+          expect(subject.asset_path).to eq(name)
+        end
+      end
+
+      context 'when version is v3' do
+        let(:version) { 'v3' }
+
+        it 'returns the v3 stylesheet name' do
+          expect(subject.asset_path).to eq(name)
+        end
       end
     end
   end

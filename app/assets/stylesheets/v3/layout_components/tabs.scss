@@ -1,0 +1,23 @@
+.tabs {
+  background-color: $white;
+}
+
+.tabs-title {
+  background-color: $white;
+
+  a {
+    padding: $base-padding;
+    color: $cerulean;
+  }
+}
+
+.tabs-title.is-active {
+  a {
+    color: $white;
+    background-color: lighten($cerulean, 10%);
+  }
+
+  a:hover {
+    background-color: lighten($cerulean, 10%);
+  }
+}
