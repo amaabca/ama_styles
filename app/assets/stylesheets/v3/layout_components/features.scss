@@ -42,62 +42,62 @@
 
 #feature__image {
   &--devices {
-    background-image: asset-url(gatekeeper/devices);
+    background-image: asset-url(v3/gatekeeper/devices);
   }
 
   &--membership {
-    background-image: asset-url(gatekeeper/membership);
+    background-image: asset-url(v3/gatekeeper/membership);
   }
 
   &--vrar {
-    background-image: asset-url(gatekeeper/vrar);
+    background-image: asset-url(v3/gatekeeper/vrar);
   }
 
   &--automotive {
-    background-image: asset-url(gatekeeper/automotive);
+    background-image: asset-url(v3/gatekeeper/automotive);
   }
 
   &--rewards {
-    background-image: asset-url(gatekeeper/rewards);
+    background-image: asset-url(v3/gatekeeper/rewards);
   }
 
   &--subscriptions {
-    background-image: asset-url(gatekeeper/subscriptions);
+    background-image: asset-url(v3/gatekeeper/subscriptions);
   }
 
   &--gift-cards {
-    background-image: asset-url(gatekeeper/gift-card);
+    background-image: asset-url(v3/gatekeeper/gift-card);
   }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   #feature__image {
     &--devices {
-      background-image: asset-url(gatekeeper/devices2x);
+      background-image: asset-url(v3/gatekeeper/devices2x);
     }
 
     &--feature--membership {
-      background-image: asset-url(gatekeeper/membership2x);
+      background-image: asset-url(v3/gatekeeper/membership2x);
     }
 
     &--vrar {
-      background-image: asset-url(gatekeeper/vrar2x);
+      background-image: asset-url(v3/gatekeeper/vrar2x);
     }
 
     &--automotive {
-      background-image: asset-url(gatekeeper/automotive2x);
+      background-image: asset-url(v3/gatekeeper/automotive2x);
     }
 
     &--rewards {
-      background-image: asset-url(gatekeeper/rewards2x);
+      background-image: asset-url(v3/gatekeeper/rewards2x);
     }
 
     &--subscriptions {
-      background-image: asset-url(gatekeeper/subscriptions2x);
+      background-image: asset-url(v3/gatekeeper/subscriptions2x);
     }
 
     &--gift-cards {
-      background-image: asset-url(gatekeeper/gift-card2x);
+      background-image: asset-url(v3/gatekeeper/gift-card2x);
     }
   }
 }
