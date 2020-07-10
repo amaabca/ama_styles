@@ -3,31 +3,36 @@
   overflow: auto;
 
   &__section {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+
     &--active {
-      background: $cerulean;
+      //background: $cerulean;
     }
 
     &--inactive {
-      background: $brand-blue-light;
+      //background: $brand-blue-light;
     }
 
     &--completed {
-      background: $brand-blue-dark;
+      //background: $brand-blue-dark;
     }
   }
 
   &--selected {
-    background: $cerulean;
-    color: $white;
+    //background: $cerulean;
+    color: $brand-blue-light;
   }
 
   &--completed {
-    color: $white;
-    background: $brand-blue-dark;
+    color: $brand-blue-light;
+    //background: $brand-blue-dark;
   }
 
   &__section-quarter {
-    @include medium-3;
+    width: 25%;
+    float: left;
     position: relative;
     color: $white;
     overflow: hidden;
@@ -40,14 +45,32 @@
 
   &__section-info {
     display: block;
+    color: $blue-main-brand--dark-med;
+    font-weight: bold;
+  }
+
+  &__section-title {
+    font-size: 1.6rem;
+    color: $blue-main-brand--dark-med;
+    background: $white;
+    border-radius: 30px;
+    border: 2px solid $blue-insurance--light-med;
+    width: fit-content;
+    padding: $base-padding/2 $base-padding;
+    margin: 0 auto;
   }
 
   &__arrow {
-    width: 32px;
-    height: 32px;
+    //width: 32px;
+    //height: 32px;
+    //position: absolute;
+    //right: -20px;
+    //top: -4px;
+    background: $white;
+    height: 20px;
+    width: 100%;
     position: absolute;
-    right: -20px;
-    top: -4px;
+    top: 25%;
 
     @include breakpoint(medium down) {
       display: none;
@@ -55,42 +78,42 @@
 
     &::after {
       content: "";
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
+      //position: absolute;
+      //right: 0;
+      //border-color: transparent transparent transparent $brand-blue-light;
+      //border-style: solid;
+      //border-width: 35px;
     }
 
     &::before {
       content: "";
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
+      //position: absolute;
+      //right: -4px; //this controls the thickness of the arrow
+      //border-color: transparent transparent transparent $white;
+      //background: $brand-blue-light;
+      //border-style: solid;
+      //border-width: 35px;
     }
 
     &--selected::after {
       content: "";
-      color: $white;
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $cerulean;
-      border-style: solid;
-      border-width: 35px;
+      //color: $white;
+      //position: absolute;
+      //right: 0;
+      //border-color: transparent transparent transparent $cerulean;
+      //border-style: solid;
+      //border-width: 35px;
     }
 
     &--selected::before {
       content: "";
-      color: $white;
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
+      //color: $white;
+      //position: absolute;
+      //right: -4px; //this controls the thickness of the arrow
+      //border-color: transparent transparent transparent $white;
+      //background: $brand-blue-light;
+      //border-style: solid;
+      //border-width: 35px;
     }
 
     &--completed::after {
