@@ -138,11 +138,15 @@
 .page-header {
   margin-bottom: $base-margin;
   overflow: auto;
-  background: $brand-blue-light;
+  background: $blue-secondary-brand--light-med;
+  font-family: knockout,Open Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 100;
 
   &__heading {
-    @extend .heading;
-    background: $brand-blue-light;
+    padding: 2rem;
+    color: $white;
+    background: $blue-secondary-brand--light-med;
 
     &--split {
       @extend .page-header__heading;
