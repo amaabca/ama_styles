@@ -1,71 +1,65 @@
 .heading {
-  padding: $base-padding*0.75 $base-padding;
+  padding: $base-padding $base-padding $base-padding*2;
   color: $white;
 }
 
 .section {
-  margin-bottom: $base-margin;
+  margin-bottom: $base-margin*3;
 
   &__heading {
     @extend .heading;
-    background: $brand-blue-light;
+    background: transparent;
+    color: $dark-grey-text;
 
     &--no-bg {
       padding-bottom: $base-padding;
-      color: $charcoal;
+      color: $dark-grey-text;
     }
 
     &--no-padding {
       background: $brand-blue-light;
-      color: $white;
+      color: $dark-grey-text;
     }
 
     &--grey-bg {
-      @extend .heading;
-      background: $slate;
+      @extend .section__heading;
     }
 
     &--dark-blue-bg {
       @extend .heading;
-      background: $brand-blue-dark;
     }
 
     &--accordion {
       @extend .heading;
-      overflow: auto;
-      display: block;
     }
 
     &--orange {
       @extend .heading;
-      background: $orange;
     }
 
     &--yellow {
       @extend .heading;
-      background: $canary;
     }
 
     &--blue {
       @extend .heading;
-      background: $brand-blue-light;
     }
 
     &--green {
       @extend .heading;
-      background: $brand-green;
     }
 
     &--cerulean {
       @extend .heading;
-      background: $cerulean;
     }
   }
 
   &__content {
     background: $white;
     padding-top: $base-padding;
+    padding-bottom: $base-padding*2;
     @include clearfix;
+    border-bottom: 1px solid $bg-grey-light;
 
     &--smoke-bg {
       padding-top: $base-padding;
@@ -307,7 +301,7 @@
 .main-container {
   // using grid-column in place of large-10 so that we can set the gutters to 0
   @include grid-column(10,0);
-  background: $stone;
+  background: $white;
   @include clearfix;
 
   @include breakpoint(medium down) {

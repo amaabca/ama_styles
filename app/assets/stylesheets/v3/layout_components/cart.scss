@@ -3,6 +3,10 @@
   margin-bottom: 0;
   position: relative;
   z-index: 1; //prevent cart from going underneath footer on short screens
+  box-shadow: 2.55px 4.33px 6.86px 1.14px rgba(24, 24, 24, 0.34);
+  padding: $base-padding;
+  border-radius: $global-radius;
+  border-top: 2rem solid $blue-secondary-brand--light;
 
   @include breakpoint(medium down) {
     width: 100%;
@@ -29,7 +33,9 @@
 
   &__title {
     float: left;
-    color: $white;
+    color: $blue-secondary-brand--light-med;
+    font-size: 1.25rem;
+    padding: 0 $base-padding;
   }
 
   &__accordion-toggle-icon {
