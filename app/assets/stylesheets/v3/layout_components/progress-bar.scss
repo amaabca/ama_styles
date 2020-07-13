@@ -96,7 +96,7 @@
   }
 }
 
-.progress-bar[data-step-index="3"] .progress-bar--selected .progress-bar__section::after{
+.progress-bar[data-step-index="3"] .progress-bar--selected .progress-bar__section::after {
   @include breakpoint(large up) {
     content: "";
     background: $blue-insurance--light-med;
