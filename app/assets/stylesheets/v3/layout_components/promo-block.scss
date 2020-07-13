@@ -1,6 +1,7 @@
 .promo-block {
   position: relative;
   overflow: auto;
+  padding-bottom: $base-padding*2;
 
   &__divider {
     @include show-for(medium);
@@ -43,10 +44,10 @@
   }
 
   &__icon-background {
-    width: 110px;
-    height: 110px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto;
-    background: $smoke;
+    background: $blue-main-brand--dark-med;
     position: relative;
 
     @include breakpoint(small down) {
@@ -65,7 +66,7 @@
 
   &__icon {
     color: $white;
-    font-size: 3.5rem;
+    font-size: 2rem;
     text-align: center;
     width: 100%;
     left: 0;
