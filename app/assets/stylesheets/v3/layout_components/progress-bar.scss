@@ -43,7 +43,8 @@
     height: 20px;
     width: 100%;
     position: absolute;
-    top: 25%;
+    //top: 25%;
+    bottom: 50%;
 
     @include breakpoint(medium down) {
       display: none;
@@ -89,7 +90,7 @@
     height: 20px;
     width: 50%;
     position: absolute;
-    top: 20%;
+    bottom: 50%;
     z-index: -1;
     left: 0;
   }
