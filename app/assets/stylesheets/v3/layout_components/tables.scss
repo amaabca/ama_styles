@@ -8,20 +8,23 @@
   &__row {
     @include grid-row;
     overflow: auto;
-    padding: $base-padding/2 0;
+    padding: $base-padding 0;
 
     &--striped {
       @extend .table__row;
-      border-bottom: $base-border;
+      //border-bottom: $base-border;
 
       &:first-of-type {
-        border-top: $base-border;
+        //border-top: $base-border;
+      }
+      &:nth-child(odd) {
+        background: $bg-grey-lightest;
       }
     }
 
     &--grey-bg {
       @extend .table__row;
-      background: $stone;
+      background: $bg-grey-lightest;
       padding: 0;
       margin-top: 3px;
     }
@@ -64,14 +67,12 @@
 
     &--grey-bg {
       @extend .table__header;
-      background: $stone;
+      background: $bg-grey-lightest;
     }
   }
 
   &__col-title {
     font-weight: 600;
-    font-size: rem-calc(16);
-    color: $slate;
 
     &--medium {
       font-weight: 600;
@@ -91,7 +92,7 @@
 
   &__col-color {
     &--green {
-      background: $brand-green;
+      background: $green-rewards--dark-med;
     }
   }
 }
