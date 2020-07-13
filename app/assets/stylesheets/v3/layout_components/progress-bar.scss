@@ -3,31 +3,14 @@
   overflow: auto;
 
   &__section {
-    &--active {
-      background: $cerulean;
-    }
-
-    &--inactive {
-      background: $brand-blue-light;
-    }
-
-    &--completed {
-      background: $brand-blue-dark;
-    }
-  }
-
-  &--selected {
-    background: $cerulean;
-    color: $white;
-  }
-
-  &--completed {
-    color: $white;
-    background: $brand-blue-dark;
+    position: relative;
+    z-index: 2;
+    text-align: center;
   }
 
   &__section-quarter {
-    @include medium-3;
+    width: 25%;
+    float: left;
     position: relative;
     color: $white;
     overflow: hidden;
@@ -40,100 +23,89 @@
 
   &__section-info {
     display: block;
+    color: $blue-main-brand--dark-med;
+    font-weight: bold;
+  }
+
+  &__section-title {
+    font-size: 1.6rem;
+    color: $blue-main-brand--dark-med;
+    background: $white;
+    border-radius: 30px;
+    border: 2px solid $blue-insurance--light-med;
+    width: 120px;
+    padding: $base-padding/2 $base-padding;
+    margin: 0 auto;
   }
 
   &__arrow {
-    width: 32px;
-    height: 32px;
+    background: $white;
+    height: 20px;
+    width: 100%;
     position: absolute;
-    right: -20px;
-    top: -4px;
+    //top: 25%;
+    bottom: 50%;
 
     @include breakpoint(medium down) {
       display: none;
     }
 
-    &::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
+    &--selected {
+      @extend .progress-bar__arrow;
+      background: $blue-insurance--light-med;
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
+    &--completed {
+      @extend .progress-bar__arrow;
+      background: $blue-insurance--light-med;
     }
 
-    &--selected::after {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $cerulean;
-      border-style: solid;
-      border-width: 35px;
+    &--very-completed {
+      @extend .progress-bar__arrow;
+      background: $blue-insurance--light-med;
     }
+  }
+}
 
-    &--selected::before {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $brand-blue-light;
-      border-style: solid;
-      border-width: 35px;
-    }
+//temporary phase 1 v3 fix
+.progress-bar .progress-bar--selected .progress-bar__section-title,
+.progress-bar .progress-bar--completed .progress-bar__section-title {
+  color: $white;
+  background: $blue-main-brand;
+  border-radius: 30px;
+  border: 2px solid $white;
+}
 
-    &--completed::after {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $brand-blue-dark;
-      border-style: solid;
-      border-width: 35px;
-    }
+.progress-bar .progress-bar--selected:nth-of-type(1) .progress-bar__arrow--selected,
+.progress-bar .progress-bar--completed:nth-of-type(1) .progress-bar__arrow--completed,
+.progress-bar .progress-bar--completed:nth-of-type(1) .progress-bar__arrow--very-completed {
+  width: 50%;
+  left: 50%;
+}
 
-    &--completed::before {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $cerulean;
-      border-style: solid;
-      border-width: 35px;
-    }
+.progress-bar .progress-bar__section--inactive:last-of-type .progress-bar__section::after {
+  @include breakpoint(large up) {
+    content: "";
+    background: $white;
+    height: 20px;
+    width: 50%;
+    position: absolute;
+    bottom: 50%;
+    z-index: -1;
+    left: 0;
+  }
+}
 
-    &--very-completed::after {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: 0;
-      border-color: transparent transparent transparent $brand-blue-dark;
-      border-style: solid;
-      border-width: 35px;
-    }
-
-    &--very-completed::before {
-      content: "";
-      color: $white;
-      position: absolute;
-      right: -4px; //this controls the thickness of the arrow
-      border-color: transparent transparent transparent $white;
-      background: $brand-blue-dark;
-      border-style: solid;
-      border-width: 35px;
-    }
+.progress-bar[data-step-index="3"] .progress-bar--selected .progress-bar__section::after {
+  @include breakpoint(large up) {
+    content: "";
+    background: $blue-insurance--light-med;
+    height: 20px;
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    z-index: -1;
+    left: 0;
   }
 }
 
