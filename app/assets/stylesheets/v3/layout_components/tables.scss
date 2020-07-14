@@ -12,11 +12,7 @@
 
     &--striped {
       @extend .table__row;
-      //border-bottom: $base-border;
 
-      &:first-of-type {
-        //border-top: $base-border;
-      }
       &:nth-child(odd) {
         background: $bg-grey-lightest;
       }
