@@ -14,6 +14,9 @@ dialog .close-reveal-modal {
   max-width: 960px;
   position: relative;
   margin: 0 auto;
+  background: $white;
+  border-radius: $base-radius;
+  overflow: auto;
 
   a {
     text-decoration: none;
@@ -64,9 +67,8 @@ dialog .close-reveal-modal {
     line-height: 1;
     cursor: pointer;
 
-    &--white {
+    &--white { //temporary fix for phase 1
       @extend .reveal-modal__close;
-      color: $white;
     }
   }
 }
