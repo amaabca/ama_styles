@@ -50,7 +50,7 @@
     "declaration-property-unit-whitelist": null,
     "declaration-property-value-blacklist": {},
     "declaration-property-value-whitelist": null,
-    "font-family-name-quotes": "always-unless-keyword",
+    "font-family-name-quotes": null,
     "font-family-no-duplicate-names": true,
     "font-weight-notation": "named-where-possible",
     "function-blacklist": ["rgb", "hsla"],
