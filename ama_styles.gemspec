@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'autoprefixer-rails'
   s.add_dependency 'dotenv-rails'
-  s.add_dependency 'font-awesome-sass'
+  s.add_dependency 'font-awesome-sass', '>= 5.0.6'
   s.add_dependency 'foundation-rails', '~> 6.4.3.0'
   s.add_dependency 'rails', '>= 4.2'
   s.add_dependency 'redis-rails'
