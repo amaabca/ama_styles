@@ -14,6 +14,10 @@ dialog .close-reveal-modal {
   max-width: 960px;
   position: relative;
   margin: 0 auto;
+  background: $white;
+  border-radius: $base-radius;
+  overflow: auto;
+  padding: $base-padding*2 $base-padding*3 0 $base-padding*3;
 
   a {
     text-decoration: none;
@@ -58,15 +62,15 @@ dialog .close-reveal-modal {
   &__close {
     position: absolute;
     color: $slate;
-    right: 1rem;
-    top: 0.5rem;
+    right: 1.5rem;
+    top: 0;
     font-size: 2em;
+    font-weight: bold;
     line-height: 1;
     cursor: pointer;
 
-    &--white {
+    &--white { //temporary fix for phase 1
       @extend .reveal-modal__close;
-      color: $white;
     }
   }
 }
