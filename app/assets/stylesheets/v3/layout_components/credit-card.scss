@@ -1,9 +1,10 @@
 .credit-card {
-  background-color: $cerulean;
+  background-color: $blue-main-brand;
   border-radius: $base-radius;
   padding: $base-padding;
   max-width: 400px;
   min-height: 216px;
+  box-shadow: $box-shadow;
 
   &__logo {
     height: 50px;

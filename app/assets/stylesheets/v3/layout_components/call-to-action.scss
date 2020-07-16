@@ -18,4 +18,8 @@
     @include large-3;
     @include small-9;
   }
+
+  &__sub-head {
+    font-size: $base-font-size*1.5 !important;
+  }
 }
