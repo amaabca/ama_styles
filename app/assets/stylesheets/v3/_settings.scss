@@ -238,10 +238,10 @@ $breadcrumbs-item-slash: true;
 // 11. Button
 // ----------
 
-$button-padding: 1em 1.75em;
+$button-padding: 20px 30px 20px 30px;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $cerulean;
+$button-background: $blue-main-brand;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;

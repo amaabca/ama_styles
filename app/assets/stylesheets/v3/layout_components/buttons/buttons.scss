@@ -1,5 +1,6 @@
 .button {
   text-decoration: none;
+  box-shadow: $box-shadow;
 
   &:hover,
   &:active,
@@ -10,7 +11,7 @@
 
   &--green-centered {
     @extend .button;
-    $button-background: $brand-green;
+    $button-background: $green-rewards--dark-med;
     background: $button-background;
 
     &:hover,
@@ -22,7 +23,7 @@
 
   &--green {
     @extend .button;
-    $button-background: $brand-green;
+    $button-background: $green-rewards--dark-med;
     background: $button-background;
 
     &:hover,
@@ -34,7 +35,7 @@
 
   &--dark-blue {
     @extend .button;
-    $button-background: $brand-blue-dark;
+    $button-background: $blue-main-brand--dark-med;
     background: $button-background;
 
     &:hover,

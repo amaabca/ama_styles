@@ -1,30 +1,35 @@
 .callout-box {
-  @include callout($ash);
+  border-radius: $base-radius;
+  box-shadow: $box-shadow;
 
   &__close-btn {
     float: right;
   }
 
   &--green {
-    @include callout($brand-green);
+    @extend .callout-box;
+    @include callout($green-rewards--dark-med);
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--red {
-    @include callout($brand-red);
+    @extend .callout-box;
+    @include callout($red-main--dark);
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--ins-blue {
-    @include callout($brand-blue-insurance);
+    @extend .callout-box;
+    @include callout($blue-insurance--dark-med);
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--brand-blue-light {
-    @include callout($brand-blue-light);
+    @extend .callout-box;
+    @include callout($blue-main-brand--dark-med);
     margin-bottom: $base-margin;
     color: $white;
   }

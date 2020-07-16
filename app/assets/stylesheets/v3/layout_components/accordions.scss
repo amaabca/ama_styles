@@ -26,19 +26,20 @@
 
 .accordion.secondary {
   background: none;
-
   a {
     font-size: $base-font-size;
   }
 
-  .accordion-content a {
-    font-size: $base-font-size;
+  .accordion-content {
+    border-radius: $base-radius;
+    a{
+      font-size: $base-font-size;
+    }
   }
 
   .accordion-title {
     background: $white;
     color: $slate;
-
     &:hover {
       background: $stone;
     }
@@ -52,9 +53,10 @@
 }
 
 .accordion {
-  border-top: 1px solid $smoke;
-  border-bottom: 1px solid $smoke;
-  background: none;
+  border: 1px solid #246CA9;
+  border-radius: $base-radius;
+  box-shadow: 3px 6px 8px 1px rgba(0,0,0,0.35);
+  background: $white;
 
   &__header {
     overflow: hidden;
@@ -67,24 +69,21 @@
       display: block;
       margin: 0 auto;
       text-align: center;
+      float: right;
+      margin-right: 1rem;
 
-      @include breakpoint(medium) {
-        float: left;
-        margin-right: $base-margin;
-      }
     }
 
     &:hover,
     &:focus {
-      background: $ash;
-      color: darken($brand-blue-light, 1%);
+      color: #246CA9;
       text-decoration: none;
     }
   }
 
   &__heading {
     text-align: center;
-    font-size: $base-font-size;
+    font-size: $base-font-size*1.5;
 
     @include breakpoint(medium) {
       text-align: left;
