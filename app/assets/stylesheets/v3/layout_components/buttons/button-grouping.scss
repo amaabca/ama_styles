@@ -72,7 +72,7 @@
 
     &--green {
       @extend .button-grouping__button;
-      $button-background: $brand-green;
+      $button-background: $green-rewards--dark-med;
       background: $button-background;
 
       &:hover,
@@ -97,7 +97,7 @@
 
     &--red {
       @extend .button-grouping__button;
-      $button-background: $brand-red;
+      $button-background: $red-main--dark;
       background: $button-background;
 
       &:hover,

@@ -18,6 +18,11 @@
   }
 }
 
+.accordion-content {
+  border-radius: $base-radius;
+  background: transparent;
+}
+
 .accordion-secondary {
   &--header {
     font-size: $base-font-size;
@@ -31,7 +36,6 @@
   }
 
   .accordion-content {
-    border-radius: $base-radius;
     a{
       font-size: $base-font-size;
     }
@@ -198,12 +202,4 @@
       color: $brand-red;
     }
   }
-}
-
-// Foundation sets a border-radius by default,
-// and there doesn't seem to be an override in the settings file
-.accordion-item:first-child > :first-child,
-.accordion-item:first-child > :last-child,
-:last-child:not(.is-active) > .accordion-title {
-  border-radius: 0;
 }
