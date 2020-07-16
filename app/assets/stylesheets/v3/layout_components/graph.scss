@@ -1,6 +1,6 @@
 .graph {
   width: 100%;
-  height: 50px;
+  height: 80px;
   position: relative;
 
   &__cap {
@@ -10,7 +10,7 @@
     display: block;
     float: left;
     position: absolute;
-    background-color: $stone;
+    background-color: $bg-grey-lightest;
 
     &--right {
       @extend .graph__cap;
@@ -18,21 +18,21 @@
     }
 
     &--filled {
-      background-color: $brand-blue-light;
+      background-color: $blue-secondary-brand--light-med;
     }
   }
 
   &__middle {
     height: 100%;
     width: calc(100% - 50px);
-    background-color: $stone;
+    background-color: $bg-grey-lightest;
     display: block;
     float: left;
     margin-left: 27px;
     position: relative;
 
     &--filled {
-      background-color: $brand-blue-light;
+      background-color: $blue-secondary-brand--light-med;
       min-width: 20%;
       height: 100%;
       position: absolute;
@@ -84,12 +84,11 @@
 
   &-label {
     text-align: center;
-    color: $slate;
     margin-top: $base-margin;
 
     p {
       @extend .small-text;
-      line-height: 0.8rem;
+      line-height: 1.5rem;
     }
   }
 }
