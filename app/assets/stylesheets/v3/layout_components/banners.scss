@@ -1,6 +1,8 @@
 .banner {
   position: relative; // This is needed for the positioning of the close icon on the blue banners
   margin-bottom: $base-margin;
+  border-radius: $base-radius;
+  box-shadow: $box-shadow;
 
   & > :last-child {
     margin-bottom: 0;
@@ -8,19 +10,19 @@
 
   &--blue {
     @extend .banner;
-    background: $brand-blue-insurance;
+    background: $blue-insurance--dark-med;
     padding: $base-padding;
   }
 
   &--red {
     @extend .banner;
-    background: $brand-red;
+    background: $red-main--dark;
     padding: $base-padding;
   }
 
   &--brand-blue-light {
     @extend .banner;
-    background: $brand-blue-light;
+    background: $blue-main-brand--dark-med;
     padding: $base-padding;
   }
 
