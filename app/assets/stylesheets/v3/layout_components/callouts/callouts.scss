@@ -1,6 +1,7 @@
 .callout-box {
-  border-radius: $base-radius;
   box-shadow: $box-shadow;
+  @include callout($bg-grey-light);
+  border-radius: $base-radius;
 
   &__close-btn {
     float: right;
@@ -8,28 +9,28 @@
 
   &--green {
     @extend .callout-box;
-    @include callout($green-rewards--dark-med);
+    background: $green-rewards--dark-med;
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--red {
+    background: $red-main--dark;
     @extend .callout-box;
-    @include callout($red-main--dark);
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--ins-blue {
+    background: $blue-insurance--dark-med;
     @extend .callout-box;
-    @include callout($blue-insurance--dark-med);
     margin-bottom: $base-margin;
     color: $white;
   }
 
   &--brand-blue-light {
+    background: $blue-main-brand--dark-med;
     @extend .callout-box;
-    @include callout($blue-main-brand--dark-med);
     margin-bottom: $base-margin;
     color: $white;
   }
