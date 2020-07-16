@@ -3,14 +3,15 @@
   line-height: 3rem;
   display: block;
   text-align: center;
+  min-height: 60px;
 
   &__blue-icon {
-    color: $brand-blue-light;
+    color: $blue-secondary-brand--light-med;
     font-size: 1.75rem;
   }
 
   &__grey-icon {
-    color: $smoke;
+    color: $bg-grey-light;
     font-size: 1.75rem;
   }
 }
