@@ -2,7 +2,6 @@
   width: 100%;
   height: 80px;
   position: relative;
-  margin-bottom: $base-margin;
 
   &__cap {
     border-radius: 100%;
@@ -85,7 +84,7 @@
 
   &-label {
     text-align: center;
-    margin-top: $base-margin;
+    margin: $base-margin 0;
 
     p {
       @extend .small-text;
