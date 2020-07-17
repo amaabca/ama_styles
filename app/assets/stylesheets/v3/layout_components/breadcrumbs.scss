@@ -1,7 +1,23 @@
 .breadcrumbs {
+  li {
+    &:not(:last-child){
+      &:after{
+        font-family: "FontAwesome";
+        content: "\f053";
+      }
+    }
+    &:nth-child(1){
+      font-weight: 900;
+    }
+    a{
+      &:hover{
+        color: $blue-main-brand--dark-med;
+      }
+    }
+  }
   &__link {
     &--disabled {
-      @extend .disabled;
+      color: $dark-grey-text !important;
       pointer-events: none;
     }
   }
