@@ -30,8 +30,9 @@
     width: fit-content;
 
     &::after {
-      font-family: "FontAwesome";
-      content: "\f105";
+      font-family: 'Font Awesome 5 Free';
+      content: fa-content($fa-var-angle-right);
+      margin-left: $base-margin;
     }
 
     &:hover {
