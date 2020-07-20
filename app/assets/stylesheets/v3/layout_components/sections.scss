@@ -111,6 +111,7 @@
   }
 
   &--no-padding {
+    @extend .heading;
   }
 
   &--grey-bg {
