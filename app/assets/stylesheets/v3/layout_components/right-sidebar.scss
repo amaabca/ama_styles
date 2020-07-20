@@ -1,7 +1,7 @@
 .right-sidebar {
   z-index: 9999;
   width: 700px;
-  transform: translate(-420px, -100%);
+  transform: translate(-300px, -100%);
   position: fixed;
   top: 53px;
   background-color: $white;
@@ -70,7 +70,7 @@
 }
 
 .right-sidebar.is-open {
-  transform: translate(-420px, 0);
+  transform: translate(-300px, 0);
 
   @include breakpoint (medium down) {
     transform: translate(0, 0);
