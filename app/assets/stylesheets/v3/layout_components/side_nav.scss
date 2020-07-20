@@ -28,6 +28,7 @@
   &__header {
     @extend .heading;
     background: $cerulean;
+    color: $white;
   }
 
   &__content {
