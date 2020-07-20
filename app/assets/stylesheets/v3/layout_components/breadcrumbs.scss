@@ -2,8 +2,10 @@
   li {
     &:not(:last-child){
       &:after{
-        font-family: "FontAwesome";
-        content: "\f053";
+        font-family: 'Font Awesome 5 Free';
+        content:'\f054';
+        display: inline-block;
+        font-weight: 900;
       }
     }
     &:nth-child(1){
