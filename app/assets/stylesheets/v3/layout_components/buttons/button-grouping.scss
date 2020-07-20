@@ -68,6 +68,7 @@
     box-shadow: $base-box-shadow;
     border-radius: $base-radius;
     margin-bottom: $base-margin;
+    padding: $base-padding*2 $base-padding*3;
 
     &:hover,
     &:active,
@@ -125,11 +126,6 @@
   }
 
   &__content {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    width: 90%;
     color: $white;
   }
 
@@ -146,14 +142,17 @@
   &__title {
     font-weight: bold;
     margin-bottom: $base-margin;
+    font-family: $button-font-family;
   }
 
   &__text {
     line-height: 1rem;
     display: block;
     float: left;
-    font-size: $medium-font-size;
+    font-size: $button-font-size;
     font-weight: 900;
+    font-family: $button-font-family;
+    color: $white;
 
     &--large {
       display: block;
@@ -170,6 +169,7 @@
     &--blue {
       color: $brand-blue-light;
       font-weight: 900;
+      font-family: $button-font-family;
     }
 
     &--slate {
