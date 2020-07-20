@@ -7,10 +7,6 @@
 
     &--bordered {
       @extend .link-list__item;
-
-      &:not(:first-child) {
-        padding-top: $base-padding/2;
-      }
     }
 
     &--grey-bordered {
