@@ -24,10 +24,14 @@
 .top-bar {
   @extend .show-for-large;
   height: $top-bar-height;
-  background: $white;
+  background: $blue-secondary-brand--light-med;
+
+  a {
+    color: $white;
+  }
 
   &__logo {
-    @extend .logo;
+    display: none;
 
     &--roadreports {
       @extend .logo;
@@ -81,7 +85,7 @@
 }
 
 .top-nav-offset {
-  margin-top: $top-bar-height;
+  margin-top: $top-bar-height + $side-nav-height;
 
   &--styleguide {
     margin-top: 19px;

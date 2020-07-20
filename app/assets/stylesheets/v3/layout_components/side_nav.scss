@@ -1,9 +1,21 @@
 .side-nav {
   background: $white;
-  @include grid-column(2,0);
+  box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
+  position: fixed;
+  top: $top-bar-height;
+  z-index: 9000;
+  @include grid-column(12,0);
+  height: $side-nav-height;
 
   @include breakpoint(medium down) {
     display: none;
+  }
+
+  .logo {
+    padding: 1rem;
+    margin-right: 3rem;
+    object-fit: contain;
+    align-self: flex-start;
   }
 
   &__spacer {
@@ -31,36 +43,72 @@
   }
 
   &__content {
-    padding: $base-padding;
   }
 
   &__list {
     list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 0;
+
   }
 
   &__item {
-    margin-bottom: $base-margin;
+    padding: $base-padding;
+    cursor: pointer;
+    height: $side-nav-height;
+
+    &:hover {
+      border-bottom: 0.5rem solid $blue-main-brand;
+
+      .side-nav__child-list {
+        display: block;
+      }
+    }
   }
 
   &__link {
     display: block;
     font-weight: 600;
-    color: $jet;
-    margin-bottom: $base-margin/2;
+    color: $dark-grey-text;
     cursor: pointer;
     line-height: inherit;
+    font-size: 1rem;
 
     &:hover {
-      color: lighten($cerulean, 15%);
+      text-decoration: none;
+      color: $dark-grey-text;
     }
   }
 
   &__child-list {
     list-style-type: none;
+    display: none;
+    position: absolute;
+    background-color: $white;
+    width: calc(100% - 4rem);
+    left: 1rem;
+    top: $side-nav-height;
+    box-shadow:
+      2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
+      inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    padding: 1rem 2rem;
+    z-index: 10;
+
+    li:first-of-type {
+      border-bottom: 1px solid $bg-grey-light;
+        &::after {
+          font-family: 'Font Awesome 5 Free';
+          content: fa-content($fa-var-angle-double-right);
+          color: $brand-red;
+          margin-left: 1rem;
+        }
+    }
   }
 
   &__child-item {
     margin-bottom: $base-margin/2;
+    width: fit-content;
   }
 
   &__child-link {
