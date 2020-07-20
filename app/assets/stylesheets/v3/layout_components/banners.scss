@@ -2,7 +2,7 @@
   position: relative; // This is needed for the positioning of the close icon on the blue banners
   margin-bottom: $base-margin;
   border-radius: $base-radius;
-  box-shadow: $box-shadow;
+  box-shadow: $base-box-shadow;
   padding: $base-padding*2 $base-padding*3 $base-padding*2 $base-padding*3 !important;
   //important is temporarily necessary until we can edit the html in phase 2 of reskin to overwrite cascade of p1
   //on green and orange banners.
