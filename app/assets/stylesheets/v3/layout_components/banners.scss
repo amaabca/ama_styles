@@ -3,6 +3,9 @@
   margin-bottom: $base-margin;
   border-radius: $base-radius;
   box-shadow: $box-shadow;
+  padding: $base-padding*2 $base-padding*3 $base-padding*2 $base-padding*3 !important;
+  //important is temporarily necessary until we can edit the html in phase 2 of reskin to overwrite cascade of p1
+  //on green and orange banners.
 
   & > :last-child {
     margin-bottom: 0;
@@ -11,19 +14,16 @@
   &--blue {
     @extend .banner;
     background: $blue-insurance--dark-med;
-    padding: $base-padding;
   }
 
   &--red {
     @extend .banner;
     background: $red-main--dark;
-    padding: $base-padding;
   }
 
   &--brand-blue-light {
     @extend .banner;
     background: $blue-main-brand--dark-med;
-    padding: $base-padding;
   }
 
   &__title {

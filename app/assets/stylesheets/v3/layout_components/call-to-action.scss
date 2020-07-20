@@ -21,5 +21,29 @@
 
   &__sub-head {
     font-size: 1.125rem !important;
+    margin-bottom: $base-margin;
+  }
+
+  &__content{
+    p{
+      margin-bottom: $base-margin;
+      a{
+        font-weight: bold;
+        border-bottom: 4px solid $hyperlink-blue;
+        width: fit-content;
+
+        &:after{
+          font-family: 'Font Awesome 5 Free';
+          content:'\f054';
+          display: inline-block;
+          font-weight: 900;
+          margin-left: $base-margin;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
