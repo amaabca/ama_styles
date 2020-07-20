@@ -17,7 +17,7 @@
   &__content {
     padding: $base-padding;
 
-    .section__sub-head{
+    .section__sub-head {
       @extend .h5;
       margin-bottom: $base-margin;
     }
@@ -30,7 +30,7 @@
     width: fit-content;
 
     &::after {
-      font-family: 'Font Awesome 5 Free';
+      font-family: "Font Awesome 5 Free";
       content: fa-content($fa-var-angle-right);
       margin-left: $base-margin;
     }
