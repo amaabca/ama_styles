@@ -2,9 +2,11 @@
   list-style-type: none;
 
   &__item {
+    padding-bottom: $base-padding/2;
+    font-weight: bold;
+
     &--bordered {
-      border-bottom: 2px solid $sky;
-      padding-bottom: $base-padding/2;
+      @extend .link-list__item;
 
       &:not(:first-child) {
         padding-top: $base-padding/2;
@@ -12,7 +14,6 @@
     }
 
     &--grey-bordered {
-      border-bottom: 2px solid $stone;
       padding-bottom: $base-padding/2;
 
       &:not(:first-child) {
