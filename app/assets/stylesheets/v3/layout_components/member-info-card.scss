@@ -1,7 +1,8 @@
 .member-info-card {
   background: $white;
-  padding: $base-padding $base-padding 0 $base-padding;
+  padding: $base-padding $base-padding $base-padding*2 $base-padding;
   margin-bottom: $base-margin;
+  border-bottom: $base-border;
 
   &__image {
     float: left;
@@ -25,7 +26,7 @@
   }
 
   &__details-container {
-    border-right: 2px solid $stone;
+    border-right: $base-border;
 
     @include breakpoint(small only) {
       &:last-of-type {
