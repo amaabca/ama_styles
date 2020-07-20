@@ -94,12 +94,15 @@ $primary-color: $blue-main-brand--dark;
 $secondary-color: $blue-main-brand;
 // Fonts
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-family-headings: latoblack, latoregular, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-headings: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-buttons: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
+$button-font-size: $base-font-size*1.125;
 $small-font-size: $base-font-size*1.0;
 $medium-font-size: $base-font-size*1.25;
 $large-font-size: $base-font-size*1.75;
 $x-large-font-size: $base-font-size*2;
+
 // Spacing
 $base-margin: 1rem;
 $base-padding: 1rem;
