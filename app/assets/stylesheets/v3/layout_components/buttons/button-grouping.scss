@@ -58,12 +58,23 @@
   }
 
   &__button {
-    @extend .button;
-    min-height: 170px;
+    background: $button-background;
+    min-height: 180px;
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
+    text-decoration: none;
+    box-shadow: $box-shadow;
+    border-radius: $base-radius;
+    margin-bottom: $base-margin;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: lighten($button-background, 10%);
+      text-decoration: none;
+    }
 
     &--full {
       @extend .button-grouping__button;
@@ -114,7 +125,9 @@
   }
 
   &__content {
-    @include absolute-center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     width: 90%;
     color: $white;
@@ -128,7 +141,6 @@
   &__bg-icon {
     height: 80px;
     background-repeat: no-repeat;
-    background-position: center center;
   }
 
   &__title {
@@ -139,6 +151,9 @@
   &__text {
     line-height: 1rem;
     display: block;
+    float: left;
+    font-size: $medium-font-size;
+    font-weight: 900;
 
     &--large {
       display: block;
@@ -149,10 +164,12 @@
     &--underline {
       display: block;
       text-decoration: underline;
+      font-weight: 900;
     }
 
     &--blue {
       color: $brand-blue-light;
+      font-weight: 900;
     }
 
     &--slate {
