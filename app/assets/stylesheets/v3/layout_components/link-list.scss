@@ -2,17 +2,14 @@
   list-style-type: none;
 
   &__item {
-    &--bordered {
-      border-bottom: 2px solid $sky;
-      padding-bottom: $base-padding/2;
+    padding-bottom: $base-padding/2;
+    font-weight: bold;
 
-      &:not(:first-child) {
-        padding-top: $base-padding/2;
-      }
+    &--bordered {
+      @extend .link-list__item;
     }
 
     &--grey-bordered {
-      border-bottom: 2px solid $stone;
       padding-bottom: $base-padding/2;
 
       &:not(:first-child) {

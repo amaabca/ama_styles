@@ -1,19 +1,26 @@
 .right-sidebar {
   z-index: 9999;
-  width: 350px;
-  transform: translate(350px, 0);
-  background-color: $ash;
+  width: 700px;
+  transform: translate(-300px, -100%);
+  position: fixed;
+  top: 53px;
+  background-color: $white;
+  height: auto;
+  padding-bottom: $base-padding;
+  box-shadow: $base-box-shadow;
+  border-radius: 0 0 $base-radius $base-radius;
 
-  @include breakpoint (small down) {
+  @include breakpoint (medium down) {
     width: 90vw;
-    transform: translate(90vw, 0);
+    transform: translate(0, -100%);
   }
 
   &__header {
-    background-color: $white;
-    border-bottom: 2px solid $stone;
-    border-left: 2px solid $stone;
-    padding-bottom: $base-padding / 2;
+    display: none;
+  }
+
+  .row:not(:last-child) {
+    border-bottom: $hr-border;
   }
 
   &__content {
@@ -59,5 +66,13 @@
       background-color: $orange;
       float: left;
     }
+  }
+}
+
+.right-sidebar.is-open {
+  transform: translate(-300px, 0);
+
+  @include breakpoint (medium down) {
+    transform: translate(0, 0);
   }
 }
