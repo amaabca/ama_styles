@@ -49,7 +49,7 @@
   &__list {
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: stretch;
     margin-bottom: 0;
 
   }
@@ -93,17 +93,25 @@
     box-shadow:
       2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
       inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
-    padding: 1rem 2rem;
+    padding: 0 2rem;
     z-index: 10;
 
     li:first-of-type {
       border-bottom: 1px solid $bg-grey-light;
-        &::after {
-          font-family: 'Font Awesome 5 Free';
-          content: fa-content($fa-var-angle-double-right);
-          color: $brand-red;
-          margin-left: 1rem;
-        }
+      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+
+      &::after {
+        // font-family: "Font Awesome 5 Free";
+        font-family: "FontAwesome";
+        content: fa-content($fa-var-angle-double-right);
+        margin-left: 1rem;
+        color: $black
+      }
+    }
+
+    li:last-of-type {
+      padding-bottom: 1rem;
     }
   }
 
@@ -113,14 +121,15 @@
   }
 
   &__child-link {
-    color: $stormcloud;
-    font-size: rem-calc(12);
+    color: $black;
+    font-size: 1rem;
+    font-weight: 600;
 
     &:active,
     &:hover,
     &:focus {
-      $anchor-color: $cerulean;
-      color: $anchor-color-hover;
+      $anchor-color: $black;
+      color: $black;
     }
 
     &--active-page {
