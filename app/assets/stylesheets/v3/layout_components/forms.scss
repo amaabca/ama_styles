@@ -157,14 +157,15 @@ input[type="checkbox"]:not(.default) {
 input[type="radio"] + label,
 input[type="checkbox"] + label,
 .form__label--unselected {
-  background: $ash;
-  border: $base-border;
+  background: $white;
+  border: 2px solid #A0A0A1;
   margin: 0;
   width: 100%;
   position: relative;
   cursor: pointer;
   padding: 0 $base-padding/2 0 $base-padding/2;
   transition: border-color 0.25s linear;
+  border-radius: $base-radius;
 
   &:hover {
     &::before {
@@ -206,7 +207,7 @@ input[type="checkbox"] + label,
 }
 
 .form__label-bg {
-  background: $ash;
+  background: $white;
   border: $base-border;
   margin: 0;
   width: 100%;
