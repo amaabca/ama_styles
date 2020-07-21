@@ -24,16 +24,17 @@
     margin-bottom: $base-margin;
   }
 
-  &__content{
-    p{
+  &__content {
+    p {
       margin-bottom: $base-margin;
-      a{
+
+      a {
         font-weight: bold;
         border-bottom: 4px solid $hyperlink-blue;
         width: fit-content;
 
-        &:after{
-          font-family: 'Font Awesome 5 Free';
+        &::after {
+          font-family: "Font Awesome 5 Free";
           content: fa-content($fa-var-angle-right);
           display: inline-block;
           font-weight: 900;
