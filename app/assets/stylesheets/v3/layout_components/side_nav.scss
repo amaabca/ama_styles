@@ -1,3 +1,5 @@
+/* Desktop Header/Side-Nav */
+
 .side-nav {
   background: $white;
   box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
@@ -50,7 +52,7 @@
     list-style-type: none;
     display: flex;
     justify-content: stretch;
-    margin-bottom: 0;
+    margin: 0 2rem;
 
   }
 
@@ -58,6 +60,7 @@
     padding: $base-padding;
     cursor: pointer;
     height: $side-nav-height;
+    flex-grow: 1;
 
     &:hover {
       border-bottom: 0.5rem solid $blue-main-brand;
@@ -75,6 +78,180 @@
     cursor: pointer;
     line-height: inherit;
     font-size: 1rem;
+    text-align: center;
+
+    &:hover {
+      text-decoration: none;
+      color: $dark-grey-text;
+    }
+  }
+
+  &__child-list {
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    background-color: $white;
+    width: calc(100% - 4rem);
+    left: 1rem;
+    top: $side-nav-height;
+    box-shadow:
+      2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
+      inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    padding: 0 2rem;
+    z-index: 10;
+
+    li:first-of-type {
+      border-bottom: 1px solid $bg-grey-light;
+      padding-bottom: 0.5rem;
+      padding-top: 1rem;
+
+      &::after {
+        // font-family: "Font Awesome 5 Free";
+        font-family: "FontAwesome";
+        content: fa-content($fa-var-angle-double-right);
+        margin-left: 1rem;
+        color: $black
+      }
+    }
+
+    li:last-of-type {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__child-item {
+    margin-bottom: $base-margin/2;
+    width: fit-content;
+  }
+
+  &__child-link {
+    color: $black;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:active,
+    &:hover,
+    &:focus {
+      $anchor-color: $black;
+      color: $black;
+    }
+
+    &--active-page {
+      font-weight: bold;
+      color: $cerulean;
+    }
+  }
+
+  &--overlay {
+    @extend .side-nav;
+    z-index: 1000;
+    position: absolute;
+    min-width: 300px;
+
+    @include breakpoint(medium down) {
+      position: relative;
+    }
+
+    @include breakpoint(small only) {
+      width: 100%;
+    }
+  }
+}
+
+/* Mobile Header/Side-Nav */
+
+.off-canvas.position-left {
+  width: $offcanvas-left-size;
+  // left: -$offcanvas-left-size;
+  transform: translateX(-$offcanvas-left-size);
+}
+
+.off-canvas.position-left.is-open {
+  transform: translate(0, 0);
+}
+
+.m-side-nav {
+  background: $red-main;
+  box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
+  position: fixed;
+  top: $top-bar-height;
+  z-index: 9000;
+  @include grid-column(12,0);
+
+  @include breakpoint(medium down) {
+    display: none;
+  }
+
+  .logo {
+    padding: 1rem;
+    margin-right: 3rem;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+
+  &__spacer {
+    @include large-2;
+    height: 100%;
+    position: absolute;
+    z-index: -1; //to prevent overlap with notifications
+
+    &--white {
+      @extend .side-nav__spacer;
+      background-color: $white;
+    }
+
+    &--show-for-medium {
+      @extend .side-nav__spacer;
+      @include breakpoint(medium down) {
+        display: block;
+      }
+    }
+  }
+
+  &__header {
+    @extend .heading;
+    background: $cerulean;
+    color: $white;
+  }
+
+  &__content {
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: 0 2rem;
+
+  }
+
+  &__item {
+    padding: .75rem .5rem;
+    cursor: pointer;
+    border-bottom: 1px solid #dee2e6;
+
+    &:hover {
+
+      .side-nav__child-list {
+        display: block;
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    font-weight: 400;
+    color: $dark-grey-text;
+    cursor: pointer;
+    line-height: inherit;
+    font-size: 1rem;
+
+    &::after {
+      // font-family: "Font Awesome 5 Free";
+      font-family: "FontAwesome";
+      content: fa-content($fa-var-caret-right);
+      color: $black;
+      position: absolute;
+      right: 2rem;
+    }
 
     &:hover {
       text-decoration: none;
