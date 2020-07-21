@@ -1,8 +1,10 @@
 .card {
   background: $white;
-  padding-top: $base-padding;
+  padding: $base-padding*2 $base-padding*3;
   text-align: center;
   margin-bottom: $base-margin;
+  box-shadow: $base-box-shadow;
+  border-radius: $base-radius;
 
   &__title {
     padding: $base-padding*0.75 $base-padding;
@@ -16,6 +18,7 @@
     &--bg-blue {
       background: $brand-blue-light;
       color: $white;
+      display: none; //temporary fix until phase 2 of reskin
     }
   }
 
@@ -28,9 +31,9 @@
     padding-right: $base-padding;
 
     &--bg-ash {
-      background: $ash;
-      border-top: $base-border;
-      border-bottom: $base-border;
+      background: transparent;
+      border-top: transparent;
+      border-bottom: transparent;
       padding-top: $base-padding;
       margin-bottom: $base-margin;
     }
