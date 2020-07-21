@@ -167,6 +167,14 @@ input[type="checkbox"] + label,
   transition: border-color 0.25s linear;
   border-radius: $base-radius;
 
+  &:hover {
+    &::before {
+      border-color: $blue-main-brand;
+      background-color: $white;
+      transition: border-color 0.25s linear;
+    }
+  }
+
   &::before {
     content: " ";
     display: block;
@@ -317,7 +325,8 @@ input[type="checkbox"]:checked + label {
   }
 
   &::before {
-    background: $brand-blue-light;
+    background: $blue-main-brand;
+    border: 2px solid $blue-main-brand;
   }
 }
 
