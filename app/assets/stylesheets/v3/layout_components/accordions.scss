@@ -31,12 +31,13 @@
 
 .accordion.secondary {
   background: none;
+
   a {
     font-size: $base-font-size;
   }
 
   .accordion-content {
-    a{
+    a {
       font-size: $base-font-size;
     }
   }
@@ -44,6 +45,7 @@
   .accordion-title {
     background: $white;
     color: $slate;
+
     &:hover {
       background: $stone;
     }
@@ -57,9 +59,9 @@
 }
 
 .accordion {
-  border: 1px solid #246CA9;
+  border: 1px solid $blue-main-brand;
   border-radius: $base-radius;
-  box-shadow: 3px 6px 8px 1px rgba(0,0,0,0.35);
+  box-shadow: 3px 6px 8px 1px rgba(0, 0, 0, 0.35);
   background: $white;
   padding: $base-padding/2 $base-padding/2 $base-padding/2 $base-padding/2;
 
@@ -76,12 +78,11 @@
       text-align: center;
       float: right;
       margin-right: 1rem;
-
     }
 
     &:hover,
     &:focus {
-      color: #246CA9;
+      color: $blue-main-brand;
       text-decoration: none;
     }
   }
