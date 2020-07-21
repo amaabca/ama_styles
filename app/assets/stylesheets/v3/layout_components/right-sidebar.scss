@@ -28,20 +28,12 @@
 
     &--active {
       padding-top: $base-padding;
-      background-color: $sky;
-      border-left: 5px solid $cerulean;
-      border-right: 1px solid $cerulean;
-      border-top: 1px solid $cerulean;
-      border-bottom: 1px solid $cerulean;
+      background-color: $blue-main-brand--light;
     }
 
     &--inactive {
-      padding-top: $base-padding / 2;
+      padding-top: $base-padding;
       background-color: $white;
-      border-left: 5px solid $smoke;
-      border-right: 1px solid $smoke;
-      border-top: 1px solid $smoke;
-      border-bottom: 1px solid $smoke;
     }
   }
 
