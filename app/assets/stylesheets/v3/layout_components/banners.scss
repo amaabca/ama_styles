@@ -1,6 +1,11 @@
 .banner {
   position: relative; // This is needed for the positioning of the close icon on the blue banners
   margin-bottom: $base-margin;
+  border-radius: $base-radius;
+  box-shadow: $base-box-shadow;
+  padding: $base-padding*2 $base-padding*3 !important;
+  //important is temporarily necessary until we can edit the html in phase 2 of reskin to overwrite cascade of p1
+  //on green and orange banners.
 
   & > :last-child {
     margin-bottom: 0;
@@ -8,20 +13,17 @@
 
   &--blue {
     @extend .banner;
-    background: $brand-blue-insurance;
-    padding: $base-padding;
+    background: $blue-insurance--dark-med;
   }
 
   &--red {
     @extend .banner;
-    background: $brand-red;
-    padding: $base-padding;
+    background: $red-main--dark;
   }
 
   &--brand-blue-light {
     @extend .banner;
-    background: $brand-blue-light;
-    padding: $base-padding;
+    background: $blue-main-brand--dark-med;
   }
 
   &__title {
