@@ -34,7 +34,7 @@
 
         &:after{
           font-family: 'Font Awesome 5 Free';
-          content:'\f054';
+          content: fa-content($fa-var-angle-right);
           display: inline-block;
           font-weight: 900;
           margin-left: $base-margin;
