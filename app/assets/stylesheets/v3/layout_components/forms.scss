@@ -171,15 +171,15 @@ input[type="checkbox"] + label,
     content: " ";
     display: block;
     position: absolute;
-    left: 10px;
-    top: calc(50% - 12px);
-    width: 24px;
-    min-width: 24px;
-    height: 24px;
+    left: 1rem;
+    top: calc(50% - 15px);
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
     background-color: $white;
     border: $form-border;
     transition: border-color 0.25s linear;
-    border-radius: 2px;
+    border-radius: 6px;
   }
 
   &.checkbox--no-label {
@@ -217,9 +217,10 @@ input[type="checkbox"] + label,
 .checkbox-label {
   display: inline-block;
   width: 85%;
-  margin-top: 9px;
-  margin-bottom: 9px;
-  margin-left: 38px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+  margin-left: 55px;
+  min-height: 35px;
 
   &--full {
     @extend .checkbox-label;
@@ -295,9 +296,9 @@ input[type="checkbox"]:checked + label {
     display: block;
     position: absolute;
     z-index: 200;
-    left: 14px;
+    left: 22px;
     top: 50%;
-    width: 8px;
+    width: 10px;
     height: 16px;
     border-right: 3px solid $white;
     border-top: 3px solid $white;
@@ -332,12 +333,12 @@ input[type="checkbox"] {
 
   25% {
     height: 0;
-    width: 8px;
+    width: 10px;
   }
 
   50% {
-    height: 17px;
-    width: 8px;
+    height: 16px;
+    width: 10px;
   }
 }
 
