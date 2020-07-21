@@ -107,7 +107,7 @@ $grid-padding-gutters: $grid-margin-gutters;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: $font-family-headings;
 $header-font-weight: 700;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -226,22 +226,23 @@ $badge-font-size: 0.6rem;
 // 10. Breadcrumbs
 // ---------------
 
-$breadcrumbs-margin: 0 0 $base-margin 0;
-$breadcrumbs-item-font-size: rem-calc(12);
-$breadcrumbs-item-color: $cerulean;
-$breadcrumbs-item-color-current: $stormcloud;
-$breadcrumbs-item-color-disabled: $stormcloud;
+$breadcrumbs-margin: 0 0 $base-margin*2 0;
+$breadcrumbs-item-font-size: 1.125rem;
+$breadcrumbs-item-color: $blue-main-brand;
+$breadcrumbs-item-color-current: $dark-grey-text;
+$breadcrumbs-item-color-disabled: $dark-grey-text;
 $breadcrumbs-item-margin: 0.75rem;
 $breadcrumbs-item-uppercase: false;
-$breadcrumbs-item-slash: true;
+$breadcrumbs-item-separator: true;
+$breadcrumbs-item-separator-color: $dark-grey-text;
 
 // 11. Button
 // ----------
 
-$button-padding: 1em 1.75em;
+$button-padding: $base-padding*1.25 $base-padding*1.875;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $cerulean;
+$button-background: $blue-main-brand;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
@@ -253,6 +254,7 @@ $button-sizes: (
   large: 1.25rem,
 );
 $button-opacity-disabled: 0.25;
+$button-font-family: $font-family-buttons;
 
 // 12. Button Group
 // ----------------
