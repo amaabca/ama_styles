@@ -34,7 +34,7 @@
   }
 
   &__text-button {
-    @extend .button;
+    // @extend .button;
     position: relative;
     width: 100%;
     padding: 1.75em;
@@ -58,17 +58,13 @@
   }
 
   &__button {
-    background: $button-background;
-    min-height: 180px;
-    position: relative;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    // @extend .button;
     text-decoration: none;
     box-shadow: $base-box-shadow;
+    background: $button-background;
+    margin-bottom: $base-margin*2;
     border-radius: $base-radius;
-    margin-bottom: $base-margin;
-    padding: $base-padding*2 $base-padding*3;
+    padding: $base-padding;
 
     &:hover,
     &:active,
@@ -76,6 +72,13 @@
       background: lighten($button-background, 10%);
       text-decoration: none;
     }
+
+    min-height: 170px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
 
     &--full {
       @extend .button-grouping__button;
@@ -126,12 +129,15 @@
   }
 
   &__content {
+    @include absolute-center;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    width: 90%;
     color: $white;
   }
 
   &__icon {
-    font-size: 5rem;
-    padding-bottom: $base-padding;
+    font-size: 3rem;
+    padding-bottom: $base-padding/2;
   }
 
   &__bg-icon {
@@ -142,17 +148,16 @@
   &__title {
     font-weight: bold;
     margin-bottom: $base-margin;
-    font-family: $button-font-family;
   }
 
   &__text {
-    line-height: 1rem;
+    line-height: 1.5;
     display: block;
-    float: left;
-    font-size: $button-font-size;
-    font-weight: 900;
-    font-family: $button-font-family;
     color: $white;
+
+    br{
+      display: none; //temporary change until phase 2 of reskin so content fits better for current buttons.
+    }
 
     &--large {
       display: block;
@@ -163,13 +168,10 @@
     &--underline {
       display: block;
       text-decoration: underline;
-      font-weight: 900;
     }
 
     &--blue {
       color: $brand-blue-light;
-      font-weight: 900;
-      font-family: $button-font-family;
     }
 
     &--slate {
