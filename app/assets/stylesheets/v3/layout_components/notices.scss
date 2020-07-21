@@ -1,12 +1,14 @@
 .notice--flash {
   padding: $base-padding/2 $base-padding;
-  background-color: $brand-blue-insurance;
+  background-color: $blue-main-brand--dark-med;
   color: $white;
   -webkit-animation: noticeFade 8s;
   -moz-animation: noticeFade 8s;
   -o-animation: noticeFade 8s;
   animation: noticeFade 8s;
   opacity: 0;
+  border-radius: $base-radius;
+  box-shadow: $base-box-shadow;
 }
 
 @keyframes noticeFade {
@@ -83,18 +85,18 @@
 
 .notice_notification {
   padding: $base-padding/2 $base-padding;
-  background-color: $brand-blue-insurance;
+  background-color: $blue-insurance--dark-med;
   color: $white;
 }
 
 .error_notification {
   @extend .notice_notification;
-  background-color: $brand-red;
+  background-color: $red-main--dark;
 }
 
 .success_notification {
   @extend .notice_notification;
-  background-color: $brand-green;
+  background-color: $green-rewards--dark-med;
 }
 
 //Status error classes
@@ -124,12 +126,14 @@
 .notice {
   color: $white;
   padding: $base-padding;
-  margin-bottom: $base-margin;
+  margin-bottom: $base-margin*2;
   overflow: auto;
+  border-radius: $base-radius;
+  box-shadow: $base-box-shadow;
 
   &--warning {
     @extend .notice;
-    background: $orange;
+    background: $orange-travel--dark-med;
   }
 
   &__icon-wrapper {
