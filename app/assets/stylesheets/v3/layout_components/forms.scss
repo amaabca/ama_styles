@@ -158,7 +158,7 @@ input[type="radio"] + label,
 input[type="checkbox"] + label,
 .form__label--unselected {
   background: $white;
-  border: 2px solid #A0A0A1;
+  border: $form-border;
   margin: 0;
   width: 100%;
   position: relative;
@@ -166,14 +166,6 @@ input[type="checkbox"] + label,
   padding: 0 $base-padding/2 0 $base-padding/2;
   transition: border-color 0.25s linear;
   border-radius: $base-radius;
-
-  &:hover {
-    &::before {
-      border-color: $brand-blue-light;
-      background-color: $white;
-      transition: border-color 0.25s linear;
-    }
-  }
 
   &::before {
     content: " ";
@@ -185,8 +177,9 @@ input[type="checkbox"] + label,
     min-width: 24px;
     height: 24px;
     background-color: $white;
-    border: $base-border;
+    border: $form-border;
     transition: border-color 0.25s linear;
+    border-radius: 2px;
   }
 
   &.checkbox--no-label {
