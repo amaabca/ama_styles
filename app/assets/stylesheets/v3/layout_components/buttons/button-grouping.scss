@@ -58,7 +58,7 @@
   }
 
   &__button {
-    // @extend .button;
+    // @extend .button; //don't want all styles from button until changes in phase 2.
     text-decoration: none;
     box-shadow: $base-box-shadow;
     background: $button-background;
@@ -157,6 +157,10 @@
 
     br{
       display: none; //temporary change until phase 2 of reskin so content fits better for current buttons.
+    }
+
+    h3{
+      margin-bottom: $base-margin; //temporary until phase 2.
     }
 
     &--large {
