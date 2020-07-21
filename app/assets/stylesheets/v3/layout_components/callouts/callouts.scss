@@ -2,7 +2,7 @@
   box-shadow: $base-box-shadow;
   @include callout($bg-grey-light);
   border-radius: $base-radius;
-  padding: $base-padding*2 $base-padding*3 $base-padding*2 $base-padding*3;
+  padding: $base-padding*2 $base-padding*3;
 
   &__close-btn {
     float: right;

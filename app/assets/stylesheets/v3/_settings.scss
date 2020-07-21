@@ -239,7 +239,7 @@ $breadcrumbs-item-separator-color: $dark-grey-text;
 // 11. Button
 // ----------
 
-$button-padding: 20px 30px 20px 30px;
+$button-padding: $base-padding*1.25 $base-padding*1.875;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $blue-main-brand;
