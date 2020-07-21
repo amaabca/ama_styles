@@ -45,9 +45,6 @@
     color: $white;
   }
 
-  &__content {
-  }
-
   &__list {
     list-style-type: none;
     display: flex;
@@ -164,10 +161,44 @@
   width: $offcanvas-left-size;
   // left: -$offcanvas-left-size;
   transform: translateX(-$offcanvas-left-size);
+  top: $top-bar-height;
 }
 
 .off-canvas.position-left.is-open {
   transform: translate(0, 0);
+}
+
+.m-side-nav__content {
+  .side-nav__link {
+    text-align: left;
+    background-color: $blue-main-brand;
+    color: $white;
+    text-decoration: none;
+    font-weight: 400;
+
+    &::after {
+      // font-family: "Font Awesome 5 Free";
+      font-family: "FontAwesome";
+      content: fa-content($fa-var-chevron-right);
+      color: $white;
+      margin-left: 1rem;
+    }
+  }
+
+  .side-nav__item {
+    background-color: $blue-main-brand;
+    border-bottom: none;
+    padding: 1rem 2rem;
+    height: auto;
+
+    &:hover {
+      border-bottom: none;
+
+      .m-side-nav__child-list {
+        display: block;
+      }
+    }
+  }
 }
 
 .m-side-nav {
@@ -180,13 +211,6 @@
 
   @include breakpoint(medium down) {
     display: none;
-  }
-
-  .logo {
-    padding: 1rem;
-    margin-right: 3rem;
-    object-fit: contain;
-    align-self: flex-start;
   }
 
   &__spacer {
@@ -214,12 +238,8 @@
     color: $white;
   }
 
-  &__content {
-  }
-
   &__list {
     list-style-type: none;
-    margin: 0 2rem;
 
   }
 
@@ -227,10 +247,13 @@
     padding: .75rem .5rem;
     cursor: pointer;
     border-bottom: 1px solid #dee2e6;
+    margin: 0 2rem;
 
-    &:hover {
-
-      .side-nav__child-list {
+    &:target,
+    &:active,
+    &:visited,
+    &:focus {
+      .m-side-nav__child-list {
         display: block;
       }
     }
@@ -243,11 +266,12 @@
     cursor: pointer;
     line-height: inherit;
     font-size: 1rem;
+    pointer-events: none;
 
     &::after {
       // font-family: "Font Awesome 5 Free";
       font-family: "FontAwesome";
-      content: fa-content($fa-var-caret-right);
+      content: fa-content($fa-var-chevron-right);
       color: $black;
       position: absolute;
       right: 2rem;
