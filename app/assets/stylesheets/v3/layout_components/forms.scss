@@ -530,7 +530,7 @@ input[type="text"],
 [type="color"],
 textarea,
 select {
-  margin-bottom: 0;
+  margin-bottom: $base-margin;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -628,7 +628,7 @@ input[type="search"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 input[type="time"]:-ms-input-placeholder,
 input[type="url"]:-ms-input-placeholder {
-  color: darken($stone, 10%);
+  color: $dark-grey-text;
 }
 
 @include breakpoint(medium) {
