@@ -52,35 +52,35 @@ body {
 
 // Footer styles
 .page-footer {
-  background: $brand-blue-light;
+  background: $bg-grey-dark;
   position: relative;
+  font-family: 'Lato', sans-serif;
 
   &__container {
     @include grid-row;
-    max-width: 1180px;
-    padding-top: $base-padding*3;
+    max-width: 1440px;
+    padding-top: $base-padding*2;
   }
 
   &__col {
     @include medium-6;
-    @include large-3;
+    @include large-2;
   }
 
   &__col-header {
+    font-size: $base-font-size*1.5;
+    font-weight: 900;
     color: $white;
-    font-weight: bold;
+    padding-bottom: $base-padding;
+    line-height: 1.2;
   }
 
   &__list {
     list-style-type: none;
+    font-weight: 400;
   }
 
   &__link {
     color: $white;
   }
-}
-
-.racetrack {
-  background: $brand-blue-light image-url("footer-racetrack-big.png") no-repeat center $base-padding*3;
-  height: 160px;
 }
