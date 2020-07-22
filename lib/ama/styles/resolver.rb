@@ -12,10 +12,17 @@ module AMA
       end
 
       def version
-        @version ||= ama_styles_default_version
+        @version || cached_ama_styles_version
       end
 
       private
+
+      def cached_ama_styles_version
+        cached_version = Cache.read(AMA_STYLES_VERSION_KEY)
+        return ama_styles_default_version if ama_styles_versions.exclude?(cached_version)
+
+        cached_version
+      end
 
       def custom_asset_url
         URI.join(

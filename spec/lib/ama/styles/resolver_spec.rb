@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 describe AMA::Styles::Resolver do
+  let(:default_version) { AMA::Styles::Globals.ama_styles_default_version }
+
   describe '#asset_path' do
     before(:each) do
       subject.remote = remote
@@ -35,6 +37,46 @@ describe AMA::Styles::Resolver do
               asset_name
             ).to_s
             expect(subject.asset_path).to eq(cloudfront_url)
+          end
+
+          context 'but there is a cache entry for ama_styles_version' do
+            before(:each) do
+              AMA::Styles::Cache.write(
+                "#{AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY}/v3",
+                "v3/#{asset_name}"
+              )
+              AMA::Styles::Cache.write(AMA::Styles::Globals::AMA_STYLES_VERSION_KEY, 'v3')
+            end
+
+            it 'returns the v3 cloudfront asset url' do
+              cloudfront_url = URI.join(
+                Rails.configuration.cloudfront_url,
+                AMA::Styles::Globals::ASSET_PREFIX,
+                'v3/',
+                asset_name
+              ).to_s
+              expect(subject.asset_path).to eq(cloudfront_url)
+            end
+
+            context 'but that version is invalid' do
+              before(:each) do
+                AMA::Styles::Cache.write(
+                  "#{AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY}/#{default_version}",
+                  "v2/#{asset_name}"
+                )
+                AMA::Styles::Cache.write(AMA::Styles::Globals::AMA_STYLES_VERSION_KEY, 'v5')
+              end
+
+              it 'returns the default version cloudfront asset url' do
+                cloudfront_url = URI.join(
+                  Rails.configuration.cloudfront_url,
+                  AMA::Styles::Globals::ASSET_PREFIX,
+                  "#{default_version}/",
+                  asset_name
+                ).to_s
+                expect(subject.asset_path).to eq(cloudfront_url)
+              end
+            end
           end
         end
 
