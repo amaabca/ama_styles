@@ -474,7 +474,8 @@ select:focus {
 
 /* ------------- Error Messaging ------------- */
 small.error {
-  display: block !important; //important is to override the inline class being applied in the html, will need to be removed and fixed in the html in phase 2
+  display: block !important; //important is to override the inline class being
+  //applied in the html, will need to be removed and fixed in the html in phase 2
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
   font-size: $base-font-size;
