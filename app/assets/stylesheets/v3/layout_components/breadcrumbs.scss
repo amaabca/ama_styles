@@ -1,7 +1,28 @@
 .breadcrumbs {
+  li {
+    &:not(:last-child) {
+      &::after {
+        font-family: "Font Awesome 5 Free";
+        content: fa-content($fa-var-angle-right);
+        display: inline-block;
+        font-weight: 900;
+      }
+    }
+
+    &:nth-child(1) {
+      font-weight: 900;
+    }
+
+    a {
+      &:hover {
+        color: $blue-main-brand--dark-med;
+      }
+    }
+  }
+
   &__link {
     &--disabled {
-      @extend .disabled;
+      color: $dark-grey-text !important;
       pointer-events: none;
     }
   }
