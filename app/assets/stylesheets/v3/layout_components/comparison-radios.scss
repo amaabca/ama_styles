@@ -81,18 +81,19 @@
     }
 
     .comparison-radios__input + label {
+
       @include breakpoint(small only) {
         overflow: hidden;
       }
 
       @include breakpoint(small) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::before {
         @include breakpoint(small) {
           top: 100%;
-          margin-top: -35px;
+          margin-top: -40px;
           left: 50%;
           margin-left: -12px;
         }
@@ -101,15 +102,16 @@
 
     input[type="radio"] + label {
       background: $white;
+      overflow: hidden;
     }
 
     input[type="radio"]:checked + label {
       &::after {
         @include breakpoint(small) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
         }
       }
     }
@@ -127,13 +129,13 @@
       }
 
       @include breakpoint(medium) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::before {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -35px;
+          margin-top: -40px;
           left: 50%;
           margin-left: -12px;
         }
@@ -142,24 +144,24 @@
           top: 50%;
           left: 91%;
           margin-top: -12px;
-          margin-left: -2px;
+          margin-left: -4px;
         }
       }
 
       &::after {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
           display: none;
         }
 
         @include breakpoint(small only) {
           top: 50%;
-          left: 91%;
-          margin-top: -4px;
-          margin-left: 6px;
+          left: 92%;
+          margin-top: -1px;
+          margin-left: 4px;
         }
       }
     }
@@ -170,22 +172,22 @@
 
     input[type="radio"]:checked + label {
       @include breakpoint(medium) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::after {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
         }
 
         @include breakpoint(small only) {
           top: 50%;
-          left: 91%;
-          margin-top: -4px;
-          margin-left: 6px;
+          left: 92%;
+          margin-top: -1px;
+          margin-left: 4px;
         }
       }
     }
@@ -202,7 +204,7 @@
 
     &--blue-bg {
       @extend .comparison-radios__title;
-      background: $brand-blue-light;
+      background: $blue-main-brand;
       color: $white;
       margin-bottom: $base-margin;
       position: relative;
@@ -235,23 +237,23 @@
   &__input:checked {
     & ~ label {
       .comparison-radios__panel {
-        border-bottom: 2px solid darken($sky, 10%);
-        background: darken($sky, 3%);
+        border-bottom: 2px solid $blue-main-brand;
+        background: $white;
 
         @include breakpoint(medium) {
-          border-top: 2px solid darken($sky, 10%);
+          border-top: 2px solid $blue-main-brand;
         }
       }
 
       .comparison-radios__content {
         @include breakpoint(small only) {
-          border-left: 2px solid darken($sky, 10%);
-          border-right: 2px solid darken($sky, 10%);
+          border-left: 2px solid $blue-main-brand;
+          border-right: 2px solid $blue-main-brand;
         }
       }
 
       .comparison-radios__divider {
-        border: solid darken($sky, 10%);
+        border: solid $blue-main-brand;
         border-width: 2px 0 0;
         height: 0;
       }
@@ -259,13 +261,13 @@
   }
 
   &__panel {
-    background-color: $ash;
-    border-bottom: 2px solid $stone;
+    background-color: $bg-grey-lightest;
+    border-bottom: 2px solid $form-border-color;
     padding: $base-padding;
     margin-bottom: $base-margin;
 
     @include breakpoint(medium) {
-      border-top: 2px solid $stone;
+      border-top: 2px solid $form-border-color;
     }
   }
 
@@ -382,6 +384,7 @@
 
   &__divider {
     margin-bottom: 0;
+    border: 1px solid $form-border-color;
 
     @include breakpoint(small only) {
       display: none;
