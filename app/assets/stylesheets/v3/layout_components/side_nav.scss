@@ -1,5 +1,12 @@
 /* Desktop Header/Side-Nav */
 
+// TODO:
+// - Change all REMs to proper variables
+// - Change all colours to proper variables
+// - Change all shadows to proper variables
+// - Check if any styles can be consolidated into each other?
+// - Click slop on desktop (cursor pointer doesn't click)
+
 .side-nav {
   background: $white;
   box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
@@ -15,9 +22,15 @@
 
   .logo {
     padding: 1rem;
-    margin-right: 3rem;
+    margin-left: 2rem;
     object-fit: contain;
     align-self: flex-start;
+    background-image: asset-url(ama-logo);
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-self: center;
+    width: 100px;
+    background-position: center;
   }
 
   &__spacer {
@@ -48,19 +61,35 @@
   &__list {
     list-style-type: none;
     display: flex;
-    justify-content: stretch;
-    margin: 0 2rem;
+    justify-content: space-between;
+    margin: 0;
+    flex-grow: 1;
 
   }
 
+  &__content {
+    display: flex;
+  }
+
+  &__content-container {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: 1rem;
+    flex-grow: 1;
+  }
+
   &__item {
-    padding: $base-padding;
+    padding: $base-padding $base-padding $base-padding/2 $base-padding;
     cursor: pointer;
     height: $side-nav-height;
-    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: $base-padding/2 solid transparent;
 
     &:hover {
-      border-bottom: 0.5rem solid $blue-main-brand;
+      border-bottom: $base-padding/2 solid $blue-main-brand;
 
       .side-nav__child-list {
         display: block;
@@ -73,9 +102,13 @@
     font-weight: 600;
     color: $dark-grey-text;
     cursor: pointer;
-    line-height: inherit;
+    line-height: 1.5;
     font-size: 1rem;
     text-align: center;
+
+    @media screen and (max-width: 1430px) {
+      font-size: .875rem;
+    }
 
     &:hover {
       text-decoration: none;
@@ -113,6 +146,7 @@
 
     li:last-of-type {
       padding-bottom: 1rem;
+      border-bottom: none;
     }
   }
 
@@ -158,199 +192,151 @@
 /* Mobile Header/Side-Nav */
 
 .off-canvas.position-left {
-  width: $offcanvas-left-size;
-  // left: -$offcanvas-left-size;
+  height: auto;
+  top: 0;
   transform: translateX(-$offcanvas-left-size);
-  top: $top-bar-height;
+  width: $offcanvas-left-size;
+  transition: transform 0.3s ease-in-out;
 }
 
 .off-canvas.position-left.is-open {
   transform: translate(0, 0);
+  box-shadow: 3px 5px 5px rgba(1,11,24,.2);
 }
 
-.m-side-nav__content {
-  .side-nav__link {
-    text-align: left;
-    background-color: $blue-main-brand;
-    color: $white;
-    text-decoration: none;
+.off-canvas.is-transition-overlap {
+  z-index: 10010;
+}
+
+.js-off-canvas-overlay {
+  z-index: 10000;
+}
+
+.m-side-nav__content .js-drilldown-back {
+  background: $border-grey;
+  padding: 0.75rem 0.5rem;
+
+  a {
+    background-color: transparent;
+    color: $dark-grey-text;
+    font-size: 1rem;
     font-weight: 400;
+    padding: .75rem .5rem;
+    line-height: 1;
+    margin-left: 1.5rem;
 
     &::after {
+      display: none !important; // !important overrides default foundation arrow
+    }
+
+    &::before {
       // font-family: "Font Awesome 5 Free";
+      border: none;
+      color: $dark-grey-text;
+      content: fa-content($fa-var-chevron-left);
       font-family: "FontAwesome";
-      content: fa-content($fa-var-chevron-right);
-      color: $white;
-      margin-left: 1rem;
+      font-size: 0.8rem;
+      font-weight: 100;
+      line-height: 1.4;
+      margin-left: 0.75rem;
+      position: absolute;
+      left: 0.25rem;
     }
   }
+}
+
+.drilldown .is-drilldown-submenu {
+  transition: transform 0.3s ease-in-out;
+  margin-top: 62px;
+}
+
+.m-side-nav__link {
+  border-bottom: 1px solid $border-grey;
+  color: $dark-grey-text;
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0 1rem;
+  padding: .75rem .5rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $dark-grey-text;
+  }
+
+  &::after {
+    display: none !important; // !important overrides default foundation arrow
+  }
+
+  &::before {
+    // font-family: "Font Awesome 5 Free";
+    border: none;
+    color: $black;
+    content: fa-content($fa-var-chevron-right);
+    font-family: "FontAwesome";
+    font-size: 0.8rem;
+    font-weight: 100;
+    line-height: 2.5;
+    margin-left: 1rem;
+    position: absolute;
+    right: 1rem;
+  }
+}
+
+.m-side-nav__child-link {
+  border-bottom: 1px solid $border-grey;
+  color: $dark-grey-text;
+  font-size: 1rem; 
+  font-weight: 400;
+  margin: 0 1rem;
+  padding: .75rem 1rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $dark-grey-text;
+  }
+}
+
+.m-side-nav__list {
+  margin-bottom: 1rem;
 
   .side-nav__item {
     background-color: $blue-main-brand;
     border-bottom: none;
-    padding: 1rem 2rem;
     height: auto;
+    padding: 0.75rem 0.5rem;
+    max-height: 62px;
+  }
+
+  .side-nav__link {
+    background-color: transparent;
+    color: $white;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
 
     &:hover {
-      border-bottom: none;
-
-      .m-side-nav__child-list {
-        display: block;
-      }
+      text-decoration: underline;
     }
-  }
-}
-
-.m-side-nav {
-  background: $red-main;
-  box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
-  position: fixed;
-  top: $top-bar-height;
-  z-index: 9000;
-  @include grid-column(12,0);
-
-  @include breakpoint(medium down) {
-    display: none;
-  }
-
-  &__spacer {
-    @include large-2;
-    height: 100%;
-    position: absolute;
-    z-index: -1; //to prevent overlap with notifications
-
-    &--white {
-      @extend .side-nav__spacer;
-      background-color: $white;
-    }
-
-    &--show-for-medium {
-      @extend .side-nav__spacer;
-      @include breakpoint(medium down) {
-        display: block;
-      }
-    }
-  }
-
-  &__header {
-    @extend .heading;
-    background: $cerulean;
-    color: $white;
-  }
-
-  &__list {
-    list-style-type: none;
-
-  }
-
-  &__item {
-    padding: .75rem .5rem;
-    cursor: pointer;
-    border-bottom: 1px solid #dee2e6;
-    margin: 0 2rem;
-
-    &:target,
-    &:active,
-    &:visited,
-    &:focus {
-      .m-side-nav__child-list {
-        display: block;
-      }
-    }
-  }
-
-  &__link {
-    display: block;
-    font-weight: 400;
-    color: $dark-grey-text;
-    cursor: pointer;
-    line-height: inherit;
-    font-size: 1rem;
-    pointer-events: none;
 
     &::after {
+      border: none;
+      color: $white;
+      content: fa-content($fa-var-chevron-right);
+      display:inline-block;
       // font-family: "Font Awesome 5 Free";
       font-family: "FontAwesome";
-      content: fa-content($fa-var-chevron-right);
-      color: $black;
-      position: absolute;
-      right: 2rem;
-    }
+      font-size: 0.8rem;
+      font-weight: 100;
+      margin-left: 1rem;
 
-    &:hover {
-      text-decoration: none;
-      color: $dark-grey-text;
-    }
-  }
-
-  &__child-list {
-    list-style-type: none;
-    display: none;
-    position: absolute;
-    background-color: $white;
-    width: calc(100% - 4rem);
-    left: 1rem;
-    top: $side-nav-height;
-    box-shadow:
-      2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
-      inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
-    padding: 0 2rem;
-    z-index: 10;
-
-    li:first-of-type {
-      border-bottom: 1px solid $bg-grey-light;
-      padding-bottom: 0.5rem;
-      padding-top: 1rem;
-
-      &::after {
-        // font-family: "Font Awesome 5 Free";
-        font-family: "FontAwesome";
-        content: fa-content($fa-var-angle-double-right);
-        margin-left: 1rem;
-        color: $black
+      &:hover {
+        text-decoration: none;
       }
-    }
-
-    li:last-of-type {
-      padding-bottom: 1rem;
-    }
-  }
-
-  &__child-item {
-    margin-bottom: $base-margin/2;
-    width: fit-content;
-  }
-
-  &__child-link {
-    color: $black;
-    font-size: 1rem;
-    font-weight: 600;
-
-    &:active,
-    &:hover,
-    &:focus {
-      $anchor-color: $black;
-      color: $black;
-    }
-
-    &--active-page {
-      font-weight: bold;
-      color: $cerulean;
-    }
-  }
-
-  &--overlay {
-    @extend .side-nav;
-    z-index: 1000;
-    position: absolute;
-    min-width: 300px;
-
-    @include breakpoint(medium down) {
-      position: relative;
-    }
-
-    @include breakpoint(small only) {
-      width: 100%;
     }
   }
 }
