@@ -532,7 +532,7 @@ input[type="text"],
 [type="color"],
 textarea,
 select {
-  margin-bottom: $base-margin;
+  margin-bottom: 0;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -552,11 +552,11 @@ select:focus {
 
 /* ------------- Error Messaging ------------- */
 small.error {
-  display: block;
+  display: block !important; //important is to override the inline class being applied in the html, will need to be removed and fixed in the html in phase 2
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
   font-size: $base-font-size;
-  background: $brand-red;
+  background: $red-main--dark;
   color: $white;
 }
 
@@ -565,7 +565,7 @@ small.error {
   clear: both;
   padding: 0.375rem 0.5625rem 0.5625rem;
   font-size: $base-font-size;
-  background: $brand-red;
+  background: $red-main--dark;
   color: $white;
   margin-bottom: $base-margin;
 }
@@ -576,20 +576,23 @@ small.error {
 
 .error small.error,
 small.error {
-  background: $brand-red;
+  background: $red-main--dark;
+  border-radius: 0 0 9px 9px;
+  padding-top: 10px;
+  margin-top: -6px;
 }
 
 .error label,
 .error label.error {
-  color: $brand-red;
+  color: $red-main--dark;
 }
 
 .error-message {
-  background: $brand-red;
+  background: $red-main--dark;
 }
 
 .email_hint {
-  color: $brand-red;
+  color: $red-main--dark;
   display: none;
   font-size: $small-font-size;
   margin: 0 0 $base-padding/2;
@@ -685,6 +688,7 @@ input[type="url"]:-ms-input-placeholder {
 
   &__input-wrapper {
     @include large-8;
+    margin-bottom: $base-margin;
 
     &--offset {
       @extend .form-horizontal__input-wrapper;
