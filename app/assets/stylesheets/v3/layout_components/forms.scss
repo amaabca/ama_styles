@@ -532,7 +532,7 @@ input[type="text"],
 [type="color"],
 textarea,
 select {
-  margin-bottom: 0;
+  margin-bottom: $base-margin;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -543,7 +543,7 @@ select.has-placeholder:nth-child(1) {
 }
 
 select:focus {
-  border: 2px solid $ocean;
+  border: 2px solid $blue-main-brand;
   background-color: $white;
   outline: none;
   box-shadow: 0;
@@ -630,7 +630,7 @@ input[type="search"]:-ms-input-placeholder,
 input[type="tel"]:-ms-input-placeholder,
 input[type="time"]:-ms-input-placeholder,
 input[type="url"]:-ms-input-placeholder {
-  color: darken($stone, 10%);
+  color: $dark-grey-text;
 }
 
 @include breakpoint(medium) {
