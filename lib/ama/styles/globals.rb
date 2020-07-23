@@ -5,6 +5,7 @@ module AMA
     module Globals
       GEM_ROOT_PATH = Gem.loaded_specs['ama_styles'].full_gem_path.freeze
       ASSET_PATH = File.join(GEM_ROOT_PATH, 'app', 'assets').freeze
+      AMA_STYLES_VERSION_KEY = 'ama_styles_version'
       CURRENT_STYLESHEET_DIGEST_KEY = 'current_stylesheet_digest'
       CURRENT_MANIFEST_KEY = 'current_manifest'
       CURRENT_DEPLOYMENT_DATE_KEY = 'deployed_on'
