@@ -3,7 +3,7 @@
   @include callout($bg-grey-light);
   border-radius: $base-radius;
   padding: $base-padding*2 $base-padding*3;
-  margin-bottom: $base-padding*2;
+  margin-bottom: $base-margin*2;
 
   &__close-btn {
     float: right;
