@@ -2,35 +2,32 @@
 
 // TODO:
 // - Change all REMs to proper variables
-// - Change all colours to proper variables
 // - Change all shadows to proper variables
 // - Check if any styles can be consolidated into each other?
 // - Click slop on desktop (cursor pointer doesn't click)
 
 .side-nav {
+  @include grid-column(12,0);
   background: $white;
-  box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
+  box-shadow: $base-box-shadow;
+  height: $side-nav-height;
   position: fixed;
   top: $top-bar-height;
   z-index: 9000;
-  @include grid-column(12,0);
-  height: $side-nav-height;
 
   @include breakpoint(medium down) {
     display: none;
   }
 
   .logo {
-    padding: 1rem;
+    background-image: asset-url(ama-logo);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
     margin-left: 2rem;
     object-fit: contain;
-    align-self: flex-start;
-    background-image: asset-url(ama-logo);
-    background-size: contain;
-    background-repeat: no-repeat;
-    align-self: center;
+    padding: 1rem;
     width: 100px;
-    background-position: center;
   }
 
   &__spacer {
@@ -59,12 +56,11 @@
   }
 
   &__list {
-    list-style-type: none;
     display: flex;
-    justify-content: space-between;
-    margin: 0;
     flex-grow: 1;
-
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
   }
 
   &__content {
@@ -72,21 +68,21 @@
   }
 
   &__content-container {
-    list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
-    margin-left: 1rem;
     flex-grow: 1;
+    justify-content: space-evenly;
+    list-style-type: none;
+    margin-left: 1rem;
   }
 
   &__item {
-    padding: $base-padding $base-padding $base-padding/2 $base-padding;
-    cursor: pointer;
-    height: $side-nav-height;
-    display: flex;
     align-items: center;
-    justify-content: center;
     border-bottom: $base-padding/2 solid transparent;
+    cursor: pointer;
+    display: flex;
+    height: $side-nav-height;
+    justify-content: center;
+    padding: $base-padding $base-padding $base-padding/2 $base-padding;
 
     &:hover {
       border-bottom: $base-padding/2 solid $blue-main-brand;
@@ -98,12 +94,12 @@
   }
 
   &__link {
-    display: block;
-    font-weight: 600;
     color: $dark-grey-text;
     cursor: pointer;
-    line-height: 1.5;
+    display: block;
     font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
     text-align: center;
 
     @media screen and (max-width: 1430px) {
@@ -111,23 +107,25 @@
     }
 
     &:hover {
-      text-decoration: none;
       color: $dark-grey-text;
+      text-decoration: none;
     }
   }
 
+  // The following box shadow is custom to make the header dropdown appear as though it is below the header itself. 
+  // (Unable to do with z-index since a child can not have a lower z-index than it's parent)
   &__child-list {
-    list-style-type: none;
-    display: none;
-    position: absolute;
     background-color: $white;
-    width: calc(100% - 4rem);
-    left: 1rem;
-    top: $side-nav-height;
     box-shadow:
       2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
       inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    display: none;
+    left: 1rem;
+    list-style-type: none;
     padding: 0 2rem;
+    position: absolute;
+    top: $side-nav-height;
+    width: calc(100% - 4rem);
     z-index: 10;
 
     li:first-of-type {
@@ -136,17 +134,17 @@
       padding-top: 1rem;
 
       &::after {
+        color: $black;
+        content: fa-content($fa-var-angle-double-right);
         // font-family: "Font Awesome 5 Free";
         font-family: "FontAwesome";
-        content: fa-content($fa-var-angle-double-right);
         margin-left: 1rem;
-        color: $black
       }
     }
 
     li:last-of-type {
-      padding-bottom: 1rem;
       border-bottom: none;
+      padding-bottom: 1rem;
     }
   }
 
@@ -168,16 +166,16 @@
     }
 
     &--active-page {
-      font-weight: bold;
       color: $cerulean;
+      font-weight: bold;
     }
   }
 
   &--overlay {
     @extend .side-nav;
-    z-index: 1000;
-    position: absolute;
     min-width: 300px;
+    position: absolute;
+    z-index: 1000;
 
     @include breakpoint(medium down) {
       position: relative;
@@ -191,17 +189,18 @@
 
 /* Mobile Header/Side-Nav */
 
+// The .off-canvas classes control the sliding mobile sidebar speed & positioning.
 .off-canvas.position-left {
   height: auto;
   top: 0;
   transform: translateX(-$offcanvas-left-size);
-  width: $offcanvas-left-size;
   transition: transform 0.3s ease-in-out;
+  width: $offcanvas-left-size;
 }
 
 .off-canvas.position-left.is-open {
+  box-shadow: $base-box-shadow;
   transform: translate(0, 0);
-  box-shadow: 3px 5px 5px rgba(1,11,24,.2);
 }
 
 .off-canvas.is-transition-overlap {
@@ -221,9 +220,9 @@
     color: $dark-grey-text;
     font-size: 1rem;
     font-weight: 400;
-    padding: .75rem .5rem;
     line-height: 1;
     margin-left: 1.5rem;
+    padding: .75rem .5rem;
 
     &::after {
       display: none !important; // !important overrides default foundation arrow
@@ -237,17 +236,17 @@
       font-family: "FontAwesome";
       font-size: 0.8rem;
       font-weight: 100;
+      left: 0.25rem;
       line-height: 1.4;
       margin-left: 0.75rem;
       position: absolute;
-      left: 0.25rem;
     }
   }
 }
 
 .drilldown .is-drilldown-submenu {
-  transition: transform 0.3s ease-in-out;
   margin-top: 62px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .m-side-nav__link {
@@ -261,8 +260,8 @@
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none;
     color: $dark-grey-text;
+    text-decoration: none;
   }
 
   &::after {
@@ -295,8 +294,8 @@
   &:hover,
   &:active,
   &:focus {
-    text-decoration: none;
     color: $dark-grey-text;
+    text-decoration: none;
   }
 }
 
@@ -314,10 +313,10 @@
   .side-nav__link {
     background-color: transparent;
     color: $white;
-    text-align: left;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1;
+    text-align: left;
 
     &:hover {
       text-decoration: underline;
