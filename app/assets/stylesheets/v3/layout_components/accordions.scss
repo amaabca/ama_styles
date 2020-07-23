@@ -18,6 +18,11 @@
   }
 }
 
+.accordion-content {
+  border-radius: $base-radius;
+  background: transparent;
+}
+
 .accordion-secondary {
   &--header {
     font-size: $base-font-size;
@@ -31,8 +36,10 @@
     font-size: $base-font-size;
   }
 
-  .accordion-content a {
-    font-size: $base-font-size;
+  .accordion-content {
+    a {
+      font-size: $base-font-size;
+    }
   }
 
   .accordion-title {
@@ -52,9 +59,11 @@
 }
 
 .accordion {
-  border-top: 1px solid $smoke;
-  border-bottom: 1px solid $smoke;
-  background: none;
+  border: 1px solid $blue-main-brand;
+  border-radius: $base-radius;
+  box-shadow: $base-box-shadow;
+  background: $white;
+  padding: $base-padding/2;
 
   &__header {
     overflow: hidden;
@@ -63,28 +72,25 @@
     padding-left: $base-padding;
 
     &--arrow {
-      font-size: $base-font-size*1.5;
+      font-size: $base-font-size*1.75;
       display: block;
       margin: 0 auto;
       text-align: center;
-
-      @include breakpoint(medium) {
-        float: left;
-        margin-right: $base-margin;
-      }
+      float: right;
+      margin-right: 1rem;
     }
 
     &:hover,
     &:focus {
-      background: $ash;
-      color: darken($brand-blue-light, 1%);
+      color: $blue-main-brand;
       text-decoration: none;
     }
   }
 
   &__heading {
     text-align: center;
-    font-size: $base-font-size;
+    font-size: $base-font-size*1.5;
+    color: $dark-grey-text;
 
     @include breakpoint(medium) {
       text-align: left;
@@ -199,12 +205,4 @@
       color: $brand-red;
     }
   }
-}
-
-// Foundation sets a border-radius by default,
-// and there doesn't seem to be an override in the settings file
-.accordion-item:first-child > :first-child,
-.accordion-item:first-child > :last-child,
-:last-child:not(.is-active) > .accordion-title {
-  border-radius: 0;
 }

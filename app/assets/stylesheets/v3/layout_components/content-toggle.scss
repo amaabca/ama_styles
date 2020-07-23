@@ -1,12 +1,12 @@
 .content-toggle {
   &__bg {
-    background-color: $stone;
+    background-color: $bg-grey-light;
     padding: $base-padding;
     margin-bottom: $base-margin;
 
     &--cerulean {
       @extend .content-toggle__bg;
-      background-color: $cerulean;
+      background-color: $blue-main-brand--dark-med;
       color: $white;
     }
   }

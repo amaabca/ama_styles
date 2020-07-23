@@ -34,7 +34,6 @@
   }
 
   &__text-button {
-    @extend .button;
     position: relative;
     width: 100%;
     padding: 1.75em;
@@ -58,12 +57,25 @@
   }
 
   &__button {
-    @extend .button;
+    // @extend .button; //don't want all styles from button until changes in phase 2.
+    text-decoration: none;
+    box-shadow: $base-box-shadow;
+    background: $button-background;
+    margin-bottom: $base-margin*2;
+    border-radius: $base-radius;
+    padding: $base-padding;
     min-height: 170px;
     position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: darken($button-background, 10%);
+      text-decoration: none;
+    }
 
     &--full {
       @extend .button-grouping__button;
@@ -72,13 +84,13 @@
 
     &--green {
       @extend .button-grouping__button;
-      $button-background: $brand-green;
+      $button-background: $green-rewards--dark-med;
       background: $button-background;
 
       &:hover,
       &:active,
       &:focus {
-        background: lighten($button-background, 10%);
+        background: darken($button-background, 10%);
       }
     }
 
@@ -90,20 +102,20 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($sky, 4%);
+        background: darken($bg-grey-lightest, 4%);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
       }
     }
 
     &--red {
       @extend .button-grouping__button;
-      $button-background: $brand-red;
+      $button-background: $red-main--dark;
       background: $button-background;
 
       &:hover,
       &:active,
       &:focus {
-        background: lighten($button-background, 10%);
+        background: darken($button-background, 10%);
       }
     }
 
@@ -121,14 +133,13 @@
   }
 
   &__icon {
-    font-size: 5rem;
-    padding-bottom: $base-padding;
+    font-size: 3rem;
+    padding-bottom: $base-padding/2;
   }
 
   &__bg-icon {
     height: 80px;
     background-repeat: no-repeat;
-    background-position: center center;
   }
 
   &__title {
@@ -137,8 +148,17 @@
   }
 
   &__text {
-    line-height: 1rem;
+    line-height: 1.5;
     display: block;
+    color: $white;
+
+    br {
+      display: none; //temporary change until phase 2 of reskin so content fits better for current buttons.
+    }
+
+    h3 {
+      margin-bottom: $base-margin; //temporary until phase 2.
+    }
 
     &--large {
       display: block;
