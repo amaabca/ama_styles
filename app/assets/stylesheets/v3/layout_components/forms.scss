@@ -176,10 +176,6 @@ input[type="radio"] + label:first-of-type {
 input[type="radio"] + label:last-of-type {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
-
-  @include breakpoint(medium) {
-    margin-bottom: $base-margin*2;
-  }
 }
 
 input[type="radio"]:checked + label {
