@@ -185,7 +185,6 @@ input[type="radio"]:checked + label {
 
   &::before {
     content: "";
-    background-color: $white;
     border: 2px solid $blue-secondary-brand--light-med;
   }
 
