@@ -172,6 +172,7 @@ input[type="radio"] + label:first-of-type {
   border-top-left-radius: 9px;
   border-top-right-radius: 9px;
 }
+
 input[type="radio"] + label:last-of-type {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
@@ -714,16 +715,16 @@ input[type="url"]:-ms-input-placeholder {
 
 /* ------------- Tenure Radios ------------- */
 
-input[type="radio"]+label.tenure-radio:before,
-input[type="checkbox"]+label.tenure-radio:before{
+input[type="radio"] + label.tenure-radio::before,
+input[type="checkbox"] + label.tenure-radio::before {
   left: 50%;
   top: 100%;
   margin-top: -37px !important;
   margin-left: -15px !important;
 }
 
-input[type="radio"] + label.tenure-radio:after,
-input[type="radio"]:checked+label.tenure-radio:after{
+input[type="radio"] + label.tenure-radio::after,
+input[type="radio"]:checked + label.tenure-radio::after {
   top: 100%;
   margin-top: -26px !important;
   left: 50%;
@@ -732,7 +733,7 @@ input[type="radio"]:checked+label.tenure-radio:after{
 }
 
 input[type="radio"] + label.tenure-radio,
-input[type="checkbox"] + label.tenure-radio{
+input[type="checkbox"] + label.tenure-radio {
   padding-bottom: 30px;
 
   @include breakpoint(small only) {
@@ -740,12 +741,12 @@ input[type="checkbox"] + label.tenure-radio{
   }
 }
 
-.tenure-radio{
+.tenure-radio {
   hr {
     border-color: $form-border-color;
   }
 
-  .checkbox-label{
+  .checkbox-label {
     margin: 9px auto;
   }
 }
