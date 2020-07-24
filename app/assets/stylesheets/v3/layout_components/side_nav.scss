@@ -1,7 +1,5 @@
 /* Desktop Header/Side-Nav */
 
-$nav-fa-icon-size: 0.8rem;
-
 .side-nav {
   @include grid-column(12,0);
   background: $white;
@@ -213,7 +211,7 @@ $nav-fa-icon-size: 0.8rem;
     background-color: transparent;
     color: $dark-grey-text;
     font-size: $base-font-size;
-    font-weight: 400;
+    font-weight: $font-weight-light--open-sans;
     line-height: 1;
     margin-left: 1.5*$base-margin;
     padding: 0.75*$base-padding 0.5*$base-padding;
@@ -227,7 +225,7 @@ $nav-fa-icon-size: 0.8rem;
       color: $dark-grey-text;
       content: fa-content($fa-var-chevron-left);
       font-family: "Font Awesome 5 Free";
-      font-size: $nav-fa-icon-size;
+      font-size: $fa-size-small;
       font-weight: $fa-solid;
       left: 0.25*$base-padding;
       line-height: 1.4;
@@ -244,7 +242,7 @@ $nav-fa-icon-size: 0.8rem;
 
 .m-side-nav {
   color: $dark-grey-text;
-  font-weight: 400;
+  font-weight: $font-weight-light--open-sans;
   font-size: $base-font-size;
 
   &:hover,
@@ -269,7 +267,7 @@ $nav-fa-icon-size: 0.8rem;
       color: $black;
       content: fa-content($fa-var-chevron-right);
       font-family: "Font Awesome 5 Free";
-      font-size: $nav-fa-icon-size;
+      font-size: $fa-size-small;
       font-weight: $fa-solid;
       line-height: 2.5;
       margin-left: $base-margin;
@@ -322,7 +320,7 @@ $nav-fa-icon-size: 0.8rem;
         content: fa-content($fa-var-chevron-right);
         display: inline-block;
         font-family: "Font Awesome 5 Free";
-        font-size: $nav-fa-icon-size;
+        font-size: $fa-size-small;
         font-weight: $fa-solid;
         margin-left: $base-margin;
 
