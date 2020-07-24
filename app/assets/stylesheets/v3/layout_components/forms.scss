@@ -1,4 +1,4 @@
-blue-secondary-brand--light-med/* ------------- Global Styles  ------------- */
+/* ------------- Global Styles  ------------- */
 /* height:auto; prevents jogging of an input's placeholder text due to safari's form autofill. */
 form {
   input[type="text"],
@@ -175,7 +175,7 @@ input[type="radio"] + label:first-of-type {
 input[type="radio"] + label:last-of-type {
   border-bottom-left-radius: 9px;
   border-bottom-right-radius: 9px;
-  
+
   @include breakpoint(medium) {
     margin-bottom: $base-margin*2;
   }
