@@ -44,13 +44,13 @@ $tertiary-purple: #55487c;
 $tertiary-yellow: #ffd275;
 
 /* Background Colours (From Marketing Site) */
+$white: #ffffff;
+$black: #010c1a;
 $blue-main-brand--lighter: #bdd3e5;
 $bg-blue-light: #ddeaf3;
 $bg-grey-lightest: #e5e5e5;
 $bg-grey-light: #dbdbdb;
-$bg-grey-dark: #010C1A;
-$white: #ffffff;
-$black: #010c1a;
+$bg-grey-dark: $black;
 
 /* Text Colours */
 $dark-grey-text: #414042;
@@ -99,31 +99,44 @@ $jet: #323232;
 // For foundation
 $primary-color: $blue-main-brand--dark;
 $secondary-color: $blue-main-brand;
+
 // Fonts
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-headings: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-family-buttons: "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size: 16px;
 $button-font-size: $base-font-size*1.125;
-$small-font-size: $base-font-size*1.0;
+$small-font-size: $base-font-size;
 $medium-font-size: $base-font-size*1.25;
 $large-font-size: $base-font-size*1.75;
 $x-large-font-size: $base-font-size*2;
+$font-weight-light--open-sans: 400;
+$font-weight-regular--open-sans: 600;
+$font-weight-bold--open-sans: 900;
+$font-weight-regular--lato: 900;
+
+// Icon Fonts
+$fa-size-small: 0.8rem;
+$fa-solid: 900;
 
 // Spacing
 $base-margin: 1rem;
 $base-padding: 1rem;
+
 // Borders
 $base-border: 1px solid $stone;
-//Icon font weight
-$fa-solid: 900;
+
 // Radius
 $base-radius: 9px;
+
 // Drop-shadow
 $base-box-shadow: 2.5px 4.33px 6.86px 0.14px rgba(24, 24, 24, 0.35)!important;
+
 // Top-Bar
 $top-bar-height: 53px;
+
 // Side-Nav
 $side-nav-height: 62px;
+
 // Tiering
 $de-emphasized-button-color: $text-muted;
