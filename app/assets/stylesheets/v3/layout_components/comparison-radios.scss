@@ -1,5 +1,5 @@
 .comparison-radios {
-  &__wrapper{
+  &__wrapper {
     @include breakpoint(small only) {
       margin-bottom: $base-margin*2 !important;
     }
