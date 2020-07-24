@@ -55,15 +55,31 @@ body {
   background: $bg-grey-dark;
   position: relative;
   font-family: 'Lato', sans-serif;
+  padding: $base-padding*2 0;
 
   &__container {
     @include grid-row;
-    max-width: 1440px;
-    padding-top: $base-padding*2;
+    @include breakpoint(medium only) {
+      max-width: 704px;
+    }
+  
+    @include breakpoint(large only) {
+      max-width: 992px;
+    }
+    @include breakpoint(xlarge only) {
+      max-width: 1334px;
+    }
+  
+    @include breakpoint(xxlarge up) {
+      max-width: 1440px;
+    }
   }
 
   &__col {
-    @include medium-6;
+    @include large-3;
+  }
+
+  &__col-right {
     @include large-2;
   }
 
@@ -73,14 +89,114 @@ body {
     color: $white;
     padding-bottom: $base-padding;
     line-height: 1.2;
+
+    &--small{
+      font-size: $base-font-size*0.875;
+      font-weight: 900;
+      color: $white;
+      padding-bottom: $base-padding;
+      line-height: 1.2;
+    }
   }
 
-  &__list {
-    list-style-type: none;
-    font-weight: 400;
+  //This is to line up the social media icons with the text
+  &__col:last-child &__col-header { 
+    padding-bottom: $base-padding*1.5;
   }
 
-  &__link {
-    color: $white;
+  &__col-social{
+    padding-bottom: $base-padding*2;
+
+    @include breakpoint(large up) {
+      padding-bottom: $base-padding*8;
+    }
+
+    img{
+      width: 40px;
+
+      @include breakpoint(large only) {
+        width: 30px;
+      }
+    }
+  }
+
+  &__policy {
+    @include grid-row;
+    margin-top: $base-margin;
+    padding-top: $base-padding*2;
+    border-top: 1px solid $white;
+
+    @include breakpoint(medium only) {
+      max-width: 704px;
+    }
+  
+    @include breakpoint(large only) {
+      max-width: 992px;
+    }
+
+    @include breakpoint(xlarge only) {
+      max-width: 1334px;
+    }
+  
+    @include breakpoint(xxlarge up) {
+      max-width: 1440px;
+    }
+
+    .footer-link{
+      color: $white;
+      font-size: $base-font-size;
+    }
+
+    .footer-link:hover{
+      color: $white;
+    }
+  }
+
+  .link-list{
+    display: none;
+
+    @include breakpoint(large up) {
+      display: inline;
+    }
+  }
+}
+
+.policy-text{
+  text-align: center;
+  padding-bottom: $base-padding;
+
+  @include breakpoint(large up) {
+    text-align: right;
+    padding-bottom: 0;
+  }
+}
+
+.policy-ama{
+  text-align: center;
+  padding-top: $base-padding;
+
+  @include breakpoint(large up) {
+    text-align: left;
+    padding-top: 0;
+  }
+}
+
+.affiliate-link{
+  text-align: center;
+  color: $white;
+  font-size: $base-font-size;
+
+  p{
+    line-height: 1rem!important;
+    margin-top: $base-margin*0.5;
+  }
+
+}
+
+.footer-copyright{
+  text-align: center;
+
+  @include breakpoint(large up) {
+    text-align: right;
   }
 }
