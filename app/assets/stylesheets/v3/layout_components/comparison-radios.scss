@@ -403,26 +403,26 @@
 
   &--disabled {
     input[type="radio"]:checked + label {
-      background-color: lighten($sky, 4%);
-      border: 2px solid lighten($dark-sky, 12%);
-      color: lighten($stormcloud, 30%);
+      background-color: lighten($bg-blue-light, 4%);
+      border: 2px solid lighten($blue-secondary-brand--light-med, 12%);
+      color: lighten($dark-grey-text, 30%);
 
       &::before {
-        border: 2px solid lighten($brand-blue-light, 55%);
+        border: 2px solid lighten($blue-secondary-brand--light-med, 55%);
       }
 
       &::after {
-        background-color: lighten($brand-blue-light, 55%);
+        background-color: lighten($blue-secondary-brand--light-med, 55%);
       }
     }
 
     input [type="radio"] + label {
-      border: 2px solid lighten($dark-sky, 6%);
+      border: 2px solid lighten($blue-secondary-brand--light-med, 6%);
     }
 
     [type="radio"] + label[for] {
       cursor: not-allowed;
-      color: lighten($stormcloud, 30%);
+      color: lighten($dark-grey-text, 30%);
     }
   }
 }
