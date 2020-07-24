@@ -99,7 +99,7 @@ $nav-fa-icon-size: 0.8rem;
     text-align: center;
 
     @media screen and (max-width: 1430px) {
-      font-size: .875*$base-font-size;
+      font-size: 0.875*$base-font-size;
     }
 
     &:hover {
@@ -108,13 +108,11 @@ $nav-fa-icon-size: 0.8rem;
     }
   }
 
-  // The following box shadow is custom to make the header dropdown appear as though it is below the header itself. 
+  // The following box shadow is custom to make the header dropdown appear as though it is below the header itself.
   // (Unable to do with z-index since a child can not have a lower z-index than its parent)
   &__child-list {
     background-color: $white;
-    box-shadow:
-      2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
-      inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    box-shadow: 2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35), inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
     display: none;
     left: $base-margin;
     list-style-type: none;
@@ -217,7 +215,7 @@ $nav-fa-icon-size: 0.8rem;
     font-weight: 400;
     line-height: 1;
     margin-left: 1.5*$base-margin;
-    padding: 0.75*$base-padding .5*$base-padding;
+    padding: 0.75*$base-padding 0.5*$base-padding;
 
     &::after {
       display: none !important; // !important overrides default foundation arrow
@@ -248,18 +246,18 @@ $nav-fa-icon-size: 0.8rem;
   font-weight: 400;
   font-size: $base-font-size;
 
-    &:hover,
-    &:active,
-    &:focus {
-      color: $dark-grey-text;
-      text-decoration: none;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-grey-text;
+    text-decoration: none;
+  }
 
-    &__link {
+  &__link {
     @extend .m-side-nav;
     border-bottom: 1px solid $border-grey;
     margin: 0 $base-margin;
-    padding: .75*$base-padding .5*$base-margin;
+    padding: 0.75*$base-padding 0.5*$base-margin;
 
     &::after {
       display: none !important; // !important overrides default foundation arrow
@@ -279,11 +277,12 @@ $nav-fa-icon-size: 0.8rem;
       text-rendering: optimizeLegibility;
     }
   }
+
   &__child-link {
     @extend .m-side-nav;
     border-bottom: 1px solid $border-grey;
     margin: 0 $base-margin;
-    padding: .75*$base-padding $base-padding;
+    padding: 0.75*$base-padding $base-padding;
 
     &:hover,
     &:active,
@@ -321,7 +320,7 @@ $nav-fa-icon-size: 0.8rem;
         border: none;
         color: $white;
         content: fa-content($fa-var-chevron-right);
-        display:inline-block;
+        display: inline-block;
         font-family: "Font Awesome 5 Free";
         font-size: $nav-fa-icon-size;
         font-weight: 900;
