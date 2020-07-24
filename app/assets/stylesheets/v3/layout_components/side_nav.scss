@@ -132,6 +132,7 @@ $nav-fa-icon-size: 0.8rem;
         content: fa-content($fa-var-angle-double-right);
         font-family: "Font Awesome 5 Free";
         margin-left: $base-margin;
+        font-weight: $fa-solid;
       }
     }
 
@@ -227,7 +228,7 @@ $nav-fa-icon-size: 0.8rem;
       content: fa-content($fa-var-chevron-left);
       font-family: "Font Awesome 5 Free";
       font-size: $nav-fa-icon-size;
-      font-weight: 900;
+      font-weight: $fa-solid;
       left: 0.25*$base-padding;
       line-height: 1.4;
       margin-left: 0.75*$base-margin;
@@ -269,7 +270,7 @@ $nav-fa-icon-size: 0.8rem;
       content: fa-content($fa-var-chevron-right);
       font-family: "Font Awesome 5 Free";
       font-size: $nav-fa-icon-size;
-      font-weight: 900;
+      font-weight: $fa-solid;
       line-height: 2.5;
       margin-left: $base-margin;
       position: absolute;
@@ -308,7 +309,6 @@ $nav-fa-icon-size: 0.8rem;
       background-color: transparent;
       color: $white;
       font-size: $base-font-size;
-      font-weight: 900;
       line-height: 1;
       text-align: left;
 
@@ -323,7 +323,7 @@ $nav-fa-icon-size: 0.8rem;
         display: inline-block;
         font-family: "Font Awesome 5 Free";
         font-size: $nav-fa-icon-size;
-        font-weight: 900;
+        font-weight: $fa-solid;
         margin-left: $base-margin;
 
         &:hover {
