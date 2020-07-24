@@ -1,10 +1,6 @@
 /* Desktop Header/Side-Nav */
 
-// TODO:
-// - Change all REMs to proper variables
-// - Change all shadows to proper variables
-// - Check if any styles can be consolidated into each other?
-// - Click slop on desktop (cursor pointer doesn't click)
+$nav-fa-icon-size: 0.8rem;
 
 .side-nav {
   @include grid-column(12,0);
@@ -24,9 +20,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    margin-left: 2rem;
+    margin-left: 2*$base-margin;
     object-fit: contain;
-    padding: 1rem;
+    padding: $base-padding;
     width: 100px;
   }
 
@@ -61,6 +57,7 @@
     justify-content: space-between;
     list-style-type: none;
     margin: 0;
+    cursor: default;
   }
 
   &__content {
@@ -68,17 +65,16 @@
   }
 
   &__content-container {
-    display: flex;
+    @extend .side-nav__content;
     flex-grow: 1;
     justify-content: space-evenly;
     list-style-type: none;
-    margin-left: 1rem;
+    margin-left: $base-margin;
   }
 
   &__item {
     align-items: center;
     border-bottom: $base-padding/2 solid transparent;
-    cursor: pointer;
     display: flex;
     height: $side-nav-height;
     justify-content: center;
@@ -97,13 +93,13 @@
     color: $dark-grey-text;
     cursor: pointer;
     display: block;
-    font-size: 1rem;
+    font-size: $base-font-size;
     font-weight: 600;
     line-height: 1.5;
     text-align: center;
 
     @media screen and (max-width: 1430px) {
-      font-size: .875rem;
+      font-size: .875*$base-font-size;
     }
 
     &:hover {
@@ -113,16 +109,16 @@
   }
 
   // The following box shadow is custom to make the header dropdown appear as though it is below the header itself. 
-  // (Unable to do with z-index since a child can not have a lower z-index than it's parent)
+  // (Unable to do with z-index since a child can not have a lower z-index than its parent)
   &__child-list {
     background-color: $white;
     box-shadow:
       2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35),
       inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
     display: none;
-    left: 1rem;
+    left: $base-margin;
     list-style-type: none;
-    padding: 0 2rem;
+    padding: 0 2*$base-padding;
     position: absolute;
     top: $side-nav-height;
     width: calc(100% - 4rem);
@@ -130,21 +126,20 @@
 
     li:first-of-type {
       border-bottom: 1px solid $bg-grey-light;
-      padding-bottom: 0.5rem;
-      padding-top: 1rem;
+      padding-bottom: $base-padding/2;
+      padding-top: $base-padding;
 
       &::after {
         color: $black;
         content: fa-content($fa-var-angle-double-right);
-        // font-family: "Font Awesome 5 Free";
-        font-family: "FontAwesome";
-        margin-left: 1rem;
+        font-family: "Font Awesome 5 Free";
+        margin-left: $base-margin;
       }
     }
 
     li:last-of-type {
       border-bottom: none;
-      padding-bottom: 1rem;
+      padding-bottom: $base-padding;
     }
   }
 
@@ -155,7 +150,7 @@
 
   &__child-link {
     color: $black;
-    font-size: 1rem;
+    font-size: $base-font-size;
     font-weight: 600;
 
     &:active,
@@ -213,32 +208,31 @@
 
 .m-side-nav__content .js-drilldown-back {
   background: $border-grey;
-  padding: 0.75rem 0.5rem;
+  padding: 0.75*$base-padding 0.5*$base-padding;
 
   a {
     background-color: transparent;
     color: $dark-grey-text;
-    font-size: 1rem;
+    font-size: $base-font-size;
     font-weight: 400;
     line-height: 1;
-    margin-left: 1.5rem;
-    padding: .75rem .5rem;
+    margin-left: 1.5*$base-margin;
+    padding: 0.75*$base-padding .5*$base-padding;
 
     &::after {
       display: none !important; // !important overrides default foundation arrow
     }
 
     &::before {
-      // font-family: "Font Awesome 5 Free";
       border: none;
       color: $dark-grey-text;
       content: fa-content($fa-var-chevron-left);
-      font-family: "FontAwesome";
-      font-size: 0.8rem;
-      font-weight: 100;
-      left: 0.25rem;
+      font-family: "Font Awesome 5 Free";
+      font-size: $nav-fa-icon-size;
+      font-weight: 900;
+      left: 0.25*$base-padding;
       line-height: 1.4;
-      margin-left: 0.75rem;
+      margin-left: 0.75*$base-margin;
       position: absolute;
     }
   }
@@ -249,92 +243,93 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.m-side-nav__link {
-  border-bottom: 1px solid $border-grey;
+.m-side-nav {
   color: $dark-grey-text;
-  font-size: 1rem;
   font-weight: 400;
-  margin: 0 1rem;
-  padding: .75rem .5rem;
+  font-size: $base-font-size;
 
-  &:hover,
-  &:active,
-  &:focus {
-    color: $dark-grey-text;
-    text-decoration: none;
-  }
-
-  &::after {
-    display: none !important; // !important overrides default foundation arrow
-  }
-
-  &::before {
-    // font-family: "Font Awesome 5 Free";
-    border: none;
-    color: $black;
-    content: fa-content($fa-var-chevron-right);
-    font-family: "FontAwesome";
-    font-size: 0.8rem;
-    font-weight: 100;
-    line-height: 2.5;
-    margin-left: 1rem;
-    position: absolute;
-    right: 1rem;
-  }
-}
-
-.m-side-nav__child-link {
-  border-bottom: 1px solid $border-grey;
-  color: $dark-grey-text;
-  font-size: 1rem; 
-  font-weight: 400;
-  margin: 0 1rem;
-  padding: .75rem 1rem;
-
-  &:hover,
-  &:active,
-  &:focus {
-    color: $dark-grey-text;
-    text-decoration: none;
-  }
-}
-
-.m-side-nav__list {
-  margin-bottom: 1rem;
-
-  .side-nav__item {
-    background-color: $blue-main-brand;
-    border-bottom: none;
-    height: auto;
-    padding: 0.75rem 0.5rem;
-    max-height: 62px;
-  }
-
-  .side-nav__link {
-    background-color: transparent;
-    color: $white;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    text-align: left;
-
-    &:hover {
-      text-decoration: underline;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $dark-grey-text;
+      text-decoration: none;
     }
 
+    &__link {
+    @extend .m-side-nav;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 $base-margin;
+    padding: .75*$base-padding .5*$base-margin;
+
     &::after {
+      display: none !important; // !important overrides default foundation arrow
+    }
+
+    &::before {
       border: none;
-      color: $white;
+      color: $black;
       content: fa-content($fa-var-chevron-right);
-      display:inline-block;
-      // font-family: "Font Awesome 5 Free";
-      font-family: "FontAwesome";
-      font-size: 0.8rem;
-      font-weight: 100;
-      margin-left: 1rem;
+      font-family: "Font Awesome 5 Free";
+      font-size: $nav-fa-icon-size;
+      font-weight: 900;
+      line-height: 2.5;
+      margin-left: $base-margin;
+      position: absolute;
+      right: $base-padding;
+      text-rendering: optimizeLegibility;
+    }
+  }
+  &__child-link {
+    @extend .m-side-nav;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 $base-margin;
+    padding: .75*$base-padding $base-padding;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $dark-grey-text;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    @extend .m-side-nav;
+    margin-bottom: $base-font-size;
+
+    .side-nav__item {
+      background-color: $blue-main-brand;
+      border-bottom: none;
+      height: auto;
+      padding: 0.75*$base-padding 0.5*$base-margin;
+      max-height: 62px;
+    }
+
+    .side-nav__link {
+      background-color: transparent;
+      color: $white;
+      font-size: $base-font-size;
+      font-weight: 900;
+      line-height: 1;
+      text-align: left;
 
       &:hover {
-        text-decoration: none;
+        text-decoration: underline;
+      }
+
+      &::after {
+        border: none;
+        color: $white;
+        content: fa-content($fa-var-chevron-right);
+        display:inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-size: $nav-fa-icon-size;
+        font-weight: 900;
+        margin-left: $base-margin;
+
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
