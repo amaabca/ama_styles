@@ -407,11 +407,13 @@
       border: 2px solid lighten($blue-secondary-brand--light-med, 12%);
       color: lighten($dark-grey-text, 30%);
 
-      &::before {
+      &::before,
+      &:hover::before {
         border: 2px solid lighten($blue-secondary-brand--light-med, 55%);
       }
 
-      &::after {
+      &::after,
+      &:hover::after {
         background-color: lighten($blue-secondary-brand--light-med, 55%);
       }
     }
