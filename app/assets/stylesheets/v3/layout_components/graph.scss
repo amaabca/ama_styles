@@ -10,7 +10,7 @@
     display: block;
     float: left;
     position: absolute;
-    background-color: $bg-grey-lightest;
+    background-color: $bg-grey-lighter;
 
     &--right {
       @extend .graph__cap;
@@ -25,7 +25,7 @@
   &__middle {
     height: 100%;
     width: calc(100% - 50px);
-    background-color: $bg-grey-lightest;
+    background-color: $bg-grey-lighter;
     display: block;
     float: left;
     margin-left: 27px;
