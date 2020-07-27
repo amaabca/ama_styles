@@ -87,6 +87,10 @@
 .top-nav-offset {
   margin-top: $top-bar-height + $side-nav-height;
 
+  @include breakpoint (medium down) {
+    margin-top: $top-bar-height;
+  }
+
   &--styleguide {
     margin-top: 19px;
   }
