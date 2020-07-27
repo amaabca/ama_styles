@@ -14,13 +14,13 @@
       @extend .table__row;
 
       &:nth-child(odd) {
-        background: $bg-grey-lightest;
+        background: $bg-grey-lighter;
       }
     }
 
     &--grey-bg {
       @extend .table__row;
-      background: $bg-grey-lightest;
+      background: $bg-grey-lighter;
       padding: 0;
       margin-top: 3px;
     }
@@ -63,7 +63,7 @@
 
     &--grey-bg {
       @extend .table__header;
-      background: $bg-grey-lightest;
+      background: $bg-grey-lighter;
     }
   }
 
