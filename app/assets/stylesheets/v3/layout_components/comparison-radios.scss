@@ -1,9 +1,14 @@
 .comparison-radios {
+  &__wrapper {
+    @include breakpoint(small only) {
+      margin-bottom: $base-margin*2 !important;
+    }
+  }
+
   @include breakpoint(medium) {
     &__wrapper {
       @include grid-row-nest;
       @include clearfix;
-      margin-bottom: $base-margin;
     }
   }
 
@@ -40,8 +45,8 @@
 
   &__radio-btn--stacked {
     .comparison-radios__list-icon {
-      margin-right: 10px;
-      margin-left: -24px;
+      margin-right: 5px;
+      margin-left: -5px;
     }
 
     .comparison-radios__list {
@@ -59,7 +64,7 @@
 
       .fas {
         &::before {
-          font-family: "FontAwesome";
+          font-family: "Font Awesome 5 Free";
           margin-right: 0;
           margin-left: -24px;
         }
@@ -67,32 +72,33 @@
 
       .fa-times {
         &::before {
-          content: "\f00d";
+          content: fa-content($fa-var-times);
           color: $brand-red;
         }
       }
 
       .fa-check {
         &::before {
-          content: "\f00c";
+          content: fa-content($fa-var-check);
           color: $brand-green;
         }
       }
     }
 
     .comparison-radios__input + label {
+
       @include breakpoint(small only) {
         overflow: hidden;
       }
 
       @include breakpoint(small) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::before {
         @include breakpoint(small) {
           top: 100%;
-          margin-top: -35px;
+          margin-top: -40px;
           left: 50%;
           margin-left: -12px;
         }
@@ -101,15 +107,16 @@
 
     input[type="radio"] + label {
       background: $white;
+      overflow: hidden;
     }
 
     input[type="radio"]:checked + label {
       &::after {
         @include breakpoint(small) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
         }
       }
     }
@@ -127,13 +134,13 @@
       }
 
       @include breakpoint(medium) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::before {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -35px;
+          margin-top: -40px;
           left: 50%;
           margin-left: -12px;
         }
@@ -142,50 +149,51 @@
           top: 50%;
           left: 91%;
           margin-top: -12px;
-          margin-left: -2px;
+          margin-left: -4px;
         }
       }
 
       &::after {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
           display: none;
         }
 
         @include breakpoint(small only) {
           top: 50%;
           left: 91%;
-          margin-top: -4px;
-          margin-left: 6px;
+          margin-top: -1px;
+          margin-left: 7px;
         }
       }
     }
 
     input[type="radio"] + label {
       background: $white;
+      overflow: hidden;
     }
 
     input[type="radio"]:checked + label {
       @include breakpoint(medium) {
-        padding: 0 0 46px;
+        padding: 0 0 50px;
       }
 
       &::after {
         @include breakpoint(medium) {
           top: 100%;
-          margin-top: -27px;
+          margin-top: -29px;
           left: 50%;
-          margin-left: -4px;
+          margin-left: -1px;
         }
 
         @include breakpoint(small only) {
           top: 50%;
-          left: 91%;
-          margin-top: -4px;
-          margin-left: 6px;
+          left: 92%;
+          margin-top: -1px;
+          margin-left: 4px;
         }
       }
     }
@@ -202,7 +210,7 @@
 
     &--blue-bg {
       @extend .comparison-radios__title;
-      background: $brand-blue-light;
+      background: $blue-secondary-brand--light-med;
       color: $white;
       margin-bottom: $base-margin;
       position: relative;
@@ -219,6 +227,10 @@
   }
 
   &__title-content {
+    @include breakpoint(medium) {
+      font-size: 32px;
+    }
+
     @include breakpoint(small only) {
       -webkit-transform: translate(-50%, -50%);
       @include absolute-center;
@@ -235,23 +247,23 @@
   &__input:checked {
     & ~ label {
       .comparison-radios__panel {
-        border-bottom: 2px solid darken($sky, 10%);
-        background: darken($sky, 3%);
+        border-bottom: 2px solid $blue-secondary-brand--light-med;
+        background: $white;
 
         @include breakpoint(medium) {
-          border-top: 2px solid darken($sky, 10%);
+          border-top: 2px solid $blue-secondary-brand--light-med;
         }
       }
 
       .comparison-radios__content {
         @include breakpoint(small only) {
-          border-left: 2px solid darken($sky, 10%);
-          border-right: 2px solid darken($sky, 10%);
+          border-left: 2px solid $blue-secondary-brand--light-med;
+          border-right: 2px solid $blue-secondary-brand--light-med;
         }
       }
 
       .comparison-radios__divider {
-        border: solid darken($sky, 10%);
+        border: solid $blue-secondary-brand--light-med;
         border-width: 2px 0 0;
         height: 0;
       }
@@ -259,13 +271,13 @@
   }
 
   &__panel {
-    background-color: $ash;
-    border-bottom: 2px solid $stone;
+    background-color: $bg-grey-lightest;
+    border-bottom: 2px solid $form-border-color;
     padding: $base-padding;
     margin-bottom: $base-margin;
 
     @include breakpoint(medium) {
-      border-top: 2px solid $stone;
+      border-top: 2px solid $form-border-color;
     }
   }
 
@@ -273,8 +285,8 @@
     @include breakpoint(small only) {
       width: 63%;
       float: left;
-      border-right: 2px solid $stone;
-      border-left: 2px solid $stone;
+      border-right: 2px solid $form-border-color;
+      border-left: 2px solid $form-border-color;
       height: 100%;
     }
   }
@@ -295,7 +307,7 @@
 
     &--blue {
       @extend .comparison-radios__highlight;
-      color: $brand-blue-light;
+      color: $blue-secondary-brand--light-med;
     }
   }
 
@@ -329,13 +341,13 @@
 
   &__list-icon {
     margin-right: 10px;
-    color: $brand-blue-light;
+    color: $blue-secondary-brand--light-med;
   }
 
   &__ribbon {
     position: absolute;
     top: 0;
-    right: -18px;
+    right: -16px;
 
     @include breakpoint(medium down) {
       right: -14px;
@@ -369,8 +381,8 @@
 
       @include breakpoint(medium) {
         font-size: $base-font-size*4;
-        top: 20px;
-        line-height: 9px;
+        top: 17px;
+        line-height: 17px;
       }
 
       @include breakpoint(small only) {
@@ -382,6 +394,7 @@
 
   &__divider {
     margin-bottom: 0;
+    border: 1px solid $form-border-color;
 
     @include breakpoint(small only) {
       display: none;
@@ -390,26 +403,28 @@
 
   &--disabled {
     input[type="radio"]:checked + label {
-      background-color: lighten($sky, 4%);
-      border: 2px solid lighten($dark-sky, 12%);
-      color: lighten($stormcloud, 30%);
+      background-color: lighten($bg-blue-light, 4%);
+      border: 2px solid lighten($blue-secondary-brand--light-med, 12%);
+      color: lighten($dark-grey-text, 30%);
 
-      &::before {
-        border: 2px solid lighten($brand-blue-light, 55%);
+      &::before,
+      &:hover::before {
+        border: 2px solid lighten($blue-secondary-brand--light-med, 55%);
       }
 
-      &::after {
-        background-color: lighten($brand-blue-light, 55%);
+      &::after,
+      &:hover::after {
+        background-color: lighten($blue-secondary-brand--light-med, 55%);
       }
     }
 
     input [type="radio"] + label {
-      border: 2px solid lighten($dark-sky, 6%);
+      border: 2px solid lighten($blue-secondary-brand--light-med, 6%);
     }
 
     [type="radio"] + label[for] {
       cursor: not-allowed;
-      color: lighten($stormcloud, 30%);
+      color: lighten($dark-grey-text, 30%);
     }
   }
 }
