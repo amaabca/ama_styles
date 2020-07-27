@@ -8,6 +8,14 @@
     text-decoration: none;
   }
 
+  &.disabled,
+  &.disabled:active,
+  &.disabled:hover,
+  &.disabled:focus {
+    background: lighten($button-background, 10%);
+    border-color: none;
+  }
+
   &--green-centered {
     @extend .button;
     $button-background: $brand-green;
@@ -17,6 +25,14 @@
     &:active,
     &:focus {
       background: lighten($button-background, 10%);
+    }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      background: lighten($button-background, 10%);
+      border-color: none;
     }
   }
 
@@ -30,6 +46,14 @@
     &:focus {
       background: lighten($button-background, 10%);
     }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      background: lighten($button-background, 10%);
+      border-color: none;
+    }
   }
 
   &--dark-blue {
@@ -41,6 +65,14 @@
     &:active,
     &:focus {
       background: lighten($button-background, 10%);
+    }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      background: lighten($button-background, 10%);
+      border-color: none;
     }
   }
 
@@ -54,6 +86,14 @@
     &:focus {
       background: lighten($button-background, 10%);
     }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      background: lighten($button-background, 10%);
+      border-color: none;
+    }
   }
 
   &--brand-red {
@@ -65,6 +105,14 @@
     &:active,
     &:focus {
       background: lighten($button-background, 10%);
+    }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      background: lighten($button-background, 10%);
+      border-color: none;
     }
   }
 
@@ -188,20 +236,5 @@
       color: lighten($cerulean, 15%);
       text-decoration: none;
     }
-  }
-}
-
-button.disabled,
-button[disabled],
-.button.disabled,
-.button[disabled] {
-  background-color: lighten($secondary-color, 10%);
-  border-color: none;
-
-  &:hover,
-  &:active,
-  &:focus {
-    background-color: lighten($secondary-color, 10%);
-    border-color: none;
   }
 }
