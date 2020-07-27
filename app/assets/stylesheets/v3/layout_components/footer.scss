@@ -77,6 +77,21 @@ body {
 
   &__col {
     @include large-3;
+    display: none;
+
+    @include breakpoint(large up) {
+      max-width: 992px;
+      display: block;
+    }
+  }
+
+  &__col-mobile {
+
+
+    @include breakpoint(large up) {
+      max-width: 992px;
+      display: none;
+    }
   }
 
   &__col-right {
