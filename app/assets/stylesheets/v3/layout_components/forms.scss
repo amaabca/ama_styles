@@ -87,11 +87,10 @@ input[type="checkbox"] + label,
   cursor: pointer;
   padding: 0 $base-padding/2 0 $base-padding/2;
   transition: border-color 0.25s linear;
-  border-radius: $base-radius;
 
   &:hover {
     &::before {
-      border-color: $blue-main-brand;
+      border-color: $blue-secondary-brand--light-med;
       background-color: $white;
       transition: border-color 0.25s linear;
     }
@@ -169,15 +168,24 @@ input[type="radio"] + label {
   }
 }
 
+input[type="radio"] + label:first-of-type {
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}
+
+input[type="radio"] + label:last-of-type {
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
 input[type="radio"]:checked + label {
-  color: $stormcloud;
-  background-color: $sky;
-  border: 2px solid darken($sky, 10%);
+  color: $dark-grey-text;
+  background-color: $bg-blue-light;
+  border: 2px solid $blue-secondary-brand--light-med;
 
   &::before {
     content: "";
-    background-color: $white;
-    border: 2px solid $secondary-color;
+    border: 2px solid $blue-secondary-brand--light-med;
   }
 
   &:hover {
@@ -195,8 +203,8 @@ input[type="radio"]:checked + label {
     position: absolute;
     display: block;
     top: calc(50% - 4px);
-    left: 18px;
-    background-color: $brand-blue-light;
+    left: 27px;
+    background-color: $blue-secondary-brand--light-med;
     width: 8px;
     height: 8px;
     -moz-transform: scale(2, 2);
@@ -207,15 +215,18 @@ input[type="radio"]:checked + label {
   }
 
   & > hr {
-    border: solid darken($sky, 10%);
-    border-width: 2px 0 0;
+    border: 1px solid $blue-secondary-brand--light-med;
     height: 0;
   }
 
   .membership-card-header {
-    border-bottom: 2px solid darken($sky, 10%);
-    background: darken($sky, 4%);
+    border-bottom: 2px solid $blue-secondary-brand--light-med;
+    background: $blue-secondary-brand--light-med;
   }
+}
+
+input[type="checkbox"] + label {
+  border-radius: $base-radius;
 }
 
 input[type="checkbox"]:checked + label {
@@ -245,8 +256,8 @@ input[type="checkbox"]:checked + label {
   }
 
   &::before {
-    background: $blue-main-brand;
-    border: 2px solid $blue-main-brand;
+    background: $blue-secondary-brand--light-med;
+    border: 2px solid $blue-secondary-brand--light-med;
   }
 }
 
@@ -465,7 +476,7 @@ select.has-placeholder:nth-child(1) {
 }
 
 select:focus {
-  border: 2px solid $blue-main-brand;
+  border: 2px solid $blue-secondary-brand--light-med;
   background-color: $white;
   outline: none;
   box-shadow: 0;
@@ -694,5 +705,43 @@ input[type="url"]:-ms-input-placeholder {
     &--inline {
       @include small-4;
     }
+  }
+}
+
+/* ------------- Tenure Radios ------------- */
+
+input[type="radio"] + label.tenure-radio::before,
+input[type="checkbox"] + label.tenure-radio::before {
+  left: 50%;
+  top: 100%;
+  margin-top: -37px !important;
+  margin-left: -15px !important;
+}
+
+input[type="radio"] + label.tenure-radio::after,
+input[type="radio"]:checked + label.tenure-radio::after {
+  top: 100%;
+  margin-top: -26px !important;
+  left: 50%;
+  margin-left: -4px;
+  position: absolute;
+}
+
+input[type="radio"] + label.tenure-radio,
+input[type="checkbox"] + label.tenure-radio {
+  padding-bottom: 30px;
+
+  @include breakpoint(small only) {
+    margin-bottom: 5px;
+  }
+}
+
+.tenure-radio {
+  hr {
+    border-color: $form-border-color;
+  }
+
+  .checkbox-label {
+    margin: 9px auto;
   }
 }
