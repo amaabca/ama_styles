@@ -65,9 +65,9 @@
   &__content-container {
     @extend .side-nav__content;
     flex-grow: 1;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style-type: none;
-    margin-left: $base-margin;
+    margin: 0 $base-margin;
   }
 
   &__item {
