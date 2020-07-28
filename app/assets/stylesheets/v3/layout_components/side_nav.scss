@@ -205,7 +205,6 @@
 
 .m-side-nav__content .js-drilldown-back {
   background: $border-grey;
-  min-height: 60vh;
   padding: 0.75*$base-padding 0.5*$base-padding;
 
   a {
@@ -295,6 +294,7 @@
   &__list {
     @extend .m-side-nav;
     margin-bottom: $base-font-size;
+    min-height: 60vh;
 
     .side-nav__item {
       background-color: $blue-main-brand;

@@ -28,6 +28,8 @@
 
   a {
     color: $white;
+    font-size: $base-font-size;
+    font-weight: $font-weight-light--open-sans;
   }
 
   &__logo {
@@ -60,14 +62,14 @@
     border: none;
 
     li {
-      background: $cerulean;
+      background: $blue-main-brand;
 
       &:nth-child(1) {
         margin-top: -$base-margin/2;
       }
 
       &:hover {
-        background: lighten($cerulean, 5%);
+        background: lighten($blue-main-brand, 5%);
       }
     }
 
@@ -189,6 +191,28 @@
 
     &:hover {
       color: $white;
+    }
+  }
+
+  .side-nav__link {
+    text-align: left;
+    font-weight: $font-weight-bold--open-sans;
+  }
+}
+
+.dropdown.menu {
+  .is-dropdown-submenu-parent .link--no-underline {
+    padding-right: 2rem;
+
+    &::after {
+      color: $white;
+      content: fa-content($fa-var-chevron-down);
+      border: none;
+      font-family: "Font Awesome 5 Free";
+      margin-left: $base-margin;
+      font-weight: $fa-solid;
+      right: 23px;
+      top: 15px;
     }
   }
 }
