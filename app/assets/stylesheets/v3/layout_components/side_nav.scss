@@ -1,9 +1,27 @@
+/* Desktop Header/Side-Nav */
+
 .side-nav {
+  @include grid-column(12,0);
   background: $white;
-  @include grid-column(2,0);
+  box-shadow: $base-box-shadow;
+  height: $side-nav-height;
+  position: fixed;
+  top: $top-bar-height;
+  z-index: 9000;
 
   @include breakpoint(medium down) {
     display: none;
+  }
+
+  .logo {
+    background-image: asset-url(ama-logo);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 2*$base-margin;
+    object-fit: contain;
+    padding: $base-padding;
+    width: 100px;
   }
 
   &__spacer {
@@ -31,61 +49,125 @@
     color: $white;
   }
 
-  &__content {
-    padding: $base-padding;
+  &__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    cursor: default;
   }
 
-  &__list {
+  &__content {
+    display: flex;
+  }
+
+  &__content-container {
+    @extend .side-nav__content;
+    flex-grow: 1;
+    justify-content: space-between;
     list-style-type: none;
+    margin: 0 $base-margin;
   }
 
   &__item {
-    margin-bottom: $base-margin;
-  }
-
-  &__link {
-    display: block;
-    font-weight: 600;
-    color: $jet;
-    margin-bottom: $base-margin/2;
-    cursor: pointer;
-    line-height: inherit;
+    align-items: center;
+    border-bottom: $base-padding/2 solid transparent;
+    display: flex;
+    height: $side-nav-height;
+    justify-content: center;
+    padding: $base-padding $base-padding $base-padding/2 $base-padding;
 
     &:hover {
-      color: lighten($cerulean, 15%);
+      border-bottom: $base-padding/2 solid $blue-main-brand;
+
+      .side-nav__child-list {
+        display: block;
+      }
     }
   }
 
+  &__link {
+    color: $dark-grey-text;
+    cursor: pointer;
+    display: block;
+    font-size: $base-font-size;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+
+    @media screen and (max-width: 1430px) {
+      font-size: 0.875*$base-font-size;
+    }
+
+    &:hover {
+      color: $dark-grey-text;
+      text-decoration: none;
+    }
+  }
+
+  // The following box shadow is custom to make the header dropdown appear as though it is below the header itself.
+  // (Unable to do with z-index since a child can not have a lower z-index than its parent)
   &__child-list {
+    background-color: $white;
+    box-shadow: 2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35), inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    display: none;
+    left: $base-margin;
     list-style-type: none;
+    padding: 0 2*$base-padding;
+    position: absolute;
+    top: $side-nav-height;
+    width: calc(100% - 4rem);
+    z-index: 10;
+
+    li:first-of-type {
+      border-bottom: 1px solid $bg-grey-light;
+      padding-bottom: $base-padding/2;
+      padding-top: $base-padding;
+
+      &::after {
+        color: $black;
+        content: fa-content($fa-var-angle-double-right);
+        font-family: "Font Awesome 5 Free";
+        margin-left: $base-margin;
+        font-weight: $fa-solid;
+      }
+    }
+
+    li:last-of-type {
+      border-bottom: none;
+      padding-bottom: $base-padding;
+    }
   }
 
   &__child-item {
     margin-bottom: $base-margin/2;
+    width: fit-content;
   }
 
   &__child-link {
-    color: $stormcloud;
-    font-size: rem-calc(12);
+    color: $black;
+    font-size: $base-font-size;
+    font-weight: 600;
 
     &:active,
     &:hover,
     &:focus {
-      $anchor-color: $cerulean;
-      color: $anchor-color-hover;
+      $anchor-color: $black;
+      color: $black;
     }
 
     &--active-page {
-      font-weight: bold;
       color: $cerulean;
+      font-weight: bold;
     }
   }
 
   &--overlay {
     @extend .side-nav;
-    z-index: 1000;
-    position: absolute;
     min-width: 300px;
+    position: absolute;
+    z-index: 1000;
 
     @include breakpoint(medium down) {
       position: relative;
@@ -93,6 +175,160 @@
 
     @include breakpoint(small only) {
       width: 100%;
+    }
+  }
+}
+
+/* Mobile Header/Side-Nav */
+
+// The .off-canvas classes control the sliding mobile sidebar speed & positioning.
+.off-canvas.position-left {
+  height: auto;
+  top: 0;
+  transform: translateX(-$offcanvas-left-size);
+  transition: transform 0.3s ease-in-out;
+  width: $offcanvas-left-size;
+}
+
+.off-canvas.position-left.is-open {
+  box-shadow: $base-box-shadow;
+  transform: translate(0, 0);
+}
+
+.off-canvas.is-transition-overlap {
+  z-index: 10010;
+}
+
+.js-off-canvas-overlay {
+  z-index: 10000;
+}
+
+.m-side-nav__content .js-drilldown-back {
+  background: $border-grey;
+  min-height: 60vh;
+  padding: 0.75*$base-padding 0.5*$base-padding;
+
+  a {
+    background-color: transparent;
+    color: $dark-grey-text;
+    font-size: $base-font-size;
+    font-weight: $font-weight-light--open-sans;
+    line-height: 1;
+    margin-left: 1.5*$base-margin;
+    padding: 0.75*$base-padding 0.5*$base-padding;
+
+    &::after {
+      display: none !important; // !important overrides default foundation arrow
+    }
+
+    &::before {
+      border: none;
+      color: $dark-grey-text;
+      content: fa-content($fa-var-chevron-left);
+      font-family: "Font Awesome 5 Free";
+      font-size: $fa-size-small;
+      font-weight: $fa-solid;
+      left: 0.25*$base-padding;
+      line-height: 1.4;
+      margin-left: 0.75*$base-margin;
+      position: absolute;
+    }
+  }
+}
+
+.drilldown .is-drilldown-submenu {
+  margin-top: 62px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.m-side-nav {
+  color: $dark-grey-text;
+  font-weight: $font-weight-light--open-sans;
+  font-size: $base-font-size;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark-grey-text;
+    text-decoration: none;
+  }
+
+  &__link {
+    @extend .m-side-nav;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 $base-margin;
+    padding: 0.75*$base-padding 0.5*$base-margin;
+
+    &::after {
+      display: none !important; // !important overrides default foundation arrow
+    }
+
+    &::before {
+      border: none;
+      color: $black;
+      content: fa-content($fa-var-chevron-right);
+      font-family: "Font Awesome 5 Free";
+      font-size: $fa-size-small;
+      font-weight: $fa-solid;
+      line-height: 2.5;
+      margin-left: $base-margin;
+      position: absolute;
+      right: $base-padding;
+      text-rendering: optimizeLegibility;
+    }
+  }
+
+  &__child-link {
+    @extend .m-side-nav;
+    border-bottom: 1px solid $border-grey;
+    margin: 0 $base-margin;
+    padding: 0.75*$base-padding $base-padding;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $dark-grey-text;
+      text-decoration: none;
+    }
+  }
+
+  &__list {
+    @extend .m-side-nav;
+    margin-bottom: $base-font-size;
+
+    .side-nav__item {
+      background-color: $blue-main-brand;
+      border-bottom: none;
+      height: auto;
+      padding: 0.75*$base-padding 0.5*$base-margin;
+      max-height: 62px;
+    }
+
+    .side-nav__link {
+      background-color: transparent;
+      color: $white;
+      font-size: $base-font-size;
+      line-height: 1;
+      text-align: left;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &::after {
+        border: none;
+        color: $white;
+        content: fa-content($fa-var-chevron-right);
+        display: inline-block;
+        font-family: "Font Awesome 5 Free";
+        font-size: $fa-size-small;
+        font-weight: $fa-solid;
+        margin-left: $base-margin;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
