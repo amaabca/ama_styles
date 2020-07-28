@@ -106,7 +106,7 @@ body {
     line-height: 1.2;
     position: relative;
 
-    &--small{
+    &--small {
       font-size: $base-font-size*0.875;
       font-weight: 900;
       color: $white;
@@ -120,14 +120,14 @@ body {
     padding-bottom: $base-padding*1.5;
   }
 
-  &__col-social{
+  &__col-social {
     padding-bottom: $base-padding*2;
 
     @include breakpoint(large up) {
       padding-bottom: $base-padding*8;
     }
 
-    img{
+    img {
       width: 40px;
 
       @include breakpoint(large only) {
@@ -158,17 +158,17 @@ body {
       max-width: 1440px;
     }
 
-    .footer-link{
+    .footer-link {
       color: $white;
       font-size: $base-font-size;
     }
 
-    .footer-link:hover{
+    .footer-link:hover {
       color: $white;
     }
   }
 
-  .link-list{
+  .link-list {
     display: none;
 
     @include breakpoint(large up) {
@@ -177,7 +177,7 @@ body {
   }
 }
 
-.policy-text{
+.policy-text {
   text-align: center;
   padding-bottom: $base-padding;
 
@@ -187,7 +187,7 @@ body {
   }
 }
 
-.policy-ama{
+.policy-ama {
   text-align: center;
   padding-top: $base-padding;
 
@@ -197,19 +197,19 @@ body {
   }
 }
 
-.affiliate-link{
+.affiliate-link {
   text-align: center;
   color: $white;
   font-size: $base-font-size;
 
-  p{
+  p {
     line-height: 1rem!important;
     margin-top: $base-margin*0.5;
   }
 
 }
 
-.footer-copyright{
+.footer-copyright {
   text-align: center;
 
   @include breakpoint(large up) {
@@ -227,7 +227,7 @@ body {
   right: 1rem;
 }
 
-.is-accordion-submenu-parent{
+.is-accordion-submenu-parent {
   a:focus {
     color: $white;
   }
