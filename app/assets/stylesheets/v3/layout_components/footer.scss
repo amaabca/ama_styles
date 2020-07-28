@@ -54,7 +54,7 @@ body {
 .page-footer {
   background: $bg-grey-dark;
   position: relative;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   padding: $base-padding*2 0;
 
   &__container {
@@ -86,8 +86,6 @@ body {
   }
 
   &__col-mobile {
-
-
     @include breakpoint(large up) {
       max-width: 992px;
       display: none;
@@ -100,23 +98,20 @@ body {
 
   &__col-header {
     font-size: $base-font-size*1.5;
-    font-weight: 900;
+    font-weight: $font-weight-regular--lato;
     color: $white;
     padding-bottom: $base-padding;
     line-height: 1.2;
     position: relative;
 
     &--small {
+      @extend .page-footer__col-header;
       font-size: $base-font-size*0.875;
-      font-weight: 900;
-      color: $white;
-      padding-bottom: $base-padding;
-      line-height: 1.2;
     }
   }
 
   //This is to line up the social media icons with the text
-  &__col:last-child &__col-header { 
+  &__col:last-child &__col-header {
     padding-bottom: $base-padding*1.5;
   }
 
@@ -203,10 +198,9 @@ body {
   font-size: $base-font-size;
 
   p {
-    line-height: 1rem!important;
+    line-height: 1rem !important;
     margin-top: $base-margin*0.5;
   }
-
 }
 
 .footer-copyright {
@@ -217,10 +211,10 @@ body {
   }
 }
 
-.is-accordion-submenu-parent > a:after {
+.is-accordion-submenu-parent > a::after {
   display: block;
   font-family: "Font Awesome 5 Free";
-  content: "\f078";
+  content: fa-content($fa-var-chevron-down);
   position: absolute;
   top: 20%;
   margin-top: -3px;
@@ -232,7 +226,7 @@ body {
     color: $white;
   }
 
-  a:hover{
+  a:hover {
     color: $white;
   }
 }
