@@ -11,3 +11,13 @@
 .link--no-underline:hover {
   text-decoration: none;
 }
+
+.is-dropdown-submenu-parent .link--no-underline,
+.is-dropdown-submenu-parent .link--no-underline:hover {
+  text-decoration: none;
+  color: $white;
+}
+
+.dropdown.menu .is-active > a {
+  color: $white;
+}
