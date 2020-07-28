@@ -193,6 +193,11 @@
       color: $white;
     }
   }
+
+  .side-nav__link {
+    text-align: left;
+    font-weight: $font-weight-bold--open-sans;
+  }
 }
 
 
