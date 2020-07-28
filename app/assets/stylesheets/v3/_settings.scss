@@ -211,8 +211,13 @@ $accordion-content-padding: 1rem;
 // 8. Accordion Menu
 // -----------------
 
+<<<<<<< HEAD
 $accordionmenu-arrows: true;
 $accordionmenu-arrow-color: $white;
+=======
+$accordionmenu-arrows: false;
+$accordionmenu-arrow-color: $primary-color;
+>>>>>>> origin
 
 // 9. Badge
 // --------
@@ -408,10 +413,11 @@ $offcanvas-zindex: -1;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: false;
-$offcanvas-exit-background: none;
+$offcanvas-exit-background: rgba(0,0,0,.28);
 $maincontent-class: 'off-canvas-content';
 $maincontent-shadow: none;
 $offcanvas-shadow: none;
+$offcanvas-left-size: 84vw;
 
 // 25. Orbit
 // ---------
