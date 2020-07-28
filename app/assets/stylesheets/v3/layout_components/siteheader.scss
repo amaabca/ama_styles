@@ -193,8 +193,12 @@
       color: $white;
     }
   }
-}
 
+  .side-nav__link {
+    text-align: left;
+    font-weight: $font-weight-bold--open-sans;
+  }
+}
 
 .dropdown.menu {
   .is-dropdown-submenu-parent .link--no-underline {
