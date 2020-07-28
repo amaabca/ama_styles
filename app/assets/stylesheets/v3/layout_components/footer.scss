@@ -104,6 +104,7 @@ body {
     color: $white;
     padding-bottom: $base-padding;
     line-height: 1.2;
+    position: relative;
 
     &--small{
       font-size: $base-font-size*0.875;
@@ -213,5 +214,25 @@ body {
 
   @include breakpoint(large up) {
     text-align: right;
+  }
+}
+
+.is-accordion-submenu-parent > a:after {
+  display: block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f078";
+  position: absolute;
+  top: 20%;
+  margin-top: -3px;
+  right: 1rem;
+}
+
+.is-accordion-submenu-parent{
+  a:focus {
+    color: $white;
+  }
+
+  a:hover{
+    color: $white;
   }
 }
