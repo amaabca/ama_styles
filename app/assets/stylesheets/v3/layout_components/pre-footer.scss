@@ -54,7 +54,7 @@
   }
 
   &__content {
-    background: #D4D4D4;
+    background: $bg-grey-light;
     padding: $base-padding*2 $base-padding*2;
   }
 
@@ -101,3 +101,4 @@
       text-decoration: none;
     }
   }
+}
