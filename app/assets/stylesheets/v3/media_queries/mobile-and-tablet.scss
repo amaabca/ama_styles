@@ -13,4 +13,10 @@
     border-left: 0;
     margin-top: $base-margin;
   }
+
+  .side-nav{
+    &__list {
+      margin-bottom: $base-margin;
+    }
+  }
 }
