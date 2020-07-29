@@ -50,14 +50,16 @@
   }
 
   &__list {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
     list-style-type: none;
     margin: 0;
     cursor: default;
   }
 
   &__content {
-    background: #D4D4D4;
-    padding: $base-padding*2 $base-padding*2;
+    display:flex;
   }
 
   &__content-container {
