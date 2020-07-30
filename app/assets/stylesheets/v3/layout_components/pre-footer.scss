@@ -1,9 +1,7 @@
 .pre-footer {
   @include grid-column(12,0);
   background: $white;
-  box-shadow: $base-box-shadow;
   height: $side-nav-height;
-  position: fixed;
   top: $top-bar-height;
   z-index: 9000;
 
