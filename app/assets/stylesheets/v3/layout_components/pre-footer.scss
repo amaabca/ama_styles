@@ -3,47 +3,6 @@
   background: $white;
   height: $side-nav-height;
   top: $top-bar-height;
-  z-index: 9000;
-
-  @include breakpoint(medium down) {
-    display: none;
-  }
-
-  .logo {
-    background-image: asset-url(ama-logo);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 2*$base-margin;
-    object-fit: contain;
-    padding: $base-padding;
-    width: 100px;
-  }
-
-  &__spacer {
-    @include large-2;
-    height: 100%;
-    position: absolute;
-    z-index: -1; //to prevent overlap with notifications
-
-    &--white {
-      @extend .side-nav__spacer;
-      background-color: $white;
-    }
-
-    &--show-for-medium {
-      @extend .side-nav__spacer;
-      @include breakpoint(medium down) {
-        display: block;
-      }
-    }
-  }
-
-  &__header {
-    @extend .heading;
-    background: $cerulean;
-    color: $white;
-  }
 
   &__list {
     list-style-type: none;
@@ -53,50 +12,6 @@
 
   &__content {
     background: $bg-grey-light;
-    padding: $base-padding*2 $base-padding*2;
-  }
-
-  &__content-container {
-    @extend .side-nav__content;
-    flex-grow: 1;
-    justify-content: space-between;
-    list-style-type: none;
-    margin: 0 $base-margin;
-  }
-
-  &__item {
-    align-items: center;
-    border-bottom: $base-padding/2 solid transparent;
-    display: flex;
-    height: $side-nav-height;
-    justify-content: center;
-    padding: $base-padding $base-padding $base-padding/2 $base-padding;
-
-    &:hover {
-      border-bottom: $base-padding/2 solid $blue-main-brand;
-
-      .side-nav__child-list {
-        display: block;
-      }
-    }
-  }
-
-  &__link {
-    color: $dark-grey-text;
-    cursor: pointer;
-    display: block;
-    font-size: $base-font-size;
-    font-weight: 600;
-    line-height: 1.5;
-    text-align: center;
-
-    @media screen and (max-width: 1430px) {
-      font-size: 0.875*$base-font-size;
-    }
-
-    &:hover {
-      color: $dark-grey-text;
-      text-decoration: none;
-    }
+    padding: $base-padding*2 $base-padding*1;
   }
 }
