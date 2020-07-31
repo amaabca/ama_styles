@@ -1,8 +1,6 @@
 .pre-footer {
   @include grid-column(12,0);
   background: $white;
-  height: $side-nav-height;
-  top: $top-bar-height;
 
   &__list {
     list-style-type: none;
@@ -12,6 +10,6 @@
 
   &__content {
     background: $bg-grey-light;
-    padding: $base-padding*2 $base-padding*1;
+    padding: $base-padding*2 $base-padding*1 $base-padding*1 $base-padding*1;
   }
 }
