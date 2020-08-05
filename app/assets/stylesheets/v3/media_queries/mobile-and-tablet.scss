@@ -13,4 +13,10 @@
     border-left: 0;
     margin-top: $base-margin;
   }
+
+  .pre-footer {
+    &__list {
+      margin-bottom: $base-margin;
+    }
+  }
 }

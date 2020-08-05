@@ -1,0 +1,15 @@
+.pre-footer {
+  @include grid-column(12,0);
+  background: $white;
+
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    cursor: default;
+  }
+
+  &__content {
+    background: $bg-grey-light;
+    padding: $base-padding*2 $base-padding $base-padding $base-padding;
+  }
+}
