@@ -482,7 +482,7 @@
 
 .hint {
   font-size: $small-font-size;
-  line-height: $base-font-size;
+  line-height: $base-font-size*1.5;
   color: darken($smoke, 15%);
   font-style: italic;
   display: block;
