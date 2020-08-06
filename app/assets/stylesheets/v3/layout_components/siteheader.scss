@@ -44,11 +44,6 @@
   &__item {
     @include breakpoint(large) {
       height: $top-bar-height;
-
-      &--highlighted {
-        @extend .top-bar__item;
-        background: $brand-blue-light;
-      }
     }
   }
 
@@ -159,18 +154,37 @@
     background: $blue-secondary-brand--light-med;
 
     &--split {
+      @extend .page-header;
       @extend .page-header__heading;
       @include small-6;
+      float: left;
+      margin-bottom: 0;
+      padding-left: $base-padding*2 !important; //temporary v3 fix
     }
   }
 
   &__sub-text {
-    @extend .heading;
     @include small-6;
-    background: $brand-blue-light;
-    font-style: italic;
-    font-size: 1.25rem;
+    background: $blue-secondary-brand--light-med;
+    color: $white;
+    font-size: $large-font-size;
     text-align: right;
+    float: right;
+    padding: 2.5rem 2rem !important; //temporary v3 fix
+
+
+    @include breakpoint (small only) {
+      padding-top: $base-padding*2;
+    }
+
+  }
+}
+
+h2.page-header__heading--split { //temporary v3 fix
+  font-size: 60px;
+
+  @include breakpoint (small only) {
+    font-size: 40px;
   }
 }
 

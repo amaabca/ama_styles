@@ -1,6 +1,6 @@
 .banner {
   position: relative; // This is needed for the positioning of the close icon on the blue banners
-  margin-bottom: $base-margin;
+  margin-bottom: $base-margin*3;
   border-radius: $base-radius;
   box-shadow: $base-box-shadow;
   padding: $base-padding*2 $base-padding*3 !important;
