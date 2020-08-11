@@ -137,26 +137,6 @@
 }
 
 /* ==================== 4. Margins ==================== */
-.m1 {
-  margin: $base-margin !important;
-}
-
-.mt1 {
-  margin-top: $base-margin !important;
-}
-
-.mr1 {
-  margin-right: $base-margin !important;
-}
-
-.mb1 {
-  margin-bottom: $base-margin !important;
-}
-
-.ml1 {
-  margin-left: $base-margin !important;
-}
-
 .m0 {
   margin: 0 !important;
 }
@@ -197,27 +177,67 @@
   }
 }
 
+.m1 {
+  margin: $base-margin !important;
+}
+
+.mt1 {
+  margin-top: $base-margin !important;
+}
+
+.mr1 {
+  margin-right: $base-margin !important;
+}
+
+.mb1 {
+  margin-bottom: $base-margin !important;
+}
+
+.ml1 {
+  margin-left: $base-margin !important;
+}
+
+.m2 {
+  margin: $base-margin*2 !important;
+}
+
+.mt2 {
+  margin-top: $base-margin*2 !important;
+}
+
+.mr2 {
+  margin-right: $base-margin*2 !important;
+}
+
+.mb2 {
+  margin-bottom: $base-margin*2 !important;
+}
+
+.ml2 {
+  margin-left: $base-margin*2 !important;
+}
+
+.m3 {
+  margin: $base-margin*3 !important;
+}
+
+.mt3 {
+  margin-top: $base-margin*3 !important;
+}
+
+.mr3 {
+  margin-right: $base-margin*3 !important;
+}
+
+.mb3 {
+  margin-bottom: $base-margin*3 !important;
+}
+
+.ml3 {
+  margin-left: $base-margin*3 !important;
+}
+
 /* ==================== 5. Padding ==================== */
-.p1 {
-  padding: $base-padding !important;
-}
-
-.pt1 {
-  padding-top: $base-padding !important;
-}
-
-.pr1 {
-  padding-right: $base-padding !important;
-}
-
-.pb1 {
-  padding-bottom: $base-padding !important;
-}
-
-.pl1 {
-  padding-left: $base-padding !important;
-}
-
 .p0 {
   padding: 0 !important;
 }
@@ -242,6 +262,66 @@
 
 .pl0 {
   padding-left: 0 !important;
+}
+
+.p1 {
+  padding: $base-padding !important;
+}
+
+.pt1 {
+  padding-top: $base-padding !important;
+}
+
+.pr1 {
+  padding-right: $base-padding !important;
+}
+
+.pb1 {
+  padding-bottom: $base-padding !important;
+}
+
+.pl1 {
+  padding-left: $base-padding !important;
+}
+
+.p2 {
+  padding: $base-padding*2 !important;
+}
+
+.pt2 {
+  padding-top: $base-padding*2 !important;
+}
+
+.pr2 {
+  padding-right: $base-padding*2 !important;
+}
+
+.pb2 {
+  padding-bottom: $base-padding*2 !important;
+}
+
+.pl2 {
+  padding-left: $base-padding*2 !important;
+}
+
+.p3 {
+  padding: $base-padding*3 !important;
+}
+
+.pt3 {
+  padding-top: $base-padding*3 !important;
+}
+
+.pr3 {
+  padding-right: $base-padding*3 !important;
+}
+
+.pb3 {
+  padding-bottom: $base-padding*3 !important;
+}
+
+.pl3 {
+  padding-left: $base-padding*3 !important;
 }
 
 /* ==================== 6. Background Colours ==================== */
