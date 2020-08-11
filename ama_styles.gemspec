@@ -35,6 +35,7 @@ Gem::Specification.new do |s|
   s.summary = 'Shared stylesheet assets for https://*.ama.ab.ca'
   s.description = 'AMA\'s shared stylesheets'
   s.license = 'MIT'
+  s.required_ruby_version = Gem::Requirement.new('>= 2.1.0')
 
   s.files = `git ls-files -z`.split("\x0")
   s.test_files = Dir['spec/**/*']
@@ -59,7 +60,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rest-client'
   s.add_development_dependency 'rest-client-jogger'
   s.add_development_dependency 'rspec'
-  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'rubocop', '0.87.0'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'slack-notifier'
   s.add_development_dependency 'sqlite3'
