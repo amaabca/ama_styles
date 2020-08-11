@@ -65,6 +65,13 @@
 
   &__link {
     @extend .link--white;
+
+    &:active,
+    &:hover,
+    &:focus,
+    &:visited {
+      color: $white;
+    }
   }
 
   &__close {
