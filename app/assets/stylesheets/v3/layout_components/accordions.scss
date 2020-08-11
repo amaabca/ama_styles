@@ -76,8 +76,16 @@
       display: block;
       margin: 0 auto;
       text-align: center;
-      float: right;
-      margin-right: 1rem;
+      margin-right: $base-margin;
+
+      @include breakpoint(medium up) {
+        float: right;
+      }
+
+      @include breakpoint(small only) {
+        margin-top: $base-margin;
+      }
+
     }
 
     &:hover,
@@ -89,10 +97,11 @@
 
   &__heading {
     text-align: center;
-    font-size: $base-font-size*1.5;
+    font-size: $base-font-size*1.25;
     color: $dark-grey-text;
 
     @include breakpoint(medium) {
+      font-size: $base-font-size*1.5;
       text-align: left;
       display: inline-block;
     }
