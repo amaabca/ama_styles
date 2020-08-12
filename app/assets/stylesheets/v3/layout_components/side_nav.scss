@@ -60,6 +60,27 @@
 
   &__content {
     display: flex;
+
+    &—-float-left{
+      @extend .side-nav__content;
+      float: left;
+
+      .side-nav__item {
+        padding-left: $base-padding*2;
+        padding-right: $base-padding*2;
+      }
+    }
+  }
+
+  &__content--float-left {
+    @extend .side-nav__content;
+    float: left;
+
+    .side-nav__item {
+      @extend .side-nav__item;
+      padding-left: $base-padding*2;
+      padding-right: $base-padding*2;
+    }
   }
 
   &__content-container {
