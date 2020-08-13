@@ -5,18 +5,6 @@
   margin-bottom: $base-margin*3;
   box-shadow: $base-box-shadow;
   border-radius: $base-radius;
-  margin-top: -80px; //temporary v3 fix
-  padding-top: 110px;
-
-  @include breakpoint(medium only) {
-    margin-top: -110px; //temporary v3 fix
-    padding-top: 120px;
-  }
-
-  @include breakpoint(small only) {
-    margin-top: -120px; //temporary v3 fix
-    padding-top: 90px;
-  }
 
   &__title {
     padding: $base-padding*0.75 $base-padding;
@@ -30,16 +18,16 @@
 
     &--bg-blue {
       color: $dark-grey-text;
-      margin-top: $base-margin*2;
+      margin-bottom: $base-margin*2;
+
+      @include breakpoint(medium up) {
+        margin-bottom: $base-margin*2;
+      }
     }
   }
 
   &__image {
     margin-bottom: $base-margin;
-
-    @include breakpoint(small only) {
-      margin-top: $base-margin*3;
-    }
   }
 
   &__content {

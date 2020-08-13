@@ -48,6 +48,13 @@
       @extend .logo;
       width: 260px;
     }
+
+    &--online-account {
+      top: 70px;
+      position: absolute;
+      margin-left: $base-margin;
+      width: 260px;
+    }
   }
 
   &__item {
