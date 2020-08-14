@@ -2,10 +2,6 @@
 
 module AMA
   module Styles
-<<<<<<< HEAD
-    VERSION = '3.11.2'
-=======
-    VERSION = '3.10.3'
->>>>>>> update version number
+    VERSION = '3.11.3'
   end
 end
