@@ -145,9 +145,7 @@ input[type="checkbox"] + label,
 .checkbox-label {
   display: inline-block;
   width: 85%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 55px;
+  margin: $base-margin 0 $base-margin $base-margin*3.5;
 
   &--full {
     @extend .checkbox-label;
@@ -742,4 +740,8 @@ input[type="checkbox"] + label.tenure-radio {
   .checkbox-label {
     margin: 9px auto;
   }
+}
+
+iframe.moneris {
+  height: 63px !important;
 }

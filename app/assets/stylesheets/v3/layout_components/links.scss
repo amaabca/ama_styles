@@ -2,7 +2,10 @@
   color: $white;
   text-decoration: underline !important;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
     color: $white;
   }
 }

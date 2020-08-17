@@ -14,14 +14,14 @@
   }
 
   .logo {
-    background-image: asset-url(ama-logo);
+    background-image: asset-url(oa-long-blue);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     margin-left: 2*$base-margin;
     object-fit: contain;
-    padding: $base-padding;
-    width: 100px;
+    padding: $base-padding*2;
+    width: 250px;
   }
 
   &__spacer {
@@ -45,7 +45,7 @@
 
   &__header {
     @extend .heading;
-    background: $cerulean;
+    background: transparent;
     color: $white;
   }
 
@@ -60,6 +60,27 @@
 
   &__content {
     display: flex;
+
+    &—-float-left {
+      @extend .side-nav__content;
+      float: left;
+
+      .side-nav__item {
+        padding-left: $base-padding*2;
+        padding-right: $base-padding*2;
+      }
+    }
+  }
+
+  &__content--float-left {
+    @extend .side-nav__content;
+    float: left;
+
+    .side-nav__item {
+      @extend .side-nav__item;
+      padding-left: $base-padding*2;
+      padding-right: $base-padding*2;
+    }
   }
 
   &__content-container {
@@ -76,7 +97,7 @@
     display: flex;
     height: $side-nav-height;
     justify-content: center;
-    padding: $base-padding $base-padding $base-padding/2 $base-padding;
+    padding: $base-padding*2 $base-padding $base-padding/2 $base-padding;
 
     &:hover {
       border-bottom: $base-padding/2 solid $blue-main-brand;
@@ -143,12 +164,16 @@
   &__child-item {
     margin-bottom: $base-margin/2;
     width: fit-content;
+
+    &:first-of-type .side-nav__child-link {
+      font-weight: $font-weight-bold--open-sans;
+    }
   }
 
   &__child-link {
     color: $black;
     font-size: $base-font-size;
-    font-weight: 600;
+    font-weight: $font-weight-light--open-sans;
 
     &:active,
     &:hover,
@@ -158,7 +183,7 @@
     }
 
     &--active-page {
-      color: $cerulean;
+      color: $blue-main-brand;
       font-weight: bold;
     }
   }
