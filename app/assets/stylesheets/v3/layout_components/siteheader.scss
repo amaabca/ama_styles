@@ -54,6 +54,10 @@
       position: absolute;
       margin-left: $base-margin;
       width: 260px;
+
+      @include breakpoint(medium down) {
+        display: none;
+      }
     }
   }
 
