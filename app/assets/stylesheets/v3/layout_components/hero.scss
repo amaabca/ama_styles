@@ -21,11 +21,6 @@
     }
   }
 
-  &--cerulean {
-    width: 100%;
-    background: $bg-grey-lightest;
-  }
-
   &__heading {
     @extend h3;
     line-height: 1.25;
@@ -57,6 +52,8 @@
 
 .hero--cerulean {
   padding: 0 $base-padding;
+  width: 100%;
+  background: $bg-grey-lightest;
 
   .section-half:first-of-type {
     background: $white;
