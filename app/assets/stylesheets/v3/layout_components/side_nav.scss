@@ -61,7 +61,7 @@
   &__content {
     display: flex;
 
-    &—-float-left{
+    &—-float-left {
       @extend .side-nav__content;
       float: left;
 
@@ -173,7 +173,7 @@
   &__child-link {
     color: $black;
     font-size: $base-font-size;
-    font-weight: 400;
+    font-weight: $font-weight-light--open-sans;
 
     &:active,
     &:hover,
@@ -186,8 +186,6 @@
       color: $blue-main-brand;
       font-weight: bold;
     }
-
-
   }
 
   &--overlay {
