@@ -29,26 +29,41 @@
   a {
     color: $white;
     font-size: $base-font-size;
-    font-weight: $font-weight-light--open-sans;
+    font-weight: $font-weight-bold--open-sans;
+
+    &:hover,
+    a:active,
+    a:focus {
+      text-decoration: underline;
+    }
   }
 
   &__logo {
-    display: none;
+    margin-left: $base-margin;
+    width: 140px;
+    position: absolute;
+    top: 65px;
 
     &--roadreports {
       @extend .logo;
       width: 260px;
+    }
+
+    &--online-account {
+      top: 70px;
+      position: absolute;
+      margin-left: $base-margin;
+      width: 260px;
+
+      @include breakpoint(medium down) {
+        display: none;
+      }
     }
   }
 
   &__item {
     @include breakpoint(large) {
       height: $top-bar-height;
-
-      &--highlighted {
-        @extend .top-bar__item;
-        background: $brand-blue-light;
-      }
     }
   }
 
@@ -159,18 +174,41 @@
     background: $blue-secondary-brand--light-med;
 
     &--split {
+      @extend .page-header;
       @extend .page-header__heading;
       @include small-6;
+      float: left;
+      margin-bottom: 0;
+      padding-left: $base-padding*2 !important; //temporary v3 fix
+
+      h1 {
+        font-family: "Knockout-48", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        text-transform: uppercase;
+        font-weight: 100;
+      }
     }
   }
 
   &__sub-text {
-    @extend .heading;
     @include small-6;
-    background: $brand-blue-light;
-    font-style: italic;
-    font-size: 1.25rem;
+    background: $blue-secondary-brand--light-med;
+    color: $white;
+    font-size: $large-font-size;
     text-align: right;
+    float: right;
+    padding: 2.5rem 2rem !important; //temporary v3 fix
+
+    @include breakpoint (small only) {
+      padding-top: $base-padding*2;
+    }
+  }
+}
+
+h2.page-header__heading--split { //temporary v3 fix
+  font-size: 60px;
+
+  @include breakpoint (small only) {
+    font-size: 40px;
   }
 }
 

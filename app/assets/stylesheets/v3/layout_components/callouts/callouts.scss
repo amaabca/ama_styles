@@ -3,7 +3,7 @@
   @include callout($bg-grey-light);
   border-radius: $base-radius;
   padding: $base-padding*2 $base-padding*3;
-  margin-bottom: $base-margin*2;
+  margin-bottom: $base-margin*3;
 
   &__close-btn {
     float: right;
@@ -19,33 +19,31 @@
   &--red {
     background: $red-main--dark;
     @extend .callout-box;
-    margin-bottom: $base-margin;
     color: $white;
   }
 
   &--ins-blue {
     background: $blue-insurance--dark-med;
     @extend .callout-box;
-    margin-bottom: $base-margin;
     color: $white;
   }
 
   &--brand-blue-light {
     background: $blue-main-brand--dark-med;
     @extend .callout-box;
-    margin-bottom: $base-margin;
     color: $white;
   }
 
   &--orange {
     @include callout($orange);
-    margin-bottom: $base-margin;
     color: $white;
   }
 
   &--membership-summary {
-    @include breakpoint(small only) {
-      min-height: 320px;
+    min-height: 360px;
+
+    @include breakpoint(medium only) {
+      min-height: 440px;
     }
   }
 
@@ -56,6 +54,7 @@
 
   &__sub-head {
     color: $white;
+    margin-bottom: $base-margin;
   }
 
   &__image-container {

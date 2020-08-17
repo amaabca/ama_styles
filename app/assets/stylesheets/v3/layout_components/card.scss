@@ -2,7 +2,7 @@
   background: $white;
   padding: $base-padding*2 $base-padding*3;
   text-align: center;
-  margin-bottom: $base-margin;
+  margin-bottom: $base-margin*3;
   box-shadow: $base-box-shadow;
   border-radius: $base-radius;
 
@@ -10,15 +10,19 @@
     padding: $base-padding*0.75 $base-padding;
     font-weight: bold;
     text-align: center;
+    font-size: 1.5rem;
 
     @include breakpoint(small only) {
       font-size: $base-font-size*1.25;
     }
 
     &--bg-blue {
-      background: $brand-blue-light;
-      color: $white;
-      display: none; //temporary fix until phase 2 of reskin
+      color: $dark-grey-text;
+      margin-bottom: $base-margin*2;
+
+      @include breakpoint(medium up) {
+        margin-bottom: $base-margin*2;
+      }
     }
   }
 

@@ -1,19 +1,30 @@
 .hero {
   &--grey {
-    margin: 100px auto;
+    margin: 0 auto;
 
     @include breakpoint(medium down) {
       margin-top: $base-margin;
     }
-  }
 
-  &--cerulean {
-    background: $cerulean;
-    width: 100%;
+    .section-content--smoke-bg {
+      background: transparent;
+      border-top: $base-border;
+    }
+
+    .section__content {
+      border-radius: $base-radius;
+      padding: $base-padding*2 $base-padding;
+    }
+
+    .section__content--smoke-bg {
+      background: transparent;
+    }
   }
 
   &__heading {
-    color: $white;
+    @extend h3;
+    line-height: 1.25;
+    margin-bottom: $base-margin;
   }
 
   &__image {
@@ -29,13 +40,44 @@
 
 .row-fluid {
   @include grid-row;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   padding: 100px 0;
 
   @include breakpoint(medium down) {
-    width: 100%;
     margin: 0;
     padding: $base-padding 0;
+  }
+}
+
+.hero--cerulean {
+  padding: 0 $base-padding;
+  width: 100%;
+  background: $bg-grey-lightest;
+
+  .section-half:first-of-type {
+    background: $white;
+    border-radius: $base-radius;
+  }
+
+  .section-half:last-of-type {
+    padding: 0 $base-padding;
+
+    @include breakpoint(large) {
+      padding: 0 $base-padding*3;
+    }
+  }
+
+  .section-heading {
+    padding: $base-padding*2 $base-padding;
+  }
+
+  .section-content--smoke-bg {
+    background: transparent;
+    border-top: $base-border;
+  }
+
+  .white-text {
+    color: $dark-grey-text;
   }
 }

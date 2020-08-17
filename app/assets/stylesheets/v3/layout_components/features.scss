@@ -4,7 +4,7 @@
   }
 
   &__section-title {
-    @extend .wisdom-script;
+    @extend .h2;
     text-align: center;
     font-size: $base-font-size*2.857;
 
@@ -33,6 +33,10 @@
   }
 
   &__content {
+    h3 {
+      margin-bottom: $base-margin;
+    }
+    
     @include breakpoint(large) {
       width: 80%;
       margin: 0 auto;

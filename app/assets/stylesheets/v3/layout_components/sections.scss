@@ -202,21 +202,9 @@
   padding: $base-padding;
   background: $white;
   @include clearfix;
-
-  & > *:last-child {
-    margin-bottom: 0;
-    /* override so that the last child element always has margin-bottom of zero
-    (because the container has bottom padding)
-    the alternative is to set the elements themselves to ONLY have bottom-margin
-    if they're not the :last-child, but Foundation adds bottom margin to everything by default
-    so we would have to change each element individually in the _settings file.
-    */
-
-    & > *:last-child {
-      margin-bottom: 0;
-      /* the same as above, but for nested elements within sections */
-    }
-  }
+  padding-top: $base-padding;
+  padding-bottom: $base-padding*2;
+  border-bottom: 1px solid $bg-grey-light;
 
   &--grey-bg {
     padding: $base-padding;
