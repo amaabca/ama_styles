@@ -149,7 +149,7 @@
       &::after {
         color: $black;
         content: fa-content($fa-var-angle-double-right);
-        font-family: "Font Awesome 5 Free";
+        font-family: FontAwesome, "Font Awesome 5 Free";
         margin-left: $base-margin;
         font-weight: $fa-solid;
       }
@@ -249,7 +249,7 @@
       border: none;
       color: $dark-grey-text;
       content: fa-content($fa-var-chevron-left);
-      font-family: "Font Awesome 5 Free";
+      font-family: FontAwesome, "Font Awesome 5 Free";
       font-size: $fa-size-small;
       font-weight: $fa-solid;
       left: 0.25*$base-padding;
@@ -291,7 +291,7 @@
       border: none;
       color: $black;
       content: fa-content($fa-var-chevron-right);
-      font-family: "Font Awesome 5 Free";
+      font-family: FontAwesome, "Font Awesome 5 Free";
       font-size: $fa-size-small;
       font-weight: $fa-solid;
       line-height: 2.5;
@@ -345,7 +345,7 @@
         color: $white;
         content: fa-content($fa-var-chevron-right);
         display: inline-block;
-        font-family: "Font Awesome 5 Free";
+        font-family: FontAwesome, "Font Awesome 5 Free";
         font-size: $fa-size-small;
         font-weight: $fa-solid;
         margin-left: $base-margin;

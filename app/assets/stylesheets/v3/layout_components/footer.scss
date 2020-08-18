@@ -213,7 +213,7 @@ body {
 
 .is-accordion-submenu-parent > a::after {
   display: block;
-  font-family: "Font Awesome 5 Free";
+  font-family: FontAwesome, "Font Awesome 5 Free";
   content: fa-content($fa-var-chevron-down);
   position: absolute;
   top: 20%;

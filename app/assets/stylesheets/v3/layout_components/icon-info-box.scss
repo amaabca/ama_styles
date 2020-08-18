@@ -29,7 +29,7 @@
     width: fit-content;
 
     &::after {
-      font-family: "Font Awesome 5 Free";
+      font-family: FontAwesome, "Font Awesome 5 Free";
       content: fa-content($fa-var-angle-right);
       margin-left: $base-margin;
     }

@@ -246,7 +246,7 @@ h2.page-header__heading--split { //temporary v3 fix
       color: $white;
       content: fa-content($fa-var-chevron-down);
       border: none;
-      font-family: "Font Awesome 5 Free";
+      font-family: FontAwesome, "Font Awesome 5 Free";
       margin-left: $base-margin;
       font-weight: $fa-solid;
       right: 23px;
