@@ -17,7 +17,7 @@
     .cx-message .cx-avatar-wrapper {
       .cx-avatar.agent {
         svg.cx-svg-icon-tone1 {
-          fill: $brand-blue-light;
+          fill: $blue-main-brand;
         }
       }
     }
@@ -43,7 +43,7 @@
     }
 
     .cx-message.cx-date {
-      border: 2px solid $brand-blue-light !important;
+      border: 2px solid $blue-main-brand !important;
     }
   }
 }
@@ -55,11 +55,11 @@
 }
 
 .cx-message.cx-date {
-  color: $brand-blue-light;
+  color: $blue-main-brand;
 }
 
 .cx-message-chat {
-  color: $brand-blue-light;
+  color: $blue-main-brand;
 }
 
 .cx-widget {
@@ -72,13 +72,13 @@
 
 .cx-widget.cx-theme-ama {
   * {
-    border-color: $brand-blue-light;
+    border-color: $blue-main-brand;
   }
   color: $slate;
   background-color: $white;
 
   .cx-overlay {
-    background-color: $brand-blue-light;
+    background-color: $blue-main-brand;
   }
 
   .cx-svg-icon-tone1 {
@@ -86,7 +86,7 @@
   }
 
   .cx-titlebar {
-    background: $brand-blue-light;
+    background: $blue-main-brand;
     padding: 9px 20px !important;
 
     .cx-title {
@@ -97,7 +97,7 @@
   }
 
   .cx-form-control {
-    border-radius: 0;
+    border-radius: $base-radius;
   }
 
   .cx-buttons-window-control .cx-svg-icon-tone1 {
@@ -118,7 +118,7 @@
   }
 
   a:hover {
-    color: $brand-blue-light;
+    color: $blue-main-brand;
   }
 
   .cx-dropdown {
@@ -168,7 +168,7 @@
   .cx-btn:focus,
   .cx-button-group button:focus,
   .cx-form-control:focus {
-    border-color: $ocean;
+    border-color: $blue-main-brand;
     border-width: 2px;
     border-style: solid;
   }
@@ -180,9 +180,12 @@
     background-color: $white;
     color: $black;
     font-size: 1em;
-    border-color: $smoke;
+    border-color: $form-border-color;
     border-width: 2px;
     border-style: solid;
+    line-height: 24px;
+    min-height: 40px;
+    border-radius: $base-radius;
   }
 
   .cx-border-error {
@@ -190,7 +193,7 @@
   }
 
   .cx-btn {
-    border-radius: 3px;
+    border-radius: $base-radius;
     font-size: 1em;
     font-weight: normal;
   }
@@ -207,8 +210,8 @@
 
   .cx-btn-primary {
     color: $white;
-    border-color: $cerulean;
-    background: $cerulean;
+    border-color: $blue-main-brand;
+    background: $blue-main-brand;
   }
 
   .cx-smokescreen {
