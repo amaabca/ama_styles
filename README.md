@@ -71,8 +71,11 @@ This will trigger compilation of your assets instead of using AWS cloudfront.
 
 ** NOTE ** Remember to update ama_styles gem in the app after deploying to master to get new assets
 
-## Font Awesome
-To include the fontawesome all js in an application please add the following code to the desired application `app/assets/javascripts/application.js`
+## Font Awesome icons
+
+To include the fontawesome all js in an application please add the following require to the desired application `app/assets/javascripts/application.js`
+
+### All FA
 
 - Minified
 
@@ -80,7 +83,7 @@ To include the fontawesome all js in an application please add the following cod
 // = require ama_styles/font-awesome/all.min
 ```
 
-- Regular
+- Full
 
 ```js
 // = require ama_styles/font-awesome/all
