@@ -73,21 +73,7 @@ This will trigger compilation of your assets instead of using AWS cloudfront.
 
 ## Font Awesome icons
 
-To include the fontawesome all js in an application please add the following require to the desired application `app/assets/javascripts/application.js`
-
-### All FA
-
-- Minified
-
-```js
-// = require ama_styles/font-awesome/all.min
-```
-
-- Full
-
-```js
-// = require ama_styles/font-awesome/all
-```
+Font Awesome icons will now be served up via the fa kit in the ama_layout [v11.3.0](https://rubygems.org/gems/ama_layout/versions/11.3.0) partial `ama_layout_partial('font_awesome_pro_kit')`
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
