@@ -19,9 +19,14 @@
     background-repeat: no-repeat;
     background-size: contain;
     margin-left: 2*$base-margin;
+    margin-right: $base-margin;
     object-fit: contain;
-    padding: $base-padding*2;
-    width: 250px;
+    padding: $base-padding*2.5;
+    width: 275px;
+
+    @include breakpoint(xlarge) {
+      margin-right: $base-margin*4;
+    }
   }
 
   &__spacer {
@@ -97,7 +102,7 @@
     display: flex;
     height: $side-nav-height;
     justify-content: center;
-    padding: $base-padding*2 $base-padding $base-padding/2 $base-padding;
+    padding: $base-padding*1.3 $base-padding $base-padding/2 $base-padding;
 
     &:hover {
       border-bottom: $base-padding/2 solid $blue-main-brand;
@@ -109,20 +114,20 @@
   }
 
   &__link {
-    color: $dark-grey-text;
+    color: $black;
     cursor: pointer;
     display: block;
-    font-size: $base-font-size;
+    font-size: $base-font-size*1.125;
     font-weight: 600;
     line-height: 1.5;
     text-align: center;
 
-    @media screen and (max-width: 1430px) {
-      font-size: 0.875*$base-font-size;
+    @media screen and (max-width: 1600px) {
+      font-size: calc(0.5rem + 0.6vw);
     }
 
     &:hover {
-      color: $dark-grey-text;
+      color: $black;
       text-decoration: none;
     }
   }
