@@ -62,7 +62,7 @@ describe AMA::Styles::Resolver do
               before(:each) do
                 AMA::Styles::Cache.write(
                   "#{AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY}/#{default_version}",
-                  "v2/#{asset_name}"
+                  "v3/#{asset_name}"
                 )
                 AMA::Styles::Cache.write(AMA::Styles::Globals::AMA_STYLES_VERSION_KEY, 'v5')
               end
