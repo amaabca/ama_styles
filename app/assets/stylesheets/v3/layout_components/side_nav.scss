@@ -95,15 +95,31 @@
     align-items: center;
     border-bottom: $base-padding/2 solid transparent;
     display: flex;
-    height: $side-nav-height;
+    height: $side-nav-height+2px;
     justify-content: center;
     padding: $base-padding*2 $base-padding $base-padding/2 $base-padding;
+    position: relative;
 
     &:hover {
       border-bottom: $base-padding/2 solid $blue-main-brand;
 
       .side-nav__child-list {
         display: block;
+        transition: 0.2s 1s;
+      }
+    }
+
+    &:last-of-type,
+    &:nth-last-of-type(2) {
+      .side-nav__child-list {
+        right: 0;
+      }
+    }
+
+    &:not(:last-of-type),
+    &:not(:nth-last-of-type(2)) {
+      .side-nav__child-list {
+        left: -20px;
       }
     }
   }
@@ -133,13 +149,15 @@
     background-color: $white;
     box-shadow: 2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35), inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
     display: none;
-    left: $base-margin;
     list-style-type: none;
     padding: 0 2*$base-padding;
     position: absolute;
-    top: $side-nav-height;
-    width: calc(100% - 4rem);
+    top: $side-nav-height+2px;
+    //width: calc(100% - 4rem);
+    min-width: 350px;
+    width: max-content;
     z-index: 10;
+    transition: 0.2s 1s;
 
     li:first-of-type {
       border-bottom: 1px solid $bg-grey-light;
