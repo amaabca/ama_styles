@@ -97,6 +97,25 @@ describe AMA::Styles::Resolver do
         context 'when version is v3' do
           let(:version) { 'v3' }
 
+          context 'when version v2 is passed' do
+            before(:each) do
+              AMA::Styles::Cache.write(
+                "#{AMA::Styles::Globals::CURRENT_STYLESHEET_DIGEST_KEY}/v2",
+                "v2/#{asset_name}"
+              )
+            end
+
+            it 'returns the v2 cloudfront asset url' do
+              cloudfront_url = URI.join(
+                Rails.configuration.cloudfront_url,
+                AMA::Styles::Globals::ASSET_PREFIX,
+                'v2/',
+                asset_name
+              ).to_s
+              expect(subject.asset_path('v2')).to eq(cloudfront_url)
+            end
+          end
+
           it 'returns the v3 cloudfront asset url' do
             cloudfront_url = URI.join(
               Rails.configuration.cloudfront_url,
