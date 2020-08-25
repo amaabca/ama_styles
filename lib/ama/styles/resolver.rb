@@ -7,8 +7,8 @@ module AMA
       attr_accessor :remote
       attr_writer :version
 
-      def asset_path
-        remote ? custom_asset_url : "#{version}/#{PRIMARY_STYLESHEET_NAME}"
+      def asset_path(asset_version = version)
+        remote ? custom_asset_url(asset_version) : "#{asset_version}/#{PRIMARY_STYLESHEET_NAME}"
       end
 
       def version
@@ -24,16 +24,16 @@ module AMA
         cached_version
       end
 
-      def custom_asset_url
+      def custom_asset_url(asset_version = version)
         URI.join(
           Rails.configuration.cloudfront_url,
           ASSET_PREFIX,
-          current_revision
+          current_revision(asset_version)
         ).to_s
       end
 
-      def current_revision
-        Cache.read("#{CURRENT_STYLESHEET_DIGEST_KEY}/#{version}") || "#{version}/#{FALLBACK_STYLESHEET_FILE}"
+      def current_revision(asset_version = version)
+        Cache.read("#{CURRENT_STYLESHEET_DIGEST_KEY}/#{asset_version}") || "#{asset_version}/#{FALLBACK_STYLESHEET_FILE}"
       end
     end
   end
