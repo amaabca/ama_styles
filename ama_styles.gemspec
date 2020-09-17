@@ -61,6 +61,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rest-client-jogger'
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rubocop', '0.87.0'
+  s.add_development_dependency 'rubocop-ast', '0.3'
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'slack-notifier'
   s.add_development_dependency 'sqlite3'
