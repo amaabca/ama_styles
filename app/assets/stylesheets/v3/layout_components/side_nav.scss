@@ -176,6 +176,11 @@
       border-bottom: none;
       padding-bottom: $base-padding;
     }
+
+    &--4-cols {
+      @extend .side-nav__child-list;
+      width: 920px;
+    }
   }
 
   &__child-item {
