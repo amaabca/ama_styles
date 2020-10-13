@@ -26,6 +26,15 @@
     }
   }
 
+  &__image-container{
+    min-height: 150px;
+    position: relative;
+
+    & > * {
+      @include absolute-center;
+    }
+  }
+
   &__image {
     margin-bottom: $base-margin;
   }
