@@ -216,3 +216,8 @@
     opacity: 0.7;
   }
 }
+
+// Removes the Minimize and Close buttons in the Learners Prep App
+.cx-widget.cx-theme-ama.cx-de-mobile .cx-buttons-window-control {
+  display: none;
+}
