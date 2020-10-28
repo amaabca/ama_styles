@@ -217,7 +217,15 @@
   }
 }
 
-// Removes the Minimize and Close buttons in the Learners Prep App
-.cx-widget.cx-theme-ama.cx-de-mobile .cx-buttons-window-control {
-  display: none;
+// DEPEA mobile app specific
+.cx-widget.cx-theme-ama.cx-de-mobile {
+  // Removes the Minimize and Close buttons in the Learners Prep App
+  .cx-buttons-window-control {
+    display: none;
+  }
+
+  // Removes the Cancel button in the Learners Prep App
+  .cx-btn-default {
+    display: none;
+  }
 }
