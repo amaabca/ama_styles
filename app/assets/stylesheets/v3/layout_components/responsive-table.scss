@@ -4,11 +4,13 @@
   width: 100%;
   table-layout: fixed;
 
-  thead, tbody {
+  thead,
+  tbody {
     border: none;
   }
 
-  th, td {
+  th,
+  td {
     padding: $base-padding;
     text-align: left;
     border-right: 1px solid $bg-grey-light;
@@ -45,14 +47,15 @@
       display: block;
       padding: $base-padding;
       font-size: $base-font-size;
-      border-top: 1px solid $bg-grey-light!important;
+      border-top: 1px solid $bg-grey-light !important;
 
       &:last-child {
-        border-bottom: 1px solid $bg-grey-light!important;
+        border-bottom: 1px solid $bg-grey-light !important;
       }
     }
 
-    th, td {
+    th,
+    td {
       padding: 0;
       border-style: none;
     }
