@@ -5,6 +5,8 @@
 * https://github.com/filamentgroup/tablesaw
 * Copyright (c) 2015 Filament Group; Licensed MIT */
 
+// The Tablesaw CSS is legacy and should not be used going forward, as of Nov 2020.
+
 table.tablesaw {
   empty-cells: show;
   max-width: 100%;
@@ -196,5 +198,83 @@ $use-respond-mixins: false !default;
 
   table {
     margin-bottom: 0;
+  }
+}
+
+// This is the new table css as of Nov 2020. Please use this going forward.
+
+.responsive-table {
+  border-style: none;
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+
+  thead,
+  tbody {
+    border: none;
+  }
+
+  thead {
+    @include breakpoint(small only) {
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: $bg-grey-lightest;
+  }
+
+  th,
+  td {
+    padding: $base-padding;
+    text-align: left;
+    border-right: $base-border;
+
+    &:last-child {
+      border-style: none;
+    }
+
+    @include breakpoint(small only) {
+      padding: 0;
+      border-style: none;
+    }
+  }
+
+  td {
+    @include breakpoint(small only) {
+      display: block;
+      text-align: right;
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
+    }
+  }
+
+  th {
+    background-color: $bg-grey-lighter;
+  }
+
+  tr {
+    background-color: $white;
+
+    @include breakpoint(small only) {
+      display: block;
+      padding: $base-padding;
+      font-size: $base-font-size;
+      border-top: $base-border;
+
+      &:last-child {
+        border-bottom: $base-border;
+      }
+    }
   }
 }
