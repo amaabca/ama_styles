@@ -214,14 +214,48 @@ $use-respond-mixins: false !default;
     border: none;
   }
 
+  thead {
+    @include breakpoint(small only) {
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: $bg-grey-lightest;
+  }
+
   th,
   td {
     padding: $base-padding;
     text-align: left;
-    border-right: 1px solid $bg-grey-light;
+    border-right: $base-border;
 
     &:last-child {
       border-style: none;
+    }
+
+    @include breakpoint(small only) {
+      padding: 0;
+      border-style: none;
+    }
+  }
+
+  td {
+    @include breakpoint(small only) {
+      display: block;
+      text-align: right;
+
+      &::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+      }
     }
   }
 
@@ -231,49 +265,16 @@ $use-respond-mixins: false !default;
 
   tr {
     background-color: $white;
-  }
 
-  tbody tr:nth-child(even) {
-    background-color: $bg-grey-lightest;
-  }
-
-  @include breakpoint(small only) {
-    thead {
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-
-    tr {
+    @include breakpoint(small only) {
       display: block;
       padding: $base-padding;
       font-size: $base-font-size;
-      border-top: 1px solid $bg-grey-light !important;
+      border-top: $base-border;
 
       &:last-child {
-        border-bottom: 1px solid $bg-grey-light !important;
+        border-bottom: $base-border;
       }
-    }
-
-    th,
-    td {
-      padding: 0;
-      border-style: none;
-    }
-
-    td {
-      display: block;
-      text-align: right;
-    }
-
-    td::before {
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
     }
   }
 }
