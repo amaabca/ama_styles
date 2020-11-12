@@ -149,14 +149,14 @@
   // (Unable to do with z-index since a child can not have a lower z-index than its parent)
   &__child-list {
     background-color: $white;
-    box-shadow: 2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35), inset 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
+    box-shadow: 2.5px 7px 7.86px -2px rgba(24, 24, 24, 0.35), 2.5px 11px 10px -10px rgba(24, 24, 24, 0.6);
     display: none;
     list-style-type: none;
     padding: 0 2*$base-padding;
     position: absolute;
     top: $side-nav-height+2px;
     min-width: 350px;
-    z-index: 10;
+    border-top: $base-border;
 
     li:first-of-type {
       border-bottom: 1px solid $bg-grey-light;
