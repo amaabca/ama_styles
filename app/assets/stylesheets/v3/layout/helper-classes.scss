@@ -38,6 +38,13 @@
       float: left !important;
     }
   }
+
+  &--tablet-down {
+    @include breakpoint(medium down) {
+      float: left !important;
+    }
+  }
+
 }
 
 .right {
@@ -45,6 +52,12 @@
 
   &--mobile {
     @include breakpoint(small only) {
+      float: right !important;
+    }
+  }
+
+  &--tablet-down {
+    @include breakpoint(medium down) {
       float: right !important;
     }
   }
