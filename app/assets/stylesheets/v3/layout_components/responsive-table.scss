@@ -5,7 +5,7 @@
 * https://github.com/filamentgroup/tablesaw
 * Copyright (c) 2015 Filament Group; Licensed MIT */
 
-// The Tablesaw CSS is legacy and should not be used going forward, as of Nov 2020.
+// The Tablesaw CSS is legacy and should NOT be used going forward, as of Nov 2020.
 
 table.tablesaw {
   empty-cells: show;
@@ -215,7 +215,7 @@ $use-respond-mixins: false !default;
   }
 
   thead {
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
       clip: rect(0 0 0 0);
       height: 1px;
       margin: -1px;
@@ -240,14 +240,14 @@ $use-respond-mixins: false !default;
       border-style: none;
     }
 
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
       padding: 0;
       border-style: none;
     }
   }
 
   td {
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
       display: block;
       text-align: right;
 
@@ -266,7 +266,7 @@ $use-respond-mixins: false !default;
   tr {
     background-color: $white;
 
-    @include breakpoint(small only) {
+    @include breakpoint(medium down) {
       display: block;
       padding: $base-padding;
       font-size: $base-font-size;
