@@ -201,7 +201,7 @@ input[type="radio"]:checked + label {
     content: "";
     position: absolute;
     display: block;
-    top: calc(50% - 4px);
+    top: calc(50% - 5px);
     left: 27px;
     background-color: $blue-secondary-brand--light-med;
     width: 10px;
