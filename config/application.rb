@@ -2,8 +2,8 @@
 
 require File.expand_path('boot', __dir__)
 
-require 'rails'
 # Pick the frameworks you want:
+require 'active_support/core_ext/integer/time.rb'
 require 'active_model/railtie'
 require 'sprockets/railtie'
 require 'ama_styles'

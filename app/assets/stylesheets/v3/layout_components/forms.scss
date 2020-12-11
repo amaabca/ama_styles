@@ -101,9 +101,9 @@ input[type="checkbox"] + label,
     display: block;
     position: absolute;
     left: 1rem;
-    top: calc(50% - 15px);
-    width: 30px;
-    height: 30px;
+    top: calc(50% - 1rem);
+    width: 2rem;
+    height: 2rem;
     background-color: $white;
     border: $form-border;
     transition: border-color 0.25s linear;
@@ -144,8 +144,9 @@ input[type="checkbox"] + label,
 
 .checkbox-label {
   display: inline-block;
-  width: 85%;
+  width: calc(100% - 3rem);
   margin: $base-margin 0 $base-margin $base-margin*3.5;
+  padding-right: 1rem;
 
   &--full {
     @extend .checkbox-label;
@@ -200,11 +201,11 @@ input[type="radio"]:checked + label {
     content: "";
     position: absolute;
     display: block;
-    top: calc(50% - 4px);
+    top: calc(50% - 5px);
     left: 27px;
     background-color: $blue-secondary-brand--light-med;
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     -moz-transform: scale(2, 2);
     -webkit-transform: scale(2, 2);
     transform: scale(2, 2);
@@ -236,7 +237,7 @@ input[type="checkbox"]:checked + label {
     left: 22px;
     top: 50%;
     width: 10px;
-    height: 16px;
+    height: 18px;
     border-right: 3px solid $white;
     border-top: 3px solid $white;
     transform: (scaleX(-1) rotate(180deg + -45deg));
