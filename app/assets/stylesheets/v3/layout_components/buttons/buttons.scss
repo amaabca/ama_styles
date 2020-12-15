@@ -113,13 +113,12 @@
 
   &--ghost {
     @extend .button;
-    display: grid;
     text-align: left;
-    align-items: center;
+    vertical-align: middle;
     background-color: $white;
     border: 3px solid $blue-main-brand;
-    min-height: 4.5rem;
-    padding: $base-padding/2 $base-padding*3 $base-padding/2 $base-padding;
+    padding-left: $base-padding;
+    padding-right: $base-padding*3;
     color: $blue-main-brand;
     line-height: 1.65rem;
     position: relative;
@@ -145,6 +144,7 @@
       font-weight: $fa-solid;
       position: absolute;
       right: 1rem;
+      top: calc(50% - 14px);
     }
   }
 
