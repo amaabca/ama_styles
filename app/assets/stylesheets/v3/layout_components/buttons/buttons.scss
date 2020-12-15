@@ -111,6 +111,43 @@
     }
   }
 
+  &--ghost {
+    @extend .button;
+    text-align: left;
+    vertical-align: middle;
+    background-color: $white;
+    border: 3px solid $blue-main-brand;
+    padding-left: $base-padding;
+    padding-right: $base-padding*3;
+    color: $blue-main-brand;
+    line-height: 1.65rem;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background: lighten($blue-main-brand, 50%);
+      color: $blue-main-brand;
+    }
+
+    &.disabled,
+    &.disabled:active,
+    &.disabled:hover,
+    &.disabled:focus {
+      border-color: lighten($blue-main-brand, 60%);
+      color: lighten($blue-main-brand, 60%);
+    }
+
+    &::after {
+      content: fa-content($fa-var-arrow-right);
+      font-family: FontAwesome, "Font Awesome 5 Free";
+      font-weight: $fa-solid;
+      position: absolute;
+      right: 1rem;
+      top: calc(50% - 14px);
+    }
+  }
+
   &--white {
     @extend .button;
     $button-background: $white;
