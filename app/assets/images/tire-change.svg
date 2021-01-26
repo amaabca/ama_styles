@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="90px" height="60px" viewBox="0 0 90 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Large Icons</title>
     <defs>
         <polygon id="path-1" points="0.06 0.866657434 19.8031112 0.866657434 19.8031112 21.94 0.06 21.94"></polygon>
@@ -7,7 +7,7 @@
         <polygon id="path-5" points="0.796 0.861 9.477 0.861 9.477 11.94 0.796 11.94"></polygon>
     </defs>
     <g id="Large-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="technician-changing-tire_lg" transform="translate(7.500000, 24.500000)">
+        <g id="technician-changing-tire_lg" transform="translate(7.500000, 11.500000)">
             <polyline id="Fill-1" fill="#343534" points="38.863 36.624 32.671 30.89 33.589 29.9 39.781 35.633 38.863 36.624"></polyline>
             <polyline id="Fill-2" fill="#343534" points="33.589 36.624 32.671 35.633 38.863 29.9 39.781 30.89 33.589 36.624"></polyline>
             <path d="M7.785,9.79 C7.785,9.79 10.383,7.87 11.983,8.478 C13.582,9.087 14.129,11.521 13.674,13 C13.219,14.479 10.749,11.815 10.749,11.815 L7.785,9.79" id="Fill-3" fill="#638FB1"></path>

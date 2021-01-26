@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="90px" height="60px" viewBox="0 0 90 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Large Icons</title>
     <defs>
         <polygon id="path-1" points="0.0348982619 0.669586467 54.447 0.669586467 54.447 18.573 0.0348982619 18.573"></polygon>
         <polygon id="path-3" points="0.0365719933 0.81 19.4380045 0.81 19.4380045 30.94 0.0365719933 30.94"></polygon>
     </defs>
     <g id="Large-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="airplane-travel_lg" transform="translate(9.000000, 28.500000)">
+        <g id="airplane-travel_lg" transform="translate(9.000000, 14.500000)">
             <g id="Group-4" transform="translate(17.000000, 4.000000)">
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
