@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="90px" height="60px" viewBox="0 0 90 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Large Icons</title>
     <defs>
         <polygon id="path-1" points="0 0.435 76.294 0.435 76.294 51.94 0 51.94"></polygon>
     </defs>
     <g id="Large-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="home-key-lock-out_lg" transform="translate(8.000000, 15.000000)">
+        <g id="home-key-lock-out_lg" transform="translate(8.000000, 2.000000)">
             <path d="M39.584,46.46 L57.709,28.158 C57.709,28.158 65.418,30.894 69.895,26.915 C74.917,22.451 72.63,15.226 71.636,12.49 C71.636,12.49 76.63,20.119 74.868,25.174 C73.56,28.929 68.294,32.645 62.097,31.987 L58.157,35.927 L55.438,35.927 L55.438,38.647 L53.557,40.528 L50.837,40.528 L50.837,43.248 L47.795,46.29 L39.584,46.46" id="Fill-1" fill="#BBCFDB"></path>
             <polyline id="Fill-3" fill="#BBCFDB" points="20.519 9.532 6.696 25.545 2.247 25.206 17.135 7.298 19.182 7.989 20.519 9.532"></polyline>
             <path d="M48.314,6.176 L46.166,6.176 L46.166,13.794 L40.505,13.794 L36.633,9.028 L36.728,6.176 L17.709,6.176 L33.618,25.176 L53.328,25.176 C53.328,25.176 53.002,17.065 54.972,14.368 L50.487,8.365" id="Fill-4" fill="#BBCFDB"></path>

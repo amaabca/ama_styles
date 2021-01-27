@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="90px" height="90px" viewBox="0 0 90 90" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="90px" height="60px" viewBox="0 0 90 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Large Icons</title>
     <defs>
         <polygon id="path-1" points="0.06 0.318571537 38.868 0.318571537 38.868 10 0.06 10"></polygon>
     </defs>
     <g id="Large-Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="palm-tree-beach-vacation_lg" transform="translate(27.500000, 20.000000)">
+        <g id="palm-tree-beach-vacation_lg" transform="translate(27.500000, 7.000000)">
             <g id="Group-6" transform="translate(2.000000, 0.000000)">
                 <path d="M2.201,40.015 C2.201,40.015 5.896,30.983 18.11,32.317 C30.324,33.651 32.582,40.22 32.582,40.22 L28.681,39.604 C28.681,39.604 26.628,38.373 25.602,38.783 C24.576,39.194 23.96,40.528 22.01,40.22 C20.06,39.912 20.368,38.373 18.007,38.475 C15.647,38.578 14.415,40.015 13.286,40.015 C12.157,40.015 9.796,37.859 8.257,38.065 C6.717,38.27 4.973,40.63 2.201,40.015" id="Fill-1" fill="#638FB1"></path>
                 <path d="M3.125,15.69 L11.952,10.045 L12.259,9.327 C12.259,9.327 22.215,16.716 22.112,16.101 C22.01,15.485 22.318,11.277 17.186,8.198 L15.955,7.993 L23.139,2.861 C23.139,2.861 16.878,-0.732 12.567,6.556 C12.567,6.556 14.312,1.732 9.181,1.219 L5.588,1.937 L7.949,4.811 C7.949,4.811 4.049,2.963 0.046,6.761 L8.462,8.095 C8.462,8.095 2.817,9.84 3.125,15.69" id="Fill-3" fill="#BBCFDB"></path>
