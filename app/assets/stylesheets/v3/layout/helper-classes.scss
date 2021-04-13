@@ -337,6 +337,10 @@
 }
 
 /* ==================== 6. Background Colours ==================== */
+.transparent-bg {
+  background-color: transparent !important;
+}
+
 .whitebg {
   background-color: $white !important;
 }
