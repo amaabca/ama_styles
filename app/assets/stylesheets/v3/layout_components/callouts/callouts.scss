@@ -41,6 +41,7 @@
 
   &--membership-summary {
     min-height: 360px;
+    border-radius: 9px;
 
     @include breakpoint(medium only) {
       min-height: 440px;
