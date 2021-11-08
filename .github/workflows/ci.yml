@@ -38,6 +38,5 @@ jobs:
       run: bundle exec rake
     - name: Run style check
       run: |
-        npm i npm@latest -g
-        npm install -g stylelint
+        npm install -g stylelint@^13.13.1
         stylelint "app/assets/stylesheets/**/*.scss"
