@@ -17,35 +17,26 @@ jobs:
         options: --entrypoint redis-server
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 10.13.0
-      uses: actions/setup-node@v1
+    - name: Use Node.js
+      uses: actions/setup-node@v2
       with:
-        node-version: '10.13.0'
-    - name: Set up Ruby 2.5
+        node-version: '14'
+    - name: Install sqlite3
+      run: sudo apt-get install libsqlite3-dev
+    - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '2.5.1'
-        bundler: '1.17.3'
-    - name: Install Bundler
-      run: gem install bundler -v '~> 1.17.3'
+        ruby-version: '2.7'
+        bundler-cache: true
     - name: Install Danger
       run: gem install danger -v 7.0.1
     - name: Execute Danger
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
       run: danger
-    - name: Install sqlite3
-      run: sudo apt-get install libsqlite3-dev
-    - name: Install Ruby Dependencies
-      run: |
-        bundle _1.17.3_ --version
-        bundle _1.17.3_ config path 'vendor/bundle'
-        bundle _1.17.3_ install --jobs 4 --retry 3
-        bundle list
     - name: Run Tests
-      run: bundle _1.17.3_ exec rake
+      run: bundle exec rake
     - name: Run style check
       run: |
-        npm i npm@latest -g
-        npm install -g stylelint
-        bundle _1.17.3_ exec stylelint "app/assets/stylesheets/**/*.scss"
+        npm install -g stylelint@^13.13.1
+        stylelint "app/assets/stylesheets/**/*.scss"

@@ -69,6 +69,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     &:hover,
     &:active,
@@ -132,9 +133,37 @@
     color: $white;
   }
 
+  &__flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    &--three-quarter {
+      flex: 8;
+    }
+
+    &--quarter {
+      flex: 4;
+    }
+  }
+
   &__icon {
     font-size: 3rem;
     padding-bottom: $base-padding/2;
+  }
+
+  &__round-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 85%;
+      max-width: 140px;
+      border-radius: 100%;
+      background-color: $white;
+    }
   }
 
   &__bg-icon {
@@ -164,6 +193,10 @@
       display: block;
       font-size: 2.5rem;
       font-weight: bold;
+    }
+
+    &--minor {
+      font-weight: normal;
     }
 
     &--underline {

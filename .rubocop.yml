@@ -29,6 +29,8 @@ Lint/DeprecatedOpenSSLConstant:
   Enabled: false
 Lint/RaiseException:
   Enabled: false
+Style/SignalException:
+  Enabled: false
 Lint/StructNewOverride:
   Enabled: false
 Style/ExponentialNotation:
