@@ -47,7 +47,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 5.0'
   s.add_dependency 'redis-rails'
   s.add_dependency 'sass-rails'
-  s.add_dependency 'sprockets', '~> 3.7'
+  s.add_dependency 'sprockets', '~> 4.0'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'colorize'
