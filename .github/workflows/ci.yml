@@ -33,7 +33,7 @@ jobs:
     - name: Execute Danger
       env:
         DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
-      run: danger
+      run: bundle exec danger
     - name: Run Tests
       run: bundle exec rake
     - name: Run style check
