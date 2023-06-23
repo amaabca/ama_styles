@@ -12,23 +12,17 @@ Gem::Specification.new do |s|
   s.authors = [
     'Michael van den Beuken',
     'Ruben Estevez',
-    'Jordan Babe',
-    'Jesse Doyle',
     'Ryan Reddekopp',
     'Darko Dosenovic',
     'Zoie Carnegie',
-    'Kayt Campbell',
     'Sinead Errity'
   ]
   s.email = [
     'michael.beuken@gmail.com',
     'ruben.a.estevez@gmail.com',
-    'jorbabe@gmail.com',
-    'jesse.doyle@ama.ab.ca',
     'ryan.reddekopp@ama.ab.ca',
     'darko.dosenovic@ama.ab.ca',
     'zoie.carnegie@ama.ab.ca',
-    'kayt.campbell@ama.ab.ca',
     'sinead.errity@ama.ab.ca'
   ]
   s.homepage = 'https:/github.com/amaabca/ama_styles'
