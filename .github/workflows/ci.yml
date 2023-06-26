@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - master
+
   pull_request:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,27 +17,35 @@ jobs:
         ports:
           - '6379:6379'
         options: --entrypoint redis-server
+
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js
       uses: actions/setup-node@v2
       with:
         node-version: '14'
+
     - name: Install sqlite3
       run: sudo apt-get install libsqlite3-dev
+
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '2.7'
         bundler-cache: true
+
     - name: Install Danger
       run: gem install danger -v 7.0.1
+
     - name: Execute Danger
       env:
-        DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+        DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: danger
+
     - name: Run Tests
       run: bundle exec rake
+
     - name: Run style check
       run: |
         npm install -g stylelint@^13.13.1
