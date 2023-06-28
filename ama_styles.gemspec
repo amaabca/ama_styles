@@ -12,23 +12,17 @@ Gem::Specification.new do |s|
   s.authors = [
     'Michael van den Beuken',
     'Ruben Estevez',
-    'Jordan Babe',
-    'Jesse Doyle',
     'Ryan Reddekopp',
     'Darko Dosenovic',
     'Zoie Carnegie',
-    'Kayt Campbell',
     'Sinead Errity'
   ]
   s.email = [
     'michael.beuken@gmail.com',
     'ruben.a.estevez@gmail.com',
-    'jorbabe@gmail.com',
-    'jesse.doyle@ama.ab.ca',
     'ryan.reddekopp@ama.ab.ca',
     'darko.dosenovic@ama.ab.ca',
     'zoie.carnegie@ama.ab.ca',
-    'kayt.campbell@ama.ab.ca',
     'sinead.errity@ama.ab.ca'
   ]
   s.homepage = 'https:/github.com/amaabca/ama_styles'
@@ -44,11 +38,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'dotenv-rails'
   s.add_dependency 'font-awesome-sass', '>= 5.0.6', '<= 5.15.1'
   s.add_dependency 'foundation-rails', '~> 6.4.3.0'
-  s.add_dependency 'rails', '~> 5.0'
+  s.add_dependency 'rails', '>= 5.0'
   s.add_dependency 'redis', '<= 4.8.1'
   s.add_dependency 'redis-rails'
   s.add_dependency 'sass-rails'
-  s.add_dependency 'sprockets', '~> 3.7'
+  s.add_dependency 'sprockets', '>= 4.0'
 
   s.add_development_dependency 'aws-sdk'
   s.add_development_dependency 'colorize'
