@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'dotenv-rails'
   s.add_dependency 'font-awesome-sass', '>= 5.0.6', '<= 5.15.1'
   s.add_dependency 'foundation-rails', '~> 6.4.3.0'
-  s.add_dependency 'rails', '~> 5.0'
+  s.add_dependency 'rails', '~> 6.0'
   s.add_dependency 'redis', '<= 4.8.1'
   s.add_dependency 'redis-rails'
   s.add_dependency 'sass-rails'
